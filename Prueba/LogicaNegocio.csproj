@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Comun\Comun.csproj" />
+    <ProjectReference Include="..\SistemaAutenticacion\SistemaAutenticacion.csproj" />
   </ItemGroup>
 
 </Project>

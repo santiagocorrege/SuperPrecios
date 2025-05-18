@@ -13,6 +13,7 @@ namespace Prueba.Entidades
     [Index(nameof(Nombre), IsUnique = true)]
     public class Categoria : IEntity, IValidate
     {
+        #region Properties
         public int Id { get; set; }
         public string Nombre { get; set; }
 
@@ -28,7 +29,8 @@ namespace Prueba.Entidades
         {
             Productos = new List<Producto>();
         }
-        
+        #endregion
+        #region Methods
         public void Validate()
         {
             if (String.IsNullOrWhiteSpace(Nombre.Trim()))
@@ -36,5 +38,6 @@ namespace Prueba.Entidades
                 throw new CategoriaException("Error: El nombre de la categoria no puede ser vacio");
             }
         }
+        #endregion
     }
 }

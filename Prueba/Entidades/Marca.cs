@@ -11,6 +11,7 @@ namespace Prueba.Entidades
 {
     public class Marca : IEntity, IValidate
     {
+        #region Properties
         public int Id { get; set; }
 
         public string Nombre { get; set; }
@@ -29,6 +30,8 @@ namespace Prueba.Entidades
         protected Marca() {
             Productos = new List<Producto>();
         }
+        #endregion
+        #region Methods
         public void Validate()
         {
             if (String.IsNullOrWhiteSpace(Nombre))
@@ -36,5 +39,6 @@ namespace Prueba.Entidades
                 throw new LocalException("Error: El nombre de la marca no puede ser nulo");
             }
         }
+        #endregion
     }
 }

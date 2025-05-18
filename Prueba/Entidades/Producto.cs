@@ -1,4 +1,5 @@
 ﻿using Comun;
+using LogicaNegocio.Entidades;
 using Microsoft.EntityFrameworkCore;
 using Prueba.Excepciones;
 using Prueba.InterfacesEntidades;
@@ -13,6 +14,7 @@ namespace Prueba.Entidades
 {    
     public class Producto : IEntity, IValidate
     {
+        #region Properties
         public int Id { get; set; }
         public string Nombre { get; set; }
               
@@ -20,40 +22,49 @@ namespace Prueba.Entidades
 
         [ForeignKey(nameof(Marca))]
         public int MarcaId { get; set; }
+
+        public Supermercado Supermercado { get; set; }
+
+        [ForeignKey(nameof(Supermercado))]
+        public int SupermercadoId { get; set; }
         public Categoria Categoria { get; set; }
 
         [ForeignKey(nameof(CategoriaId))]
         public int CategoriaId {  get; set; }
 
-        public Producto(string nombre, int localId, decimal precioInicial)
-        {            
-            Nombre = UtilidadesString.FormatearTexto(nombre);
-            // Creamos el precio histórico inicial para este producto
+        public List<PrecioHistorico> PreciosHistoricos { get; set; }
+        
+
+        public Producto(string nombre, int nombreMarca, int nombreSupermercado, decimal precio)
+        {
+            PreciosHistoricos = new List<PrecioHistorico>();
+            Nombre = UtilidadesString.FormatearTexto(nombre);            
             var precioHistorico = new PrecioHistorico
             {
                 Fecha = DateOnly.FromDateTime(DateTime.UtcNow),
-                Precio = precioInicial,
+                Precio = precio,
                 Producto = this // Establecemos la relación
             };
-            HistorialPrecio.Add(precioHistorico);
-            PrecioActual = precioHistorico;
-            LocalId = localId;
+            precioHistorico.Validate();            
             Validate();
         }
 
-        protected Producto() {            
+        protected Producto() {
+            PreciosHistoricos = new List<PrecioHistorico>();
         }
-
+        #endregion
+        #region Methods
         public void Validate()
         {
             if (string.IsNullOrWhiteSpace(Nombre))
             {
                 throw new ProductoException("Error: El nombre del producto no puede ser nulo");
             }
-            if (LocalId == 0)
+            if (MarcaId <= 0)
             {
-                throw new ProductoException("Error: El local del producto no puede ser nulo");
+                throw new ProductoException("Error: El nombre del producto no puede ser nulo");
             }
         }
+        #endregion
     }
 }

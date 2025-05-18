@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using LogicaNegocio.Entidades;
+using Microsoft.EntityFrameworkCore;
 using Prueba.Excepciones;
 using Prueba.InterfacesEntidades;
 using System;
@@ -11,22 +12,31 @@ using System.Threading.Tasks;
 
 namespace Prueba.Entidades
 {
-    [Index(nameof(ProductoId), nameof(Fecha), IsUnique = true)]
+    [PrimaryKey(nameof(ProductoId), nameof(Fecha))]
     public class PrecioHistorico : IEntity, IValidate
     {
+        #region Properties
         public int Id { get; set; }
+
+        public Producto? Producto { get; set; }
+
         [Required]
-        public int ProductoId { get; set; }
-        
         [ForeignKey(nameof(ProductoId))]
-        public Producto? Producto { get; set; } 
+        public int ProductoId { get; set; }        
+                           
+        public Supermercado Supermercado { get; set; }
+
+        [ForeignKey(nameof(SupermercadoId))]
+        public int SupermercadoId { get; set; }
+
         [Required]
         public DateOnly Fecha {  get; set; }
         [Required]
         public decimal Precio { get; set; }
 
-        public PrecioHistorico(int productoId, decimal precio) {
+        public PrecioHistorico(int productoId, int supermercadoId, decimal precio) {
             ProductoId = productoId;
+            SupermercadoId = supermercadoId;
             Precio = precio;
             Fecha = DateOnly.FromDateTime(DateTime.UtcNow);
             Validate();
@@ -34,6 +44,8 @@ namespace Prueba.Entidades
 
         internal PrecioHistorico() { }
 
+        #endregion
+        #region Methods
         public void Validate()
         {
             if(ProductoId == 0 || Producto == null)
@@ -45,5 +57,6 @@ namespace Prueba.Entidades
                 throw new ProductoHistoricoException("Error: El precio no puede ser menor o igual a 0");
             }
         }
+        #endregion
     }
 }
