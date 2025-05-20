@@ -1,14 +1,13 @@
-﻿using Comun;
-using Microsoft.EntityFrameworkCore;
-using Prueba.Excepciones;
-using Prueba.InterfacesEntidades;
+﻿using Microsoft.EntityFrameworkCore;
+using SuperPrecios.Domain.Excepciones;
+using SuperPrecios.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Prueba.Entidades
+namespace SuperPrecios.Domain.Entidades
 {
     [Index(nameof(Nombre), IsUnique = true)]
     public class Categoria : IEntity, IValidate

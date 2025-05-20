@@ -1,7 +1,7 @@
-using SuperPrecios.Infrastructure.EntityFramework;
+using SuperPrecios.Infrastructure.EF;
 using Microsoft.EntityFrameworkCore;
 
-namespace MVC
+namespace SuperPrecios.Web
 {
     public class Program
     {

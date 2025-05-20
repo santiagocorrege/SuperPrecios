@@ -1,15 +1,14 @@
-﻿using LogicaNegocio.Entidades;
-using Prueba.Entidades;
-using SuperPrecios.AutenticacionCore.Entidades;
+﻿using SuperPrecios.AutenticacionCore.Entidades;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Papeleria.AccesoDatos.Configuraciones;
+using SuperPrecios.Infrastructure.Configuraciones;
+using SuperPrecios.Domain.Entidades;
 
-namespace SuperPrecios.Infrastructure.EntityFramework
+namespace SuperPrecios.Infrastructure.EF
 {
     public class SuperPreciosContext : DbContext
     {

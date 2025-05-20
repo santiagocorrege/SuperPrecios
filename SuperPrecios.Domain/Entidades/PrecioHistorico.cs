@@ -1,7 +1,5 @@
-﻿using LogicaNegocio.Entidades;
-using Microsoft.EntityFrameworkCore;
-using Prueba.Excepciones;
-using Prueba.InterfacesEntidades;
+﻿using Microsoft.EntityFrameworkCore;
+using SuperPrecios.Domain.Excepciones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Prueba.Entidades
+namespace SuperPrecios.Domain.Entidades
 {
     [PrimaryKey(nameof(ProductoId), nameof(Fecha))]
     public class PrecioHistorico : IEntity, IValidate

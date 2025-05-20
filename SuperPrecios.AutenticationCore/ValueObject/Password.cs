@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
-using SuperPrecios.AutenticacionCore.InterfacesEntidades;
 using SuperPrecios.AutenticacionCore.Exceptions.Password;
 using System.Text.RegularExpressions;
 using System.ComponentModel.DataAnnotations.Schema;

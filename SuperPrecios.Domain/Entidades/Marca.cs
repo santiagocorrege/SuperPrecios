@@ -1,13 +1,12 @@
-﻿using Comun;
-using Prueba.Excepciones;
-using Prueba.InterfacesEntidades;
+﻿using SuperPrecios.Domain.Excepciones;
+using SuperPrecios.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Prueba.Entidades
+namespace SuperPrecios.Domain.Entidades
 {
     public class Marca : IEntity, IValidate
     {

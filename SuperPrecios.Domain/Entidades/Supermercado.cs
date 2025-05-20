@@ -1,6 +1,4 @@
-﻿using LogicaNegocio.Excepciones;
-using Prueba.Entidades;
-using Prueba.InterfacesEntidades;
+﻿using SuperPrecios.Domain.Excepciones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LogicaNegocio.Entidades
+namespace SuperPrecios.Domain.Entidades
 {
     public class Supermercado : IEntity, IValidate
     {

@@ -1,8 +1,6 @@
-﻿using Comun;
-using LogicaNegocio.Entidades;
-using Microsoft.EntityFrameworkCore;
-using Prueba.Excepciones;
-using Prueba.InterfacesEntidades;
+﻿using Microsoft.EntityFrameworkCore;
+using SuperPrecios.Domain.Excepciones;
+using SuperPrecios.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Prueba.Entidades
+namespace SuperPrecios.Domain.Entidades
 {    
     public class Producto : IEntity, IValidate
     {

@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Prueba.Excepciones
+namespace SuperPrecios.Domain.Excepciones
 {
     internal class ProductoHistoricoException : Exception
     {

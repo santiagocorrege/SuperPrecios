@@ -1,4 +1,4 @@
-﻿using SuperPrecios.Infrastructure.EntityFramework;
+﻿using SuperPrecios.Infrastructure.EF;
 using SuperPrecios.Application.IRepository;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;

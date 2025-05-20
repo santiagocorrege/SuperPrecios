@@ -10,7 +10,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Papeleria.AccesoDatos.Configuraciones
+namespace SuperPrecios.Infrastructure.Configuraciones
 {
     public class UsuarioConfiguracion : IEntityTypeConfiguration<Usuario>
     {
