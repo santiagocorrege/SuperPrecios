@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SuperPrecios.AutenticationCore\SuperPrecios.AutenticationCore.csproj" />
+    <ProjectReference Include="..\SuperPrecios.Shared\SuperPrecios.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

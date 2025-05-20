@@ -3,21 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicaNegocio", "Prueba\LogicaNegocio.csproj", "{A41EF793-E6CF-4852-A47B-96A38CA7D777}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperPrecios.Domain", "SuperPrecios.Domain\SuperPrecios.Domain.csproj", "{A41EF793-E6CF-4852-A47B-96A38CA7D777}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Comun", "Comun\Comun.csproj", "{311A1511-3BD4-421C-8A3F-F7CCFCE7C5A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperPrecios.Shared", "SuperPrecios.Shared\SuperPrecios.Shared.csproj", "{311A1511-3BD4-421C-8A3F-F7CCFCE7C5A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerService", "WorkerService\WorkerService.csproj", "{F576E73D-131A-45A6-8071-D921CADE2671}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperPrecios.Worker", "SuperPrecios.Worker\SuperPrecios.Worker.csproj", "{F576E73D-131A-45A6-8071-D921CADE2671}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{1C2E4A48-F835-4464-BAE2-72CF7ECCA119}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperPrecios.AutenticationCore", "SuperPrecios.AutenticationCore\SuperPrecios.AutenticationCore.csproj", "{A98A6271-88ED-4F0B-B289-54B240D62966}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaAutenticacion", "SistemaAutenticacion\SistemaAutenticacion.csproj", "{A98A6271-88ED-4F0B-B289-54B240D62966}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperPrecios.Application", "SuperPrecios.Application\SuperPrecios.Application.csproj", "{F6B1944C-6E69-4695-A8A5-8BF2D268C0F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicaAplicacion", "LogicaAplicacion\LogicaAplicacion.csproj", "{F6B1944C-6E69-4695-A8A5-8BF2D268C0F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperPrecios.Infrastructure", "SuperPrecios.Infrastructure\SuperPrecios.Infrastructure.csproj", "{D3455F8E-0D51-4176-A344-D51883F6DAEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{D3455F8E-0D51-4176-A344-D51883F6DAEE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC", "MVC\MVC.csproj", "{BC99FE40-5520-4249-96B6-94BEF1CF453D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperPrecios.Web", "SuperPrecios.Web\SuperPrecios.Web.csproj", "{BC99FE40-5520-4249-96B6-94BEF1CF453D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
