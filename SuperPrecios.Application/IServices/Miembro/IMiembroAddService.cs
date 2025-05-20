@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperPrecios.Application.UCInterfaces.Miembro
+namespace SuperPrecios.Application.IServices.Miembro
 {
-    public interface IMiembroUpdate
+    public interface IMiembroAddService
     {
-        public void Ejecutar(DtoMiembroUpdate dto);
+        public void Ejecutar(DtoMiembroAdd dto);
     }
 }

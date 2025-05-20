@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace SuperPrecios.Application.IRepository
 {
-    public interface IRepositoryUsuario : IRepository<Usuario>
+    public interface IMiembroRepository : IRepository<Miembro>  
     {
-    
     }
 }

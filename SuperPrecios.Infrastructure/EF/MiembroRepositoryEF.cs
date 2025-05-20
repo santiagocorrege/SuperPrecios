@@ -11,10 +11,10 @@ using System.Threading.Tasks;
 
 namespace SuperPrecios.Infrastructure.EF
 {
-    public class RepositoryMiembroEF : IRepositoryMiembro
+    public class MiembroRepositoryEF : IMiembroRepository
     {
         private SuperPreciosContext _db;
-        public RepositoryMiembroEF(SuperPreciosContext db)
+        public MiembroRepositoryEF(SuperPreciosContext db)
         {
             _db = db;            
         }

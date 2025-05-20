@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperPrecios.Application.UCInterfaces.Miembro
+namespace SuperPrecios.Application.IServices.Miembro
 {
-    public interface IMiembroGetById
+    public interface IMiembroGetByEmailService
     {
-        public DtoMiembroUpdate Ejecutar(int id);
+        public DtoMiembroUpdate Ejecutar(string email);
     }
 }

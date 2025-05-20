@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace SuperPrecios.Application.DTO.Miembro
 {
-    public class DtoMiembroUpdate
+    public class DtoMiembroGet
     {
         [Required]
         public int Id { get; set; }
-
         [Required]
+
         public string Nombre { get; set; }
 
         [Required]
@@ -20,10 +20,7 @@ namespace SuperPrecios.Application.DTO.Miembro
 
         [Required]
         [DataType(DataType.EmailAddress)]
-        public string Email { get; set; }
+        public string Email { get; init; }
 
-        [Required]
-        [DataType(DataType.Password)]
-        public string Password { get; set; }
     }
 }

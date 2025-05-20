@@ -16,7 +16,7 @@ namespace SuperPrecios.Application.IRepository
 
         public void Update(T entity);
 
-        public void Delete(T entity);
+        public void Delete(int id);
 
 
     }

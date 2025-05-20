@@ -10,8 +10,6 @@ namespace SuperPrecios.Application.DTO.Miembro
 {
     public class DtoMiembroAdd
     {
-        [Required]
-        public string Id { get; set; }
         [Required]        
         
         public string Nombre { get; set; }
@@ -23,6 +21,7 @@ namespace SuperPrecios.Application.DTO.Miembro
         public string Email { get; init; }
 
         [Required]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
     }
 }

@@ -10,12 +10,11 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
-namespace SuperPrecios.AutenticacionCore.Entidades
+namespace SuperPrecios.AutenticacionCore.Entities
 {
     [Index(nameof(Email), IsUnique = true)]
     public abstract class Usuario : IEntity, IValidate
-    {
-        
+    {        
         #region Properties
         public int Id { get; set; }
         public string Nombre { get; set; }

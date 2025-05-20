@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SuperPrecios.AutenticacionCore.ValueObject;
 
-namespace SuperPrecios.AutenticacionCore.Entidades
+namespace SuperPrecios.AutenticacionCore.Entities
 {
     public class Miembro : Usuario
     {
