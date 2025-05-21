@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="UC\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\SuperPrecios.Domain\SuperPrecios.Domain.csproj" />
   </ItemGroup>
 

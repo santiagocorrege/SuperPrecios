@@ -9,6 +9,6 @@ namespace SuperPrecios.Application.IServices.Miembro
 {
     public interface IMiembroUpdateService
     {
-        public void Run(DtoMiembroUpdate dto);
+        public Task Run(DtoMiembroUpdate dto);
     }
 }

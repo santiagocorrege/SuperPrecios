@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SuperPrecios.AutenticacionCore.Entidades;
+using SuperPrecios.AutenticacionCore.Entities;
 using SuperPrecios.AutenticacionCore.ValueObject;
 using System;
 using System.Collections.Generic;

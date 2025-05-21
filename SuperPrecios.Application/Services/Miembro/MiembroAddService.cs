@@ -18,13 +18,13 @@ namespace SuperPrecios.Application.Services.Miembro
         {
             _miembroRepo = miembroRepo;
         }
-        public void Run(DtoMiembroAdd dto)
+        public async Task Run(DtoMiembroAdd dto)
         {
             if(dto == null)
             {
                 throw new ArgumentNullException("El miembro no puede ser nulo");
             }
-            _miembroRepo.Add(MapperMiembro.ToMiembro(dto));
+            _miembroRepo.AddAsync(MapperMiembro.ToMiembro(dto));
         }
     }
 }

@@ -15,12 +15,12 @@ namespace SuperPrecios.Application.Services.Miembro
         {
             _miembroRepository = repo;
         }
-        public void Run(int id)
+        public async Task Run(int id)
         {
             if(id <= 0) {
                 throw new ArgumentNullException("El id no puede ser menor o igual a 0");
             }
-            _miembroRepository.Delete(id);
+            _miembroRepository.DeleteAsync(id);
         }
     }
 }

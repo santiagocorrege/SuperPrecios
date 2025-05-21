@@ -8,6 +8,6 @@ namespace SuperPrecios.Application.IServices.Miembro
 {
     public interface IMiembroDeleteService
     {
-        public void Run(int id);
+        public Task Run(int id);
     }
 }

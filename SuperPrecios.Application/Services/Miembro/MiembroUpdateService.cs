@@ -20,20 +20,20 @@ namespace SuperPrecios.Application.Services.Miembro
         {
             _miembroRepository = miembroRepository;
         }
-        public void Run(DtoMiembroUpdate dto)
+        public async Task Run(DtoMiembroUpdate dto)
         {
             if(dto == null || dto.Id <= 0)
             {
                 throw new ArgumentNullException("El miembro que desea actualizar no puede ser nulo");
             }
-            MiembroCore miembroBuscado = _miembroRepository.GetById(dto.Id);
+            MiembroCore miembroBuscado = await _miembroRepository.GetByIdAsync(dto.Id);
             if(miembroBuscado == null)
             {
                 throw new MiembroException("El miembro que desea actualizar no existe");
             }
             MiembroCore miembroActualizado = MapperMiembro.ToDto(dto);
             miembroBuscado.Modificar(miembroActualizado);   
-            _miembroRepository.Update(miembroBuscado);
+            await _miembroRepository.UpdateAsync(miembroBuscado);
         }
     }
 }
