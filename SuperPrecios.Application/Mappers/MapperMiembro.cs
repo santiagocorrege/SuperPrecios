@@ -10,7 +10,7 @@ namespace SuperPrecios.Application.Mappers
 {
     public class MapperMiembro
     {
-        public static DtoMiembroGet ToDtoMiembroGet(Miembro miembro)
+        public static DtoMiembroGet ToDto(Miembro miembro)
         {
             if(miembro == null)
             {

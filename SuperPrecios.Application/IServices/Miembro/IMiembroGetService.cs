@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace SuperPrecios.Application.IServices.Miembro
 {
-    public interface IMiembroGetByIdService
+    public interface IMiembroGet
     {
-        public DtoMiembroUpdate Ejecutar(int id);
+        public Task<DtoMiembroGet> Run(string email);
+
+        public Task<DtoMiembroGet> Run(int id);
     }
 }

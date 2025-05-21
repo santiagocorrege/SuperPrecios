@@ -1,7 +1,7 @@
 ﻿using SuperPrecios.Application.DTO.Miembro;
 using SuperPrecios.Application.IRepository;
 using SuperPrecios.Application.Mappers;
-using SuperPrecios.Application.UCInterfaces.Miembro;
+using SuperPrecios.Application.IServices.Miembro;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +18,7 @@ namespace SuperPrecios.Application.Services.Miembro
         {
             _miembroRepo = miembroRepo;
         }
-        public void Ejecutar(DtoMiembroAdd dto)
+        public void Run(DtoMiembroAdd dto)
         {
             if(dto == null)
             {

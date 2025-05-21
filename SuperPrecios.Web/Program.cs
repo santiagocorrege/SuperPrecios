@@ -1,5 +1,8 @@
 using SuperPrecios.Infrastructure.EF;
 using Microsoft.EntityFrameworkCore;
+using SuperPrecios.Application.IServices.Miembro;
+using SuperPrecios.Application.Services.Miembro;
+using SuperPrecios.Application.IRepository;
 
 namespace SuperPrecios.Web
 {
@@ -13,6 +16,16 @@ namespace SuperPrecios.Web
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddDbContext<SuperPreciosContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConexionPapeleria")));
+
+
+            //DI: Repositories
+            builder.Services.AddScoped<IMiembroRepository, MiembroRepositoryEF>();
+
+            //DI: Services
+            builder.Services.AddScoped<IMiembroGet, MiembroGetService>();
+            builder.Services.AddScoped<IMiembroAddService, MiembroAddService>();
+            builder.Services.AddScoped<IMiembroUpdateService, MiembroUpdateService>();
+            builder.Services.AddScoped<IMiembroDeleteService, MiembroDeleteService>();
 
             //TODO: Para que?
             builder.Services.AddSession();

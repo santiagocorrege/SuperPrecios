@@ -1,4 +1,4 @@
-﻿using SuperPrecios.AutenticacionCore.Entidades;
+﻿using SuperPrecios.AutenticacionCore.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +9,6 @@ namespace SuperPrecios.Application.IRepository
 {
     public interface IAdministradorRepository : IRepository<Administrador>
     {
+        public Task<Miembro> GetByEmailAsync(string email);
     }
 }

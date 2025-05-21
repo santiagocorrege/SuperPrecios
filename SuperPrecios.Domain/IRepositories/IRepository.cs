@@ -8,16 +8,15 @@ namespace SuperPrecios.Application.IRepository
 {
     public interface IRepository<T> where T : class
     {
-        public T GetById(int id);
+        public Task<T> GetByIdAsync(int id);
 
-        public IEnumerable<T> GetAll();
+        public Task<IEnumerable<T>> GetAll();
 
-        public void Add(T entity);
+        public Task AddAsync(T entity);
 
-        public void Update(T entity);
+        public Task UpdateAsync(T entity);
 
-        public void Delete(int id);
-
+        public Task DeleteAsync(int id);
 
     }
 }

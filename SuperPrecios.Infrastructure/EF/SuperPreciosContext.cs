@@ -1,4 +1,4 @@
-﻿using SuperPrecios.AutenticacionCore.Entidades;
+﻿using SuperPrecios.AutenticacionCore.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

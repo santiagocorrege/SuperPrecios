@@ -2,7 +2,7 @@
 using SuperPrecios.Application.IRepository;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using SuperPrecios.AutenticacionCore.Entidades;
+using SuperPrecios.AutenticacionCore.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +18,7 @@ namespace SuperPrecios.Infrastructure.EF
         {
             _db = db;            
         }
-        public void Add(Miembro entity)
+        public async Task AddAsync(Miembro entity)
         {
             if (entity == null)
             {
@@ -26,8 +26,8 @@ namespace SuperPrecios.Infrastructure.EF
             }
             try
             {
-                _db.Add(entity);
-                _db.SaveChanges();
+                await _db.Miembros.AddAsync(entity);
+                await _db.SaveChangesAsync();
             }
             catch(DbUpdateException dbEx)
             {
@@ -51,21 +51,21 @@ namespace SuperPrecios.Infrastructure.EF
             }
         }
 
-        public void Delete(Miembro entity)
+        public async Task DeleteAsync(int id)
         {
-            if(entity == null || entity.Id <= 0)
+            if(id <= 0)
             {
-                throw new ArgumentNullException("El miembro no puede ser nulo");
+                throw new ArgumentException("El id del miembro no puede ser nulo");
             }
             try
             {                
-                Miembro miembroBuscado = _db.Miembros.Find(entity.Id);
+                Miembro miembroBuscado = await _db.Miembros.FindAsync(id);
                 if(miembroBuscado == null)
                 {
-                    throw new Exception("El miembro no existe en la base de datos");
+                    throw new ArgumentNullException("El miembro no existe en la base de datos");
                 }
                 _db.Miembros.Remove(miembroBuscado);
-                _db.SaveChanges();  
+                await _db.SaveChangesAsync();  
             }
             catch(DbUpdateException dbEx)
             {
@@ -85,11 +85,11 @@ namespace SuperPrecios.Infrastructure.EF
             }
         }
 
-        public IEnumerable<Miembro> GetAll()
+        public async Task<IEnumerable<Miembro>> GetAll()
         {
             try
             {                
-                return _db.Miembros.ToList();
+                return await _db.Miembros.ToListAsync();
             }
             catch (DbUpdateException dbEx)
             {
@@ -102,15 +102,29 @@ namespace SuperPrecios.Infrastructure.EF
 
         }
 
-        public Miembro GetById(int id)
+        public async Task<Miembro> GetByEmailAsync(string email)
+        {
+            if(string.IsNullOrWhiteSpace(email))
+            {
+                throw new ArgumentException("El email no puede ser nulo");
+            }
+            Miembro miembroBuscado = await _db.Miembros.FirstOrDefaultAsync(m => m.Email.Valor == email);            
+            if(miembroBuscado == null)
+            {
+                throw new KeyNotFoundException("El miembro con ese email no existe en la base de datos");
+            }
+            return miembroBuscado;
+        }
+
+        public async Task<Miembro> GetByIdAsync(int id)
         {
             if (id <= 0)
             {
-                throw new ArgumentNullException("DB Error: El id no puede ser nulo");
+                throw new ArgumentException("DB Error: El id no puede ser nulo");
             }
             try
             {
-                Miembro miembro = _db.Miembros.Find(id);
+                Miembro miembro = await _db.Miembros.FindAsync(id);
                 if (miembro == null)
                 {
                     throw new Exception("El miembro no existe en la base de datos");
@@ -127,22 +141,23 @@ namespace SuperPrecios.Infrastructure.EF
             }
         }
 
-        public void Update(Miembro entity)
+        public async Task UpdateAsync(Miembro entity)
         {
             if(entity == null || entity.Id <= 0)
             {
-                throw new Exception("Error: El miembrto no puede ser nula");
+                throw new ArgumentNullException("Error: El miembro no puede ser nula");
             }
             try
             {
-                Miembro miembro = _db.Miembros.Find(entity.Id);
+                Miembro miembro = await _db.Miembros.FindAsync(entity.Id);
                 if (miembro == null)
                 {
                     throw new KeyNotFoundException($"Error: No se encontró un miembro con ID {entity.Id}");
                 }
+                // Si Modificar modifica propiedades de la entidad recuperada(miembro), podés omitir Update:
                 miembro.Modificar(entity);
                 _db.Miembros.Update(miembro);
-                _db.SaveChanges();
+                await _db.SaveChangesAsync();
             }
             catch (DbUpdateException dbEx)
             {
