@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace SuperPrecios.Application.IRepository
 {
-    public interface IUsuarioRepository : IRepository<Usuario>
+    public interface IUsuarioRepository
     {
-        public Task<Miembro> GetByEmailAsync(string email);
+        public Task<Usuario> GetByUsuarioLogin(string email, string password);
     }
 }

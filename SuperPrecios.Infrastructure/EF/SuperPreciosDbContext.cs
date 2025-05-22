@@ -10,7 +10,7 @@ using SuperPrecios.Domain.Entidades;
 
 namespace SuperPrecios.Infrastructure.EF
 {
-    public class SuperPreciosContext : DbContext
+    public class SuperPreciosDbContext : DbContext
     {
         public DbSet<Supermercado> Supermercados { get; set; }
         public DbSet<Producto> Productos { get; set; }
@@ -25,7 +25,7 @@ namespace SuperPrecios.Infrastructure.EF
 
         public DbSet<Miembro> Miembros { get; set; }       
 
-        public SuperPreciosContext(DbContextOptions<SuperPreciosContext> options) : base(options)
+        public SuperPreciosDbContext(DbContextOptions<SuperPreciosDbContext> options) : base(options)
         {
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

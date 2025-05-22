@@ -24,7 +24,7 @@ namespace SuperPrecios.Application.Services.Miembro
             {
                 throw new ArgumentNullException("El miembro no puede ser nulo");
             }
-            _miembroRepo.AddAsync(MapperMiembro.ToMiembro(dto));
+            await _miembroRepo.AddAsync(MapperMiembro.ToMiembro(dto));
         }
     }
 }

@@ -12,5 +12,7 @@ namespace SuperPrecios.Application.IServices.Miembro
         public Task<DtoMiembroGet> Run(string email);
 
         public Task<DtoMiembroGet> Run(int id);
+
+        public Task<IEnumerable<DtoMiembroGet>> Run();
     }
 }

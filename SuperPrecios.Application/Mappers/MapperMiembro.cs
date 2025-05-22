@@ -12,10 +12,6 @@ namespace SuperPrecios.Application.Mappers
     {
         public static DtoMiembroGet ToDto(Miembro miembro)
         {
-            if(miembro == null)
-            {
-                throw new ArgumentNullException("El miembro no puede ser nulo");
-            }
             return new DtoMiembroGet
             {
                 Id = miembro.Id,
@@ -27,10 +23,6 @@ namespace SuperPrecios.Application.Mappers
 
         public static Miembro ToMiembro(DtoMiembroAdd dto)
         {
-            if(dto == null)
-            {
-                throw new ArgumentNullException("El miembro no puede ser nulo");
-            }
             return new Miembro(
                 dto.Nombre,
                 dto.Apellido,
@@ -41,10 +33,6 @@ namespace SuperPrecios.Application.Mappers
 
         public static Miembro ToDto(DtoMiembroUpdate dto)
         {
-            if (dto == null)
-            {
-                throw new ArgumentNullException("El miembro no puede ser nulo");
-            }
             var miembro = new Miembro(
                 dto.Nombre,
                 dto.Apellido,
@@ -55,6 +43,10 @@ namespace SuperPrecios.Application.Mappers
             return miembro;
         }
 
+        public static IEnumerable<DtoMiembroGet> ToDto(IEnumerable<Miembro> miembros)
+        {
+            return miembros.Select(m => ToDto(m));
+        }
 
     }
 }

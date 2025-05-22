@@ -20,6 +20,13 @@ namespace SuperPrecios.Application.Services.Miembro
         {
             _miembroRepo = miembroRepo;
         }
+        public async Task<IEnumerable<DtoMiembroGet>> Run()
+        {
+
+            var miembro = await _miembroRepo.GetAll();
+            return MapperMiembro.ToDto(miembro);
+        }
+
         public async Task<DtoMiembroGet> Run(string email)
         {
             if(email.Trim().Length == 0)

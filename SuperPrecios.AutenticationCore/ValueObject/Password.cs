@@ -48,14 +48,14 @@ namespace SuperPrecios.AutenticacionCore.ValueObject
 
         public void Validate(string password)
         {
-            string patron = @"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[.,;!]).{6,}$";
+            string patron = @"^(?!\s)(?!.*\s$).{8,64}$";
             if (string.IsNullOrEmpty(password))
             {
                 throw new PasswordException("La contrasena no puede ser nula");
             }
             if(!Regex.IsMatch(password, patron))
             {
-                throw new PasswordException("La contrasena debe tener un largo mínimo de 6 caracteres, al menos una letra mayúscula, una minúscula, un dígito y un carácter de puntuación: punto, punto y coma, coma, signo de admiración de cierre");
+                throw new PasswordException("La contrasena debe tener un largo mínimo de 8 caracteres, no se permiten espacios");
             }
         }
     }

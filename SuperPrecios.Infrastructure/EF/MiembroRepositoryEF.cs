@@ -13,10 +13,10 @@ namespace SuperPrecios.Infrastructure.EF
 {
     public class MiembroRepositoryEF : IMiembroRepository
     {
-        private SuperPreciosContext _db;
-        public MiembroRepositoryEF(SuperPreciosContext db)
+        private SuperPreciosDbContext _context;
+        public MiembroRepositoryEF(SuperPreciosDbContext context)
         {
-            _db = db;            
+            _context = context;
         }
         public async Task AddAsync(Miembro entity)
         {
@@ -26,28 +26,24 @@ namespace SuperPrecios.Infrastructure.EF
             }
             try
             {
-                await _db.Miembros.AddAsync(entity);
-                await _db.SaveChangesAsync();
+                await _context.Miembros.AddAsync(entity);
+                await _context.SaveChangesAsync();
             }
             catch(DbUpdateException dbEx)
             {
-                SqlException exSql = dbEx.InnerException as SqlException;
-                if(exSql?.Number != null)
+                if(dbEx.InnerException != null)
                 {
-                    if (exSql.Number == 2627) // Error de clave duplicada
+                    SqlException exSql = dbEx.InnerException as SqlException;
+                    if (exSql.Number == 2627) 
                     {
                         throw new Exception($"BD Error: El miembro ya existe en la base de datos", exSql);
-                    }
-                    else
-                    {
-                        throw new Exception($"BD Error: al agregar el miembro | Mensaje {exSql.Message}", exSql);
-                    }
-                }
+                    }             
+                }                
                 throw;                                
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al agregar el miembro | Mensaje {ex.Message}", ex);
+                throw new Exception($"BD Error: No se pudo agregar el miembro | Mensaje {ex.Message}", ex);
             }
         }
 
@@ -59,13 +55,13 @@ namespace SuperPrecios.Infrastructure.EF
             }
             try
             {                
-                Miembro miembroBuscado = await _db.Miembros.FindAsync(id);
+                Miembro miembroBuscado = await _context.Miembros.FindAsync(id);
                 if(miembroBuscado == null)
                 {
                     throw new ArgumentNullException("El miembro no existe en la base de datos");
                 }
-                _db.Miembros.Remove(miembroBuscado);
-                await _db.SaveChangesAsync();  
+                _context.Miembros.Remove(miembroBuscado);
+                await _context.SaveChangesAsync();  
             }
             catch(DbUpdateException dbEx)
             {
@@ -89,7 +85,7 @@ namespace SuperPrecios.Infrastructure.EF
         {
             try
             {                
-                return await _db.Miembros.ToListAsync();
+                return await _context.Miembros.ToListAsync();
             }
             catch (DbUpdateException dbEx)
             {
@@ -108,7 +104,7 @@ namespace SuperPrecios.Infrastructure.EF
             {
                 throw new ArgumentException("El email no puede ser nulo");
             }
-            Miembro miembroBuscado = await _db.Miembros.FirstOrDefaultAsync(m => m.Email.Valor == email);            
+            Miembro miembroBuscado = await _context.Miembros.FirstOrDefaultAsync(m => m.Email.Valor == email);            
             if(miembroBuscado == null)
             {
                 throw new KeyNotFoundException("El miembro con ese email no existe en la base de datos");
@@ -124,7 +120,7 @@ namespace SuperPrecios.Infrastructure.EF
             }
             try
             {
-                Miembro miembro = await _db.Miembros.FindAsync(id);
+                Miembro miembro = await _context.Miembros.FindAsync(id);
                 if (miembro == null)
                 {
                     throw new Exception("El miembro no existe en la base de datos");
@@ -149,15 +145,15 @@ namespace SuperPrecios.Infrastructure.EF
             }
             try
             {
-                Miembro miembro = await _db.Miembros.FindAsync(entity.Id);
+                Miembro miembro = await _context.Miembros.FindAsync(entity.Id);
                 if (miembro == null)
                 {
                     throw new KeyNotFoundException($"Error: No se encontró un miembro con ID {entity.Id}");
                 }
                 // Si Modificar modifica propiedades de la entidad recuperada(miembro), podés omitir Update:
                 miembro.Modificar(entity);
-                _db.Miembros.Update(miembro);
-                await _db.SaveChangesAsync();
+                _context.Miembros.Update(miembro);
+                await _context.SaveChangesAsync();
             }
             catch (DbUpdateException dbEx)
             {
