@@ -1,5 +1,5 @@
 ﻿using SuperPrecios.Application.DTO.Usuario;
-using SuperPrecios.AutenticacionCore.Entities;
+using SuperPrecios.AuthenticationCore.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

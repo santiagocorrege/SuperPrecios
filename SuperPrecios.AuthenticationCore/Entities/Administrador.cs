@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperPrecios.AutenticacionCore.Entities
+namespace SuperPrecios.AuthenticationCore.Entities
 {
     public class Administrador : Usuario
     {

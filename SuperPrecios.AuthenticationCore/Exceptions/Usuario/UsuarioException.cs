@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperPrecios.AutenticacionCore.Exceptions.Usuario
+namespace SuperPrecios.AuthenticationCore.Exceptions.Usuario
 {
     public class UsuarioException : Exception
     {

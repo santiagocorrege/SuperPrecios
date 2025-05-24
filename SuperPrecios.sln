@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperPrecios.Shared", "Supe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperPrecios.Worker", "SuperPrecios.Worker\SuperPrecios.Worker.csproj", "{F576E73D-131A-45A6-8071-D921CADE2671}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperPrecios.AutenticationCore", "SuperPrecios.AutenticationCore\SuperPrecios.AutenticationCore.csproj", "{A98A6271-88ED-4F0B-B289-54B240D62966}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperPrecios.AuthenticationCore", "SuperPrecios.AuthenticationCore\SuperPrecios.AuthenticationCore.csproj", "{A98A6271-88ED-4F0B-B289-54B240D62966}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperPrecios.Application", "SuperPrecios.Application\SuperPrecios.Application.csproj", "{F6B1944C-6E69-4695-A8A5-8BF2D268C0F1}"
 EndProject

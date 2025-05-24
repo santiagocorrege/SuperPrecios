@@ -23,7 +23,7 @@ namespace MVC.Controllers
 
         // GET: MiembrosController
         [AdminFilter]
-        public async Task<ActionResult> Index()
+        public async Task<IActionResult> Index()
         {             
             try
             {
@@ -46,13 +46,39 @@ namespace MVC.Controllers
         }
 
         // GET: MiembrosController/Details/5
-        public ActionResult Details(int id)
+        [AdminFilter]
+        public async Task<IActionResult> Details(int id)
         {
-            return View();
+            try
+            {
+                var miembro = _miembroGetService.Run(id);
+                if (id <= 0)
+                {
+                    TempData["Mensaje"] = "No existe miembros registrados";
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    var dto = await _miembroGetService.Run(id);
+                    if (dto == null)
+                    {
+                        throw new Exception("No existen miembros con ese id");
+                    }
+                    else
+                    {
+                        return View(dto);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                TempData["Mensaje"] = $"Error:  {e.Message}";
+                return RedirectToAction(nameof(Index));
+            }
         }
 
         // GET: MiembrosController/Create
-        public ActionResult Create()
+        public IActionResult Create()
         {
             return View();
         }
@@ -60,13 +86,12 @@ namespace MVC.Controllers
         // POST: MiembrosController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(DtoMiembroAdd dto)
+        public async Task<IActionResult> Create(DtoMiembroAdd dto)
         {
             try
             {
                 await _miembroAddService.Run(dto);
-                TempData["Success"] = "Miembro creado correctamente.";
-                Console.WriteLine("Nice");
+                TempData["Success"] = "Miembro creado correctamente.";                
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
@@ -79,7 +104,7 @@ namespace MVC.Controllers
 
         // GET: MiembrosController/Edit/5
         [AdminFilter]
-        public ActionResult Edit(int id)
+        public IActionResult Edit(int id)
         {
             return View();
         }
@@ -88,7 +113,7 @@ namespace MVC.Controllers
         [AdminFilter]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public IActionResult Edit(int id, IFormCollection collection)
         {
             try
             {
@@ -102,7 +127,7 @@ namespace MVC.Controllers
 
         // GET: MiembrosController/Delete/5
         [AdminFilter]
-        public ActionResult Delete(int id)
+        public IActionResult Delete(int id)
         {
             return View();
         }
@@ -111,7 +136,7 @@ namespace MVC.Controllers
         [AdminFilter]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public IActionResult Delete(int id, IFormCollection collection)
         {
             try
             {

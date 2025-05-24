@@ -10,16 +10,13 @@ using System.Threading.Tasks;
 
 namespace SuperPrecios.Domain.Entidades
 {
-    [PrimaryKey(nameof(ProductoId), nameof(Fecha))]
-    public class PrecioHistorico : IEntity, IValidate
+    [PrimaryKey(nameof(ProductoId), nameof(SupermercadoId), nameof(Fecha))]
+    public class PrecioHistorico : IValidate
     {
         #region Properties
-        public int Id { get; set; }
-
         public Producto? Producto { get; set; }
 
-        [Required]
-        [ForeignKey(nameof(ProductoId))]
+        [Required]        
         public int ProductoId { get; set; }        
                            
         public Supermercado Supermercado { get; set; }
@@ -29,7 +26,9 @@ namespace SuperPrecios.Domain.Entidades
 
         [Required]
         public DateOnly Fecha {  get; set; }
+
         [Required]
+        [Column(TypeName = "decimal(18,2)")]
         public decimal Precio { get; set; }
 
         public PrecioHistorico(int productoId, int supermercadoId, decimal precio) {
@@ -46,11 +45,15 @@ namespace SuperPrecios.Domain.Entidades
         #region Methods
         public void Validate()
         {
-            if(ProductoId == 0 || Producto == null)
+            if(Producto == null || ProductoId <= 0 )
             {
                 throw new ProductoHistoricoException("Error: No se puede guardar un registro de precio sin un producto relacionado");
             }
-            if(Precio <= 0 || Precio >= decimal.MaxValue)
+            if(Supermercado == null || SupermercadoId <= 0)
+            {
+                throw new ProductoHistoricoException("Error: No se puede guardar un registro de precio sin un supermercado relacionado");
+            }
+            if (Precio <= 0 || Precio >= decimal.MaxValue)
             {
                 throw new ProductoHistoricoException("Error: El precio no puede ser menor o igual a 0");
             }

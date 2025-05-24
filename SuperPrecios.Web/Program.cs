@@ -5,6 +5,7 @@ using SuperPrecios.Application.Services.Miembro;
 using SuperPrecios.Application.IRepository;
 using SuperPrecios.Application.IServices.Usuario;
 using SuperPrecios.Application.Services.Usuario;
+using Microsoft.Extensions.Options;
 
 namespace SuperPrecios.Web
 {
@@ -17,7 +18,17 @@ namespace SuperPrecios.Web
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            builder.Services.AddDbContext<SuperPreciosDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConexionPapeleria")));
+            var connectionString = builder.Configuration.GetConnectionString("ConexionBD");
+            builder.Services.AddDbContext<SuperPreciosDbContext>(options =>
+            {
+                options.UseSqlServer(connectionString);
+                // Solo en desarrollo: logs detallados
+                if (builder.Environment.IsDevelopment())
+                {
+                    options.EnableSensitiveDataLogging();
+                    options.LogTo(Console.WriteLine, LogLevel.Information);
+                }
+            });
 
             builder.Services.AddSession();
 
@@ -36,8 +47,21 @@ namespace SuperPrecios.Web
             builder.Services.AddScoped<IMiembroDeleteService, MiembroDeleteService>();
                         
                         
-            //Inversion
+            //Inversion??
             var app = builder.Build();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var context = scope.ServiceProvider.GetRequiredService<SuperPreciosDbContext>();
+                var environment = scope.ServiceProvider.GetRequiredService<IWebHostEnvironment>();
+
+                // Solo ejecutar si NO es Development (local)
+                if (!environment.IsDevelopment())
+                {
+                    context.Database.EnsureCreated();
+                    Console.WriteLine("Base de datos creada automáticamente en entorno: " + environment.EnvironmentName);
+                }
+            }
 
             app.UseSession();
 

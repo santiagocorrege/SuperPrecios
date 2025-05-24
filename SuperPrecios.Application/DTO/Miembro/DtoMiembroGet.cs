@@ -9,17 +9,14 @@ namespace SuperPrecios.Application.DTO.Miembro
 {
     public class DtoMiembroGet
     {
-        [Required]
         public int Id { get; set; }
-        [Required]
 
         public string Nombre { get; set; }
-
-        [Required]
+        
         public string Apellido { get; set; }
 
-        [Required]
-        [DataType(DataType.EmailAddress)]
+        [Required(ErrorMessage = "El email es obligatorio")]
+        [EmailAddress]
         public string Email { get; init; }
 
     }

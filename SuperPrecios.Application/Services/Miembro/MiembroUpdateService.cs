@@ -1,9 +1,9 @@
 ﻿using SuperPrecios.Application.DTO.Miembro;
 using SuperPrecios.Application.IRepository;
 using SuperPrecios.Application.IServices.Miembro;
-using MiembroCore = SuperPrecios.AutenticacionCore.Entities.Miembro;
+using MiembroCore = SuperPrecios.AuthenticationCore.Entities.Miembro;
 using SuperPrecios.Application.Mappers;
-using SuperPrecios.AutenticationCore.Exceptions;
+using SuperPrecios.AuthenticationCore.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +31,7 @@ namespace SuperPrecios.Application.Services.Miembro
             {
                 throw new MiembroException("El miembro que desea actualizar no existe");
             }
-            MiembroCore miembroActualizado = MapperMiembro.ToDto(dto);
+            MiembroCore miembroActualizado = MapperMiembro.ToMiembro(dto);
             miembroBuscado.Modificar(miembroActualizado);   
             await _miembroRepository.UpdateAsync(miembroBuscado);
         }

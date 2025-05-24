@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SuperPrecios.AutenticacionCore.ValueObject;
+using SuperPrecios.AuthenticationCore.ValueObject;
 
-namespace SuperPrecios.AutenticacionCore.Entities
+namespace SuperPrecios.AuthenticationCore.Entities
 {
     public class Miembro : Usuario
     {

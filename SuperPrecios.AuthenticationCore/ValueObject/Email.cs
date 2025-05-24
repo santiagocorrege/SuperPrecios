@@ -1,5 +1,5 @@
-﻿using SuperPrecios.AutenticacionCore.InterfacesEntidades;
-using SuperPrecios.AutenticacionCore.Exceptions.Email;
+﻿using SuperPrecios.AuthenticationCore.InterfacesEntidades;
+using SuperPrecios.AuthenticationCore.Exceptions.Email;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +8,9 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SuperPrecios.AutenticacionCore.ValueObject
+namespace SuperPrecios.AuthenticationCore.ValueObject
 {
-    [ComplexType]
+    //Complex Type por convencion (No tiene id y se relaciona con usuario)
     public record Email : IValidate
     {
         public string Valor { get; init; }
@@ -18,6 +18,7 @@ namespace SuperPrecios.AutenticacionCore.ValueObject
         public Email(string valor)
         {
             Valor = valor;
+            Validate();
         }
 
         protected Email() { }
@@ -29,7 +30,7 @@ namespace SuperPrecios.AutenticacionCore.ValueObject
             }
             if (!Formato())
             {
-                throw new EmailException("El formato del email no es valido");
+                throw new EmailException("Por favor, ingresá una dirección de correo electrónico válida. Por ejemplo: nombre@ejemplo.com ");
             }
             
         }

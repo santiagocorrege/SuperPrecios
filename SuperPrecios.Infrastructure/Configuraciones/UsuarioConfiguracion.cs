@@ -1,14 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SuperPrecios.AutenticacionCore.Entities;
-using SuperPrecios.AutenticacionCore.ValueObject;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using SuperPrecios.AuthenticationCore.Entities;
+using SuperPrecios.AuthenticationCore.ValueObject;
 using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperPrecios.Infrastructure.Configuraciones
 {
@@ -16,12 +11,20 @@ namespace SuperPrecios.Infrastructure.Configuraciones
     {
         public void Configure(EntityTypeBuilder<Usuario> builder)
         {
-            var emailConverter = new ValueConverter<Email, string>
-                (
+            //builder.ComplexProperty(u => u.Email);
+            //builder.ComplexProperty(u => u.Password);
+
+            builder.Property(u => u.Email)
+                .HasConversion(
                     e => e.Valor,
-                    e => new Email(e)
+                    s => new Email(s)
                 );
-            builder.Property(u => u.Email).HasConversion(emailConverter);
+
+            builder.Property(u => u.Password)
+                .HasConversion(
+                    p => p.Hash,
+                    h => Password.FromHash(h)
+                );
         }
     }
 }

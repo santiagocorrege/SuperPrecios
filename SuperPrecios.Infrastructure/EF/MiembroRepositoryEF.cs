@@ -2,7 +2,7 @@
 using SuperPrecios.Application.IRepository;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using SuperPrecios.AutenticacionCore.Entities;
+using SuperPrecios.AuthenticationCore.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -150,9 +150,7 @@ namespace SuperPrecios.Infrastructure.EF
                 {
                     throw new KeyNotFoundException($"Error: No se encontró un miembro con ID {entity.Id}");
                 }
-                // Si Modificar modifica propiedades de la entidad recuperada(miembro), podés omitir Update:
-                miembro.Modificar(entity);
-                _context.Miembros.Update(miembro);
+                miembro.Modificar(entity);                
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException dbEx)

@@ -2,13 +2,13 @@
 using SuperPrecios.Application.IRepository;
 using SuperPrecios.Application.IServices.Usuario;
 using SuperPrecios.Application.Mappers;
-using SuperPrecios.AutenticacionCore.Exceptions.Usuario;
+using SuperPrecios.AuthenticationCore.Exceptions.Usuario;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UsuarioCore = SuperPrecios.AutenticacionCore.Entities.Usuario;
+using UsuarioCore = SuperPrecios.AuthenticationCore.Entities.Usuario;
 
 namespace SuperPrecios.Application.Services.Usuario
 {

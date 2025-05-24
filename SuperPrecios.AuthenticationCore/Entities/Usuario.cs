@@ -1,6 +1,6 @@
-﻿using SuperPrecios.AutenticacionCore.InterfacesEntidades;
-using SuperPrecios.AutenticacionCore.ValueObject;
-using SuperPrecios.AutenticacionCore.Exceptions.Usuario;
+﻿using SuperPrecios.AuthenticationCore.InterfacesEntidades;
+using SuperPrecios.AuthenticationCore.ValueObject;
+using SuperPrecios.AuthenticationCore.Exceptions.Usuario;
 using System.Text.RegularExpressions;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
-namespace SuperPrecios.AutenticacionCore.Entities
+namespace SuperPrecios.AuthenticationCore.Entities
 {
     [Index(nameof(Email), IsUnique = true)]
     public abstract class Usuario : IEntity, IValidate

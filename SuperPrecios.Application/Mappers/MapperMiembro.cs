@@ -1,5 +1,5 @@
 ﻿using SuperPrecios.Application.DTO.Miembro;
-using SuperPrecios.AutenticacionCore.Entities;
+using SuperPrecios.AuthenticationCore.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +23,7 @@ namespace SuperPrecios.Application.Mappers
 
         public static Miembro ToMiembro(DtoMiembroAdd dto)
         {
-            return new Miembro(
+            return new Miembro(                
                 dto.Nombre,
                 dto.Apellido,
                 dto.Email,
@@ -31,7 +31,7 @@ namespace SuperPrecios.Application.Mappers
             );
         }
 
-        public static Miembro ToDto(DtoMiembroUpdate dto)
+        public static Miembro ToMiembro(DtoMiembroUpdate dto)
         {
             var miembro = new Miembro(
                 dto.Nombre,

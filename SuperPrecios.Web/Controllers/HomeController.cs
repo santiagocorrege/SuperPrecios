@@ -37,8 +37,7 @@ public class HomeController : Controller
                 throw new Exception("Usuario y/o password invalidas");
             }
             else
-            {
-                
+            {                
                 string rol = user.Rol;
                 HttpContext.Session.SetString("Email", user.Email);
                 HttpContext.Session.SetString("Rol", rol);

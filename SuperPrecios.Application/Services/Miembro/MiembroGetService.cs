@@ -2,8 +2,8 @@
 using SuperPrecios.Application.IRepository;
 using SuperPrecios.Application.IServices.Miembro;
 using SuperPrecios.Application.Mappers;
-using SuperPrecios.AutenticacionCore.ValueObject;
-using SuperPrecios.AutenticationCore.Exceptions;
+using SuperPrecios.AuthenticationCore.ValueObject;
+using SuperPrecios.AuthenticationCore.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;

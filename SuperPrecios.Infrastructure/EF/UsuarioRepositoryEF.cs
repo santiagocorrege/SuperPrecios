@@ -1,9 +1,9 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using SuperPrecios.Application.IRepository;
-using SuperPrecios.AutenticacionCore.Entities;
-using SuperPrecios.AutenticacionCore.Exceptions.Usuario;
-using SuperPrecios.AutenticacionCore.ValueObject;
+using SuperPrecios.AuthenticationCore.Entities;
+using SuperPrecios.AuthenticationCore.Exceptions.Usuario;
+using SuperPrecios.AuthenticationCore.ValueObject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,18 +20,25 @@ namespace SuperPrecios.Infrastructure.EF
         {
             _context = context;
         }
-        public async Task<Usuario> GetByUsuarioLogin(string email, string password)
+        public async Task<Usuario> GetByUsuarioLogin(string email, string plainPassword)
         {
             try
             {
-                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+                if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(plainPassword))
                 {
                     throw new ArgumentException("El usuario y/o contrasenas no pueden ser nulos");
-                }
-                string pass = Password.Encrypt(password);
-                Usuario usuario = await _context.Usuarios.Where(u => u.Email.Valor == email && u.Password.Encriptada.Equals(pass)).FirstOrDefaultAsync();
-                if (usuario == null) throw new UsuarioException($"Usuario y/o password invalidos");
-                return usuario;
+                }                
+				var usuario = await _context.Usuarios
+	            .Where(u => u.Email == new Email(email))
+	            .FirstOrDefaultAsync();
+
+				Console.WriteLine($"Hash guardado: {usuario.Password.Hash}");
+				Console.WriteLine($"Password ingresada: {plainPassword}");
+				if (usuario != null && usuario.Password.Verify(plainPassword) == true)
+                {                    
+					return usuario;
+				}                    
+                return null;
             }
             catch (Exception ex)
             {

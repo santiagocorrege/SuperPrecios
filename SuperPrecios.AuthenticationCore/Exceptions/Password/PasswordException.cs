@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperPrecios.AutenticacionCore.Exceptions.Password
+namespace SuperPrecios.AuthenticationCore.Exceptions.Password
 {
     public class PasswordException : Exception
     {

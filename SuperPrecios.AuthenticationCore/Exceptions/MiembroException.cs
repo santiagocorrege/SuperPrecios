@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperPrecios.AutenticationCore.Exceptions
+namespace SuperPrecios.AuthenticationCore.Exceptions
 {
     public class MiembroException : Exception
     {

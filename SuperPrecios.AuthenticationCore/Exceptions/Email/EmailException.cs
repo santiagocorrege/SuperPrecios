@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperPrecios.AutenticacionCore.Exceptions.Email;
+namespace SuperPrecios.AuthenticationCore.Exceptions.Email;
 
 public class EmailException : Exception
 {

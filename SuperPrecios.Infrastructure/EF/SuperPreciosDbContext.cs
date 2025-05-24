@@ -1,4 +1,4 @@
-﻿using SuperPrecios.AutenticacionCore.Entities;
+﻿using SuperPrecios.AuthenticationCore.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -30,19 +30,23 @@ namespace SuperPrecios.Infrastructure.EF
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            new UsuarioConfiguracion().Configure(modelBuilder.Entity<Usuario>());
+            //new UsuarioConfiguracion().Configure(modelBuilder.Entity<Usuario>());
+            modelBuilder.ApplyConfiguration(new UsuarioConfiguracion());
 
-            modelBuilder.Entity<PrecioHistorico>()
-                .HasOne(ph => ph.Producto)
-                .WithMany()
-                .HasForeignKey(ph => ph.ProductoId)
-                .OnDelete(DeleteBehavior.Restrict); // o NoAction
+            modelBuilder.Entity<PrecioHistorico>(entity =>
+            {
+                // La clave primaria compuesta ya está definida con [PrimaryKey]
 
-            modelBuilder.Entity<PrecioHistorico>()
-                .HasOne(ph => ph.Supermercado)
-                .WithMany()
-                .HasForeignKey(ph => ph.SupermercadoId)
-                .OnDelete(DeleteBehavior.Restrict); // o NoAction
+                entity.HasOne(e => e.Producto)
+                    .WithMany()
+                    .HasForeignKey(e => e.ProductoId)
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.Supermercado)
+                    .WithMany()
+                    .HasForeignKey(e => e.SupermercadoId)
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
         }
 
     }
