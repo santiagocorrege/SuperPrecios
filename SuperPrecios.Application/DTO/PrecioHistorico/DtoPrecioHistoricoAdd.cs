@@ -1,4 +1,5 @@
 ﻿using SuperPrecios.Application.DTO.Producto;
+using SuperPrecios.Application.DTO.Supermercado;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace SuperPrecios.Application.DTO.PrecioHistorico
     {
         public DtoProductoAdd DtoProductoAdd { get; set; }
 
-        public int SupermercadoId { get; set; }
+        public DtoSupermercadoAdd DtoSupermercadoAdd { get; set; }
         public decimal Precio { get; set; }
     }
 }

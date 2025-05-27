@@ -1,4 +1,5 @@
 ﻿using SuperPrecios.Domain.Excepciones;
+using SuperPrecios.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -22,8 +23,14 @@ namespace SuperPrecios.Domain.Entidades
 
         public Supermercado(string name, string websiteUrl)
         {
-            Name = name;
+            Name = UtilidadesString.FormatearTexto(name);
             WebsiteUrl = websiteUrl;            
+            Validate();
+        }
+
+        public Supermercado(string name)
+        {
+            Name = UtilidadesString.FormatearTexto(name);            
             Validate();
         }
 

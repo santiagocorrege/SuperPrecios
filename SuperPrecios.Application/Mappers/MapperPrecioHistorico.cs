@@ -38,9 +38,8 @@ namespace SuperPrecios.Application.Mappers
             Marca marca = MapperMarca.ToMarca(dto.DtoProductoAdd.DtoMarcaAdd);
             Categoria categoria = MapperCategoria.ToCategoria(dto.DtoProductoAdd.DtoCategoriaAdd);
             Producto producto = new Producto(dto.DtoProductoAdd.Nombre, marca, categoria);
+            Supermercado supermercado = MapperSupermercado.ToSupermercado(dto.DtoSupermercadoAdd);
             return new PrecioHistorico(producto, supermercado, dto.Precio);
-            
-
         }
 
     }
