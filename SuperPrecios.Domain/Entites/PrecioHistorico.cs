@@ -14,17 +14,14 @@ namespace SuperPrecios.Domain.Entidades
     public class PrecioHistorico : IValidate
     {
         #region Properties
-        public Producto? Producto { get; set; }
-
-        [Required]        
+        public Producto Producto { get; set; }       
         public int ProductoId { get; set; }        
                            
-        public Supermercado Supermercado { get; set; }
-
-        [ForeignKey(nameof(SupermercadoId))]
+        public Supermercado Supermercado { get; set; }        
         public int SupermercadoId { get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
         public DateOnly Fecha {  get; set; }
 
         [Required]
@@ -39,21 +36,29 @@ namespace SuperPrecios.Domain.Entidades
             Validate();
         }
 
+        public PrecioHistorico(Producto producto, Supermercado supermercado, decimal precio)
+        {
+            Producto = producto;
+            Supermercado = supermercado;            
+            Precio = precio;
+            Fecha = DateOnly.FromDateTime(DateTime.UtcNow);
+            Validate();
+        }
         internal PrecioHistorico() { }
 
         #endregion
         #region Methods
         public void Validate()
         {
-            if(Producto == null || ProductoId <= 0 )
+            if(Producto == null && ProductoId <= 0 )
             {
                 throw new ProductoHistoricoException("Error: No se puede guardar un registro de precio sin un producto relacionado");
             }
-            if(Supermercado == null || SupermercadoId <= 0)
+            if(Supermercado == null && SupermercadoId <= 0)
             {
                 throw new ProductoHistoricoException("Error: No se puede guardar un registro de precio sin un supermercado relacionado");
             }
-            if (Precio <= 0 || Precio >= decimal.MaxValue)
+            if (Precio <= 0 && Precio >= decimal.MaxValue)
             {
                 throw new ProductoHistoricoException("Error: El precio no puede ser menor o igual a 0");
             }

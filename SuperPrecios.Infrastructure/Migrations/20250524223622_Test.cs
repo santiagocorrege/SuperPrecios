@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SuperPrecios.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Nueva : Migration
+    public partial class Test : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -76,7 +76,6 @@ namespace SuperPrecios.Infrastructure.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     MarcaId = table.Column<int>(type: "int", nullable: false),
-                    SupermercadoId = table.Column<int>(type: "int", nullable: false),
                     CategoriaId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -94,12 +93,6 @@ namespace SuperPrecios.Infrastructure.Migrations
                         principalTable: "Marcas",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Productos_Supermercados_SupermercadoId",
-                        column: x => x.SupermercadoId,
-                        principalTable: "Supermercados",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -109,9 +102,7 @@ namespace SuperPrecios.Infrastructure.Migrations
                     ProductoId = table.Column<int>(type: "int", nullable: false),
                     SupermercadoId = table.Column<int>(type: "int", nullable: false),
                     Fecha = table.Column<DateOnly>(type: "date", nullable: false),
-                    Precio = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    ProductoId1 = table.Column<int>(type: "int", nullable: true),
-                    SupermercadoId1 = table.Column<int>(type: "int", nullable: true)
+                    Precio = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -121,23 +112,13 @@ namespace SuperPrecios.Infrastructure.Migrations
                         column: x => x.ProductoId,
                         principalTable: "Productos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_PreciosHistoricos_Productos_ProductoId1",
-                        column: x => x.ProductoId1,
-                        principalTable: "Productos",
-                        principalColumn: "Id");
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_PreciosHistoricos_Supermercados_SupermercadoId",
                         column: x => x.SupermercadoId,
                         principalTable: "Supermercados",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_PreciosHistoricos_Supermercados_SupermercadoId1",
-                        column: x => x.SupermercadoId1,
-                        principalTable: "Supermercados",
-                        principalColumn: "Id");
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -147,19 +128,9 @@ namespace SuperPrecios.Infrastructure.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_PreciosHistoricos_ProductoId1",
-                table: "PreciosHistoricos",
-                column: "ProductoId1");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_PreciosHistoricos_SupermercadoId",
                 table: "PreciosHistoricos",
                 column: "SupermercadoId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PreciosHistoricos_SupermercadoId1",
-                table: "PreciosHistoricos",
-                column: "SupermercadoId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Productos_CategoriaId",
@@ -170,11 +141,6 @@ namespace SuperPrecios.Infrastructure.Migrations
                 name: "IX_Productos_MarcaId",
                 table: "Productos",
                 column: "MarcaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Productos_SupermercadoId",
-                table: "Productos",
-                column: "SupermercadoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Usuarios_Email",
@@ -196,13 +162,13 @@ namespace SuperPrecios.Infrastructure.Migrations
                 name: "Productos");
 
             migrationBuilder.DropTable(
+                name: "Supermercados");
+
+            migrationBuilder.DropTable(
                 name: "Categorias");
 
             migrationBuilder.DropTable(
                 name: "Marcas");
-
-            migrationBuilder.DropTable(
-                name: "Supermercados");
         }
     }
 }

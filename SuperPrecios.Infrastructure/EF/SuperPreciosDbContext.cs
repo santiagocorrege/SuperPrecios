@@ -32,21 +32,6 @@ namespace SuperPrecios.Infrastructure.EF
         {
             //new UsuarioConfiguracion().Configure(modelBuilder.Entity<Usuario>());
             modelBuilder.ApplyConfiguration(new UsuarioConfiguracion());
-
-            modelBuilder.Entity<PrecioHistorico>(entity =>
-            {
-                // La clave primaria compuesta ya está definida con [PrimaryKey]
-
-                entity.HasOne(e => e.Producto)
-                    .WithMany()
-                    .HasForeignKey(e => e.ProductoId)
-                    .OnDelete(DeleteBehavior.Restrict);
-
-                entity.HasOne(e => e.Supermercado)
-                    .WithMany()
-                    .HasForeignKey(e => e.SupermercadoId)
-                    .OnDelete(DeleteBehavior.Restrict);
-            });
         }
 
     }

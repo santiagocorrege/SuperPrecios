@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SuperPrecios.Application.DTO.Categoria
+{
+    public class DtoCategoriaGet
+    {
+        public int Id { get; set; }
+
+        public string Nombre { get; set; }
+    }
+}

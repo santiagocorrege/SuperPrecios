@@ -14,36 +14,30 @@ namespace SuperPrecios.Domain.Entidades
     {
         #region Properties
         public int Id { get; set; }
-        public string Nombre { get; set; }
-              
-        public Marca Marca { get; set; }
-
-        [ForeignKey(nameof(Marca))]
+        public string Nombre { get; set; }              
+        public Marca Marca { get; set; }        
         public int MarcaId { get; set; }
-
-        public Supermercado Supermercado { get; set; }
-
-        [ForeignKey(nameof(Supermercado))]
-        public int SupermercadoId { get; set; }
-        public Categoria Categoria { get; set; }
-
-        [ForeignKey(nameof(CategoriaId))]
+        public Categoria Categoria { get; set; }       
         public int CategoriaId {  get; set; }
 
         public List<PrecioHistorico> PreciosHistoricos { get; set; }
         
 
-        public Producto(string nombre, int nombreMarca, int nombreSupermercado, decimal precio)
+        public Producto(string nombre, int marcaId, int categoriaId)
         {
             PreciosHistoricos = new List<PrecioHistorico>();
-            Nombre = UtilidadesString.FormatearTexto(nombre);            
-            var precioHistorico = new PrecioHistorico
-            {
-                Fecha = DateOnly.FromDateTime(DateTime.UtcNow),
-                Precio = precio,
-                Producto = this // Establecemos la relación
-            };
-            precioHistorico.Validate();            
+            Nombre = UtilidadesString.FormatearTexto(nombre);
+            MarcaId = marcaId;
+            CategoriaId = categoriaId;
+            Validate();
+        }
+
+        public Producto(string nombre, Marca marca, Categoria categoria)
+        {
+            PreciosHistoricos = new List<PrecioHistorico>();
+            Nombre = UtilidadesString.FormatearTexto(nombre);
+            Marca = marca;
+            Categoria = categoria;                        
             Validate();
         }
 
@@ -58,10 +52,26 @@ namespace SuperPrecios.Domain.Entidades
             {
                 throw new ProductoException("Error: El nombre del producto no puede ser nulo");
             }
-            if (MarcaId <= 0)
+            if (Marca == null && MarcaId <= 0)
             {
                 throw new ProductoException("Error: El nombre del producto no puede ser nulo");
+            }    
+            if(Categoria == null && CategoriaId <= 0)
+            {
+                throw new ProductoException("Error: La categoria del producto no puede ser nula");
             }
+        }
+
+        public void Update(Producto producto)
+        {
+            if (producto == null)
+            {
+                throw new ArgumentNullException(nameof(producto), "El producto no puede ser nulo");
+            }
+            Nombre = UtilidadesString.FormatearTexto(producto.Nombre);
+            MarcaId = producto.MarcaId;
+            CategoriaId = producto.CategoriaId;
+            Validate();
         }
         #endregion
     }

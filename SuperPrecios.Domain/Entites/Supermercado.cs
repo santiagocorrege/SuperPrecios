@@ -18,15 +18,12 @@ namespace SuperPrecios.Domain.Entidades
         public string Name { get; set; }
 
         [Url]
-        public string WebsiteUrl { get; set; }
-
-        public virtual ICollection<PrecioHistorico> PreciosHistoricos { get; set; }
+        public string WebsiteUrl { get; set; }        
 
         public Supermercado(string name, string websiteUrl)
         {
             Name = name;
-            WebsiteUrl = websiteUrl;
-            PreciosHistoricos = new List<PrecioHistorico>();
+            WebsiteUrl = websiteUrl;            
             Validate();
         }
 

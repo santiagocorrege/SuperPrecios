@@ -12,8 +12,8 @@ using SuperPrecios.Infrastructure.EF;
 namespace SuperPrecios.Infrastructure.Migrations
 {
     [DbContext(typeof(SuperPreciosDbContext))]
-    [Migration("20250523022804_Nueva")]
-    partial class Nueva
+    [Migration("20250524223622_Test")]
+    partial class Test
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -117,19 +117,9 @@ namespace SuperPrecios.Infrastructure.Migrations
                     b.Property<decimal>("Precio")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("ProductoId1")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("SupermercadoId1")
-                        .HasColumnType("int");
-
                     b.HasKey("ProductoId", "SupermercadoId", "Fecha");
 
-                    b.HasIndex("ProductoId1");
-
                     b.HasIndex("SupermercadoId");
-
-                    b.HasIndex("SupermercadoId1");
 
                     b.ToTable("PreciosHistoricos");
                 });
@@ -152,16 +142,11 @@ namespace SuperPrecios.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SupermercadoId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CategoriaId");
 
                     b.HasIndex("MarcaId");
-
-                    b.HasIndex("SupermercadoId");
 
                     b.ToTable("Productos");
                 });
@@ -205,24 +190,16 @@ namespace SuperPrecios.Infrastructure.Migrations
             modelBuilder.Entity("SuperPrecios.Domain.Entidades.PrecioHistorico", b =>
                 {
                     b.HasOne("SuperPrecios.Domain.Entidades.Producto", "Producto")
-                        .WithMany()
-                        .HasForeignKey("ProductoId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("SuperPrecios.Domain.Entidades.Producto", null)
                         .WithMany("PreciosHistoricos")
-                        .HasForeignKey("ProductoId1");
+                        .HasForeignKey("ProductoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("SuperPrecios.Domain.Entidades.Supermercado", "Supermercado")
                         .WithMany()
                         .HasForeignKey("SupermercadoId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("SuperPrecios.Domain.Entidades.Supermercado", null)
-                        .WithMany("PreciosHistoricos")
-                        .HasForeignKey("SupermercadoId1");
 
                     b.Navigation("Producto");
 
@@ -243,17 +220,9 @@ namespace SuperPrecios.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SuperPrecios.Domain.Entidades.Supermercado", "Supermercado")
-                        .WithMany()
-                        .HasForeignKey("SupermercadoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Categoria");
 
                     b.Navigation("Marca");
-
-                    b.Navigation("Supermercado");
                 });
 
             modelBuilder.Entity("SuperPrecios.Domain.Entidades.Categoria", b =>
@@ -267,11 +236,6 @@ namespace SuperPrecios.Infrastructure.Migrations
                 });
 
             modelBuilder.Entity("SuperPrecios.Domain.Entidades.Producto", b =>
-                {
-                    b.Navigation("PreciosHistoricos");
-                });
-
-            modelBuilder.Entity("SuperPrecios.Domain.Entidades.Supermercado", b =>
                 {
                     b.Navigation("PreciosHistoricos");
                 });

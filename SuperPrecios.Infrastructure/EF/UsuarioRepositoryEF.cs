@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using SuperPrecios.Application.IRepository;
 using SuperPrecios.AuthenticationCore.Entities;
+using SuperPrecios.AuthenticationCore.Exceptions.Email;
 using SuperPrecios.AuthenticationCore.Exceptions.Usuario;
 using SuperPrecios.AuthenticationCore.ValueObject;
 using System;
@@ -20,29 +21,31 @@ namespace SuperPrecios.Infrastructure.EF
         {
             _context = context;
         }
-        public async Task<Usuario> GetByUsuarioLogin(string email, string plainPassword)
+        public async Task<Usuario> GetByUsuarioLogin(string stringEmail, string plainPassword)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(plainPassword))
+                if (string.IsNullOrWhiteSpace(stringEmail) || string.IsNullOrWhiteSpace(plainPassword))
                 {
                     throw new ArgumentException("El usuario y/o contrasenas no pueden ser nulos");
-                }                
-				var usuario = await _context.Usuarios
-	            .Where(u => u.Email == new Email(email))
+                }
+                Email email = new Email(stringEmail);
+                var usuario = await _context.Usuarios
+	            .Where(u => u.Email == email)
 	            .FirstOrDefaultAsync();
-
-				Console.WriteLine($"Hash guardado: {usuario.Password.Hash}");
-				Console.WriteLine($"Password ingresada: {plainPassword}");
+				
 				if (usuario != null && usuario.Password.Verify(plainPassword) == true)
                 {                    
 					return usuario;
 				}                    
                 return null;
+            }            
+            catch (EmailException ex) 
+            {
+                throw; 
             }
             catch (Exception ex)
-            {
-                // Captura cualquier otra excepción inesperada
+            { 
                 throw new Exception("DB: Error : Error al acceder a la base de datos durante la búsqueda por email", ex);
             }
         }
