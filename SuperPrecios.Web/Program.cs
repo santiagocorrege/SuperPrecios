@@ -58,7 +58,7 @@ namespace SuperPrecios.Web
                 // Solo ejecutar si NO es Development (local)
                 if (!environment.IsDevelopment())
                 {
-                    context.Database.EnsureCreated();
+                    context.Database.EnsureCreated(); //Ensure por migrate
                     Console.WriteLine("Base de datos creada automáticamente en entorno: " + environment.EnvironmentName);
                 }
             }

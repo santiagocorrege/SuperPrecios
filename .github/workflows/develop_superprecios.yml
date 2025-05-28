@@ -6,44 +6,29 @@ on:
       - develop
   workflow_dispatch:
 
-env:
-  DOTNET_ROOT: /home/runner/.dotnet
-  ASPNETCORE_ENVIRONMENT: Production
-
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Setup .NET Core
+
+      - name: Set up .NET Core
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0'
-          
-      - name: Install EF Core tools
-        run: dotnet tool install --global dotnet-ef
-        
+
       - name: Restore dependencies
         run: dotnet restore
-        
+
       - name: Build with dotnet
-        run: dotnet build --configuration Release --no-restore
-        
-      - name: Run EF Core migrations
-        env:
-          CONNECTION_STRING: ${{ secrets.PROD_CONNECTION_STRING }}
-        run: |
-          export PATH="$PATH:/home/runner/.dotnet/tools"
-          dotnet ef database drop --force --project SuperPrecios.Infrastructure/SuperPrecios.Infrastructure.csproj --startup-project SuperPrecios.Web/SuperPrecios.Web.csproj
-          dotnet ef migrations add InitialMigration --project SuperPrecios.Infrastructure/SuperPrecios.Infrastructure.csproj --startup-project SuperPrecios.Web/SuperPrecios.Web.csproj
-          dotnet ef database update --project SuperPrecios.Infrastructure/SuperPrecios.Infrastructure.csproj --startup-project SuperPrecios.Web/SuperPrecios.Web.csproj
-          
-      - name: dotnet publish
+        run: dotnet build SuperPrecios.Web/SuperPrecios.Web.csproj --configuration Release
+
+      - name: Publish app
         run: dotnet publish SuperPrecios.Web/SuperPrecios.Web.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
-        
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
@@ -54,24 +39,37 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+      name: 'Development'
     permissions:
       id-token: write
       contents: read
+
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
           name: .net-app
-          
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_024F0D65D3154002BB0891039514E05B }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_423B4E0F4A22407DBCC128ADDD13F8FF }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A9AFC8691DDB43818B376A706E5B7AD2 }}
-          
+
+      - name: Install EF Core CLI
+        run: dotnet tool install --global dotnet-ef
+
+      - name: Apply EF Core migrations
+        env:
+          ASPNETCORE_ENVIRONMENT: Deployment
+        run: |
+          dotnet restore
+          dotnet ef database update \
+            --project SuperPrecios.Infrastructure/SuperPrecios.Infrastructure.csproj \
+            --startup-project SuperPrecios.Web/SuperPrecios.Web.csproj \
+            --configuration Release
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
@@ -79,4 +77,3 @@ jobs:
           app-name: 'superprecios'
           slot-name: 'Production'
           package: .
-          connection-string: ${{ secrets.PROD_CONNECTION_STRING }}
