@@ -49,13 +49,10 @@ namespace SuperPrecios.Web
                 var context = scope.ServiceProvider.GetRequiredService<SuperPreciosDbContext>();
                 var environment = scope.ServiceProvider.GetRequiredService<IWebHostEnvironment>();
 
-                // Solo ejecutar si NO es Development (local)
-                if (!environment.IsDevelopment())
-                {
-                    context.Database.EnsureCreated(); //Ensure por migrate
-                    Console.WriteLine("Base de datos creada automáticamente en entorno: " + environment.EnvironmentName);
-                }
+                // Aplica migraciones pendientes en cualquier entorno
+                context.Database.Migrate();
             }
+            Console.WriteLine("Cadena de conexión usada: " + connectionString);
 
             app.UseSession();
 
