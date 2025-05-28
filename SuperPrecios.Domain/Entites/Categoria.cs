@@ -23,7 +23,7 @@ namespace SuperPrecios.Domain.Entidades
             Nombre = UtilidadesString.FormatearTexto(nombre);
             Productos = new List<Producto>();
         }
-
+        //Test
         protected Categoria()
         {
             Productos = new List<Producto>();
