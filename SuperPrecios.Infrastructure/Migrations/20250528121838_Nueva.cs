@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SuperPrecios.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Test : Migration
+    public partial class Nueva : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
