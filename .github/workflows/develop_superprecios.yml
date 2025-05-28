@@ -4,13 +4,12 @@ on:
     branches:
       - develop
   workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    env:
-      ConnectionStrings__ConexionBD: ${{ secrets.PROD_CONNECTION_STRING }}
     steps:
       - uses: actions/checkout@v4
 
@@ -19,16 +18,24 @@ jobs:
         with:
           dotnet-version: '8.0'
 
-      - name: Remove existing migrations
-        run: rm -rf SuperPrecios.Infrastructure/Migrations/*
+      - name: Install dotnet-ef global tool
+        run: dotnet tool install --global dotnet-ef --version 8.0.0
 
-      - name: Add new migration with timestamp
+      - name: Add dotnet tools to PATH
+        run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+
+      - name: Remove existing migrations
+        run: |
+          rm -rf D:/DropBox/Dropbox/SuperPrecios/SuperPrecios.Infrastructure/Migrations/*
+
+      - name: Create new migration with timestamp name
         run: |
           timestamp=$(date +'%Y%m%d%H%M%S')
-          dotnet ef migrations add AutoMigration_$timestamp --project SuperPrecios.Infrastructure --startup-project SuperPrecios.Web
+          dotnet ef migrations add Migration_$timestamp --project D:/DropBox/Dropbox/SuperPrecios/SuperPrecios.Infrastructure/SuperPrecios.Infrastructure.csproj --startup-project D:/DropBox/Dropbox/SuperPrecios/SuperPrecios.Web/SuperPrecios.Web.csproj
 
       - name: Update database
-        run: dotnet ef database update --project SuperPrecios.Infrastructure --startup-project SuperPrecios.Web
+        run: |
+          dotnet ef database update --project D:/DropBox/Dropbox/SuperPrecios/SuperPrecios.Infrastructure/SuperPrecios.Infrastructure.csproj --startup-project D:/DropBox/Dropbox/SuperPrecios/SuperPrecios.Web/SuperPrecios.Web.csproj
 
       - name: Build with dotnet
         run: dotnet build SuperPrecios.Web/SuperPrecios.Web.csproj --configuration Release
