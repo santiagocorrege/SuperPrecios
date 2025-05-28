@@ -49,9 +49,20 @@ namespace SuperPrecios.Web
                 var context = scope.ServiceProvider.GetRequiredService<SuperPreciosDbContext>();
                 var environment = scope.ServiceProvider.GetRequiredService<IWebHostEnvironment>();
 
-                // Aplica migraciones pendientes en cualquier entorno
-                context.Database.Migrate();
+                if (environment.IsProduction())
+                {
+                    try
+                    {
+                        context.Database.Migrate();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error applying migrations: {ex.Message}");
+                        // Opcional: throw; para que el app falle si querés
+                    }
+                }
             }
+
             Console.WriteLine("Cadena de conexión usada: " + connectionString);
 
             app.UseSession();
