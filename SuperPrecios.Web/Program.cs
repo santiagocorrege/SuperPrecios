@@ -22,15 +22,7 @@ namespace SuperPrecios.Web
             builder.Services.AddDbContext<SuperPreciosDbContext>(options =>
             {
                 options.UseSqlServer(connectionString);
-                // Solo en desarrollo: logs detallados
-                if (builder.Environment.IsDevelopment())
-                {
-                    options.EnableSensitiveDataLogging();
-                    options.LogTo(Console.WriteLine, LogLevel.Information);
-                }
-            });
-
-            Console.WriteLine($"Connection string: {connectionString}");
+            });            
 
             builder.Services.AddSession();
 
