@@ -30,6 +30,8 @@ namespace SuperPrecios.Web
                 }
             });
 
+            Console.WriteLine($"Connection string: {connectionString}");
+
             builder.Services.AddSession();
 
             //IoC : DI
