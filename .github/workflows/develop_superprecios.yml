@@ -68,10 +68,10 @@ jobs:
           ConnectionStrings__ConexionBD: ${{ secrets.ConnectionStrings__ConexionBD }}
         run: |
           export PATH="$PATH:/home/runner/.dotnet/tools"
-          dotnet ef database update \
-            --project SuperPrecios.Infrastructure/SuperPrecios.Infrastructure.csproj \
-            --startup-project SuperPrecios.Web/SuperPrecios.Web.csproj \
-            --context SuperPreciosDbContext
+	dotnet ef database update \
+	  --project ./SuperPrecios.Infrastructure/SuperPrecios.Infrastructure.csproj \
+	  --startup-project ./SuperPrecios.Web/SuperPrecios.Web.csproj \
+	  --context SuperPreciosDbContext
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
