@@ -1,9 +1,14 @@
 name: Build and deploy ASP.Net Core app to Azure Web App - superprecios
+
 on:
   push:
     branches:
       - develop
   workflow_dispatch:
+
+env:
+  DOTNET_ROOT: /home/runner/.dotnet
+  ASPNETCORE_ENVIRONMENT: Production
 
 jobs:
   build:
@@ -12,37 +17,33 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
-
-      - name: Set up .NET Core
+      
+      - name: Setup .NET Core
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0'
-
-      - name: Install dotnet-ef global tool
-        run: dotnet tool install --global dotnet-ef --version 8.0.0
-
-      - name: Add dotnet tools to PATH
-        run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
-
-      - name: Remove existing migrations
-        run: |
-          rm -rf D:/DropBox/Dropbox/SuperPrecios/SuperPrecios.Infrastructure/Migrations/*
-
-      - name: Create new migration with timestamp name
-        run: |
-          timestamp=$(date +'%Y%m%d%H%M%S')
-          dotnet ef migrations add Migration_$timestamp --project D:/DropBox/Dropbox/SuperPrecios/SuperPrecios.Infrastructure/SuperPrecios.Infrastructure.csproj --startup-project D:/DropBox/Dropbox/SuperPrecios/SuperPrecios.Web/SuperPrecios.Web.csproj
-
-      - name: Update database
-        run: |
-          dotnet ef database update --project D:/DropBox/Dropbox/SuperPrecios/SuperPrecios.Infrastructure/SuperPrecios.Infrastructure.csproj --startup-project D:/DropBox/Dropbox/SuperPrecios/SuperPrecios.Web/SuperPrecios.Web.csproj
-
+          
+      - name: Install EF Core tools
+        run: dotnet tool install --global dotnet-ef
+        
+      - name: Restore dependencies
+        run: dotnet restore
+        
       - name: Build with dotnet
-        run: dotnet build SuperPrecios.Web/SuperPrecios.Web.csproj --configuration Release
-
+        run: dotnet build --configuration Release --no-restore
+        
+      - name: Run EF Core migrations
+        env:
+          CONNECTION_STRING: ${{ secrets.PROD_CONNECTION_STRING }}
+        run: |
+          export PATH="$PATH:/home/runner/.dotnet/tools"
+          dotnet ef database drop --force --project SuperPrecios.Infrastructure/SuperPrecios.Infrastructure.csproj --startup-project SuperPrecios.Web/SuperPrecios.Web.csproj
+          dotnet ef migrations add InitialMigration --project SuperPrecios.Infrastructure/SuperPrecios.Infrastructure.csproj --startup-project SuperPrecios.Web/SuperPrecios.Web.csproj
+          dotnet ef database update --project SuperPrecios.Infrastructure/SuperPrecios.Infrastructure.csproj --startup-project SuperPrecios.Web/SuperPrecios.Web.csproj
+          
       - name: dotnet publish
         run: dotnet publish SuperPrecios.Web/SuperPrecios.Web.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
-
+        
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
@@ -63,14 +64,14 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: .net-app
-      
+          
       - name: Login to Azure
         uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_024F0D65D3154002BB0891039514E05B }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_423B4E0F4A22407DBCC128ADDD13F8FF }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A9AFC8691DDB43818B376A706E5B7AD2 }}
-
+          
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
@@ -78,3 +79,4 @@ jobs:
           app-name: 'superprecios'
           slot-name: 'Production'
           package: .
+          connection-string: ${{ secrets.PROD_CONNECTION_STRING }}
