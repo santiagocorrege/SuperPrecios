@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 using BCrypt.Net;
 using SuperPrecios.AuthenticationCore.Exceptions.Password;
@@ -9,6 +10,7 @@ namespace SuperPrecios.AuthenticationCore.ValueObject
     //Complex Type por convencion (No tiene id y se relaciona con usuario)
     public record Password
     {
+        [Required]
         public string Hash { get; init; }
 
         public Password(string plainPassword)

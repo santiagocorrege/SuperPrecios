@@ -17,11 +17,13 @@ namespace SuperPrecios.AuthenticationCore.Entities
     {        
         #region Properties
         public int Id { get; set; }
+        [Required]
         public string Nombre { get; set; }
-
+        [Required]
         public string Apellido { get; set; }
-        
+        [Required]
         public Email Email { get; init; }
+        [Required]        
         
         public Password Password { get; set; }
 
