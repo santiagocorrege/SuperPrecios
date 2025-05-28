@@ -1,4 +1,4 @@
-name: Build and deploy ASP.Net Core app to Azure Web App - superprecios
+name: Build and Deploy ASP.NET Core app - superprecios
 
 on:
   push:
@@ -9,45 +9,41 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
+
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up .NET
+      - name: Show repo structure (debug)
+        run: ls -R
+
+      - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0'
 
-      - name: Restore dependencies
-        run: dotnet restore SuperPrecios.Web/SuperPrecios.Web.csproj
+      - name: Build app
+        run: dotnet build SuperPrecios.Web/SuperPrecios.Web.csproj --configuration Release
 
-      - name: Build project
-        run: dotnet build SuperPrecios.Web/SuperPrecios.Web.csproj --configuration Release --no-restore
-
-      - name: Publish project
-        run: dotnet publish SuperPrecios.Web/SuperPrecios.Web.csproj --configuration Release --output ./publish
+      - name: Publish app
+        run: dotnet publish SuperPrecios.Web/SuperPrecios.Web.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: superprecios-app
-          path: ./publish
+          name: .net-app
+          path: ${{env.DOTNET_ROOT}}/myapp
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    permissions:
-      id-token: write
-      contents: read
+
     steps:
+      - uses: actions/checkout@v4
+
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: superprecios-app
+          name: .net-app
 
       - name: Login to Azure
         uses: azure/login@v2
@@ -56,28 +52,24 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_423B4E0F4A22407DBCC128ADDD13F8FF }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A9AFC8691DDB43818B376A706E5B7AD2 }}
 
-      - name: Set up .NET for EF Core
+      - name: Setup .NET for EF Tools
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0'
 
-      - name: Install dotnet-ef globally
+      - name: Install dotnet-ef tool
         run: dotnet tool install --global dotnet-ef
 
-      - name: Apply EF Core Migrations
+      - name: Apply EF Core migrations
         env:
           ConnectionStrings__ConexionBD: ${{ secrets.PROD_CONNECTION_STRING }}
         run: |
           export PATH="$PATH:/home/runner/.dotnet/tools"
-          dotnet ef database update \
-            --project SuperPrecios.Infrastructure/SuperPrecios.Infrastructure.csproj \
-            --startup-project SuperPrecios.Web/SuperPrecios.Web.csproj \
-            --context SuperPreciosDbContext
+          dotnet ef database update --project SuperPrecios.Infrastructure/SuperPrecios.Infrastructure.csproj --startup-project SuperPrecios.Web/SuperPrecios.Web.csproj --context SuperPreciosDbContext
 
       - name: Deploy to Azure Web App
-        id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'superprecios'
           slot-name: 'Production'
-          package: .
+          package: ${{ env.DOTNET_ROOT }}/myapp
