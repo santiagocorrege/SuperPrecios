@@ -19,10 +19,5 @@
     <ProjectReference Include="..\SuperPrecios.Infrastructure\SuperPrecios.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="appsettings.Deployment.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
 
 </Project>

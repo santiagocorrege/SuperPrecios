@@ -7,12 +7,14 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace SuperPrecios.AuthenticationCore.ValueObject
 {
     //Complex Type por convencion (No tiene id y se relaciona con usuario)
     public record Email : IValidate
     {
+        [Required]
         public string Valor { get; init; }
 
         public Email(string valor)

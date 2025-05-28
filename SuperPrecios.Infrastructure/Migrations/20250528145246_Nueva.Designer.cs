@@ -12,7 +12,7 @@ using SuperPrecios.Infrastructure.EF;
 namespace SuperPrecios.Infrastructure.Migrations
 {
     [DbContext(typeof(SuperPreciosDbContext))]
-    [Migration("20250528121838_Nueva")]
+    [Migration("20250528145246_Nueva")]
     partial class Nueva
     {
         /// <inheritdoc />
