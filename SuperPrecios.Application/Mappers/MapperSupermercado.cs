@@ -1,5 +1,5 @@
 ﻿using SuperPrecios.Application.DTO.Supermercado;
-using SuperPrecios.Domain.Entidades;
+using SuperPrecios.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +22,7 @@ namespace SuperPrecios.Application.Mappers
             return new DtoSupermercadoGet
             {
                 Id = supermercado.Id,
-                Nombre = supermercado.Name,
+                Nombre = supermercado.Nombre,
                 WebsiteUrl = supermercado.WebsiteUrl
             };
         }

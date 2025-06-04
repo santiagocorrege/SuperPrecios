@@ -1,5 +1,5 @@
 ﻿using SuperPrecios.Application.DTO.Categoria;
-using SuperPrecios.Domain.Entidades;
+using SuperPrecios.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,13 +23,5 @@ namespace SuperPrecios.Application.Mappers
             };
         }
 
-        public static Categoria ToCategoria(DtoCategoriaAdd dto)
-        {
-            if (dto == null)
-            {
-                throw new ArgumentNullException("MapperError: El dto de categoria no puede ser nulo");
-            }
-            return new Categoria(dto.Nombre);
-        }
     }
 }

@@ -1,8 +1,5 @@
-﻿using SuperPrecios.Application.DTO.PrecioHistorico;
-using SuperPrecios.Application.DTO.Producto;
+﻿using SuperPrecios.Application.DTO.Producto;
 using SuperPrecios.Application.IServices.Producto;
-using SuperPrecios.Application.Mappers;
-using SuperPrecios.Domain.Entidades;
 using SuperPrecios.Domain.IRepositories;
 using System;
 using System.Collections.Generic;
@@ -15,29 +12,15 @@ namespace SuperPrecios.Application.Services.Producto
     public class ProductoAddService : IProductoAddService
     {
         private readonly IProductoRepository _productoRepository;
-        private readonly IMarcaRepository _marcaRepository;
-        private readonly ICategoriaRepository _categoriaRepository;
-        public ProductoAddService(IProductoRepository productoRepo, IMarcaRepository marcaRepository, ICategoriaRepository categoriaRepository)
+
+        public ProductoAddService(IProductoRepository productoRepository)
         {
-            _productoRepository = productoRepo;
-            _marcaRepository = marcaRepository;
-            _categoriaRepository = categoriaRepository;
-        }
-        public async Task AddAsync(DtoPrecioHistoricoAdd dto)
-        {
-            if (dto == null) throw new ArgumentNullException("Error: El precio producto a agregar no puede estar vacio");
-            try
-            {
-                PrecioHistorico pHistorico = MapperPrecioHistorico.ToPrecioHistorico(dto);
-                //SupermercadoRepository
-            }
-            catch(Exception ex)
-            {
-
-            }
-
-
+            _productoRepository = productoRepository;
         }
 
+        public Task AddAsync(DtoProductoAdd productoAdd)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

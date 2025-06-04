@@ -1,0 +1,1 @@
+﻿INSERT INTO Usuarios VALUES ('Admin', '', 'admin@admin.com', '$2a$12$Mpocyh6Qtixvpa9nbJgWG.ZSIHWd.r844f5KGuz9yh92VaekuOAIm', 'Administrador')

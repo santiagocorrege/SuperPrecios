@@ -22,14 +22,23 @@ namespace SuperPrecios.Application.Services.Miembro
         }
         public async Task<IEnumerable<DtoMiembroGet>> Run()
         {
-
             var miembro = await _miembroRepo.GetAll();
             return MapperMiembro.ToDto(miembro);
         }
 
+        public async Task<IEnumerable<DtoMiembroGet>> RunByNombreList(string email)
+        {
+            if (String.IsNullOrEmpty(email))
+            {
+                throw new MiembroException("El email no puede ser nulo");
+            }
+            var listaMiembro = await _miembroRepo.GetByEmailListAsync(email);
+            return MapperMiembro.ToDto(listaMiembro);
+        }
+
         public async Task<DtoMiembroGet> Run(string email)
         {
-            if(email.Trim().Length == 0)
+            if(String.IsNullOrWhiteSpace(email))
             {
                 throw new MiembroException("El email no puede ser nulo");
             }
@@ -43,6 +52,18 @@ namespace SuperPrecios.Application.Services.Miembro
 
         public async Task<DtoMiembroGet> Run(int id)
         {
+            if (id <= 0) throw new MiembroException("El id no puede ser nulo");
+            
+            var miembro = await _miembroRepo.GetByIdAsync(id);
+            if (miembro == null)
+            {
+                throw new MiembroException("El miembro no existe");
+            }
+            return MapperMiembro.ToDto(miembro);
+        }
+
+        public async Task<DtoMiembroUpdate> RunGetUpdate(int id)
+        {
             if (id <= 0)
             {
                 throw new MiembroException("El id no puede ser nulo");
@@ -52,7 +73,7 @@ namespace SuperPrecios.Application.Services.Miembro
             {
                 throw new MiembroException("El miembro no existe");
             }
-            return MapperMiembro.ToDto(miembro);
+            return MapperMiembro.ToDtoUpdate(miembro);
         }
     }
 }

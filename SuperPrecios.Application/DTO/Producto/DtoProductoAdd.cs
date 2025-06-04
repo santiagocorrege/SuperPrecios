@@ -15,8 +15,10 @@ namespace SuperPrecios.Application.DTO.Producto
         [Required]
         public string Nombre { get; set; }
 
-        public DtoMarcaAdd DtoMarcaAdd { get; set; }
+        [Required]
+        public int MarcaId { get; set; }
 
-        public DtoCategoriaAdd DtoCategoriaAdd { get; set; }
+        [Required]
+        public int CategoriaId { get; set; }
     }
 }

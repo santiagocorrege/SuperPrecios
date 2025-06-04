@@ -1,4 +1,6 @@
-﻿using SuperPrecios.Domain.Excepciones;
+﻿using Microsoft.EntityFrameworkCore;
+using SuperPrecios.AuthenticationCore.ValueObject;
+using SuperPrecios.Domain.Excepciones;
 using SuperPrecios.Shared;
 using System;
 using System.Collections.Generic;
@@ -6,10 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperPrecios.Domain.Entidades
+namespace SuperPrecios.Domain.Entities
 {
-    public class Marca : IEntity, IValidate
-    {
+    [Index(nameof(Nombre), IsUnique = true)]
+    public class Marca : IEntity, IValidate, IEquatable<Marca>
+    {            
         #region Properties
         public int Id { get; set; }
 
@@ -37,6 +40,25 @@ namespace SuperPrecios.Domain.Entidades
             {
                 throw new LocalException("Error: El nombre de la marca no puede ser nulo");
             }
+        }
+
+        public bool Equals(Marca? other)
+        {
+            if (other is null)
+                return false;
+
+            if (ReferenceEquals(this, other))
+                return true;
+
+            // Si ambos tienen Id asignado (> 0), comparar por Id
+            if (Id > 0 && other.Id > 0)
+                return this.Id == other.Id;
+
+            // En caso contrario, comparar por Nombre (ignorando mayúsculas/minúsculas)
+            return string.Equals(
+                Nombre,
+                other.Nombre
+            );
         }
         #endregion
     }

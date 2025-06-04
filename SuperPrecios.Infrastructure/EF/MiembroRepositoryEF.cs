@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Common;
+using SuperPrecios.AuthenticationCore.ValueObject;
 
 namespace SuperPrecios.Infrastructure.EF
 {
@@ -29,21 +31,17 @@ namespace SuperPrecios.Infrastructure.EF
                 await _context.Miembros.AddAsync(entity);
                 await _context.SaveChangesAsync();
             }
-            catch(DbUpdateException dbEx)
+            catch (DbUpdateException dbEx)
             {
-                if(dbEx.InnerException != null)
+                if (dbEx.InnerException != null)
                 {
                     SqlException exSql = dbEx.InnerException as SqlException;
-                    if (exSql.Number == 2627) 
+                    if (exSql.Number == 2627 || exSql.Number == 2601)
                     {
-                        throw new Exception($"BD Error: El miembro ya existe en la base de datos", exSql);
-                    }             
-                }                
-                throw;                                
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"BD Error: No se pudo agregar el miembro | Mensaje {ex.Message}", ex);
+                        throw new Exception("El miembro ya existe en la base de datos");
+                    }
+                }
+                throw new Exception("Error al agregar el miembro a la base de datos");                
             }
         }
 
@@ -68,16 +66,9 @@ namespace SuperPrecios.Infrastructure.EF
                 SqlException exSql = dbEx.InnerException as SqlException;
                 if (exSql?.Number == 547) // Violación de restricción de clave foránea
                 {
-                    throw new Exception("BD Error: No se puede eliminar el miembro porque tiene registros relacionados", exSql);
+                    throw new Exception("BD Error: No se puede eliminar el miembro porque tiene registros relacionados");
                 }
-                else
-                {
-                    throw new Exception($"BD Error: Error al eliminar el miembro de la base de datos {dbEx.Message}", dbEx);
-                }
-            }
-            catch(Exception ex)
-            {
-                throw new Exception($"Error al eliminar el miembro {ex.Message}");
+                throw new Exception($"BD Error: Error al eliminar el miembro de la base de datos {dbEx.Message}");                
             }
         }
 
@@ -87,29 +78,51 @@ namespace SuperPrecios.Infrastructure.EF
             {                
                 return await _context.Miembros.ToListAsync();
             }
-            catch (DbUpdateException dbEx)
+            catch (DbException ex)
             {
-                throw new Exception("BD Error: al consultar la base de datos de miembros", dbEx);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Error al obtener los miembros {ex.Message}");
+                throw new Exception("BD Error: al consultar la base de datos de miembros");
             }
 
         }
 
-        public async Task<Miembro> GetByEmailAsync(string email)
+        public async Task<Miembro> GetByEmailAsync(string stringEmail)
         {
-            if(string.IsNullOrWhiteSpace(email))
+            if(string.IsNullOrWhiteSpace(stringEmail))
             {
                 throw new ArgumentException("El email no puede ser nulo");
             }
-            Miembro miembroBuscado = await _context.Miembros.FirstOrDefaultAsync(m => m.Email.Valor == email);            
-            if(miembroBuscado == null)
+            try
             {
-                throw new KeyNotFoundException("El miembro con ese email no existe en la base de datos");
+                Email email = new Email(stringEmail);
+                Miembro miembroBuscado = await _context.Miembros.FirstOrDefaultAsync(m => m.Email == email);
+                if (miembroBuscado == null)
+                {
+                    throw new KeyNotFoundException("El miembro con ese email no existe en la base de datos");
+                }
+                return miembroBuscado;
             }
-            return miembroBuscado;
+            catch (DbException ex)
+            {
+                throw new Exception("BD Error: al consultar la base de datos de miembros");
+            }            
+        }
+
+        public async Task<IEnumerable<Miembro>> GetByEmailListAsync(string stringEmail)
+        {
+            if (string.IsNullOrWhiteSpace(stringEmail))
+            {
+                throw new ArgumentException("El email no puede ser nulo");
+            }
+            try
+            {
+                Email email = new Email(stringEmail);
+                var miembrosBuscado = await _context.Miembros.Where(m => m.Email == email).ToListAsync();
+                return miembrosBuscado;
+            }
+            catch (DbException ex)
+            {
+                throw new Exception("BD Error: al consultar la base de datos de miembros");
+            }
         }
 
         public async Task<Miembro> GetByIdAsync(int id)
@@ -127,39 +140,31 @@ namespace SuperPrecios.Infrastructure.EF
                 }
                 return miembro;
             }
-            catch (DbUpdateException dbEx)
+            catch (DbException ex)
             {
-                throw new Exception($"BD Error: al consultar la base de datos de miembros {dbEx.Message}", dbEx);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Error al obtener el miembro {ex.Message}");
+                throw new Exception("BD Error: al consultar la base de datos de miembros");
             }
         }
 
-        public async Task UpdateAsync(Miembro entity)
+        public async Task UpdateAsync(Miembro miembroActualizado)
         {
-            if(entity == null || entity.Id <= 0)
+            if(miembroActualizado == null || miembroActualizado.Id <= 0)
             {
                 throw new ArgumentNullException("Error: El miembro no puede ser nula");
             }
             try
             {
-                Miembro miembro = await _context.Miembros.FindAsync(entity.Id);
+                Miembro miembro = await _context.Miembros.FindAsync(miembroActualizado.Id);
                 if (miembro == null)
                 {
-                    throw new KeyNotFoundException($"Error: No se encontró un miembro con ID {entity.Id}");
+                    throw new KeyNotFoundException("No se encontró un miembro con ese Id");
                 }
-                miembro.Modificar(entity);                
+                miembro.Modificar(miembroActualizado);       
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException dbEx)
             {
                 throw new Exception($"BD Error: Error al actualizar el miembro en la base de datos. {dbEx.Message}", dbEx);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Error al actualizar el miembro: {ex.Message}", ex);
             }
         }        
     }

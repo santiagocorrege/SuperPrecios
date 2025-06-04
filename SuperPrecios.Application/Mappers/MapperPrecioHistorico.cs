@@ -1,10 +1,11 @@
 ﻿using SuperPrecios.Application.DTO.PrecioHistorico;
 using SuperPrecios.Application.DTO.Producto;
-using SuperPrecios.Domain.Entidades;
+using SuperPrecios.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace SuperPrecios.Application.Mappers
@@ -30,17 +31,41 @@ namespace SuperPrecios.Application.Mappers
             };
         }
 
+        public static DtoPrecioHistoricoWOProducto ToDtoWOProducto(PrecioHistorico precioHistorico)
+        {
+            if (precioHistorico == null)
+            {
+                throw new ArgumentNullException("MapperError: El precio historico no puede ser nulo");
+            }
+            return new DtoPrecioHistoricoWOProducto
+            {
+                Fecha = precioHistorico.Fecha,
+                Precio = precioHistorico.Precio,                
+            };
+        }
+
+        public static IEnumerable<DtoPrecioHistoricoWOProducto> ToDtoWOProductoList(IEnumerable<PrecioHistorico> preciosHistoricos)
+        {
+            return preciosHistoricos.Select(p => ToDtoWOProducto(p));
+        }
         public static PrecioHistorico ToPrecioHistorico(DtoPrecioHistoricoAdd dto)
         {
-            if (dto == null) throw new ArgumentNullException("MapperError: El precio historico no puede ser nulo");
-            if(dto.Precio <= 0) throw new ArgumentException("MapperError: El precio no puede ser menor o igual a 0");
-            if (dto.DtoProductoAdd == null) throw new ArgumentNullException("MapperError: El producto del precio historico no puede ser nulo");
-            Marca marca = MapperMarca.ToMarca(dto.DtoProductoAdd.DtoMarcaAdd);
-            Categoria categoria = MapperCategoria.ToCategoria(dto.DtoProductoAdd.DtoCategoriaAdd);
-            Producto producto = new Producto(dto.DtoProductoAdd.Nombre, marca, categoria);
-            Supermercado supermercado = MapperSupermercado.ToSupermercado(dto.DtoSupermercadoAdd);
-            return new PrecioHistorico(producto, supermercado, dto.Precio);
+            if (dto == null) throw new ArgumentNullException("El precio historico no puede ser nulo");
+            if (dto.Precio <= 0) throw new ArgumentException("El precio no puede ser menor a 0");
+            if (dto.SupermercadoId <= 0) throw new ArgumentException("El id del supermercado no es valido");
+            Categoria categoria = new Categoria(dto.Categoria);
+            Marca marca = new Marca(dto.Marca);
+            Producto producto = new Producto(dto.Producto, marca, categoria);
+            PrecioHistorico precioHistorico = new PrecioHistorico(producto, dto.SupermercadoId, dto.Precio);
+            return precioHistorico;
         }
+
+        public static IEnumerable<PrecioHistorico> ToPrecioHistoricoList(List<DtoPrecioHistoricoAdd> dtoList)
+        {
+            if (dtoList == null || dtoList.Count == 0) throw new ArgumentException("La lista de precios historicos no puede ser nula o vacía.", nameof(dtoList));
+            return dtoList.Select(p => ToPrecioHistorico(p));
+        }
+
 
     }
 }

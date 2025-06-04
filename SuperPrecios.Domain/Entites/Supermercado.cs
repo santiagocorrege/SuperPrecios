@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperPrecios.Domain.Entidades
+namespace SuperPrecios.Domain.Entities
 {
     public class Supermercado : IEntity, IValidate
     {
@@ -16,21 +16,21 @@ namespace SuperPrecios.Domain.Entidades
 
         [Required]
         [MaxLength(100)]
-        public string Name { get; set; }
+        public string Nombre { get; set; }
 
         [Url]
         public string WebsiteUrl { get; set; }        
 
         public Supermercado(string name, string websiteUrl)
         {
-            Name = UtilidadesString.FormatearTexto(name);
+            Nombre = UtilidadesString.FormatearTexto(name);
             WebsiteUrl = websiteUrl;            
             Validate();
         }
 
         public Supermercado(string name)
         {
-            Name = UtilidadesString.FormatearTexto(name);            
+            Nombre = UtilidadesString.FormatearTexto(name);            
             Validate();
         }
 
@@ -40,7 +40,7 @@ namespace SuperPrecios.Domain.Entidades
         #region Methods
         public void Validate()
         {
-            if(string.IsNullOrWhiteSpace(Name))
+            if(string.IsNullOrWhiteSpace(Nombre))
             {
                 throw new SupermercadoException("Error: El nombre del supermercado no puede ser nulo");
             }

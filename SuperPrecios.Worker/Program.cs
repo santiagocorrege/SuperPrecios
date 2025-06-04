@@ -1,3 +1,5 @@
+using SuperPrecios.AuthenticationCore.ValueObject;
+
 namespace WorkerService
 {
     public class Program

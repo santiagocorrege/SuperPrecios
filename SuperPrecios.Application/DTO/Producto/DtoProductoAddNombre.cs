@@ -1,16 +1,22 @@
-﻿using System;
+﻿using SuperPrecios.Application.DTO.Categoria;
+using SuperPrecios.Application.DTO.Marca;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperPrecios.Application.DTO.Categoria
+namespace SuperPrecios.Application.DTO.Producto
 {
-    public class DtoCategoriaAdd
+    public class DtoProductoAddNombre
     {
         [Length(2, 50, ErrorMessage = "El nombre no puede exceder los 50 caracteres.")]
         [Required]
         public string Nombre { get; set; }
+
+        public string Marca { get; set; }
+
+        public string Categoria { get; set; }
     }
 }

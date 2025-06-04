@@ -1,5 +1,5 @@
 ﻿using SuperPrecios.Application.DTO.Marca;
-using SuperPrecios.Domain.Entidades;
+using SuperPrecios.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,12 +18,6 @@ namespace SuperPrecios.Application.Mappers
                 Id = marca.Id,
                 Nombre = marca.Nombre,
             };
-        }
-
-        public static Marca ToMarca(DtoMarcaAdd dto)
-        {
-            if (dto == null) throw new ArgumentNullException("Error mapper: La marca no puede ser nula");
-            return new Marca(dto.Nombre);            
         }
 
         public static IEnumerable<DtoMarcaGet> ToDto(IEnumerable<Marca> list)

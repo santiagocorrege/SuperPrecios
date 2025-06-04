@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SuperPrecios.Infrastructure.Configuraciones;
-using SuperPrecios.Domain.Entidades;
+using SuperPrecios.Domain.Entities;
 
 namespace SuperPrecios.Infrastructure.EF
 {

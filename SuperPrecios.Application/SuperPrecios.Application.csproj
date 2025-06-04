@@ -10,4 +10,8 @@
     <ProjectReference Include="..\SuperPrecios.Domain\SuperPrecios.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="IServices\Supermercado\" />
+  </ItemGroup>
+
 </Project>

@@ -51,28 +51,24 @@ namespace MVC.Controllers
         {
             try
             {
-                var miembro = _miembroGetService.Run(id);
+                var miembro = await _miembroGetService.Run(id);
                 if (id <= 0)
                 {
-                    TempData["Mensaje"] = "No existe miembros registrados";
+                    TempData["Error"] = "No existe el miembro seleccionado";
                     return RedirectToAction(nameof(Index));
                 }
-                else
+                
+                var dto = await _miembroGetService.Run(id);
+                if (dto == null)
                 {
-                    var dto = await _miembroGetService.Run(id);
-                    if (dto == null)
-                    {
-                        throw new Exception("No existen miembros con ese id");
-                    }
-                    else
-                    {
-                        return View(dto);
-                    }
-                }
+                    throw new Exception("No existen miembros con ese id");
+                }                
+                return View(dto);
+                
             }
             catch (Exception e)
             {
-                TempData["Mensaje"] = $"Error:  {e.Message}";
+                TempData["Error"] = e.Message;
                 return RedirectToAction(nameof(Index));
             }
         }
@@ -91,60 +87,132 @@ namespace MVC.Controllers
             try
             {
                 await _miembroAddService.Run(dto);
-                TempData["Success"] = "Miembro creado correctamente.";                
+                TempData["Message"] = "Miembro creado correctamente.";                
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
-                ViewBag.Error = ex.Message;
-                Console.WriteLine("Error");
+                ViewBag.Error = ex.Message;                
                 return View();
             }
         }
 
         // GET: MiembrosController/Edit/5
         [AdminFilter]
-        public IActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
-            return View();
+            if (id <= 0)
+            {
+                TempData["Error"] = "No existe el miembro seleccionado";
+                RedirectToAction(nameof(Index));
+            }
+            try
+            {
+                var dto = await _miembroGetService.RunGetUpdate(id);
+                if (dto == null)
+                {
+                    throw new Exception("No existen miembros con ese id");
+                }
+                else
+                {
+                    return View(dto);
+                }
+            }
+            catch (Exception e)
+            {
+                TempData["Message"] = e.Message;
+                return RedirectToAction(nameof(Index));
+            }
         }
 
         // POST: MiembrosController/Edit/5
         [AdminFilter]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Edit(DtoMiembroUpdate dto)
         {
+            if(dto == null || !ModelState.IsValid)
+            {
+                TempData["Error"] = "No se pudo actualizar el miembro. Datos inválidos.";                
+                return RedirectToAction(nameof(Index));
+            }
             try
             {
-                return RedirectToAction(nameof(Index));
+                await _miembroUpdateService.Run(dto);
+                ViewBag.Message = "Miembro actualizado correctamente.";
+                dto.Password = string.Empty; // Clear password to avoid showing it in the view
+                return View(dto);
             }
             catch
             {
-                return View();
+                ViewBag.Error = "Error al actualizar el miembro. Por favor, intente nuevamente.";
+                dto.Password = string.Empty; // Clear password to avoid showing it in the view
+                return View(dto);
             }
         }
 
         // GET: MiembrosController/Delete/5
         [AdminFilter]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            return View();
-        }
+            if (id <= 0)
+            {
+                TempData["Error"] = "ID inválido.";
+                return RedirectToAction(nameof(Index));
+            }
 
+            var miembro = await _miembroGetService.Run(id);
+            if (miembro == null)
+            {
+                TempData["Error"] = "Miembro no encontrado.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(miembro); // Vista con detalles del miembro y un formulario de confirmación
+        }
         // POST: MiembrosController/Delete/5
         [AdminFilter]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Delete(int id, IFormCollection collection)
+        public async Task<IActionResult> Delete(DtoMiembroGet dto)
         {
+            if(dto == null || dto.Id <= 0)
+            {
+                TempData["Error"] = "No se pudo actualizar el miembro. Datos inválidos.";
+                return RedirectToAction(nameof(Index));
+            }
             try
             {
-                return RedirectToAction(nameof(Index));
+                await _miembroDeleteService.Run(dto.Id);
+                TempData["Message"] = "Miembro eliminado correctamente.";
             }
             catch
             {
-                return View();
+                TempData["Error"] = "Error al eliminar el miembro.";
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        [AdminFilter]
+        public async Task<IActionResult> GetByNombreMiembros(string emailMiembro)
+        {
+            try
+            {
+                IEnumerable<DtoMiembroGet> dtoMiembros = await _miembroGetService.RunByNombreList(emailMiembro);
+                if (dtoMiembros == null || dtoMiembros.Count() == 0)
+                {
+                    throw new Exception("No hay miembros con ese nombre");
+                }
+                else
+                {
+                    return View("Index", dtoMiembros);
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = ex.Message;
+                return RedirectToAction(nameof(Index));
             }
         }
     }

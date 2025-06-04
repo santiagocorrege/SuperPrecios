@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SuperPrecios.Application.IRepository
 {
     public interface IRepository<T> where T : class
-    {
+    {                
         public Task<T> GetByIdAsync(int id);
 
         public Task<IEnumerable<T>> GetAll();

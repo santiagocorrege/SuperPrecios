@@ -12,8 +12,8 @@ using SuperPrecios.Infrastructure.EF;
 namespace SuperPrecios.Infrastructure.Migrations
 {
     [DbContext(typeof(SuperPreciosDbContext))]
-    [Migration("20250528224941_ultima")]
-    partial class ultima
+    [Migration("20250604040105_Reset DB")]
+    partial class ResetDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -66,7 +66,7 @@ namespace SuperPrecios.Infrastructure.Migrations
                     b.UseTphMappingStrategy();
                 });
 
-            modelBuilder.Entity("SuperPrecios.Domain.Entidades.Categoria", b =>
+            modelBuilder.Entity("SuperPrecios.Domain.Entities.Categoria", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -86,7 +86,7 @@ namespace SuperPrecios.Infrastructure.Migrations
                     b.ToTable("Categorias");
                 });
 
-            modelBuilder.Entity("SuperPrecios.Domain.Entidades.Marca", b =>
+            modelBuilder.Entity("SuperPrecios.Domain.Entities.Marca", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -96,14 +96,17 @@ namespace SuperPrecios.Infrastructure.Migrations
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Nombre")
+                        .IsUnique();
 
                     b.ToTable("Marcas");
                 });
 
-            modelBuilder.Entity("SuperPrecios.Domain.Entidades.PrecioHistorico", b =>
+            modelBuilder.Entity("SuperPrecios.Domain.Entities.PrecioHistorico", b =>
                 {
                     b.Property<int>("ProductoId")
                         .HasColumnType("int");
@@ -124,7 +127,7 @@ namespace SuperPrecios.Infrastructure.Migrations
                     b.ToTable("PreciosHistoricos");
                 });
 
-            modelBuilder.Entity("SuperPrecios.Domain.Entidades.Producto", b =>
+            modelBuilder.Entity("SuperPrecios.Domain.Entities.Producto", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -140,7 +143,7 @@ namespace SuperPrecios.Infrastructure.Migrations
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -148,10 +151,13 @@ namespace SuperPrecios.Infrastructure.Migrations
 
                     b.HasIndex("MarcaId");
 
+                    b.HasIndex("Nombre", "MarcaId")
+                        .IsUnique();
+
                     b.ToTable("Productos");
                 });
 
-            modelBuilder.Entity("SuperPrecios.Domain.Entidades.Supermercado", b =>
+            modelBuilder.Entity("SuperPrecios.Domain.Entities.Supermercado", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -159,7 +165,7 @@ namespace SuperPrecios.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Nombre")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -187,15 +193,15 @@ namespace SuperPrecios.Infrastructure.Migrations
                     b.HasDiscriminator().HasValue("Miembro");
                 });
 
-            modelBuilder.Entity("SuperPrecios.Domain.Entidades.PrecioHistorico", b =>
+            modelBuilder.Entity("SuperPrecios.Domain.Entities.PrecioHistorico", b =>
                 {
-                    b.HasOne("SuperPrecios.Domain.Entidades.Producto", "Producto")
+                    b.HasOne("SuperPrecios.Domain.Entities.Producto", "Producto")
                         .WithMany("PreciosHistoricos")
                         .HasForeignKey("ProductoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SuperPrecios.Domain.Entidades.Supermercado", "Supermercado")
+                    b.HasOne("SuperPrecios.Domain.Entities.Supermercado", "Supermercado")
                         .WithMany()
                         .HasForeignKey("SupermercadoId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -206,15 +212,15 @@ namespace SuperPrecios.Infrastructure.Migrations
                     b.Navigation("Supermercado");
                 });
 
-            modelBuilder.Entity("SuperPrecios.Domain.Entidades.Producto", b =>
+            modelBuilder.Entity("SuperPrecios.Domain.Entities.Producto", b =>
                 {
-                    b.HasOne("SuperPrecios.Domain.Entidades.Categoria", "Categoria")
+                    b.HasOne("SuperPrecios.Domain.Entities.Categoria", "Categoria")
                         .WithMany("Productos")
                         .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SuperPrecios.Domain.Entidades.Marca", "Marca")
+                    b.HasOne("SuperPrecios.Domain.Entities.Marca", "Marca")
                         .WithMany("Productos")
                         .HasForeignKey("MarcaId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -225,17 +231,17 @@ namespace SuperPrecios.Infrastructure.Migrations
                     b.Navigation("Marca");
                 });
 
-            modelBuilder.Entity("SuperPrecios.Domain.Entidades.Categoria", b =>
+            modelBuilder.Entity("SuperPrecios.Domain.Entities.Categoria", b =>
                 {
                     b.Navigation("Productos");
                 });
 
-            modelBuilder.Entity("SuperPrecios.Domain.Entidades.Marca", b =>
+            modelBuilder.Entity("SuperPrecios.Domain.Entities.Marca", b =>
                 {
                     b.Navigation("Productos");
                 });
 
-            modelBuilder.Entity("SuperPrecios.Domain.Entidades.Producto", b =>
+            modelBuilder.Entity("SuperPrecios.Domain.Entities.Producto", b =>
                 {
                     b.Navigation("PreciosHistoricos");
                 });

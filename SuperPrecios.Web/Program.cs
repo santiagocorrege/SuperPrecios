@@ -6,6 +6,9 @@ using SuperPrecios.Application.IRepository;
 using SuperPrecios.Application.IServices.Usuario;
 using SuperPrecios.Application.Services.Usuario;
 using Microsoft.Extensions.Options;
+using SuperPrecios.Domain.IRepositories;
+using SuperPrecios.Application.IServices.PrecioHistorico;
+using SuperPrecios.Application.Services.PrecioHistorico;
 
 namespace SuperPrecios.Web
 {
@@ -30,6 +33,12 @@ namespace SuperPrecios.Web
             //DI: Repositories
             builder.Services.AddScoped<IMiembroRepository, MiembroRepositoryEF>();
             builder.Services.AddScoped<IUsuarioRepository, UsuarioRepositoryEF>();
+            builder.Services.AddScoped<IProductoRepository, ProductoRepositoryEF>();
+            builder.Services.AddScoped<ICategoriaRepository, CategoriaRepositoryEF>();
+            builder.Services.AddScoped<IMarcaRepository, MarcaRepositoryEF>();
+            builder.Services.AddScoped<ISupermercadoRepository, SupermercadoRepositoryEF>();
+            builder.Services.AddScoped<IPrecioHistoricoRepository, PrecioHistoricoRepositoryEF>();
+
 
             //DI: Services
             //Usuario
@@ -39,11 +48,12 @@ namespace SuperPrecios.Web
             builder.Services.AddScoped<IMiembroAddService, MiembroAddService>();
             builder.Services.AddScoped<IMiembroUpdateService, MiembroUpdateService>();
             builder.Services.AddScoped<IMiembroDeleteService, MiembroDeleteService>();
-                        
+            //PrecioHistorico
+            builder.Services.AddScoped<IPrecioHistoricoAddService, PrecioHistoricoAddService>();
                         
             //Inversion??
             var app = builder.Build();
-
+            //Para que se apliquen migraciones?
             using (var scope = app.Services.CreateScope())
             {
                 var context = scope.ServiceProvider.GetRequiredService<SuperPreciosDbContext>();

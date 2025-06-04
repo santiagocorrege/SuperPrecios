@@ -7,6 +7,7 @@ using SuperPrecios.AuthenticationCore.Exceptions.Usuario;
 using SuperPrecios.AuthenticationCore.ValueObject;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,15 +40,12 @@ namespace SuperPrecios.Infrastructure.EF
 					return usuario;
 				}                    
                 return null;
-            }            
-            catch (EmailException ex) 
+            }
+            catch (DbException ex)
             {
-                throw; 
+                throw new Exception("BD Error: al consultar la base de datos de miembros");
             }
-            catch (Exception ex)
-            { 
-                throw new Exception("DB: Error : Error al acceder a la base de datos durante la búsqueda por email", ex);
-            }
+
         }
 
     }

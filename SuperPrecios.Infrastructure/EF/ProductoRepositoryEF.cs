@@ -1,9 +1,10 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using SuperPrecios.Domain.Entidades;
+using SuperPrecios.Domain.Entities;
 using SuperPrecios.Domain.IRepositories;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace SuperPrecios.Infrastructure.EF
             _context = context;
         }
 
-        public async Task AddAsync(Producto entity)
+        public async Task AddAsyncCompleto(Producto entity)
         {
             if (entity == null)
             {
@@ -27,17 +28,36 @@ namespace SuperPrecios.Infrastructure.EF
             }
             try
             {
-                if(entity.Marca != null)
+                if(entity.MarcaId <= 0)
                 {
+                    throw new ArgumentException("El ID de la marca debe ser mayor que cero o la marca no puede ser nula.", nameof(entity.MarcaId));
+                }
+                if(entity.CategoriaId <= 0)
+                {
+                    throw new ArgumentException("El ID de la categoria debe ser mayor que cero o la categoria no puede ser nula.", nameof(entity.CategoriaId));
+                }
+                Marca marcaBuscada = await _context.Marcas.FindAsync(entity.MarcaId);
+                if (marcaBuscada != null)
+                {
+                    entity.Marca = marcaBuscada;
                     _context.Entry(entity.Marca).State = EntityState.Unchanged;
                 }
-                if (entity.Categoria != null)
+                else
                 {
+                    throw new ArgumentException("El ID de la marca especificada no existe.", nameof(entity.MarcaId));
+                }
+                Categoria categoriaBuscada = await _context.Categorias.FindAsync(entity.CategoriaId);
+                if (categoriaBuscada != null)
+                {
+                    entity.Categoria = categoriaBuscada;
                     _context.Entry(entity.Categoria).State = EntityState.Unchanged;
                 }
-                await _context.Productos.AddAsync(entity);
+                else
+                {
+                    throw new ArgumentException("El ID de la categoria especificada no existe.", nameof(entity.CategoriaId));
+                }
+                    await _context.Productos.AddAsync(entity);
                 await _context.SaveChangesAsync();
-
             }
             catch (DbUpdateException dbEx)
             {
@@ -55,9 +75,49 @@ namespace SuperPrecios.Infrastructure.EF
                 }
                 throw new Exception("Error al agregar el producto a la base de datos.", dbEx);
             }
-            catch (Exception ex)
+        }
+
+        public async Task AddAsync(Producto producto)
+        {
+            if (producto == null || producto.CategoriaId < 1 || producto.MarcaId < 1)
             {
-                throw new Exception("Error al agregar el producto a la base de datos.", ex);
+                throw new ArgumentNullException("Error: Ingrese todos los campos por favor");
+            }
+            try
+            {
+                var categoriaBuscado = await _context.Categorias.FindAsync(producto.CategoriaId);
+                if (categoriaBuscado == null)
+                {
+                    throw new ArgumentException("El la categoria especificada no existe.");
+                }
+                var marcaBuscado = await _context.Marcas.FindAsync(producto.MarcaId);
+                if (marcaBuscado == null)
+                {
+                    throw new ArgumentException("El la marca especificada no existe.");
+                }
+                var productoBuscado = await _context.Productos.FirstOrDefaultAsync(p => p.Nombre == producto.Nombre && p.MarcaId == producto.MarcaId);
+                if(productoBuscado != null)
+                {
+                    throw new ArgumentException("El producto ya existe en la base de datos.");
+                }
+                await _context.Productos.AddAsync(producto);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException dbEx)
+            {
+                if (dbEx.InnerException != null)
+                {
+                    SqlException sqlException = dbEx.InnerException as SqlException;
+                    if (sqlException.Number == 2627) // Unique constraint error
+                    {
+                        throw new Exception("Error: El producto ya existe en la base de datos.");
+                    }
+                    if (sqlException.Number == 547) // Foreign key violation
+                    {
+                        throw new Exception("Error: El producto no puede ser agregado debido a una violación de clave foránea.");
+                    }
+                }
+                throw new Exception("Error al agregar el producto a la base de datos.", dbEx);
             }
         }
 
@@ -89,10 +149,6 @@ namespace SuperPrecios.Infrastructure.EF
                 }
                 throw new Exception("Error al eliminar el producto a la base de datos.", dbEx);
             }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al eliminar el producto a la base de datos.", ex);
-            }
         }
 
         public async Task<IEnumerable<Producto>> GetAll()
@@ -101,9 +157,9 @@ namespace SuperPrecios.Infrastructure.EF
             {
                 return await _context.Productos.ToListAsync();
             }
-            catch (Exception ex)
+            catch (DbException ex)
             {
-                throw new Exception("Error al obtener los productos de la base de datos.", ex);
+                throw new Exception("BD Error: al consultar la base de datos de miembros");
             }
         }
 
@@ -122,9 +178,26 @@ namespace SuperPrecios.Infrastructure.EF
                 }
                 return producto;
             }
-            catch(Exception ex)
+            catch (DbException ex)
             {
-                throw new Exception("Error al buscar el producto en la base de datos.", ex);
+                throw new Exception("BD Error: al consultar la base de datos de miembros");
+            }
+        }
+
+        public async Task<Producto> GetByNombreAsync(string nombreProducto)
+        {
+            try
+            {
+                if(nombreProducto == null)
+                {
+                    throw new ArgumentNullException("El producto que desea agregar no es valido");
+                }
+                Producto prodBuscado = await _context.Productos.FirstOrDefaultAsync(p => p.Nombre == nombreProducto);
+                return prodBuscado;
+            }
+            catch (DbException ex)
+            {
+                throw new Exception("BD Error: al consultar la base de datos de miembros");
             }
         }
 
@@ -161,8 +234,7 @@ namespace SuperPrecios.Infrastructure.EF
                         throw new InvalidOperationException("La actualización viola una restricción de unicidad.", dbEx);
                     }
                 }                
-            }
-            throw new Exception("Error al actualizar el producto en la base de datos.");
+            }            
         }
     }
 }

@@ -35,6 +35,13 @@ namespace SuperPrecios.AuthenticationCore.Entities
             Password = new Password(password);
             Validate();
         }
+        public Usuario(string nombre, string apellido, string email)
+        {
+            Nombre = nombre;
+            Apellido = apellido;
+            Email = new Email(email);            
+            Validate();
+        }
         #endregion
 
         protected Usuario() { }
@@ -67,7 +74,11 @@ namespace SuperPrecios.AuthenticationCore.Entities
         {
             Nombre = usuario.Nombre;
             Apellido = usuario.Apellido;
-            Password = usuario.Password;
+            if(usuario.Password != null)
+            {
+                Password = usuario.Password;
+            }
+            Validate();
         }
 
         public abstract string Rol();

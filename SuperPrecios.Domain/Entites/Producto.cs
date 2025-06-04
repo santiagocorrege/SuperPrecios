@@ -8,8 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperPrecios.Domain.Entidades
-{    
+namespace SuperPrecios.Domain.Entities
+{
+    [Index(nameof(Nombre), nameof(MarcaId), IsUnique = true)]
+
     public class Producto : IEntity, IValidate
     {
         #region Properties
@@ -22,7 +24,6 @@ namespace SuperPrecios.Domain.Entidades
 
         public List<PrecioHistorico> PreciosHistoricos { get; set; }
         
-
         public Producto(string nombre, int marcaId, int categoriaId)
         {
             PreciosHistoricos = new List<PrecioHistorico>();
@@ -73,6 +74,8 @@ namespace SuperPrecios.Domain.Entidades
             CategoriaId = producto.CategoriaId;
             Validate();
         }
+
+
         #endregion
     }
 }

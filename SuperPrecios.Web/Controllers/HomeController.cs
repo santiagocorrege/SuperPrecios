@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using SuperPrecios.Application.DTO;
 using SuperPrecios.Application.IServices.Usuario;
+using SuperPrecios.AuthenticationCore.Entities;
 using SuperPrecios.Web.Models;
 using SuperPrecios.Web.Models.Usuario;
 
@@ -41,15 +42,11 @@ public class HomeController : Controller
                 string rol = user.Rol;
                 HttpContext.Session.SetString("Email", user.Email);
                 HttpContext.Session.SetString("Rol", rol);
-                if (rol == "Administrador")
+                if(rol == "Administrador")
                 {
-                    return RedirectToAction("Index", rol);
+                    return RedirectToAction(nameof(Index), "Miembro");
                 }
-                else
-                {
-                    TempData["Error"] = "Aun no existen acciones para el Miembro";
-                    return RedirectToAction("Login", "Home");
-                }
+                return RedirectToAction(nameof(Login));
             }
         }
         catch (Exception ex)

@@ -1,5 +1,5 @@
 ﻿using SuperPrecios.Application.IRepository;
-using SuperPrecios.Domain.Entidades;
+using SuperPrecios.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +10,6 @@ namespace SuperPrecios.Domain.IRepositories
 {
     public interface ICategoriaRepository : IRepository<Categoria>
     {
+        public Task<Categoria> GetByNombreAsync(Categoria categoria);
     }
 }

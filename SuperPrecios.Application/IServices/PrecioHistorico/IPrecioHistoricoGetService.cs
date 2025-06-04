@@ -1,0 +1,18 @@
+﻿using SuperPrecios.Application.DTO.PrecioHistorico;
+using SuperPrecios.Application.DTO.Producto;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SuperPrecios.Application.IServices.PrecioHistorico
+{
+    public interface IPrecioHistoricoGetService
+    {
+        public Task<IEnumerable<DtoProductoPreciosHistoricos>> GetAllBySupermercado(int supermercadoId);
+
+        public Task<IEnumerable<DtoPrecioHistoricoWOProducto>> GetPrecioHistoricoProductoBySupermercado(int supermercadoId, int productoId);
+        
+    }
+}

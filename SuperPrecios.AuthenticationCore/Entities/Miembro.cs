@@ -14,7 +14,11 @@ namespace SuperPrecios.AuthenticationCore.Entities
             Validate();
         }
 
-       protected Miembro() { }
+        public Miembro(string nombre, string apellido, string email) : base(nombre, apellido, email)
+        {
+            Validate();
+        }
+        protected Miembro() { }
 
         public override string Rol()
         {

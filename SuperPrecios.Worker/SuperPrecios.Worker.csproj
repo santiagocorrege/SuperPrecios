@@ -13,6 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SuperPrecios.AuthenticationCore\SuperPrecios.AuthenticationCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="css_rules.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -1,10 +1,12 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using SuperPrecios.Domain.Entidades;
+using Microsoft.IdentityModel.Tokens;
+using SuperPrecios.Domain.Entities;
 using SuperPrecios.Domain.IRepositories;
 using SuperPrecios.Shared;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Threading.Tasks;
 
 namespace SuperPrecios.Infrastructure.EF
@@ -39,11 +41,8 @@ namespace SuperPrecios.Infrastructure.EF
                 }
                 throw new Exception("Error al agregar la marca a la base de datos.", dbEx);
             }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al agregar la marca a la base de datos.", ex);
-            }
         }
+
 
         public async Task DeleteAsync(int id)
         {
@@ -68,10 +67,6 @@ namespace SuperPrecios.Infrastructure.EF
                 }
                 throw new Exception("Error al eliminar la marca de la base de datos.", dbEx);
             }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al eliminar la marca de la base de datos.", ex);
-            }
         }
 
         public async Task<IEnumerable<Marca>> GetAll()
@@ -80,9 +75,9 @@ namespace SuperPrecios.Infrastructure.EF
             {
                 return await _context.Marcas.ToListAsync();
             }
-            catch (Exception ex)
+            catch (DbException ex)
             {
-                throw new Exception("Error al obtener las marcas de la base de datos.", ex);
+                throw new Exception("Error al obtener las marcas de la base de datos.");
             }
         }
 
@@ -99,11 +94,31 @@ namespace SuperPrecios.Infrastructure.EF
 
                 return marca;
             }
-            catch (Exception ex)
+            catch (DbException ex)
             {
-                throw new Exception("Error al buscar la marca en la base de datos.", ex);
+                throw new Exception("Error al buscar la marca en la base de datos.");
             }
         }
+
+        public async Task<Marca> GetByNombreAsync(Marca marca)
+        {
+            if (String.IsNullOrWhiteSpace(marca.Nombre))
+            {
+                throw new ArgumentException("El nombre de la marca no puede ser nulo o vacío.");
+            }
+            try
+            {
+                var marcaBuscada = await _context.Marcas.FirstOrDefaultAsync(m => m.Nombre.Equals(marca.Nombre));
+                if (marcaBuscada == null)
+                    throw new KeyNotFoundException("La marca con el nombre especificado no existe.");
+                return marcaBuscada;
+            }
+            catch (DbException ex)
+            {
+                throw new Exception("Error al buscar la marca por nombre en la base de datos.");
+            }
+        }
+
 
         public async Task UpdateAsync(Marca entity)
         {
@@ -134,10 +149,6 @@ namespace SuperPrecios.Infrastructure.EF
                         throw new InvalidOperationException("La actualización viola una restricción de unicidad.", dbEx);
                 }
                 throw new Exception("Error al actualizar la marca en la base de datos.", dbEx);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al actualizar la marca en la base de datos.", ex);
             }
         }
     }

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperPrecios.Domain.Entidades
+namespace SuperPrecios.Domain.Entities
 {
     [PrimaryKey(nameof(ProductoId), nameof(SupermercadoId), nameof(Fecha))]
     public class PrecioHistorico : IValidate
@@ -36,10 +36,10 @@ namespace SuperPrecios.Domain.Entidades
             Validate();
         }
 
-        public PrecioHistorico(Producto producto, Supermercado supermercado, decimal precio)
+        public PrecioHistorico(Producto producto, int supermercadoId, decimal precio)
         {
             Producto = producto;
-            Supermercado = supermercado;            
+            SupermercadoId = supermercadoId;
             Precio = precio;
             Fecha = DateOnly.FromDateTime(DateTime.UtcNow);
             Validate();
