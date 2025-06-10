@@ -14,5 +14,9 @@ namespace SuperPrecios.Application.DTO.Producto
         public string Nombre { get; set; }
         public DtoMarcaGet Marca { get; set; }
         public DtoCategoriaGet Categoria { get; set; }        
+
+        public string? ImagenUrl { get; set; }
+
+        public decimal Precio { get; set; }
     }
 }

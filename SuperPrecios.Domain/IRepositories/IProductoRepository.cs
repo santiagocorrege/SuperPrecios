@@ -12,6 +12,9 @@ namespace SuperPrecios.Domain.IRepositories
     {
         public Task<Producto> GetByNombreAsync(string nombreProducto);
 
-        public Task AddAsyncCompleto(Producto entity);
+        public Task<IEnumerable<Producto>> GetProductosByMarca (Marca marca);
+
+        public Task AddAsyncCompleto(Producto producto);
+        
     }
 }

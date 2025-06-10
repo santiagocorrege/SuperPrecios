@@ -42,17 +42,12 @@ namespace SuperPrecios.Infrastructure.EF
             }
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Categoria categoria)
         {
-            if (id <= 0)
-                throw new ArgumentException("El ID de la categoría debe ser mayor que cero.", nameof(id));
-
             try
             {
-                var categoria = await _context.Categorias.FindAsync(id);
-                if (categoria == null)
-                    throw new KeyNotFoundException("La categoría con el ID especificado no existe.");
-
+                bool existeProducto = await _context.Productos.AnyAsync(p => p.CategoriaId == categoria.Id);
+                if(existeProducto) throw new CategoriaException("La categoría no puede ser eliminada porque tiene productos asociados.");
                 _context.Categorias.Remove(categoria);
                 await _context.SaveChangesAsync();
             }
@@ -61,13 +56,13 @@ namespace SuperPrecios.Infrastructure.EF
                 if (dbEx.InnerException is SqlException sqlException)
                 {
                     if (sqlException.Number == 547) // Foreign key violation (productos asociados)
-                        throw new CategoriaException("Error: La categoría no puede ser eliminada porque tiene productos asociados.");
+                        throw new CategoriaException("La categoría no puede ser eliminada porque tiene productos asociados.");
                 }
                 throw new Exception($"Error al eliminar la categoría de la base de datos.");
             }
         }
 
-        public async Task<IEnumerable<Categoria>> GetAll()
+        public async Task<IEnumerable<Categoria>> GetAllAsync()
         {
             try
             {

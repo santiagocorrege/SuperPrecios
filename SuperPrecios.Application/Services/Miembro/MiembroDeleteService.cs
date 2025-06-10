@@ -17,8 +17,10 @@ namespace SuperPrecios.Application.Services.Miembro
         }
         public async Task Run(int id)
         {
-            if(id <= 0) throw new ArgumentNullException("El id no puede ser menor a 0");            
-            await _miembroRepository.DeleteAsync(id);
+            if(id < 1) throw new ArgumentNullException("El id no puede ser menor a 0");
+            var miembro = await _miembroRepository.GetByIdAsync(id);
+            if (miembro == null) throw new KeyNotFoundException("El miembro que se desea eliminar no existe");
+            await _miembroRepository.DeleteAsync(miembro);
         }
     }
 }

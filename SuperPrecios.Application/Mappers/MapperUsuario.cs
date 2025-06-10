@@ -14,6 +14,7 @@ namespace SuperPrecios.Application.Mappers
         {
             return new DtoUsuarioLogin()
             {
+                Id = usuario.Id,
                 Email = usuario.Email.Valor,
                 Rol = usuario.Rol()
             };            

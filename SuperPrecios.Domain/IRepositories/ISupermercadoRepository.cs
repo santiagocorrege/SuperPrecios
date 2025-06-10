@@ -10,5 +10,6 @@ namespace SuperPrecios.Domain.IRepositories
 {
     public interface ISupermercadoRepository : IRepository<Supermercado>
     {
+        public Task<Supermercado> GetByNameAsync(string name);
     }
 }

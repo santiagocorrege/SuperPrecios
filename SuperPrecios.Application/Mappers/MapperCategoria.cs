@@ -12,15 +12,17 @@ namespace SuperPrecios.Application.Mappers
     {
         public static DtoCategoriaGet ToDto(Categoria categoria)
         {
-            if (categoria == null)
-            {
-                throw new ArgumentNullException("MapperError: La categoria no puede ser nula");
-            }
+            if (categoria == null) throw new ArgumentNullException("MapperError: La categoria no puede ser nula");            
             return new DtoCategoriaGet
             {
                 Id = categoria.Id,
                 Nombre = categoria.Nombre
             };
+        }
+
+        public static IEnumerable<DtoCategoriaGet> ToDto(IEnumerable<Categoria> categorias)
+        {
+            return categorias.Select(c => ToDto(c));
         }
 
     }

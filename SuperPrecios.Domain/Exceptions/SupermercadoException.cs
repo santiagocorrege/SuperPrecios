@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SuperPrecios.Domain.Excepciones
 {
-    class SupermercadoException : Exception
+    public class SupermercadoException : Exception
     {
         public SupermercadoException()
         {

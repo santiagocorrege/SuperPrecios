@@ -11,5 +11,6 @@ namespace SuperPrecios.Domain.IRepositories
     public interface IMarcaRepository : IRepository<Marca>
     {         
         public Task<Marca> GetByNombreAsync(Marca marca);
+        
     }
 }

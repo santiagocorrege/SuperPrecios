@@ -51,17 +51,15 @@ namespace SuperPrecios.Infrastructure.EF
             }            
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Supermercado supermercado)
         {
-            if (id <= 0)
-                throw new ArgumentException("El ID del supermercado debe ser mayor que cero.", nameof(id));
-
             try
-            {
-                var supermercado = await _context.Supermercados.FindAsync(id);
-                if (supermercado == null)
-                    throw new KeyNotFoundException("El supermercado con el ID especificado no existe.");
-
+            {                
+                var proveedor = await _context.Proveedores.AnyAsync(p => p.SupermercadoId == supermercado.Id);
+                if (proveedor)
+                    throw new Exception("No se puede eliminar el supermercado porque tiene un proveedor asociado.");
+                var preciosHistoricos = await _context.PreciosHistoricos.AnyAsync(ph => ph.SupermercadoId == supermercado.Id);
+                if (preciosHistoricos) throw new Exception("No se puede eliminar el supermercado porque tiene precios históricos asociados.");
                 _context.Supermercados.Remove(supermercado);
                 await _context.SaveChangesAsync();
             }
@@ -78,7 +76,7 @@ namespace SuperPrecios.Infrastructure.EF
             }
         }
 
-        public async Task<IEnumerable<Supermercado>> GetAll()
+        public async Task<IEnumerable<Supermercado>> GetAllAsync()
         {
             try
             {
@@ -120,8 +118,9 @@ namespace SuperPrecios.Infrastructure.EF
             {
                 var formattedName = UtilidadesString.FormatearTexto(name);
                 return await _context.Supermercados
-                                     .AsNoTracking()
-                                     .FirstOrDefaultAsync(s => s.Nombre == formattedName);
+                .Include(s => s.Proveedor)                        
+                .AsNoTracking()
+                .FirstOrDefaultAsync(s => s.Nombre == formattedName);
             }
             catch (DbException ex)
             {

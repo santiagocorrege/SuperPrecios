@@ -2,11 +2,7 @@
 using SuperPrecios.Application.IRepository;
 using SuperPrecios.Application.Mappers;
 using SuperPrecios.Application.IServices.Miembro;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MiembroCore = SuperPrecios.AuthenticationCore.Entities.Miembro;
 
 namespace SuperPrecios.Application.Services.Miembro
 {
@@ -20,11 +16,11 @@ namespace SuperPrecios.Application.Services.Miembro
         }
         public async Task Run(DtoMiembroAdd dto)
         {
-            if(dto == null)
-            {
-                throw new ArgumentNullException("El miembro no puede ser nulo");
-            }
-            await _miembroRepo.AddAsync(MapperMiembro.ToMiembro(dto));
+            if(dto == null) throw new ArgumentNullException("El miembro no puede ser nulo");
+            MiembroCore miembro = MapperMiembro.ToMiembro(dto);
+            MiembroCore miembroBuscado = await _miembroRepo.GetByEmailAsync(dto.Email);
+            if (miembroBuscado != null) throw new Exception("El miembro que se desea agregar ya existe con ese email");
+            await _miembroRepo.AddAsync(miembro);
         }
     }
 }

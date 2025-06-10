@@ -10,13 +10,13 @@ namespace SuperPrecios.Application.IRepository
     {                
         public Task<T> GetByIdAsync(int id);
 
-        public Task<IEnumerable<T>> GetAll();
+        public Task<IEnumerable<T>> GetAllAsync();
 
         public Task AddAsync(T entity);
 
         public Task UpdateAsync(T entity);
 
-        public Task DeleteAsync(int id);
+        public Task DeleteAsync(T entity);
 
     }
 }

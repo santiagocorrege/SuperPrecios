@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SuperPrecios.Application.DTO.Marca;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace SuperPrecios.Application.IServices.Marca
 {
     public interface IMarcaAddService
     {
-        public Task AddAsync(string marca);        
+        public Task AddAsync(DtoMarcaAdd dto);        
     }
 }

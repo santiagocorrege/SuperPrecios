@@ -20,6 +20,11 @@ namespace SuperPrecios.Application.Mappers
             };
         }
 
+        public static Marca ToMarca(DtoMarcaAdd dto)
+        {
+            if (dto == null) throw new ArgumentNullException("La marca no puede ser nula");
+            return new Marca(dto.Nombre);
+        }
         public static IEnumerable<DtoMarcaGet> ToDto(IEnumerable<Marca> list)
         {
             return list.Select(p => ToDto(p));

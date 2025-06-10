@@ -43,7 +43,7 @@ namespace SuperPrecios.AuthenticationCore.ValueObject
         private void Validate(string password)
         {
             string patron = @"^(?!\s)(?!.*\s$).{8,64}$";
-            if (string.IsNullOrEmpty(password))
+            if (String.IsNullOrWhiteSpace(password))
                 throw new PasswordException("La contraseña no puede ser nula");
             if (!Regex.IsMatch(password, patron))
                 throw new PasswordException("La contraseña debe tener un largo mínimo de 8 caracteres, no se permiten espacios");

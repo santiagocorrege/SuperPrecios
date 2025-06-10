@@ -38,7 +38,7 @@ namespace SuperPrecios.Application.Mappers
             };
         }
 
-        public static IEnumerable<DtoProductoGet> ToDtoCompletoList(List<Producto> productos)
+        public static IEnumerable<DtoProductoGet> ToDtoCompletoList(IEnumerable<Producto> productos)
         {
             return productos.Select(p => ToDtoCompleto(p));
         }

@@ -20,14 +20,14 @@ namespace SuperPrecios.Infrastructure.EF
             _context = context;
         }
 
-        public async Task AddAsync(Marca entity)
+        public async Task AddAsync(Marca marca)
         {
-            if (entity == null)
-                throw new ArgumentNullException(nameof(entity), "La marca no puede ser nula");
+            if (marca == null)
+                throw new ArgumentNullException("La marca no puede ser nula");
 
             try
             {                
-                await _context.Marcas.AddAsync(entity);
+                await _context.Marcas.AddAsync(marca);
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException dbEx)
@@ -44,17 +44,10 @@ namespace SuperPrecios.Infrastructure.EF
         }
 
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Marca marca)
         {
-            if (id <= 0)
-                throw new ArgumentException("El ID de la marca debe ser mayor que cero.", nameof(id));
-
             try
-            {
-                var marca = await _context.Marcas.FindAsync(id);
-                if (marca == null)
-                    throw new KeyNotFoundException("La marca con el ID especificado no existe.");
-
+            {                
                 _context.Marcas.Remove(marca);
                 await _context.SaveChangesAsync();
             }
@@ -63,13 +56,13 @@ namespace SuperPrecios.Infrastructure.EF
                 if (dbEx.InnerException is SqlException sqlException)
                 {
                     if (sqlException.Number == 547) // Foreign key violation (ej. productos relacionados)
-                        throw new Exception("Error: La marca no puede ser eliminada debido a que tiene productos asociados.");
+                        throw new Exception("La marca no puede ser eliminada debido a que tiene productos asociados.");
                 }
                 throw new Exception("Error al eliminar la marca de la base de datos.", dbEx);
             }
         }
 
-        public async Task<IEnumerable<Marca>> GetAll()
+        public async Task<IEnumerable<Marca>> GetAllAsync()
         {
             try
             {
@@ -109,8 +102,6 @@ namespace SuperPrecios.Infrastructure.EF
             try
             {
                 var marcaBuscada = await _context.Marcas.FirstOrDefaultAsync(m => m.Nombre.Equals(marca.Nombre));
-                if (marcaBuscada == null)
-                    throw new KeyNotFoundException("La marca con el nombre especificado no existe.");
                 return marcaBuscada;
             }
             catch (DbException ex)

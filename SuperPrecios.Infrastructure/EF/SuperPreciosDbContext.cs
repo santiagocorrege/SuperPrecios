@@ -25,6 +25,7 @@ namespace SuperPrecios.Infrastructure.EF
 
         public DbSet<Miembro> Miembros { get; set; }       
 
+        public DbSet<Proveedor> Proveedores { get; set; }
         public SuperPreciosDbContext(DbContextOptions<SuperPreciosDbContext> options) : base(options)
         {
         }
@@ -32,6 +33,17 @@ namespace SuperPrecios.Infrastructure.EF
         {
             //new UsuarioConfiguracion().Configure(modelBuilder.Entity<Usuario>());
             modelBuilder.ApplyConfiguration(new UsuarioConfiguracion());
+
+            modelBuilder.Entity<Proveedor>()
+            .HasOne(p => p.Supermercado)
+            .WithOne(s => s.Proveedor)
+            .HasForeignKey<Proveedor>(p => p.SupermercadoId)
+            .IsRequired(false) // ¡IMPORTANTE para evitar error en TPH!
+            .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Proveedor>()
+                .HasIndex(p => p.SupermercadoId)
+                .IsUnique();
         }
 
     }

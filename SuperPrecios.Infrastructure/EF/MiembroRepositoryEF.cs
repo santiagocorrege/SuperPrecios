@@ -22,10 +22,6 @@ namespace SuperPrecios.Infrastructure.EF
         }
         public async Task AddAsync(Miembro entity)
         {
-            if (entity == null)
-            {
-                throw new ArgumentNullException("El miembro no puede ser nulo");
-            }
             try
             {
                 await _context.Miembros.AddAsync(entity);
@@ -45,20 +41,11 @@ namespace SuperPrecios.Infrastructure.EF
             }
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Miembro miembro)
         {
-            if(id <= 0)
-            {
-                throw new ArgumentException("El id del miembro no puede ser nulo");
-            }
             try
-            {                
-                Miembro miembroBuscado = await _context.Miembros.FindAsync(id);
-                if(miembroBuscado == null)
-                {
-                    throw new ArgumentNullException("El miembro no existe en la base de datos");
-                }
-                _context.Miembros.Remove(miembroBuscado);
+            {                                
+                _context.Miembros.Remove(miembro);
                 await _context.SaveChangesAsync();  
             }
             catch(DbUpdateException dbEx)
@@ -72,7 +59,7 @@ namespace SuperPrecios.Infrastructure.EF
             }
         }
 
-        public async Task<IEnumerable<Miembro>> GetAll()
+        public async Task<IEnumerable<Miembro>> GetAllAsync()
         {
             try
             {                
@@ -93,13 +80,8 @@ namespace SuperPrecios.Infrastructure.EF
             }
             try
             {
-                Email email = new Email(stringEmail);
-                Miembro miembroBuscado = await _context.Miembros.FirstOrDefaultAsync(m => m.Email == email);
-                if (miembroBuscado == null)
-                {
-                    throw new KeyNotFoundException("El miembro con ese email no existe en la base de datos");
-                }
-                return miembroBuscado;
+                Email email = new Email(stringEmail);                
+                return await _context.Miembros.FirstOrDefaultAsync(m => m.Email == email);
             }
             catch (DbException ex)
             {
@@ -109,15 +91,11 @@ namespace SuperPrecios.Infrastructure.EF
 
         public async Task<IEnumerable<Miembro>> GetByEmailListAsync(string stringEmail)
         {
-            if (string.IsNullOrWhiteSpace(stringEmail))
-            {
-                throw new ArgumentException("El email no puede ser nulo");
-            }
+            if (string.IsNullOrWhiteSpace(stringEmail)) throw new ArgumentException("El email no puede ser nulo");            
             try
             {
-                Email email = new Email(stringEmail);
-                var miembrosBuscado = await _context.Miembros.Where(m => m.Email == email).ToListAsync();
-                return miembrosBuscado;
+                Email email = new Email(stringEmail);                
+                return await _context.Miembros.Where(m => m.Email == email).ToListAsync();
             }
             catch (DbException ex)
             {
@@ -127,17 +105,9 @@ namespace SuperPrecios.Infrastructure.EF
 
         public async Task<Miembro> GetByIdAsync(int id)
         {
-            if (id <= 0)
-            {
-                throw new ArgumentException("DB Error: El id no puede ser nulo");
-            }
             try
             {
                 Miembro miembro = await _context.Miembros.FindAsync(id);
-                if (miembro == null)
-                {
-                    throw new Exception("El miembro no existe en la base de datos");
-                }
                 return miembro;
             }
             catch (DbException ex)
@@ -148,18 +118,8 @@ namespace SuperPrecios.Infrastructure.EF
 
         public async Task UpdateAsync(Miembro miembroActualizado)
         {
-            if(miembroActualizado == null || miembroActualizado.Id <= 0)
-            {
-                throw new ArgumentNullException("Error: El miembro no puede ser nula");
-            }
             try
-            {
-                Miembro miembro = await _context.Miembros.FindAsync(miembroActualizado.Id);
-                if (miembro == null)
-                {
-                    throw new KeyNotFoundException("No se encontró un miembro con ese Id");
-                }
-                miembro.Modificar(miembroActualizado);       
+            {                                
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException dbEx)

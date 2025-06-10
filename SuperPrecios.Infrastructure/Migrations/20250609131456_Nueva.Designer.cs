@@ -12,8 +12,8 @@ using SuperPrecios.Infrastructure.EF;
 namespace SuperPrecios.Infrastructure.Migrations
 {
     [DbContext(typeof(SuperPreciosDbContext))]
-    [Migration("20250604040105_Reset DB")]
-    partial class ResetDB
+    [Migration("20250609131456_Nueva")]
+    partial class Nueva
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -171,10 +171,12 @@ namespace SuperPrecios.Infrastructure.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("WebsiteUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Nombre")
+                        .IsUnique();
 
                     b.ToTable("Supermercados");
                 });
@@ -191,6 +193,20 @@ namespace SuperPrecios.Infrastructure.Migrations
                     b.HasBaseType("SuperPrecios.AuthenticationCore.Entities.Usuario");
 
                     b.HasDiscriminator().HasValue("Miembro");
+                });
+
+            modelBuilder.Entity("SuperPrecios.Domain.Entities.Proveedor", b =>
+                {
+                    b.HasBaseType("SuperPrecios.AuthenticationCore.Entities.Usuario");
+
+                    b.Property<int?>("SupermercadoId")
+                        .HasColumnType("int");
+
+                    b.HasIndex("SupermercadoId")
+                        .IsUnique()
+                        .HasFilter("[SupermercadoId] IS NOT NULL");
+
+                    b.HasDiscriminator().HasValue("Proveedor");
                 });
 
             modelBuilder.Entity("SuperPrecios.Domain.Entities.PrecioHistorico", b =>
@@ -231,6 +247,16 @@ namespace SuperPrecios.Infrastructure.Migrations
                     b.Navigation("Marca");
                 });
 
+            modelBuilder.Entity("SuperPrecios.Domain.Entities.Proveedor", b =>
+                {
+                    b.HasOne("SuperPrecios.Domain.Entities.Supermercado", "Supermercado")
+                        .WithOne("Proveedor")
+                        .HasForeignKey("SuperPrecios.Domain.Entities.Proveedor", "SupermercadoId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Supermercado");
+                });
+
             modelBuilder.Entity("SuperPrecios.Domain.Entities.Categoria", b =>
                 {
                     b.Navigation("Productos");
@@ -244,6 +270,11 @@ namespace SuperPrecios.Infrastructure.Migrations
             modelBuilder.Entity("SuperPrecios.Domain.Entities.Producto", b =>
                 {
                     b.Navigation("PreciosHistoricos");
+                });
+
+            modelBuilder.Entity("SuperPrecios.Domain.Entities.Supermercado", b =>
+                {
+                    b.Navigation("Proveedor");
                 });
 #pragma warning restore 612, 618
         }

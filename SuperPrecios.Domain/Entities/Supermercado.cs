@@ -1,4 +1,5 @@
-﻿using SuperPrecios.Domain.Excepciones;
+﻿using Microsoft.EntityFrameworkCore;
+using SuperPrecios.Domain.Excepciones;
 using SuperPrecios.Shared;
 using System;
 using System.Collections.Generic;
@@ -9,17 +10,19 @@ using System.Threading.Tasks;
 
 namespace SuperPrecios.Domain.Entities
 {
+    [Index(nameof(Nombre), IsUnique = true)]
     public class Supermercado : IEntity, IValidate
     {
         #region Properties
         public int Id { get; set; }
+        public Proveedor? Proveedor { get; set; }
 
         [Required]
         [MaxLength(100)]
         public string Nombre { get; set; }
 
         [Url]
-        public string WebsiteUrl { get; set; }        
+        public string? WebsiteUrl { get; set; }        
 
         public Supermercado(string name, string websiteUrl)
         {
@@ -30,8 +33,8 @@ namespace SuperPrecios.Domain.Entities
 
         public Supermercado(string name)
         {
-            Nombre = UtilidadesString.FormatearTexto(name);            
-            Validate();
+            Nombre = UtilidadesString.FormatearTexto(name);
+            ValidateNombre();
         }
 
         protected Supermercado(){}
@@ -40,13 +43,18 @@ namespace SuperPrecios.Domain.Entities
         #region Methods
         public void Validate()
         {
-            if(string.IsNullOrWhiteSpace(Nombre))
-            {
-                throw new SupermercadoException("Error: El nombre del supermercado no puede ser nulo");
-            }
-            if(string.IsNullOrEmpty(WebsiteUrl))
+            ValidateNombre();
+            if(String.IsNullOrWhiteSpace(WebsiteUrl))
             {
                 throw new SupermercadoException("Error: La URL del supermercado no puede ser nula");
+            }
+        }
+
+        public void ValidateNombre()
+        {
+            if (string.IsNullOrWhiteSpace(Nombre))
+            {
+                throw new SupermercadoException("Error: El nombre del supermercado no puede ser nulo");
             }
         }
         #endregion        

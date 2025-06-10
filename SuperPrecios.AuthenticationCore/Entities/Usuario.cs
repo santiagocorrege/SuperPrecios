@@ -40,7 +40,7 @@ namespace SuperPrecios.AuthenticationCore.Entities
             Nombre = nombre;
             Apellido = apellido;
             Email = new Email(email);            
-            Validate();
+            this.Validate();
         }
         #endregion
 
@@ -52,11 +52,11 @@ namespace SuperPrecios.AuthenticationCore.Entities
             //Los caracteres no alfabéticos no pueden estar ubicados al principio ni al final de la cadena
             string patron = @"^[a-zA-Z]+(?:[' -][a-zA-Z]+)*$";
             //Chequeo el caso de que sea nulo ya que el Regex chequearia si fuese vacio.
-            if (string.IsNullOrEmpty(Nombre))
+            if (String.IsNullOrWhiteSpace(Nombre))
             {
                 throw new UsuarioException("El nombre no puede ser nulo");
             }
-            if (string.IsNullOrEmpty(Apellido))
+            if (String.IsNullOrWhiteSpace(Apellido))
             {
                 throw new UsuarioException("El apellido no puede ser nulo");
             }
@@ -78,7 +78,7 @@ namespace SuperPrecios.AuthenticationCore.Entities
             {
                 Password = usuario.Password;
             }
-            Validate();
+            this.Validate();
         }
 
         public abstract string Rol();

@@ -9,6 +9,16 @@ using Microsoft.Extensions.Options;
 using SuperPrecios.Domain.IRepositories;
 using SuperPrecios.Application.IServices.PrecioHistorico;
 using SuperPrecios.Application.Services.PrecioHistorico;
+using SuperPrecios.Application.IServices.Producto;
+using SuperPrecios.Application.Services.Producto;
+using SuperPrecios.Application.IServices.Categoria;
+using SuperPrecios.Application.Services.Categoria;
+using SuperPrecios.Application.Services.Marca;
+using SuperPrecios.Application.IServices.Marca;
+using SuperPrecios.Application.Services.Proveedor;
+using SuperPrecios.Application.IServices.Proveedor;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using SuperPrecios.Web.Extensions;
 
 namespace SuperPrecios.Web
 {
@@ -38,7 +48,7 @@ namespace SuperPrecios.Web
             builder.Services.AddScoped<IMarcaRepository, MarcaRepositoryEF>();
             builder.Services.AddScoped<ISupermercadoRepository, SupermercadoRepositoryEF>();
             builder.Services.AddScoped<IPrecioHistoricoRepository, PrecioHistoricoRepositoryEF>();
-
+            builder.Services.AddScoped<IProveedorRepository, ProveedorRepositoryEF>();
 
             //DI: Services
             //Usuario
@@ -48,33 +58,34 @@ namespace SuperPrecios.Web
             builder.Services.AddScoped<IMiembroAddService, MiembroAddService>();
             builder.Services.AddScoped<IMiembroUpdateService, MiembroUpdateService>();
             builder.Services.AddScoped<IMiembroDeleteService, MiembroDeleteService>();
+            //Proveedor
+            builder.Services.AddScoped<IProveedorGetService, ProveedorGetService>();
+            builder.Services.AddScoped<IProveedorAddService, ProveedorAddService>();
+            builder.Services.AddScoped<IProveedorDeleteService, ProveedorDeleteService>();
+            builder.Services.AddScoped<IProveedorUpdateService, ProveedorUpdateService>();
             //PrecioHistorico
             builder.Services.AddScoped<IPrecioHistoricoAddService, PrecioHistoricoAddService>();
-                        
+            builder.Services.AddScoped<IPrecioHistoricoGetService, PrecioHistoricoGetService>();
+            //Producto
+            builder.Services.AddScoped<IProductoAddService, ProductoAddService>();
+            builder.Services.AddScoped<IProductoGetService, ProductoGetService>();
+            builder.Services.AddScoped<IProductoDeleteService, ProductoDeleteService>();
+            //Categoria
+            builder.Services.AddScoped<ICategoriaGetService, CategoriaGetService>();
+            builder.Services.AddScoped<ICategoriaAddService, CategoriaAddService>();
+            builder.Services.AddScoped<ICategoriaDeleteService, CategoriaDeleteService>();
+            //Marca
+            builder.Services.AddScoped<IMarcaGetService, MarcaGetService>();
+            builder.Services.AddScoped<IMarcaAddService, MarcaAddService>();            
+            builder.Services.AddScoped<IMarcaDeleteService, MarcaDeleteService>();
+
+            //Cookies - Authentication Cookies cifradas - Se guarda en extensions de .Web
+            builder.Services
+                   .AddCookieAuthentication();
+
             //Inversion??
             var app = builder.Build();
-            //Para que se apliquen migraciones?
-            using (var scope = app.Services.CreateScope())
-            {
-                var context = scope.ServiceProvider.GetRequiredService<SuperPreciosDbContext>();
-                var environment = scope.ServiceProvider.GetRequiredService<IWebHostEnvironment>();
-
-                if (environment.IsProduction())
-                {
-                    try
-                    {
-                        context.Database.Migrate();
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"Error applying migrations: {ex.Message}");
-                        // Opcional: throw; para que el app falle si querés
-                    }
-                }
-            }
-
-            Console.WriteLine("Cadena de conexión usada: " + connectionString);
-
+            
             app.UseSession();
 
             // Configure the HTTP request pipeline.
@@ -90,11 +101,13 @@ namespace SuperPrecios.Web
 
             app.UseRouting();
 
+            //Added
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Login}");
+                pattern: "{controller=Home}/{action=Login}/{id?}");
             app.Run();
         }
     }

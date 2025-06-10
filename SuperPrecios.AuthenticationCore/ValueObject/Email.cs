@@ -26,7 +26,7 @@ namespace SuperPrecios.AuthenticationCore.ValueObject
         protected Email() { }
         public void Validate()
         {
-            if (string.IsNullOrEmpty(Valor))
+            if (String.IsNullOrWhiteSpace(Valor))
             {
                 throw new EmailException("El email no puede ser nulo");
             }

@@ -30,11 +30,11 @@ namespace SuperPrecios.Infrastructure.EF
             {
                 if(entity.MarcaId <= 0)
                 {
-                    throw new ArgumentException("El ID de la marca debe ser mayor que cero o la marca no puede ser nula.", nameof(entity.MarcaId));
+                    throw new ArgumentException("El ID de la marca debe ser mayor que cero o la marca no puede ser nula.");
                 }
                 if(entity.CategoriaId <= 0)
                 {
-                    throw new ArgumentException("El ID de la categoria debe ser mayor que cero o la categoria no puede ser nula.", nameof(entity.CategoriaId));
+                    throw new ArgumentException("El ID de la categoria debe ser mayor que cero o la categoria no puede ser nula.");
                 }
                 Marca marcaBuscada = await _context.Marcas.FindAsync(entity.MarcaId);
                 if (marcaBuscada != null)
@@ -44,7 +44,7 @@ namespace SuperPrecios.Infrastructure.EF
                 }
                 else
                 {
-                    throw new ArgumentException("El ID de la marca especificada no existe.", nameof(entity.MarcaId));
+                    throw new ArgumentException("El ID de la marca especificada no existe.");
                 }
                 Categoria categoriaBuscada = await _context.Categorias.FindAsync(entity.CategoriaId);
                 if (categoriaBuscada != null)
@@ -54,9 +54,9 @@ namespace SuperPrecios.Infrastructure.EF
                 }
                 else
                 {
-                    throw new ArgumentException("El ID de la categoria especificada no existe.", nameof(entity.CategoriaId));
+                    throw new ArgumentException("El ID de la categoria especificada no existe.");
                 }
-                    await _context.Productos.AddAsync(entity);
+                await _context.Productos.AddAsync(entity);
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException dbEx)
@@ -76,13 +76,9 @@ namespace SuperPrecios.Infrastructure.EF
                 throw new Exception("Error al agregar el producto a la base de datos.", dbEx);
             }
         }
-
+        //SE PUEDE ELIMINAR?
         public async Task AddAsync(Producto producto)
         {
-            if (producto == null || producto.CategoriaId < 1 || producto.MarcaId < 1)
-            {
-                throw new ArgumentNullException("Error: Ingrese todos los campos por favor");
-            }
             try
             {
                 var categoriaBuscado = await _context.Categorias.FindAsync(producto.CategoriaId);
@@ -121,19 +117,15 @@ namespace SuperPrecios.Infrastructure.EF
             }
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Producto producto)
         {
-            if (id <= 0)
-            {
-                throw new ArgumentException("El ID del producto debe ser mayor que cero.", nameof(id));
-            }
             try
             {
-                var producto = await _context.Productos.FindAsync(id);
-                if (producto == null)
+                var preciosHistoricos = await _context.PreciosHistoricos.Where(ph => ph.ProductoId == producto.Id).ToListAsync();
+                if (preciosHistoricos.Any())
                 {
-                    throw new KeyNotFoundException("El producto con el ID especificado no existe.");
-                }
+                    throw new InvalidOperationException("No se puede eliminar el producto porque tiene precios históricos asociados.");
+                }                
                 _context.Remove(producto);
                 await _context.SaveChangesAsync();
             }
@@ -151,11 +143,11 @@ namespace SuperPrecios.Infrastructure.EF
             }
         }
 
-        public async Task<IEnumerable<Producto>> GetAll()
+        public async Task<IEnumerable<Producto>> GetAllAsync()
         {
             try
             {
-                return await _context.Productos.ToListAsync();
+                return await _context.Productos.Include(p => p.Marca).Include(p => p.Categoria).ToListAsync();
             }
             catch (DbException ex)
             {
@@ -164,17 +156,14 @@ namespace SuperPrecios.Infrastructure.EF
         }
 
         public async Task<Producto> GetByIdAsync(int id)
-        {
-            if(id <= 0)
-            {
-                throw new ArgumentException("Error buscando el producto: El ID del producto debe ser mayor que cero.");
-            }
+        {                        
             try
             {
-                var producto = await _context.Productos.FindAsync(id);
+                if (id <= 0) throw new ArgumentException("Error buscando el producto: El ID del producto debe ser mayor que cero.");
+                var producto = await _context.Productos.Include(p => p.Marca).Include(p => p.Categoria).FirstOrDefaultAsync(p => p.Id == id);
                 if(producto == null)
                 {
-                    throw new Exception("Error buscando el producto: El producto con el ID especificado no existe.");
+                    throw new Exception("El producto con el ID especificado no existe.");
                 }
                 return producto;
             }
@@ -188,11 +177,13 @@ namespace SuperPrecios.Infrastructure.EF
         {
             try
             {
-                if(nombreProducto == null)
+                if(String.IsNullOrWhiteSpace(nombreProducto))
                 {
                     throw new ArgumentNullException("El producto que desea agregar no es valido");
                 }
                 Producto prodBuscado = await _context.Productos.FirstOrDefaultAsync(p => p.Nombre == nombreProducto);
+                if (prodBuscado == null) throw new KeyNotFoundException("El producto con el nombre especificado no existe.");
+
                 return prodBuscado;
             }
             catch (DbException ex)
@@ -205,11 +196,11 @@ namespace SuperPrecios.Infrastructure.EF
         {
             if(entity == null)
             {
-                throw new ArgumentNullException("El producto no puede ser nulo");
+                throw new ArgumentNullException("El producto que desea agregar no puede estar vacio");
             }
             if(entity.Id <= 0)
             {
-                throw new ArgumentException("El ID del producto debe ser mayor que cero.", nameof(entity.Id));
+                throw new ArgumentException("El ID del producto que desea agregar no es valido");
             }
             try
             {
@@ -235,6 +226,21 @@ namespace SuperPrecios.Infrastructure.EF
                     }
                 }                
             }            
+        }
+
+        public async Task<IEnumerable<Producto>> GetProductosByMarca(Marca marca)
+        {
+            if(marca == null) throw new ArgumentNullException("Marca no puede ser nula");
+            try
+            {
+                return await _context.Productos
+                    .Where(p => p.MarcaId == marca.Id)                    
+                    .ToListAsync();
+            }
+            catch (DbException ex)
+            {
+                throw new Exception("BD Error: al consultar la base de datos de productos por marca");
+            }
         }
     }
 }

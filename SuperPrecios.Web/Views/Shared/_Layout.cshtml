@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -14,37 +15,124 @@
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Login">SuperPrecios</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        @if (Context.Session.GetString("Rol") != null)
+                        @if (User.Identity?.IsAuthenticated ?? false)
                         {
-                            @if (Context.Session.GetString("Rol") == "Administrador")
-                            {
+                            @* Usuario autenticado *@
+                            @if (User.IsInRole("Administrador")){
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Administración
+                                        Miembros
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a class="dropdown-item" asp-area="" asp-controller="Miembro" asp-action="Index">Miembros</a>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Miembro" asp-action="Index">Listado</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Miembro" asp-action="Create">Agregar</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Proveedores
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Proveedor" asp-action="Index">Listado</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Proveedor" asp-action="Create">Agregar</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Productos
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Producto" asp-action="Index">Listado</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Producto" asp-action="Create">Agregar</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Categorias
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Categoria" asp-action="Index">Listado</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Categoria" asp-action="Create">Agregar</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Marcas
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Marca" asp-action="Index">Listado</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Marca" asp-action="Create">Agregar</a>
                                         </li>
                                     </ul>
                                 </li>
                             }
-                            else if (Context.Session.GetString("Rol") == "Miembro")
+                            else if (User.IsInRole("Miembro"))
                             {
-                                <li class="nav-item align-content-end">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="Index">Administradores</a>
-                                </li>
-                                <li class="nav-item align-content-end">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Miembro" asp-action="Index">Miembros</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Buscar
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Producto" asp-action="Index">Productos</a>
+                                        </li>
+                                    </ul>
                                 </li>
                             }
                             <li class="nav-item">
-                                <a class="nav-link text-dark align-content-end" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
+                                <a href="#" class="nav-link text-dark" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
+                                    Logout
+                                </a>
+                                <form id="logoutForm"
+                                      asp-controller="Home"
+                                      asp-action="Logout"
+                                      method="post"
+                                      class="d-none">
+                                    @Html.AntiForgeryToken()
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-dark align-content-end" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Registro
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Registro" asp-action="Miembro">Miembro</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Registro" asp-action="Proveedor">Proveedor</a>
+                                    </li>
+                                </ul>
                             </li>
                         }
                     </ul>

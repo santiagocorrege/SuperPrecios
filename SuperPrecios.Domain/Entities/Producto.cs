@@ -51,15 +51,15 @@ namespace SuperPrecios.Domain.Entities
         {
             if (string.IsNullOrWhiteSpace(Nombre))
             {
-                throw new ProductoException("Error: El nombre del producto no puede ser nulo");
+                throw new ProductoException("El Nombre del producto no puede ser nulo");
             }
             if (Marca == null && MarcaId <= 0)
             {
-                throw new ProductoException("Error: El nombre del producto no puede ser nulo");
+                throw new ProductoException("La Marca del producto no puede ser nula");
             }    
             if(Categoria == null && CategoriaId <= 0)
             {
-                throw new ProductoException("Error: La categoria del producto no puede ser nula");
+                throw new ProductoException("La Categoria del producto no puede ser nula");
             }
         }
 

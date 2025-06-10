@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace SuperPrecios.Application.DTO.Usuario
 {
-    public class DtoUsuarioLogin
-    {
-        [Required(ErrorMessage = "Por favor ingrese un email")]
+    public class DtoUsuarioLogin        
+    {        
+        public int Id { get; set; }
+        
         public string Email { get; set; }
         
         public string Rol { get; set; }

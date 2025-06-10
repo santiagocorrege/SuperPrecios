@@ -11,7 +11,7 @@ namespace SuperPrecios.Application.DTO.Producto
 {
     public class DtoProductoAdd
     {
-        [Length(2, 50, ErrorMessage = "El nombre no puede exceder los 50 caracteres.")]
+        [Length(2, 50, ErrorMessage = "El nombre debe poseer entre 2 y 50 caracteres.")]
         [Required]
         public string Nombre { get; set; }
 

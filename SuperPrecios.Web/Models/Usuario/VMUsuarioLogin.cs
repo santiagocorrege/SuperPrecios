@@ -2,7 +2,7 @@
 
 namespace SuperPrecios.Web.Models.Usuario
 {
-    public class UsuarioLoginModel
+    public class VMUsuarioLogin
     {
         [Required]
         public string Email { get; set; }
@@ -10,5 +10,11 @@ namespace SuperPrecios.Web.Models.Usuario
         [Required]
         [DataType(DataType.Password)]   
         public string Password { get; set; }
+
+        [Display(Name = "Recuérdame")]
+        public bool RememberMe { get; set; }
+
+        // Para redirigir tras el login
+        public string ReturnUrl { get; set; }
     }
 }

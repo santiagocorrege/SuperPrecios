@@ -18,7 +18,7 @@ namespace MVC.Filters
             var session = controller.HttpContext.Session;
             string rol = session.GetString("Rol");
 
-            if (string.IsNullOrEmpty(rol) || rol != "Administrador")
+            if (String.IsNullOrWhiteSpace(rol) || rol != "Administrador")
             {
                 controller.TempData["Error"] = "Usted no tiene permisos para acceder a esta sección.";
                 context.Result = new RedirectToActionResult("Login", "Home", null);

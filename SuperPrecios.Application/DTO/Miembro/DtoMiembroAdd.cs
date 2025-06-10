@@ -22,6 +22,6 @@ namespace SuperPrecios.Application.DTO.Miembro
 
         [Required(ErrorMessage = "La contrasena es obligatorio")]
         [DataType(DataType.Password)]
-        public string Password { get; set; }
+        public string Password { get; set; }        
     }
 }

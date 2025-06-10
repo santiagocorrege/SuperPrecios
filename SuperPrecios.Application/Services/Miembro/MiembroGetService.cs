@@ -22,58 +22,45 @@ namespace SuperPrecios.Application.Services.Miembro
         }
         public async Task<IEnumerable<DtoMiembroGet>> Run()
         {
-            var miembro = await _miembroRepo.GetAll();
-            return MapperMiembro.ToDto(miembro);
+            var dtoMiembro = await _miembroRepo.GetAllAsync();
+            return MapperMiembro.ToDto(dtoMiembro);
         }
 
-        public async Task<IEnumerable<DtoMiembroGet>> RunByNombreList(string email)
+        public async Task<IEnumerable<DtoMiembroGet>> RunByEmailList(string email)
         {
-            if (String.IsNullOrEmpty(email))
+            if (String.IsNullOrWhiteSpace(email))
             {
                 throw new MiembroException("El email no puede ser nulo");
             }
-            var listaMiembro = await _miembroRepo.GetByEmailListAsync(email);
-            return MapperMiembro.ToDto(listaMiembro);
+            var dtoListaMiembro = await _miembroRepo.GetByEmailListAsync(email);
+            return MapperMiembro.ToDto(dtoListaMiembro);
         }
 
-        public async Task<DtoMiembroGet> Run(string email)
+        public async Task<DtoMiembroGet> RunByEmail(string email)
         {
             if(String.IsNullOrWhiteSpace(email))
             {
                 throw new MiembroException("El email no puede ser nulo");
             }
-            var miembro = await _miembroRepo.GetByEmailAsync(email);
-            if(miembro == null)
-            {
-                throw new MiembroException("El miembro no existe");
-            }
-            return MapperMiembro.ToDto(miembro);
+            var miembroBuscado = await _miembroRepo.GetByEmailAsync(email);
+            if(miembroBuscado == null) throw new MiembroException("No existe miembro con ese email");            
+            return MapperMiembro.ToDto(miembroBuscado);
         }
 
-        public async Task<DtoMiembroGet> Run(int id)
+        public async Task<DtoMiembroGet> RunById(int id)
         {
-            if (id <= 0) throw new MiembroException("El id no puede ser nulo");
-            
-            var miembro = await _miembroRepo.GetByIdAsync(id);
-            if (miembro == null)
-            {
-                throw new MiembroException("El miembro no existe");
-            }
-            return MapperMiembro.ToDto(miembro);
+            if (id <= 0) throw new MiembroException("El id no puede ser nulo");            
+            var miembroBuscado = await _miembroRepo.GetByIdAsync(id);
+            if(miembroBuscado == null) throw new MiembroException("No existe miembro con ese id");
+            return MapperMiembro.ToDto(miembroBuscado);
         }
 
         public async Task<DtoMiembroUpdate> RunGetUpdate(int id)
         {
-            if (id <= 0)
-            {
-                throw new MiembroException("El id no puede ser nulo");
-            }
-            var miembro = await _miembroRepo.GetByIdAsync(id);
-            if (miembro == null)
-            {
-                throw new MiembroException("El miembro no existe");
-            }
-            return MapperMiembro.ToDtoUpdate(miembro);
+            if (id < 1) throw new MiembroException("El id no puede ser nulo");            
+            var miembroBuscado = await _miembroRepo.GetByIdAsync(id);
+            if(miembroBuscado == null) throw new MiembroException("No existe miembro con ese id");
+            return MapperMiembro.ToDtoUpdate(miembroBuscado);
         }
     }
 }
