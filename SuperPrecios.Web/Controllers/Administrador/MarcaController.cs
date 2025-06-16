@@ -6,8 +6,8 @@ using SuperPrecios.Application.DTO.Marca;
 using SuperPrecios.Application.IServices.Marca;
 using SuperPrecios.Application.Services.Miembro;
 
-namespace SuperPrecios.Web.Controllers
-{
+namespace SuperPrecios.Web.Controllers.Administrador
+{    
     public class MarcaController : Controller
     {
         private readonly IMarcaAddService _marcaAddService;

@@ -12,7 +12,7 @@ using SuperPrecios.AuthenticationCore.Entities;
 using SuperPrecios.Web.Models;
 using SuperPrecios.Web.Models.Usuario;
 
-namespace SuperPrecios.Web.Controllers;
+namespace SuperPrecios.Web.Controllers.Shared;
 
 public class HomeController : Controller
 {    
@@ -24,11 +24,13 @@ public class HomeController : Controller
         _getUsuarioLoginService = getUsuarioLogin;
         _miembroAddService = miembroAddService;
     }
-
-    [Authorize]
+    
     public IActionResult Index()
     {        
-        return View();
+        var rol = User.FindFirstValue(ClaimTypes.Role);        
+        if (rol == "Administrador")
+            return RedirectToAction(nameof(Index), "Miembro");       
+        return RedirectToAction("Productos", "Visitante");                
     }
     public IActionResult Login()
     {
@@ -54,15 +56,13 @@ public class HomeController : Controller
                 var principal = new ClaimsPrincipal(identity);
                 var props = new AuthenticationProperties
                 {
-                    IsPersistent = model.RememberMe // Debes agregar RememberMe en tu VM si lo quieres
+                    IsPersistent = model.RememberMe 
                 };
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,principal, props); 
                 string rol = user.Rol;
-                //HttpContext.Session.SetString("Email", user.Email);
-                //HttpContext.Session.SetString("Rol", rol);
                 if(rol == "Administrador") return RedirectToAction(nameof(Index), "Miembro");       
-                if(rol == "Miembro") return RedirectToAction(nameof(Index), "Producto");
-                return RedirectToAction(nameof(Login));
+                if(rol == "Miembro") return RedirectToAction("Productos", "RolMiembro");                
+                return RedirectToAction(nameof(AccessDenied));
             }
         }
         catch (Exception ex)

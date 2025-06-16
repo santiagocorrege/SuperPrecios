@@ -7,7 +7,7 @@ using SuperPrecios.Application.DTO.Proveedor;
 using SuperPrecios.Application.IServices.Miembro;
 using SuperPrecios.Application.IServices.Proveedor;
 
-namespace SuperPrecios.Web.Controllers
+namespace SuperPrecios.Web.Controllers.Shared
 {
     public class RegistroController : Controller
     {

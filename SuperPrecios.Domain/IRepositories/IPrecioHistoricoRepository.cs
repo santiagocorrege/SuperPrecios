@@ -17,5 +17,6 @@ namespace SuperPrecios.Domain.IRepositories
         public Task<IEnumerable<PrecioHistorico>> GetPrecioHistoricoProductoBySupermercado(int supermercadoId, string productoNombre);
 
         public Task<IEnumerable<Producto>> GetAllBySupermercado(int supermercadoId);
+
     }
 }

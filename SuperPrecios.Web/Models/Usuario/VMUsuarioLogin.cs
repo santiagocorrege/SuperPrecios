@@ -13,8 +13,5 @@ namespace SuperPrecios.Web.Models.Usuario
 
         [Display(Name = "Recuérdame")]
         public bool RememberMe { get; set; }
-
-        // Para redirigir tras el login
-        public string ReturnUrl { get; set; }
     }
 }

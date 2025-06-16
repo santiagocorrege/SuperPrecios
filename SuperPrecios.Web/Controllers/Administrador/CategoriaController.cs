@@ -4,7 +4,7 @@ using MVC.Filters;
 using SuperPrecios.Application.DTO.Categoria;
 using SuperPrecios.Application.IServices.Categoria;
 
-namespace SuperPrecios.Web.Controllers
+namespace SuperPrecios.Web.Controllers.Administrador
 {
     public class CategoriaController : Controller
     {

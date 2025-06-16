@@ -31,22 +31,37 @@ namespace SuperPrecios.Application.Mappers
             };
         }
 
-        public static DtoPrecioHistoricoWOProducto ToDtoWOProducto(PrecioHistorico precioHistorico)
+        public static DtoPrecioHistoricoWOProducto ToDtoCompletoWoProducto(PrecioHistorico ph)
+        {
+            return new DtoPrecioHistoricoWOProducto
+            {
+                Fecha = ph.Fecha,
+                Precio = ph.Precio,
+                Supermercado = MapperSupermercado.ToDto(ph.Supermercado)
+            };
+        }
+
+        public static IEnumerable<DtoPrecioHistoricoWOProducto> ToDtoCompletoWoProducto(IEnumerable<PrecioHistorico> ph)
+        {
+            return ph.Select(p => ToDtoCompletoWoProducto(p));
+        }
+
+        public static DtoPrecioHistoricoWOProductoWOSupermercado ToDtoWOProductoWOSupermercado(PrecioHistorico precioHistorico)
         {
             if (precioHistorico == null)
             {
                 throw new ArgumentNullException("MapperError: El precio historico no puede ser nulo");
             }
-            return new DtoPrecioHistoricoWOProducto
+            return new DtoPrecioHistoricoWOProductoWOSupermercado
             {
                 Fecha = precioHistorico.Fecha,
                 Precio = precioHistorico.Precio,                
             };
         }
 
-        public static IEnumerable<DtoPrecioHistoricoWOProducto> ToDtoWOProductoList(IEnumerable<PrecioHistorico> preciosHistoricos)
+        public static IEnumerable<DtoPrecioHistoricoWOProductoWOSupermercado> ToDtoWOProductoWOSupermercadoList(IEnumerable<PrecioHistorico> preciosHistoricos)
         {
-            return preciosHistoricos.Select(p => ToDtoWOProducto(p));
+            return preciosHistoricos.Select(p => ToDtoWOProductoWOSupermercado(p));
         }
         public static PrecioHistorico ToPrecioHistorico(DtoPrecioHistoricoAdd dto)
         {

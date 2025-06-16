@@ -9,8 +9,8 @@ using SuperPrecios.Web.Models.Producto;
 using SuperPrecios.Web.Models.VMMaper;
 using SuperPrecios.Web.Models.VMMapper;
 
-namespace SuperPrecios.Web.Controllers
-{
+namespace SuperPrecios.Web.Controllers.Administrador
+{    
     public class ProductoController : Controller
     {        
         private readonly IProductoAddService _productoAddService;

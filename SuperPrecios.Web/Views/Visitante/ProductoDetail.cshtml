@@ -1,0 +1,96 @@
+﻿@model SuperPrecios.Application.DTO.Producto.DtoProductoCompleto
+
+<div class="container my-4">
+    <div class="row">
+        <!-- Imagen principal -->
+        <div class="col-md-5 text-center">
+            @if (!string.IsNullOrWhiteSpace(Model.ImagenUrl))
+            {
+                <img src="@Model.ImagenUrl"
+                     alt="@Model.Nombre"
+                     class="img-fluid rounded border"
+                     style="max-height: 400px; object-fit: contain;" />
+            }
+            else
+            {
+                <div class="d-flex align-items-center justify-content-center border rounded bg-light text-muted"
+                     style="width: 100%; max-width: 400px; height: 400px;">
+                    <span class="fs-5">Sin imagen</span>
+                </div>
+            }
+
+        </div>
+
+        <!-- Información y botón -->
+        <div class="col-md-7 d-flex flex-column justify-content-center">
+            <p class="text-secondary mb-1">
+                @Model.Marca?.Nombre
+            </p>
+
+            <h4 class="fw-semibold mb-3">
+                @Model.Nombre
+            </h4>
+
+            @if (Model.PreciosHistoricos?.Any() == true)
+            {
+                var precioMin = Model.PreciosHistoricos.Min(ph => ph.Precio);
+                <h5 class="text-success fw-bold mb-3">
+                    Desde $@precioMin.ToString("N2")
+                </h5>
+            }
+            else
+            {
+                <p class="text-muted mb-3">Sin precios disponibles hoy</p>
+            }
+
+            <button class="btn btn-danger btn-lg" style="max-width: 200px;">
+                <i class="bi bi-cart-plus me-2"></i> AGREGAR
+            </button>
+        </div>
+    </div>
+
+    <!-- Precios por supermercado -->
+    <div class="mt-5">
+        <h5 class="mb-3">Precios por supermercado</h5>
+
+        @if (Model.PreciosHistoricos?.Any() == true)
+        {
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>Supermercado</th>
+                        <th>Precio</th>
+                        <th>Fecha</th>
+                        <th>Web</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var ph in Model.PreciosHistoricos.OrderBy(p => p.Precio))
+                    {
+                        <tr>
+                            <td>@ph.Supermercado?.Nombre</td>
+                            <td>$@ph.Precio.ToString("N2")</td>
+                            <td>@ph.Fecha.ToString("dd/MM/yyyy")</td>
+                            <td>
+                                @if (!string.IsNullOrWhiteSpace(ph.Supermercado?.WebsiteUrl))
+                                {
+                                    <a href="@ph.Supermercado.WebsiteUrl" target="_blank" class="btn btn-outline-secondary btn-sm">
+                                        Ir al sitio
+                                    </a>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">No disponible</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p class="text-muted">No hay precios cargados para este producto.</p>
+        }
+    </div>
+</div>

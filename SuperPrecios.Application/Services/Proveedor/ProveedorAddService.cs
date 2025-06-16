@@ -25,16 +25,9 @@ namespace SuperPrecios.Application.Services.Proveedor
             if (dto == null) throw new ArgumentNullException("El proveedor no puede ser nulo");            
             var supermercadoExistente = await _supermercadoRepository.GetByNameAsync(dto.SupermercadoNombre);            
             ProveedorCore proveedor;
-            if (supermercadoExistente != null)
-            {
-                if (supermercadoExistente.Proveedor != null) throw new SupermercadoException("El supermercado que desea asignarse ya esta vinculado a otra cuenta de proveedor");
-                proveedor = MapperProveedor.ToProveedor(dto, supermercadoExistente);
-            }
-            else
-            {
-                Supermercado nuevoSupermercado = new Supermercado(dto.SupermercadoNombre);
-                proveedor = MapperProveedor.ToProveedor(dto, nuevoSupermercado);                
-            }                
+            if (supermercadoExistente != null) throw new SupermercadoException("El supermercado que desea agregar ya esta registrado");                
+            Supermercado nuevoSupermercado = new Supermercado(dto.SupermercadoNombre);
+            proveedor = MapperProveedor.ToProveedor(dto, nuevoSupermercado);                                        
             var proveedorExistente = await _proveedorRepository.GetByEmailAsync(dto.Email);
             if (proveedorExistente != null) throw new Exception("Ya existe un proveedor con ese email");
             await _proveedorRepository.AddAsync(proveedor);

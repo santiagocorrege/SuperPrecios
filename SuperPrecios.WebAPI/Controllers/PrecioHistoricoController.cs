@@ -54,7 +54,7 @@ namespace SuperPrecios.WebAPI.Controllers
             }
             try
             {
-                IEnumerable<DtoProductoPreciosHistoricos> productosConPreciosHistoricos = await _precioHistoricoGetService.GetAllBySupermercado(supermercadoId);
+                IEnumerable<DtoProductoPreciosHistoricosXSupermercado> productosConPreciosHistoricos = await _precioHistoricoGetService.GetAllBySupermercado(supermercadoId);
                 return Ok(productosConPreciosHistoricos);
             }
             catch(Exception e)

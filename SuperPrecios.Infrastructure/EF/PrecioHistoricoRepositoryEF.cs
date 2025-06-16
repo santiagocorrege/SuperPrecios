@@ -22,55 +22,73 @@ namespace SuperPrecios.Infrastructure.EF
         }
         public async Task AddAsync(PrecioHistorico precioHistorico)
         {
-            if(precioHistorico == null) throw new ArgumentNullException("El precio historico no puede ser nulo", nameof(precioHistorico));
+            if (precioHistorico == null)
+                throw new ArgumentNullException(nameof(precioHistorico), "El precio histórico no puede ser nulo");
+
             try
             {
-                var super = await _context.Supermercados.FindAsync(precioHistorico.SupermercadoId);
-                if (super == null) throw new ArgumentException("El Supermercado no existe");
-                var productoPrecioHistorico = precioHistorico.Producto;
-                var productoBuscado = await _context.Productos
-                    .AsNoTracking()
-                    .Include(p => p.Categoria)
-                    .Include(m => m.Marca)
-                    .FirstOrDefaultAsync(p => p.Nombre == productoPrecioHistorico.Nombre && p.Marca.Nombre == productoPrecioHistorico.Marca.Nombre);                    
+                // Validar supermercado
+                var supermercado = await _context.Supermercados.FindAsync(precioHistorico.SupermercadoId);
+                if (supermercado == null)
+                    throw new ArgumentException("El supermercado no existe");
 
-                if (productoBuscado != null)
+                // Acceso al producto enviado
+                var productoNuevo = precioHistorico.Producto;
+
+                // Buscar si ya existe un producto con mismo nombre y marca
+                var productoExistente = await _context.Productos
+                    .Include(p => p.Marca)
+                    .Include(p => p.Categoria)
+                    .FirstOrDefaultAsync(p =>
+                        p.Nombre == productoNuevo.Nombre &&
+                        p.Marca.Nombre == productoNuevo.Marca.Nombre);
+
+                if (productoExistente != null)
                 {
-                    productoPrecioHistorico.Id = productoBuscado.Id;
-                    _context.Entry(productoPrecioHistorico).State = EntityState.Unchanged;
-                    _context.Entry(productoPrecioHistorico.Marca).State = EntityState.Unchanged;                    
-                    _context.Entry(productoPrecioHistorico.Categoria).State = EntityState.Unchanged;                    
+                    // Reusar el producto existente
+                    precioHistorico.Producto = productoExistente;
                 }
                 else
                 {
-                    var marca = await _context.Marcas.FirstOrDefaultAsync(m => m.Nombre == productoPrecioHistorico.Marca.Nombre);
-                    if (marca != null)
+                    // Buscar o agregar la marca
+                    var marcaExistente = await _context.Marcas.FirstOrDefaultAsync(m => m.Nombre == productoNuevo.Marca.Nombre);
+                    if (marcaExistente != null)
                     {
-                        precioHistorico.Producto.Marca = marca;
+                        productoNuevo.Marca = marcaExistente;
                     }
                     else
                     {
-                        await _context.Marcas.AddAsync(productoPrecioHistorico.Marca);
+                        await _context.Marcas.AddAsync(productoNuevo.Marca);
                     }
-                    var categoria = await _context.Categorias.FirstOrDefaultAsync(c => c.Nombre == productoPrecioHistorico.Categoria.Nombre);
-                    if (categoria != null)
+
+                    // Buscar o agregar la categoría
+                    var categoriaExistente = await _context.Categorias.FirstOrDefaultAsync(c => c.Nombre == productoNuevo.Categoria.Nombre);
+                    if (categoriaExistente != null)
                     {
-                        precioHistorico.Producto.Categoria = categoria;
-                    }
-                    else
-                    {
-                        await _context.Categorias.AddAsync(productoPrecioHistorico.Categoria);
-                    }
-                    var productoSolo = await _context.Productos.FirstOrDefaultAsync(p => p.Nombre == productoPrecioHistorico.Nombre);
-                    if (productoSolo != null)
-                    {
-                        precioHistorico.Producto = productoSolo;
+                        productoNuevo.Categoria = categoriaExistente;
                     }
                     else
                     {
-                        await _context.Productos.AddAsync(productoPrecioHistorico);
+                        await _context.Categorias.AddAsync(productoNuevo.Categoria);
+                    }
+
+                    // Verificar si el producto (sin considerar marca) ya existe
+                    var productoPorNombre = await _context.Productos
+                        .FirstOrDefaultAsync(p => p.Nombre == productoNuevo.Nombre);
+
+                    if (productoPorNombre != null)
+                    {
+                        // En ese caso, se asume que es el mismo
+                        precioHistorico.Producto = productoPorNombre;
+                    }
+                    else
+                    {
+                        // Es un producto nuevo completo
+                        await _context.Productos.AddAsync(productoNuevo);
                     }
                 }
+
+                // Guardar el precio histórico
                 await _context.PreciosHistoricos.AddAsync(precioHistorico);
                 await _context.SaveChangesAsync();
             }
@@ -78,20 +96,17 @@ namespace SuperPrecios.Infrastructure.EF
             {
                 if (dbEx.InnerException is SqlException sqlEx)
                 {
-                    // Error de índice único o duplicado de clave (2627 ó 2601)
                     if (sqlEx.Number == 2627 || sqlEx.Number == 2601)
-                    {
                         throw new Exception("Error de duplicado en la tabla");
-                    }
-                    // Error de violación de clave foránea (547)
+
                     if (sqlEx.Number == 547)
-                    {
                         throw new Exception("Violación de clave foránea");
-                    }
                 }
-                throw new Exception("Error al guardar el precio historico en la base de datos.");
+
+                throw new Exception("Error al guardar el precio histórico en la base de datos.");
             }
         }
+
 
         public async Task<IEnumerable<Producto>> GetAllBySupermercado(int supermercadoId)
         {
@@ -154,5 +169,7 @@ namespace SuperPrecios.Infrastructure.EF
                 throw new Exception("Error al buscar el supermercado en la base de datos.", dbEx);
             }
         }
+
+
     }
 }

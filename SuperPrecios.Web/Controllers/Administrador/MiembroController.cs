@@ -6,8 +6,8 @@ using MVC.Filters;
 using SuperPrecios.Application.DTO.Miembro;
 using SuperPrecios.Application.IServices.Miembro;
 
-namespace MVC.Controllers
-{
+namespace SuperPrecios.Web.Controllers.Administrador
+{    
     public class MiembroController : Controller
     {
         private readonly IMiembroGet _miembroGetService;
@@ -62,6 +62,7 @@ namespace MVC.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Administrador")]
         // POST: MiembrosController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]

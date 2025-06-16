@@ -1,0 +1,36 @@
+﻿<div class="d-flex justify-content-center mt-4">
+    <nav>
+        <ul class="pagination">
+            @* Botón Anterior *@
+            @if (Model.PaginaActual > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link"
+                       asp-action="@ViewContext.RouteData.Values["action"]"
+                       asp-route-pagina="@(Model.PaginaActual - 1)"
+                       asp-route-busqueda="@Context.Request.Query["busqueda"]">
+                        Anterior
+                    </a>
+                </li>
+            }
+
+            @* Info de la página actual *@
+            <li class="page-item disabled">
+                <span class="page-link">Página @Model.PaginaActual de @Model.TotalPaginas</span>
+            </li>
+
+            @* Botón Siguiente *@
+            @if (Model.PaginaActual < Model.TotalPaginas)
+            {
+                <li class="page-item">
+                    <a class="page-link"
+                       asp-action="@ViewContext.RouteData.Values["action"]"
+                       asp-route-pagina="@(Model.PaginaActual + 1)"
+                       asp-route-busqueda="@Context.Request.Query["busqueda"]">
+                        Siguiente
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
+</div>

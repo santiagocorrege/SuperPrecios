@@ -80,12 +80,11 @@ namespace SuperPrecios.Web
             builder.Services.AddScoped<IMarcaDeleteService, MarcaDeleteService>();
 
             //Cookies - Authentication Cookies cifradas - Se guarda en extensions de .Web
-            builder.Services
-                   .AddCookieAuthentication();
+            builder.Services.AddCookieAuthentication();
 
             //Inversion??
             var app = builder.Build();
-            
+
             app.UseSession();
 
             // Configure the HTTP request pipeline.
@@ -107,7 +106,7 @@ namespace SuperPrecios.Web
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Login}/{id?}");
+                pattern: "{controller=Home}/{action=Index}/{id?}"); 
             app.Run();
         }
     }

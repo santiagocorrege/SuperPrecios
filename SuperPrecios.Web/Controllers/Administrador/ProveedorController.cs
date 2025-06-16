@@ -6,8 +6,8 @@ using SuperPrecios.Application.DTO.Proveedor;
 using MVC.Filters;
 using Microsoft.AspNetCore.Authorization;
 
-namespace SuperPrecios.Web.Controllers
-{
+namespace SuperPrecios.Web.Controllers.Administrador
+{    
     public class ProveedorController : Controller
     {
         private readonly IProveedorAddService _proveedorAddService;

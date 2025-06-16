@@ -26,7 +26,7 @@ namespace SuperPrecios.Application.Services.PrecioHistorico
             _supermercadoRepository = supermercadoRepository;
         }
 
-        public async Task<IEnumerable<DtoProductoPreciosHistoricos>> GetAllBySupermercado(int supermercadoId)
+        public async Task<IEnumerable<DtoProductoPreciosHistoricosXSupermercado>> GetAllBySupermercado(int supermercadoId)
         {
             if (supermercadoId <= 0)
             {
@@ -63,7 +63,7 @@ namespace SuperPrecios.Application.Services.PrecioHistorico
                     throw new ArgumentException("Error: El supermercado no existe");
                 }
                 IEnumerable<PrecioHistoricoCore> preciosHistoricos = await _precioHistoricoRepository.GetPrecioHistoricoProductoBySupermercado(supermercadoId, productoId);
-                return MapperPrecioHistorico.ToDtoWOProductoList(preciosHistoricos);
+                return MapperPrecioHistorico.ToDtoCompletoWoProducto(preciosHistoricos);
             }
             catch (Exception ex)
             {

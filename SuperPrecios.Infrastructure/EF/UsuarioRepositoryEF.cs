@@ -5,6 +5,7 @@ using SuperPrecios.AuthenticationCore.Entities;
 using SuperPrecios.AuthenticationCore.Exceptions.Email;
 using SuperPrecios.AuthenticationCore.Exceptions.Usuario;
 using SuperPrecios.AuthenticationCore.ValueObject;
+using SuperPrecios.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -32,10 +33,12 @@ namespace SuperPrecios.Infrastructure.EF
                 }
                 Email email = new Email(stringEmail);
                 var usuario = await _context.Usuarios
-	            .Where(u => u.Email == email)
-	            .FirstOrDefaultAsync();
-				
-				if (usuario != null && usuario.Password.Verify(plainPassword) == true)
+                    .Where(u =>
+                        (u is Miembro || u is Administrador) &&
+                        u.Email == email)
+                    .FirstOrDefaultAsync();
+
+                if (usuario != null && usuario.Password.Verify(plainPassword) == true)
                 {                    
 					return usuario;
 				}                    

@@ -1,0 +1,12 @@
+﻿@model SuperPrecios.Web.Models.Producto.VMProductoCompletoWPaginado
+@section Scripts {
+    <script src="~/js/productos-paginado.js"></script>
+}
+
+@{
+    ViewData["Title"] = "Listado de Productos";
+}
+
+<div id="contenedor-productos">
+    @await Html.PartialAsync("_ProductosConPaginadoPartial", Model)
+</div>
