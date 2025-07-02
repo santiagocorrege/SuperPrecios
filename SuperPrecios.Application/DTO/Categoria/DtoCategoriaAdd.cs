@@ -11,5 +11,7 @@ namespace SuperPrecios.Application.DTO.Categoria
     {
         [Required(ErrorMessage = "El nombre es obligatorio")]
         public string Nombre { get; set; }
+
+        public int? PadreId { get; set; }
     }
 }

@@ -1,12 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SuperPrecios.AuthenticationCore.ValueObject;
 using SuperPrecios.Domain.Excepciones;
+using SuperPrecios.Domain.Exceptions;
 using SuperPrecios.Shared;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperPrecios.Domain.Entities
 {
@@ -38,7 +33,7 @@ namespace SuperPrecios.Domain.Entities
         {
             if (String.IsNullOrWhiteSpace(Nombre))
             {
-                throw new LocalException("Error: El nombre de la marca no puede ser nulo");
+                throw new MarcaException("Error: El nombre de la marca no puede ser nulo");
             }
         }
 

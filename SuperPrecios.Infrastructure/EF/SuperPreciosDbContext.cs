@@ -44,6 +44,12 @@ namespace SuperPrecios.Infrastructure.EF
             modelBuilder.Entity<Proveedor>()
                 .HasIndex(p => p.SupermercadoId)
                 .IsUnique();
+
+            modelBuilder.Entity<Categoria>()
+            .HasOne(c => c.Padre)
+            .WithMany(c => c.Hijos)
+            .HasForeignKey(c => c.PadreId)
+            .OnDelete(DeleteBehavior.Restrict);
         }
 
     }

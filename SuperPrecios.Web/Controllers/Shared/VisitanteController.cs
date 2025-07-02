@@ -5,10 +5,12 @@ using SuperPrecios.Application.IServices.Categoria;
 using SuperPrecios.Application.IServices.Marca;
 using SuperPrecios.Application.IServices.PrecioHistorico;
 using SuperPrecios.Application.IServices.Producto;
+using SuperPrecios.Domain.Excepciones;
 using SuperPrecios.Web.Models.Producto;
 
-namespace SuperPrecios.Web.Controllers.Miembro
-{    
+namespace SuperPrecios.Web.Controllers.Shared
+{
+    [Route("Productos")]
     public class VisitanteController : Controller
     {        
         
@@ -20,6 +22,7 @@ namespace SuperPrecios.Web.Controllers.Miembro
         }
 
 
+        [HttpGet("")]
         public async Task<IActionResult> Productos(string busqueda = null, int pagina = 1)
         {
             try
@@ -49,7 +52,35 @@ namespace SuperPrecios.Web.Controllers.Miembro
             }        
         }
 
+        // GET /Productos/Categoria/131
+        [HttpGet("Categoria/{categoriaId}")]
+        public async Task<IActionResult> ProductosPorCategoria(int categoriaId, int pagina = 1)
+        {
+            try
+            {
+                var dto = await _productoGetService
+                .GetProductosByCategoriaTodayWPrecioHistoricoPaginado(categoriaId, pagina);
+                
+                var vm = new VMProductoCompletoWPaginado
+                {
+                    Productos = dto.DtoProductos,
+                    PaginaActual = dto.PaginaActual,
+                    TotalPaginas = dto.TotalPaginas,
+                    Categoria = dto.Categoria
+                };
 
+                if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                    return PartialView("_ProductosConPaginadoPartial", vm);
+                return View("Productos", vm);
+            }
+            catch(Exception e)
+            {
+                ViewBag.Error = e.Message;
+                return View("Productos", new VMProductoCompletoWPaginado());
+            }                        
+        }
+
+        [HttpGet("Detail/{id}")]
         public async Task<IActionResult> ProductoDetail(int id)
         {
             //DtoProductoCompleto

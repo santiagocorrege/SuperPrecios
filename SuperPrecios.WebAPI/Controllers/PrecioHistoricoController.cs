@@ -23,7 +23,7 @@ namespace SuperPrecios.WebAPI.Controllers
 
         // POST api/<PrecioHistoricoController>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] List<DtoPrecioHistoricoAdd> dtoList)
+        public async Task<IActionResult> Create([FromBody] List<DtoPrecioHistoricoAdd> dtoList)
         {
             if (dtoList == null || dtoList.Count <= 0)
             {

@@ -4,16 +4,23 @@ using SuperPrecios.Application.Mappers;
 using SuperPrecios.Domain.Entities;
 using SuperPrecios.Domain.Excepciones;
 using SuperPrecios.Domain.IRepositories;
+using SuperPrecios.Domain.TAD;
 using ProductoCore = SuperPrecios.Domain.Entities.Producto;
+using CategoriaCore = SuperPrecios.Domain.Entities.Categoria;
+using SuperPrecios.Application.DTO.Categoria;
+using SuperPrecios.Application.IServices.Categoria;
 
 namespace SuperPrecios.Application.Services.Producto
 {
     public class ProductoGetService : IProductoGetService
     {
         private readonly IProductoRepository _productoRepository;
-        public ProductoGetService(IProductoRepository productoRepository)
+        private readonly ICategoriaGetService _categoriaGetService;
+
+        public ProductoGetService(IProductoRepository productoRepository, ICategoriaGetService categoriaGetService) 
         {
             _productoRepository = productoRepository;
+            _categoriaGetService = categoriaGetService;
         }
         public async Task<IEnumerable<DtoProductoGet>> GetAllAsync()
         {
@@ -49,30 +56,51 @@ namespace SuperPrecios.Application.Services.Producto
         {
             if (nombre == null || String.IsNullOrWhiteSpace(nombre)) throw new ArgumentException("El nombre del producto no es valido");
             if (pagina < 1) throw new ProductoException("La pagina seleccionada no es valida");
-            var dtoProductoPaginado = await _productoRepository.GetProductosByNombreTodayWPrecioHistorico(nombre, pagina);
-            var productos = dtoProductoPaginado.Productos;
+            var productosPagedResult = await _productoRepository.GetProductosByNombreTodayWPrecioHistorico(nombre, pagina, 10);
+            var productos = productosPagedResult.Items;
             if (productos == null || !productos.Any()) throw new ProductoException("No existen precios del producto actualizados para hoy");
             return new DtoProductosPaginados
             {
                 DtoProductos = MapperProducto.ToDtoProductoCompleto(productos),
-                PaginaActual = dtoProductoPaginado.PaginaActual,
-                TotalPaginas = dtoProductoPaginado.TotalPaginas,
+                PaginaActual = productosPagedResult.PaginaActual,
+                TotalPaginas = productosPagedResult.TotalPaginas,
             };
         }
 
         public async Task<DtoProductosPaginados> GetProductosTodayWPrecioHistoricoPaginado(int pagina)
         {
             if (pagina < 1) throw new ProductoException("La pagina seleccionada no es valida");
-            var dtoProductoPaginado = await _productoRepository.GetProductosTodayWPrecioHistorico(pagina);
-            var productos = dtoProductoPaginado.Productos;
+            var productosPagedResult = await _productoRepository.GetProductosTodayWPrecioHistorico(pagina, 10);
+            var productos = productosPagedResult.Items;
             if (productos == null || !productos.Any()) throw new ProductoException("No existen precios actualizados para hoy");
             return new DtoProductosPaginados
             {
                 DtoProductos = MapperProducto.ToDtoProductoCompleto(productos),
-                PaginaActual = dtoProductoPaginado.PaginaActual,
-                TotalPaginas = dtoProductoPaginado.TotalPaginas,                
+                PaginaActual = productosPagedResult.PaginaActual,
+                TotalPaginas = productosPagedResult.TotalPaginas,                
+            };            
+        }
+
+        public async Task<DtoProductosPaginados> GetProductosByCategoriaTodayWPrecioHistoricoPaginado(int categoriaId, int pagina)
+        {
+            if (pagina < 1)
+                throw new ProductoException("La página seleccionada no es válida");
+            var categoria = await _categoriaGetService.GetById(categoriaId);
+            if (categoria == null)
+                throw new ProductoException("La categoria seleccionada no existe");
+            var categoriaIds = await _categoriaGetService.GetDescendantCategoryIdsAsync(categoriaId);
+            var productosPagedResult = await _productoRepository.GetByCategoriasWithPrecioHistoricoAsync(categoriaIds, pagina, 10);
+            var productos = productosPagedResult.Items;
+            if (!productos.Any())
+                throw new ProductoException("No existen precios actualizados para hoy en esa categoría");
+
+            return new DtoProductosPaginados
+            {
+                DtoProductos = MapperProducto.ToDtoProductoCompleto(productos),
+                PaginaActual = productosPagedResult.PaginaActual,
+                TotalPaginas = productosPagedResult.TotalPaginas,
+                Categoria = categoria.Nombre
             };
-            
         }
     }
 }

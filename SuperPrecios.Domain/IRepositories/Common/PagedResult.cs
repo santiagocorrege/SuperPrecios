@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperPrecios.Application.DTO.Producto
+namespace SuperPrecios.Application.Common
 {
-    public class DtoProductosPaginados
+    public class PagedResult<T>
     {
         public int PaginaActual { get; set; }
         public int TotalPaginas { get; set; }
+        public IEnumerable<T> Items { get; set; }
 
-        public IEnumerable<DtoProductoCompleto> DtoProductos { get; set; }
-
-        public string Categoria { get; set; }
+        public string AditionalData { get; set; }
     }
 }

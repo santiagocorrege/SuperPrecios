@@ -1,14 +1,9 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using SuperPrecios.Application.IServices.PrecioHistorico;
 using SuperPrecios.Domain.Entities;
 using SuperPrecios.Domain.IRepositories;
-using System;
-using System.Collections.Generic;
 using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace SuperPrecios.Infrastructure.EF
 {
@@ -69,7 +64,8 @@ namespace SuperPrecios.Infrastructure.EF
                     }
                     else
                     {
-                        await _context.Categorias.AddAsync(productoNuevo.Categoria);
+                        //await _context.Categorias.AddAsync(productoNuevo.Categoria);
+                        throw new Exception("La categoria ingresada no existe");
                     }
 
                     // Verificar si el producto (sin considerar marca) ya existe
@@ -127,8 +123,6 @@ namespace SuperPrecios.Infrastructure.EF
                 throw new Exception("BD Error: al consultar la base de datos de miembros");
             }
         }
-
-
 
         public async Task<IEnumerable<PrecioHistorico>> GetPrecioHistoricoProductoBySupermercado(int supermercadoId, int productoId)
         {

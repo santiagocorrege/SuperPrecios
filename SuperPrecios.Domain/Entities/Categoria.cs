@@ -3,20 +3,30 @@ using SuperPrecios.Domain.Excepciones;
 using SuperPrecios.Shared;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SuperPrecios.Domain.Entities
 {
-    [Index(nameof(Nombre), IsUnique = true)]
+    [Index(nameof(Nombre))]
     public class Categoria : IEntity, IValidate, IEquatable<Categoria>
     {
         #region Properties
+        [Key]
         public int Id { get; set; }
         public string Nombre { get; set; }
 
         public List<Producto> Productos { get; set; }
+
+        [ForeignKey(nameof(Categoria))]
+        public int? PadreId { get; set; }
+
+        public Categoria? Padre { get; set; }
+
+        public List<Categoria> Hijos { get; set; } = new();
 
         public Categoria(string nombre)
         {            

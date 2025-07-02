@@ -1,4 +1,5 @@
 using SuperPrecios.AuthenticationCore.ValueObject;
+using SuperPrecios.Worker;
 
 namespace WorkerService
 {

@@ -1,0 +1,141 @@
+﻿/* Overlay completo */
+.categoria-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+/* Fondo desenfocado */
+.categoria-overlay__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(3px);
+}
+
+/* Caja blanca central */
+.categoria-overlay__content {
+    position: relative;
+    width: 90%;
+    max-width: 1100px;
+    height: 80vh;
+    margin: 5vh auto;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Botón cerrar */
+.btn-close-categorias {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Botón abrir */
+.btn-open-categorias {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Estructura del menú */
+.categoria-menu {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Sidebar izquierdo */
+.categoria-menu__sidebar {
+    width: 18%;
+    background: #222;
+    color: #fff;
+    overflow-y: auto;
+}
+
+    .categoria-menu__sidebar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+/* Ítem de categoría: convertimos padding en el <a> y hacemos el link cubrir todo el li */
+    .categoria-menu__sidebar .categoria-menu__item {
+        padding: 0; /* quitamos padding del li */
+        position: relative;
+    }
+
+    .categoria-menu__sidebar .categoria-menu__item a {
+        display: block !important; /* obligatorio: bloque */
+        width: 100% !important; /* todo el ancho */
+        height: 100% !important; /* todo el alto */
+        box-sizing: border-box;
+        padding: 12px 16px; /* recuperamos el padding */
+        color: inherit;
+        text-decoration: none;
+    }
+
+            
+    .categoria-menu__sidebar .categoria-menu__item a:hover,
+    .categoria-menu__sidebar .categoria-menu__item.active a {
+        background: #e52020;
+        color: #fff;
+    }
+/* Panel derecho */
+.categoria-menu__content {
+    width: 72%;
+    padding: 24px;
+    overflow-y: auto;
+}
+
+.submenu-panel {
+    display: none;
+}
+
+    .submenu-panel.active {
+        display: block;
+    }
+
+    .submenu-panel h2 {
+        margin-top: 0;
+        font-size: 1.6rem;
+    }
+
+    .submenu-panel ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .submenu-panel li {
+        margin: 8px 0;
+    }
+
+    .submenu-panel a {
+        color: #222;
+        text-decoration: none;
+    }
+
+        .submenu-panel a:hover {
+            text-decoration: underline;
+        }
+
+/* Mostrar overlay */
+.categoria-overlay.open {
+    display: block;
+}

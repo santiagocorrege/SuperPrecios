@@ -61,7 +61,7 @@ public class HomeController : Controller
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,principal, props); 
                 string rol = user.Rol;
                 if(rol == "Administrador") return RedirectToAction(nameof(Index), "Miembro");       
-                if(rol == "Miembro") return RedirectToAction("Productos", "RolMiembro");                
+                if(rol == "Miembro") return RedirectToAction(nameof(Index));
                 return RedirectToAction(nameof(AccessDenied));
             }
         }

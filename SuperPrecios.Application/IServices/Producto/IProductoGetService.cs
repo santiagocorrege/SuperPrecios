@@ -19,5 +19,7 @@ namespace SuperPrecios.Application.IServices.Producto
         public Task<DtoProductoCompleto> GetCompletoByIdAsync(int id);
 
         public Task<DtoProductosPaginados> GetProductosByNameTodayWPrecioHistoricoPaginado(string nombre, int pagina);
+
+        public Task<DtoProductosPaginados> GetProductosByCategoriaTodayWPrecioHistoricoPaginado(int categoriaId, int pagina);
     }
 }

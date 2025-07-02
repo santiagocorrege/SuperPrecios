@@ -1,0 +1,195 @@
+[
+  {
+    "producto": "Agua con gas Salus 500 ml",
+    "marca": "Salus",
+    "categoria": "Aguas con gas",
+    "supermercadoId": 2,
+    "precio": 40
+  },
+  {
+    "producto": "Agua con gas Salus 1.5 L",
+    "marca": "Salus",
+    "categoria": "Aguas con gas",
+    "supermercadoId": 2,
+    "precio": 60
+  },
+  {
+    "producto": "Agua con gas saborizada Lima Limón Nativa 500 ml",
+    "marca": "Nativa",
+    "categoria": "Aguas saborizadas",
+    "supermercadoId": 4,
+    "precio": 55
+  },
+  {
+    "producto": "Agua con gas saborizada Pomelo Citrus 500 ml",
+    "marca": "Citrus",
+    "categoria": "Aguas saborizadas",
+    "supermercadoId": 2,
+    "precio": 58
+  },
+  {
+    "producto": "Agua con gas Salus 500 ml",
+    "marca": "Salus",
+    "categoria": "Aguas con gas",
+    "supermercadoId": 4,
+    "precio": 35
+  },
+  {
+    "producto": "Agua con gas Villavicencio 2 L",
+    "marca": "Villavicencio",
+    "categoria": "Aguas con gas",
+    "supermercadoId": 2,
+    "precio": 72
+  },
+  {
+    "producto": "Agua con gas saborizada Frizzé 500 ml",
+    "marca": "Frizzé",
+    "categoria": "Aguas saborizadas",
+    "supermercadoId": 4,
+    "precio": 65
+  },
+  {
+    "producto": "Agua con gas saborizada Manzana Fruttina 500 ml",
+    "marca": "Fruttina",
+    "categoria": "Aguas saborizadas",
+    "supermercadoId": 2,
+    "precio": 62
+  },
+  {
+    "producto": "Agua con gas Canelones 750 ml",
+    "marca": "Canelones",
+    "categoria": "Aguas con gas",
+    "supermercadoId": 4,
+    "precio": 48
+  },
+  {
+    "producto": "Agua con gas sin sodio Vida 500 ml",
+    "marca": "Vida",
+    "categoria": "Aguas con gas",
+    "supermercadoId": 2,
+    "precio": 54
+  },
+  {
+    "producto": "Agua con gas Canelones 755 ml",
+    "marca": "Canelones",
+    "categoria": "Aguas con gas",
+    "supermercadoId": 4,
+    "precio": 48
+  },
+  {
+    "producto": "Agua con gas Express Vida 500 ml",
+    "marca": "Vida",
+    "categoria": "Aguas con gas",
+    "supermercadoId": 2,
+    "precio": 54
+  }
+]
+
+[
+  {
+    "producto": "Pan de molde Bimbo blanco 500 g",
+    "marca": "Bimbo",
+    "categoria": "Pan de molde",
+    "supermercadoId": 1,
+    "precio": 85
+  },
+  {
+    "producto": "Yogur entero frutilla Conaprole 1 L",
+    "marca": "Conaprole",
+    "categoria": "Yogures",
+    "supermercadoId": 2,
+    "precio": 120
+  },
+  {
+    "producto": "Papas fritas Lay's clásicas 180 g",
+    "marca": "Lay's",
+    "categoria": "Papas fritas",
+    "supermercadoId": 1,
+    "precio": 95
+  },
+  {
+    "producto": "Café molido La Virginia 500 g",
+    "marca": "La Virginia",
+    "categoria": "Café",
+    "supermercadoId": 2,
+    "precio": 185
+  },
+  {
+    "producto": "Coca-Cola 2.25 L",
+    "marca": "Coca-Cola",
+    "categoria": "Gaseosas",
+    "supermercadoId": 1,
+    "precio": 132
+  },
+  {
+    "producto": "Queso Colonia feteado Calcar 200 g",
+    "marca": "Calcar",
+    "categoria": "Quesos",
+    "supermercadoId": 2,
+    "precio": 210
+  },
+  {
+    "producto": "Shampoo Sedal brillo 340 ml",
+    "marca": "Sedal",
+    "categoria": "Shampoo",
+    "supermercadoId": 1,
+    "precio": 115
+  },
+  {
+    "producto": "Lavandina Concentrada Ayudín 2 L",
+    "marca": "Ayudín",
+    "categoria": "Lavandina",
+    "supermercadoId": 2,
+    "precio": 89
+  },
+  {
+    "producto": "Paquete de pañales Pampers M x30",
+    "marca": "Pampers",
+    "categoria": "Pañales",
+    "supermercadoId": 1,
+    "precio": 540
+  },
+  {
+    "producto": "Pizza muzzarella congelada 450 g",
+    "marca": "Paladini",
+    "categoria": "Pizza",
+    "supermercadoId": 2,
+    "precio": 195
+  },
+  {
+    "producto": "Cerveza Pilsen 1 L",
+    "marca": "Pilsen",
+    "categoria": "Cerveza",
+    "supermercadoId": 1,
+    "precio": 78
+  },
+  {
+    "producto": "Cepillo dental Colgate triple acción",
+    "marca": "Colgate",
+    "categoria": "Cepillos dentales",
+    "supermercadoId": 2,
+    "precio": 65
+  },
+  {
+    "producto": "Alfajor triple chocolate Portezuelo",
+    "marca": "Portezuelo",
+    "categoria": "Alfajores",
+    "supermercadoId": 1,
+    "precio": 45
+  },
+  {
+    "producto": "Frijoles negros La Abundancia 400 g",
+    "marca": "La Abundancia",
+    "categoria": "Legumbres",
+    "supermercadoId": 2,
+    "precio": 54
+  },
+  {
+    "producto": "Mayonesa Hellmann's 475 g",
+    "marca": "Hellmann's",
+    "categoria": "Mayonesa",
+    "supermercadoId": 1,
+    "precio": 115
+  }
+]
+

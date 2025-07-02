@@ -8,11 +8,6 @@ INSERT INTO Marcas VALUES
 ('Coca-Cola'),
 ('Sibarita');
 GO
-INSERT INTO Categorias VALUES
-('Almacen'),
-('Carniceria'),
-('Bebidas')
-GO
 INSERT INTO Supermercados (Nombre, WebsiteUrl) VALUES
 	('TA-TA', 'www.testwebA.com'),
 	('Tienda Inglesa', 'www.testwebB.com')

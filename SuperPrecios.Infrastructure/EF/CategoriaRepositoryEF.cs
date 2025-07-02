@@ -19,13 +19,13 @@ namespace SuperPrecios.Infrastructure.EF
             _context = context;
         }
 
+        //Indicar el padreId
         public async Task AddAsync(Categoria entity)
         {
             if (entity == null)
                 throw new ArgumentNullException(nameof(entity), "La categoría no puede ser nula");
-
             try
-            {                
+            {                       
                 await _context.Categorias.AddAsync(entity);
                 await _context.SaveChangesAsync();
             }
@@ -101,7 +101,8 @@ namespace SuperPrecios.Infrastructure.EF
             }
             try
             {
-                return  await _context.Categorias.FirstOrDefaultAsync(c=> c.Nombre == categoria.Nombre);
+                return await _context.Categorias.FirstOrDefaultAsync(c => c.Nombre == categoria.Nombre);
+                    
             }
             catch (DbException ex)
             {
@@ -138,7 +139,7 @@ namespace SuperPrecios.Infrastructure.EF
                 }
                 throw new Exception("Error al actualizar la categoría en la base de datos.", dbEx);
             }
-
         }
+
     }
 }

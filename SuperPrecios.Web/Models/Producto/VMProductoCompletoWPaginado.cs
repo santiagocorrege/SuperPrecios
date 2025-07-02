@@ -7,5 +7,7 @@ namespace SuperPrecios.Web.Models.Producto
     {
         public IEnumerable<DtoProductoCompleto> Productos { get; set; } = Enumerable.Empty<DtoProductoCompleto>();
 
+        public string? Categoria { get; set; } = null;
+
     }
 }

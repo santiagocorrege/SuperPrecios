@@ -33,9 +33,7 @@ namespace SuperPrecios.Infrastructure.EF
                 }
                 Email email = new Email(stringEmail);
                 var usuario = await _context.Usuarios
-                    .Where(u =>
-                        (u is Miembro || u is Administrador) &&
-                        u.Email == email)
+                    .Where(u => u.Email == email)
                     .FirstOrDefaultAsync();
 
                 if (usuario != null && usuario.Password.Verify(plainPassword) == true)

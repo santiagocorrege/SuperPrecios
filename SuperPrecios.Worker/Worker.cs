@@ -1,4 +1,4 @@
-namespace WorkerService
+namespace SuperPrecios.Worker
 {
     public class Worker : BackgroundService
     {

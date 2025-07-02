@@ -1,0 +1,2263 @@
+{
+  "tata": [
+    {
+      "name": "Almacén",
+      "url": "/almacen",
+      "children": [
+        {
+          "name": "Desayuno",
+          "url": "/almacen/desayuno",
+          "children": [
+            {
+              "name": "Café",
+              "url": "/almacen/desayuno/cafe",
+              "children": []
+            },
+            {
+              "name": "Cereales",
+              "url": "/almacen/desayuno/cereales",
+              "children": []
+            },
+            {
+              "name": "Cocoa",
+              "url": "/almacen/desayuno/cocoa",
+              "children": []
+            },
+            {
+              "name": "Dulce de leche",
+              "url": "/almacen/desayuno/dulce-de-leche",
+              "children": []
+            },
+            {
+              "name": "Mermeladas y dulces",
+              "url": "/almacen/desayuno/mermeladas-y-dulces",
+              "children": []
+            },
+            {
+              "name": "Té",
+              "url": "/almacen/desayuno/te",
+              "children": []
+            },
+            {
+              "name": "Yerbas",
+              "url": "/almacen/desayuno/yerbas",
+              "children": []
+            },
+            {
+              "name": "Galletitas dulces",
+              "url": "/almacen/desayuno/galletitas-dulces",
+              "children": []
+            },
+            {
+              "name": "Galletitas saladas",
+              "url": "/almacen/desayuno/galletitas-saladas",
+              "children": []
+            },
+            {
+              "name": "Repostería",
+              "url": "/almacen/desayuno/reposteria",
+              "children": []
+            },
+            {
+              "name": "Azúcar y edulcorantes",
+              "url": "/almacen/desayuno/azucar-y-edulcorantes",
+              "children": []
+            },
+            {
+              "name": "Leche en polvo",
+              "url": "/almacen/desayuno/leche-en-polvo",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Aceites y aderezos",
+          "url": "/almacen/aceites-y-aderezos",
+          "children": [
+            {
+              "name": "Aceites",
+              "url": "/almacen/aceites-y-aderezos/aceites",
+              "children": []
+            },
+            {
+              "name": "Vinagres",
+              "url": "/almacen/aceites-y-aderezos/vinagres",
+              "children": []
+            },
+            {
+              "name": "Mayonesa",
+              "url": "/almacen/aceites-y-aderezos/mayonesa",
+              "children": []
+            },
+            {
+              "name": "Mostaza",
+              "url": "/almacen/aceites-y-aderezos/mostaza",
+              "children": []
+            },
+            {
+              "name": "Ketchup",
+              "url": "/almacen/aceites-y-aderezos/ketchup",
+              "children": []
+            },
+            {
+              "name": "Salsas especiales",
+              "url": "/almacen/aceites-y-aderezos/salsas-especiales",
+              "children": []
+            },
+            {
+              "name": "Sal",
+              "url": "/almacen/aceites-y-aderezos/sal",
+              "children": []
+            },
+            {
+              "name": "Saborizadores",
+              "url": "/almacen/aceites-y-aderezos/saborizadores",
+              "children": []
+            },
+            {
+              "name": "Otros condimentos",
+              "url": "/almacen/aceites-y-aderezos/otros-condimentos",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Golosinas y chocolates",
+          "url": "/almacen/golosinas-y-chocolates",
+          "children": [
+            {
+              "name": "Alfajores",
+              "url": "/almacen/golosinas-y-chocolates/alfajores",
+              "children": []
+            },
+            {
+              "name": "Barritas",
+              "url": "/almacen/golosinas-y-chocolates/barritas",
+              "children": []
+            },
+            {
+              "name": "Bocaditos y bombones",
+              "url": "/almacen/golosinas-y-chocolates/bocaditos-y-bombones",
+              "children": []
+            },
+            {
+              "name": "Caramelos, chupetines y gomitas",
+              "url": "/almacen/golosinas-y-chocolates/caramelos-chupetines-y-gomitas",
+              "children": []
+            },
+            {
+              "name": "Chicles",
+              "url": "/almacen/golosinas-y-chocolates/chicles",
+              "children": []
+            },
+            {
+              "name": "Pastillas",
+              "url": "/almacen/golosinas-y-chocolates/pastillas",
+              "children": []
+            },
+            {
+              "name": "Tabletas de chocolate",
+              "url": "/almacen/golosinas-y-chocolates/tabletas-de-chocolate",
+              "children": []
+            },
+            {
+              "name": "Turrones",
+              "url": "/almacen/golosinas-y-chocolates/turrones",
+              "children": []
+            },
+            {
+              "name": "Popcorn",
+              "url": "/almacen/golosinas-y-chocolates/popcorn",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Panificados",
+          "url": "/almacen/panificados",
+          "children": [
+            {
+              "name": "Tortillas y rapiditas",
+              "url": "/almacen/panificados/otros-panificados",
+              "children": []
+            },
+            {
+              "name": "Pan de molde",
+              "url": "/almacen/panificados/pan-de-molde",
+              "children": []
+            },
+            {
+              "name": "Pan tortuga y viena",
+              "url": "/almacen/panificados/pan-tortuga-y-viena",
+              "children": []
+            },
+            {
+              "name": "Budines y pan dulce",
+              "url": "/almacen/panificados/budines-y-pan-dulce",
+              "children": []
+            },
+            {
+              "name": "Tostadas",
+              "url": "/almacen/panificados/tostadas",
+              "children": []
+            },
+            {
+              "name": "Pan rallado",
+              "url": "/almacen/panificados/pan-rallado",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Snacks",
+          "url": "/almacen/snacks",
+          "children": [
+            {
+              "name": "Frutos secos",
+              "url": "/almacen/snacks/frutos-secos",
+              "children": []
+            },
+            {
+              "name": "Papas fritas",
+              "url": "/almacen/snacks/papas-fritas",
+              "children": []
+            },
+            {
+              "name": "Maní",
+              "url": "/almacen/snacks/mani",
+              "children": []
+            },
+            {
+              "name": "Palitos",
+              "url": "/almacen/snacks/palitos",
+              "children": []
+            },
+            {
+              "name": "Otros Snacks",
+              "url": "/almacen/snacks/otros-snacks",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Aceitunas y encurtidos",
+          "url": "/almacen/aceitunas-y-encurtidos",
+          "children": [
+            {
+              "name": "Aceitunas",
+              "url": "/almacen/aceitunas-y-encurtidos/aceitunas",
+              "children": []
+            },
+            {
+              "name": "Encurtidos",
+              "url": "/almacen/aceitunas-y-encurtidos/encurtidos",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Conservas",
+          "url": "/almacen/conservas",
+          "children": [
+            {
+              "name": "Conservas de verdura y legumbres",
+              "url": "/almacen/conservas/conservas-de-verdura-y-legumbres",
+              "children": []
+            },
+            {
+              "name": "Conserva de pescado",
+              "url": "/almacen/conservas/conserva-de-pescado",
+              "children": []
+            },
+            {
+              "name": "Conserva de carne",
+              "url": "/almacen/conservas/conserva-de-carne",
+              "children": []
+            },
+            {
+              "name": "Conserva de fruta",
+              "url": "/almacen/conservas/conserva-de-frutas",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Arroz, harina y legumbres",
+          "url": "/almacen/arroz-harina-y-legumbres",
+          "children": [
+            {
+              "name": "Arroz",
+              "url": "/almacen/arroz-harina-y-legumbres/arroz",
+              "children": []
+            },
+            {
+              "name": "Harina y polenta",
+              "url": "/almacen/arroz-harina-y-legumbres/harina-y-polenta",
+              "children": []
+            },
+            {
+              "name": "Legumbres",
+              "url": "/almacen/arroz-harina-y-legumbres/legumbres",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Sopas, caldos y puré",
+          "url": "/almacen/sopas-caldos-y-pure",
+          "children": [
+            {
+              "name": "Sopas",
+              "url": "/almacen/sopas-caldos-y-pure/sopas",
+              "children": []
+            },
+            {
+              "name": "Caldos",
+              "url": "/almacen/sopas-caldos-y-pure/caldos",
+              "children": []
+            },
+            {
+              "name": "Puré",
+              "url": "/almacen/sopas-caldos-y-pure/pure",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Pastas y salsas",
+          "url": "/almacen/pastas-y-salsas",
+          "children": [
+            {
+              "name": "Pastas",
+              "url": "/almacen/pastas-y-salsas/pastas",
+              "children": []
+            },
+            {
+              "name": "Salsas",
+              "url": "/almacen/pastas-y-salsas/salsas",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Apto para celíacos y diabéticos",
+          "url": "/almacen/apto-para-celiacos-y-diabeticos",
+          "children": [
+            {
+              "name": "Apto para celíacos",
+              "url": "/almacen/apto-para-celiacos-y-diabeticos/apto-para-celiacos",
+              "children": []
+            },
+            {
+              "name": "Apto para diabéticos",
+              "url": "/apto-para-celiacos-y-diabeticos/apto-para-diabeticos",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Cigarros",
+          "url": "/almacen/cigarros",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Frescos",
+      "url": "/frescos",
+      "children": [
+        {
+          "name": "Lácteos",
+          "url": "/frescos/lacteos",
+          "children": [
+            {
+              "name": "Huevos",
+              "url": "/frescos/lacteos/huevos",
+              "children": []
+            },
+            {
+              "name": "Leches",
+              "url": "/frescos/lacteos/leches",
+              "children": []
+            },
+            {
+              "name": "Mantecas y margarinas",
+              "url": "/frescos/lacteos/mantecas-y-margarinas",
+              "children": []
+            },
+            {
+              "name": "Crema de leche",
+              "url": "/frescos/lacteos/crema-de-leche",
+              "children": []
+            },
+            {
+              "name": "Levaduras y grasas",
+              "url": "/frescos/lacteos/levaduras-y-grasas",
+              "children": []
+            },
+            {
+              "name": "Postres",
+              "url": "/frescos/lacteos/postres",
+              "children": []
+            },
+            {
+              "name": "Quesos untables",
+              "url": "/frescos/lacteos/quesos-untables",
+              "children": []
+            },
+            {
+              "name": "Yogures",
+              "url": "/frescos/lacteos/yogures",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Pastas y masas",
+          "url": "/frescos/pastas-y-masas",
+          "children": [
+            {
+              "name": "Masas de tarta",
+              "url": "/frescos/pastas-y-masas/masas-de-tarta",
+              "children": []
+            },
+            {
+              "name": "Masas de empanada",
+              "url": "/frescos/pastas-y-masas/masas-de-empanada",
+              "children": []
+            },
+            {
+              "name": "Pastas rellenas",
+              "url": "/frescos/pastas-y-masas/pastas-rellenas",
+              "children": []
+            },
+            {
+              "name": "Pastas simples",
+              "url": "/frescos/pastas-y-masas/pastas-simples",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Carnicería",
+          "url": "/frescos/carniceria",
+          "children": [
+            {
+              "name": "Atados y carbón",
+              "url": "/frescos/carniceria/atados-y-carbon",
+              "children": []
+            },
+            {
+              "name": "Carne vacuna",
+              "url": "/frescos/carniceria/carne-vacuna",
+              "children": []
+            },
+            {
+              "name": "Carne de cerdo",
+              "url": "/frescos/carniceria/carne-de-cerdo",
+              "children": []
+            },
+            {
+              "name": "Pollo",
+              "url": "/frescos/carniceria/pollo",
+              "children": []
+            },
+            {
+              "name": "Embutidos y achuras",
+              "url": "/frescos/carniceria/embutidos-y-achuras",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Fiambrería",
+          "url": "/frescos/fiambreria",
+          "children": [
+            {
+              "name": "Fiambres y embutidos",
+              "url": "/frescos/fiambreria/fiambres-y-embutidos",
+              "children": []
+            },
+            {
+              "name": "Frankfurters",
+              "url": "/frescos/fiambreria/frankfurters",
+              "children": []
+            },
+            {
+              "name": "Quesos especiales",
+              "url": "/frescos/fiambreria/quesos-especiales",
+              "children": []
+            },
+            {
+              "name": "Quesos",
+              "url": "/frescos/fiambreria/quesos",
+              "children": []
+            },
+            {
+              "name": "Queso rallado",
+              "url": "/frescos/fiambreria/queso-rallado",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Frutas y verduras",
+          "url": "/frescos/frutas-y-verduras",
+          "children": [
+            {
+              "name": "Frutas",
+              "url": "/frescos/frutas-y-verduras/frutas",
+              "children": []
+            },
+            {
+              "name": "Verduras",
+              "url": "/frescos/frutas-y-verduras/verduras",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Rotisería",
+          "url": "/frescos/rotiseria",
+          "children": [
+            {
+              "name": "Pizza",
+              "url": "/frescos/rotiseria/pizza",
+              "children": []
+            },
+            {
+              "name": "Sandwiches y tartas",
+              "url": "/frescos/rotiseria/sandwiches-y-tartas",
+              "children": []
+            },
+            {
+              "name": "Otros",
+              "url": "/frescos/rotiseria/otros",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Panadería",
+          "url": "/frescos/panaderia",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Congelados",
+      "url": "/congelados",
+      "children": [
+        {
+          "name": "Pasta",
+          "url": "/congelados/pasta",
+          "children": []
+        },
+        {
+          "name": "Vegetales",
+          "url": "/congelados/vegetales",
+          "children": []
+        },
+        {
+          "name": "Helados y postres",
+          "url": "/congelados/helados-y-postres",
+          "children": [
+            {
+              "name": "Helados",
+              "url": "/congelados/helados-y-postres/helados",
+              "children": []
+            },
+            {
+              "name": "Postres",
+              "url": "/congelados/helados-y-postres/postres",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Hamburguesas y Milanesas",
+          "url": "/congelados/hamburguesas-y-milanesas",
+          "children": [
+            {
+              "name": "Hamburguesas",
+              "url": "/congelados/hamburguesas-y-milanesas/hamburguesas",
+              "children": []
+            },
+            {
+              "name": "Milanesas",
+              "url": "/congelados/hamburguesas-y-milanesas/milanesas",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Pescados",
+          "url": "/congelados/pescados",
+          "children": []
+        },
+        {
+          "name": "Comidas congeladas",
+          "url": "/congelados/comidas-congeladas",
+          "children": [
+            {
+              "name": "Guarniciones",
+              "url": "/congelados/comidas-congeladas/guarniciones",
+              "children": []
+            },
+            {
+              "name": "Pizza",
+              "url": "/congelados/comidas-congeladas/pizza",
+              "children": []
+            },
+            {
+              "name": "Pollo",
+              "url": "/congelados/comidas-congeladas/pollo",
+              "children": []
+            },
+            {
+              "name": "Otras comidas congeladas",
+              "url": "/congelados/comidas-congeladas/otras-comidas-congeladas",
+              "children": []
+            },
+            {
+              "name": "Empanadas y tartas",
+              "url": "/congelados/comidas-congeladas/empanadas-y-tartas",
+              "children": []
+            },
+            {
+              "name": "Papas",
+              "url": "/congelados/comidas-congeladas/papas",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Hielos",
+          "url": "/congelados/hielos",
+          "children": []
+        },
+        {
+          "name": "Frutas",
+          "url": "/congelados/frutas",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Bebidas",
+      "url": "/bebidas",
+      "children": [
+        {
+          "name": "Aguas",
+          "url": "/bebidas/aguas",
+          "children": [
+            {
+              "name": "Aguas con gas",
+              "url": "/bebidas/aguas/aguas-con-gas",
+              "children": []
+            },
+            {
+              "name": "Aguas sin gas",
+              "url": "/bebidas/aguas/aguas-sin-gas",
+              "children": []
+            },
+            {
+              "name": "Aguas saborizadas",
+              "url": "/bebidas/aguas/aguas-saborizadas",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Cerveza",
+          "url": "/bebidas/cervezas",
+          "children": []
+        },
+        {
+          "name": "Jugos",
+          "url": "/bebidas/jugos",
+          "children": [
+            {
+              "name": "En polvo",
+              "url": "/bebidas/jugos/en-polvo",
+              "children": []
+            },
+            {
+              "name": "Jugos liquidos",
+              "url": "/bebidas/jugos/jugos-liquidos",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Gaseosas",
+          "url": "/bebidas/gaseosas",
+          "children": []
+        },
+        {
+          "name": "Vinos y espumantes",
+          "url": "/bebidas/vinos-y-espumantes",
+          "children": [
+            {
+              "name": "Vinos de mesa",
+              "url": "/bebidas/vinos-y-espumantes/vinos-de-mesa",
+              "children": []
+            },
+            {
+              "name": "Vinos finos",
+              "url": "/bebidas/vinos-y-espumantes/vinos-finos",
+              "children": []
+            },
+            {
+              "name": "Espumantes",
+              "url": "/bebidas/vinos-y-espumantes/espumantes",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Energizantes e isotónicas",
+          "url": "/bebidas/energizantes-e-isotonicas",
+          "children": []
+        },
+        {
+          "name": "Whiskys, bebidas blancas y aperitivos",
+          "url": "/bebidas/whiskys-bebidas-blancas-y-aperitivos",
+          "children": [
+            {
+              "name": "Whiskys",
+              "url": "/bebidas/whiskys-bebidas-blancas-y-aperitivos/whiskys",
+              "children": []
+            },
+            {
+              "name": "Bebidas blancas",
+              "url": "/bebidas/whiskys-bebidas-blancas-y-aperitivos/bebidas-blancas",
+              "children": []
+            },
+            {
+              "name": "Aperitivos",
+              "url": "/bebidas/whiskys-bebidas-blancas-y-aperitivos/aperitivos",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Perfumería",
+      "url": "/perfumeria",
+      "children": [
+        {
+          "name": "Cuidado del cabello",
+          "url": "/perfumeria/cuidado-del-cabello",
+          "children": [
+            {
+              "name": "Shampoo",
+              "url": "/perfumeria/cuidado-del-cabello/shampoo",
+              "children": []
+            },
+            {
+              "name": "Acondicionador",
+              "url": "/perfumeria/cuidado-del-cabello/acondicionador",
+              "children": []
+            },
+            {
+              "name": "Tratamiento capilar",
+              "url": "/perfumeria/cuidado-del-cabello/tratamiento-capilar",
+              "children": []
+            },
+            {
+              "name": "Tintas",
+              "url": "/perfumeria/cuidado-del-cabello/tintas",
+              "children": []
+            },
+            {
+              "name": "Fijadores",
+              "url": "/perfumeria/cuidado-del-cabello/fijadores",
+              "children": []
+            },
+            {
+              "name": "Accesorios para el cabello",
+              "url": "/perfumeria/cuidado-del-cabello/accesorios-para-el-cabello",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Cuidado oral",
+          "url": "/perfumeria/cuidado-oral",
+          "children": [
+            {
+              "name": "Cremas dentales",
+              "url": "/perfumeria/cuidado-oral/cremas-dentales",
+              "children": []
+            },
+            {
+              "name": "Cepillos dentales",
+              "url": "/perfumeria/cuidado-oral/cepillos-dentales",
+              "children": []
+            },
+            {
+              "name": "Enjuague bucal y accesorios",
+              "url": "/perfumeria/cuidado-oral/enjuague-bucal-y-accesorios",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Cuidado facial",
+          "url": "/perfumeria/cuidado-facial",
+          "children": [
+            {
+              "name": "Cremas faciales",
+              "url": "/perfumeria/cuidado-facial/cremas-faciales",
+              "children": []
+            },
+            {
+              "name": "Maquillaje y accesorios",
+              "url": "/perfumeria/cuidado-facial/maquillaje-y-accesorios",
+              "children": []
+            },
+            {
+              "name": "Afeitado",
+              "url": "/perfumeria/cuidado-facial/afeitado",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Cuidado corporal",
+          "url": "/perfumeria/cuidado-corporal",
+          "children": [
+            {
+              "name": "Jabones",
+              "url": "/perfumeria/cuidado-corporal/jabones",
+              "children": []
+            },
+            {
+              "name": "Desodorantes",
+              "url": "/perfumeria/cuidado-corporal/desodorantes",
+              "children": []
+            },
+            {
+              "name": "Cremas corporales",
+              "url": "/perfumeria/cuidado-corporal/cremas-corporales",
+              "children": []
+            },
+            {
+              "name": "Manos y pies",
+              "url": "/perfumeria/cuidado-corporal/manos-y-pies",
+              "children": []
+            },
+            {
+              "name": "Perfumes y fragancias",
+              "url": "/perfumeria/cuidado-corporal/perfumes-y-fragancias",
+              "children": []
+            },
+            {
+              "name": "Depilación",
+              "url": "/perfumeria/cuidado-corporal/depilacion",
+              "children": []
+            },
+            {
+              "name": "Talcos",
+              "url": "/perfumeria/cuidado-corporal/talcos",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Protectores solares",
+          "url": "/perfumeria/protectores-solares",
+          "children": []
+        },
+        {
+          "name": "Cuidado del adulto",
+          "url": "/perfumeria/cuidado-del-adulto",
+          "children": [
+            {
+              "name": "Incontinencia",
+              "url": "/perfumeria/cuidado-del-adulto/incontinencia",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Protección feminina",
+          "url": "/perfumeria/proteccion-femenina",
+          "children": [
+            {
+              "name": "Toallas femeninas",
+              "url": "/perfumeria/proteccion-femenina/toallas-femeninas",
+              "children": []
+            },
+            {
+              "name": "Protectores diarios",
+              "url": "/perfumeria/proteccion-femenina/protectores-diarios",
+              "children": []
+            },
+            {
+              "name": "Tampones",
+              "url": "/perfumeria/proteccion-femenina/tampones",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Otros perfumería",
+          "url": "/perfumeria/otros-perfumeria",
+          "children": [
+            {
+              "name": "Otros",
+              "url": "/perfumeria/otros-perfumeria/otros",
+              "children": []
+            },
+            {
+              "name": "Alcohol",
+              "url": "/perfumeria/otros-perfumeria/alcohol",
+              "children": []
+            },
+            {
+              "name": "Algodones",
+              "url": "/perfumeria/otros-perfumeria/algodones",
+              "children": []
+            },
+            {
+              "name": "Hisopos",
+              "url": "/perfumeria/otros-perfumeria/hisopos-y-cotonetes",
+              "children": []
+            },
+            {
+              "name": "Esponjas",
+              "url": "/perfumeria/otros-perfumeria/esponjas",
+              "children": []
+            },
+            {
+              "name": "Curitas",
+              "url": "/perfumeria/otros-perfumeria/curitas",
+              "children": []
+            },
+            {
+              "name": "Preservativos",
+              "url": "/perfumeria/otros-perfumeria/preservativos",
+              "children": []
+            },
+            {
+              "name": "Bolsas de agua caliente",
+              "url": "/perfumeria/otros-perfumeria/bolsas-de-agua-caliente",
+              "children": []
+            },
+            {
+              "name": "Tapabocas",
+              "url": "/perfumeria/otros-perfumeria/tapabocas",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Limpieza",
+      "url": "/limpieza",
+      "children": [
+        {
+          "name": "Desodorante de ambiente",
+          "url": "/limpieza/desodorante-de-ambiente",
+          "children": []
+        },
+        {
+          "name": "Limpieza de baños y cocina",
+          "url": "/limpieza/limpieza-de-banos-y-cocina",
+          "children": [
+            {
+              "name": "Detergentes",
+              "url": "/limpieza/limpieza-de-banos-y-cocina/detergentes",
+              "children": []
+            },
+            {
+              "name": "Lavavajillas",
+              "url": "/limpieza/limpieza-de-banos-y-cocina/lavavajillas",
+              "children": []
+            },
+            {
+              "name": "Limpiadores de cocina",
+              "url": "/limpieza/limpieza-de-banos-y-cocina/limpiadores-de-cocina",
+              "children": []
+            },
+            {
+              "name": "Limpiadores de baño",
+              "url": "/limpieza/limpieza-de-banos-y-cocina/limpiadores-de-bano",
+              "children": []
+            },
+            {
+              "name": "Limpiadores cremosos",
+              "url": "/limpieza/limpieza-de-banos-y-cocina/limpiadores-cremosos",
+              "children": []
+            },
+            {
+              "name": "Limpiadores específicos",
+              "url": "/limpieza/limpieza-de-banos-y-cocina/limpiadores-especificos",
+              "children": []
+            },
+            {
+              "name": "Lavandina",
+              "url": "/limpieza/limpieza-de-banos-y-cocina/lavandina",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Limpieza pisos y muebles",
+          "url": "/limpieza/limpieza-pisos-y-muebles",
+          "children": [
+            {
+              "name": "Limpiadores de piso",
+              "url": "/limpieza/limpieza-pisos-y-muebles/limpiadores-de-piso",
+              "children": []
+            },
+            {
+              "name": "Limpia muebles",
+              "url": "/limpieza/limpieza-pisos-y-muebles/limpia-muebles",
+              "children": []
+            },
+            {
+              "name": "Ceras y autobrillos",
+              "url": "/limpieza/limpieza-pisos-y-muebles/ceras-y-autobrillos",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Limpieza de ropa",
+          "url": "/limpieza/limpieza-de-ropa",
+          "children": [
+            {
+              "name": "Jabón liquido",
+              "url": "/limpieza/limpieza-de-ropa/jabon-liquido",
+              "children": []
+            },
+            {
+              "name": "Jabón en polvo",
+              "url": "/limpieza/limpieza-de-ropa/jabon-en-polvo",
+              "children": []
+            },
+            {
+              "name": "Jabón en barra",
+              "url": "/limpieza/limpieza-de-ropa/jabon-en-barra",
+              "children": []
+            },
+            {
+              "name": "Suavizantes",
+              "url": "/limpieza/limpieza-de-ropa/suavizantes",
+              "children": []
+            },
+            {
+              "name": "Prelavados y quitamanchas",
+              "url": "/limpieza/limpieza-de-ropa/prelavados-y-quitamanchas",
+              "children": []
+            },
+            {
+              "name": "Perfume para tela",
+              "url": "/limpieza/limpieza-de-ropa/perfume-para-tela",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Papeles",
+          "url": "/limpieza/papeles",
+          "children": [
+            {
+              "name": "Papel higiénico",
+              "url": "/limpieza/papeles/papel-higienico",
+              "children": []
+            },
+            {
+              "name": "Rollos de cocina",
+              "url": "/limpieza/papeles/rollos-de-cocina",
+              "children": []
+            },
+            {
+              "name": "Servilletas",
+              "url": "/limpieza/papeles/servilletas",
+              "children": []
+            },
+            {
+              "name": "Pañuelos",
+              "url": "/limpieza/papeles/panuelos",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Insecticidas, plaguicidas y repelentes",
+          "url": "/limpieza/insecticidas-plaguicidas-y-repelentes",
+          "children": [
+            {
+              "name": "Insecticidas",
+              "url": "/limpieza/insecticidas-plaguicidas-y-repelentes/insecticidas",
+              "children": []
+            },
+            {
+              "name": "Repelentes",
+              "url": "/limpieza/insecticidas-plaguicidas-y-repelentes/repelentes",
+              "children": []
+            },
+            {
+              "name": "Otros",
+              "url": "/limpieza/insecticidas-plaguicidas-y-repelentes/otros",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Accesorios de limpieza",
+          "url": "/limpieza/accesorios-de-limpieza",
+          "children": [
+            {
+              "name": "Guantes esponjas y paños",
+              "url": "/limpieza/accesorios-de-limpieza/guantes-esponjas-y-panos",
+              "children": []
+            },
+            {
+              "name": "Escobas mopas y cepillos",
+              "url": "/limpieza/accesorios-de-limpieza/escobas-mopas-y-cepillos",
+              "children": []
+            },
+            {
+              "name": "Baldes y palanganas",
+              "url": "/limpieza/accesorios-de-limpieza/baldes-y-palanganas",
+              "children": []
+            },
+            {
+              "name": "Cestos",
+              "url": "/limpieza/accesorios-de-limpieza/cestos",
+              "children": []
+            },
+            {
+              "name": "Fósforos y encendedores",
+              "url": "/limpieza/accesorios-de-limpieza/fosforos-y-encendedores",
+              "children": []
+            },
+            {
+              "name": "Bolsas residuos",
+              "url": "/limpieza/accesorios-de-limpieza/bolsa-residuos",
+              "children": []
+            },
+            {
+              "name": "Otros accesorios",
+              "url": "/limpieza/accesorios-de-limpieza/otros-accesorios",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Otros limpiadores",
+          "url": "/limpieza/otros-limpiadores",
+          "children": [
+            {
+              "name": "Autos",
+              "url": "/limpieza/otros-limpiadores/autos",
+              "children": []
+            },
+            {
+              "name": "Calzado",
+              "url": "/limpieza/otros-limpiadores/calzado",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bebés",
+      "url": "/bebes",
+      "children": [
+        {
+          "name": "Cuidado del bebé",
+          "url": "/bebes/cuidado-del-bebe",
+          "children": [
+            {
+              "name": "Pañales",
+              "url": "/bebes/cuidado-del-bebe/panales",
+              "children": []
+            },
+            {
+              "name": "Toallitas húmedas",
+              "url": "/bebes/cuidado-del-bebe/toallitas-humedas",
+              "children": []
+            },
+            {
+              "name": "Shampoo, jabones y otros",
+              "url": "/bebes/cuidado-del-bebe/shampoo-jabones-y-otros",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Alimentación Infantil",
+          "url": "/bebes/alimentacion-infantil",
+          "children": []
+        },
+        {
+          "name": "Puericultura",
+          "url": "/bebes/puericultura",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Ferreteria",
+      "url": "/ferreteria",
+      "children": [
+        {
+          "name": "Herramientas",
+          "url": "/ferreteria/herramientas",
+          "children": [
+            {
+              "name": "Manuales",
+              "url": "/ferreteria/herramientas/manuales",
+              "children": []
+            },
+            {
+              "name": "Eléctricas",
+              "url": "/ferreteria/herramientas/electricas",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Lamparitas y electricidad",
+          "url": "/ferreteria/lamparitas-y-electricidad",
+          "children": [
+            {
+              "name": "Lámparas led",
+              "url": "/ferreteria/lamparitas-y-electricidad/lamparas-led",
+              "children": []
+            },
+            {
+              "name": "Linternas",
+              "url": "/ferreteria/lamparitas-y-electricidad/linternas",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Materiales eléctricos",
+          "url": "/ferreteria/materiales-electricos",
+          "children": [
+            {
+              "name": "Fichas y adaptadores",
+              "url": "/ferreteria/materiales-electricos/fichas-y-adaptadores",
+              "children": []
+            },
+            {
+              "name": "Alargues",
+              "url": "/ferreteria/materiales-electricos/alargues",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Pilas y accesorios",
+          "url": "/ferreteria/pilas-y-accesorios",
+          "children": [
+            {
+              "name": "Pilas",
+              "url": "/ferreteria/pilas-y-accesorios/pilas",
+              "children": []
+            },
+            {
+              "name": "Accesorios",
+              "url": "/ferreteria/pilas-y-accesorios/accesorios",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Adhesivos y otros",
+          "url": "/ferreteria/adhesivos-y-otros",
+          "children": [
+            {
+              "name": "Adhesivos",
+              "url": "/ferreteria/adhesivos-y-otros/adhesivos",
+              "children": []
+            },
+            {
+              "name": "Otros",
+              "url": "/ferreteria/adhesivos-y-otros/otros",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mascotas",
+      "url": "/mascotas",
+      "children": [
+        {
+          "name": "Alimento para gato",
+          "url": "/mascotas/alimento-para-gato",
+          "children": []
+        },
+        {
+          "name": "Alimento para perro",
+          "url": "/mascotas/alimento-para-perro",
+          "children": []
+        },
+        {
+          "name": "Accesorios",
+          "url": "/mascotas/accesorios",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Textil",
+      "url": "/textil",
+      "children": [
+        {
+          "name": "Ropa niños",
+          "url": "/Textil/ropa-ninos",
+          "children": [
+            {
+              "name": "Pantalones y jeans",
+              "url": "/Textil/ropa-ninos/pantalones-y-jeans",
+              "children": []
+            },
+            {
+              "name": "Ropa de abrigo",
+              "url": "/Textil/ropa-ninos/ropa-de-abrigo",
+              "children": []
+            },
+            {
+              "name": "Remeras y blusas",
+              "url": "/Textil/ropa-ninos/remeras-y-blusas",
+              "children": []
+            },
+            {
+              "name": "Calzado",
+              "url": "/Textil/ropa-ninos/calzado",
+              "children": []
+            },
+            {
+              "name": "Malla y shorts de baño",
+              "url": "/Textil/ropa-ninos/mallas-y-shorts-de-bano",
+              "children": []
+            },
+            {
+              "name": "Ropa interior y medias",
+              "url": "/Textil/ropa-ninos/ropa-interior-y-medias",
+              "children": []
+            },
+            {
+              "name": "Túnicas delantales y moñas",
+              "url": "/Textil/ropa-ninos/tunicas-delantales-y-monas",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Ropa damas",
+          "url": "/Textil/ropa-damas",
+          "children": [
+            {
+              "name": "Ropa interior",
+              "url": "/Textil/ropa-damas/ropa-interior",
+              "children": []
+            },
+            {
+              "name": "Remeras y camisas",
+              "url": "/Textil/ropa-damas/remeras-y-camisas",
+              "children": []
+            },
+            {
+              "name": "Pantalones y jeans",
+              "url": "/Textil/ropa-damas/pantalones-y-jeans",
+              "children": []
+            },
+            {
+              "name": "Ropa de verano",
+              "url": "/Textil/ropa-damas/ropa-de-verano",
+              "children": []
+            },
+            {
+              "name": "Ropa de abrigo",
+              "url": "/Textil/ropa-damas/ropa-de-abrigo",
+              "children": []
+            },
+            {
+              "name": "Calzado",
+              "url": "/Textil/ropa-damas/calzado",
+              "children": []
+            },
+            {
+              "name": "Mallas",
+              "url": "/Textil/ropa-damas/mallas",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Ropa hombres",
+          "url": "/Textil/ropa-hombres",
+          "children": [
+            {
+              "name": "Ropa interior",
+              "url": "/Textil/ropa-hombres/ropa-interior",
+              "children": []
+            },
+            {
+              "name": "Remeras y camisas",
+              "url": "/Textil/ropa-hombres/remeras-y-camisas",
+              "children": []
+            },
+            {
+              "name": "Short de baño",
+              "url": "/Textil/ropa-hombres/short-de-bano",
+              "children": []
+            },
+            {
+              "name": "Pantalones, jeans y short",
+              "url": "/Textil/ropa-hombres/pantalones-jeans-y-short",
+              "children": []
+            },
+            {
+              "name": "Ropa de abrigo",
+              "url": "/Textil/ropa-hombres/ropa-de-abrigo",
+              "children": []
+            },
+            {
+              "name": "Calzado",
+              "url": "/Textil/ropa-hombres/calzado",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Ropa bebés",
+          "url": "/Textil/ropa-bebes",
+          "children": []
+        },
+        {
+          "name": "Accesorios",
+          "url": "/Textil/accesorios-textil",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Juguetería y librería",
+      "url": "/jugueteria-y-libreria",
+      "children": [
+        {
+          "name": "Jugueteria",
+          "url": "/jugueteria-y-libreria/jugueteria",
+          "children": [
+            {
+              "name": "Juegos de rol",
+              "url": "/jugueteria-y-libreria/jugueteria/juegos-de-rol",
+              "children": []
+            },
+            {
+              "name": "Muñecas y accesorios",
+              "url": "/jugueteria-y-libreria/jugueteria/munecas-y-accesorios",
+              "children": []
+            },
+            {
+              "name": "Deporte y aire libre",
+              "url": "/jugueteria-y-libreria/jugueteria/deporte-y-aire-libre",
+              "children": []
+            },
+            {
+              "name": "Figuras y animales",
+              "url": "/jugueteria-y-libreria/jugueteria/figuras-y-animales",
+              "children": []
+            },
+            {
+              "name": "Manualidades y accesorios",
+              "url": "/jugueteria-y-libreria/jugueteria/manualidades-y-accesorios",
+              "children": []
+            },
+            {
+              "name": "Primera infancia",
+              "url": "/jugueteria-y-libreria/jugueteria/primera-infancia",
+              "children": []
+            },
+            {
+              "name": "Didáctico",
+              "url": "/jugueteria-y-libreria/jugueteria/didactico",
+              "children": []
+            },
+            {
+              "name": "Licencias",
+              "url": "/jugueteria-y-libreria/jugueteria/licencias",
+              "children": []
+            },
+            {
+              "name": "Vehículos y pistas",
+              "url": "/jugueteria-y-libreria/jugueteria/vehiculos-y-pistas",
+              "children": []
+            },
+            {
+              "name": "Piscinas, inflables y accesorios",
+              "url": "/jugueteria-y-libreria/jugueteria/piscinas-inflables-y-accesorios",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Librería",
+          "url": "/jugueteria-y-libreria/libreria",
+          "children": [
+            {
+              "name": "Cartuchera",
+              "url": "/jugueteria-y-libreria/libreria/cartucheras",
+              "children": []
+            },
+            {
+              "name": "Encuadernados",
+              "url": "/jugueteria-y-libreria/libreria/encuadernados",
+              "children": []
+            },
+            {
+              "name": "Mochilas",
+              "url": "/jugueteria-y-libreria/libreria/mochilas",
+              "children": []
+            },
+            {
+              "name": "Útiles",
+              "url": "/jugueteria-y-libreria/libreria/utiles",
+              "children": []
+            },
+            {
+              "name": "Uniformes escolares",
+              "url": "/jugueteria-y-libreria/libreria/uniformes-escolares",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hogar y bazar",
+      "url": "/hogar-y-bazar",
+      "children": [
+        {
+          "name": "Navidad",
+          "url": "/hogar-y-bazar/navidad",
+          "children": []
+        },
+        {
+          "name": "Textil hogar",
+          "url": "/hogar-y-bazar/textil-hogar",
+          "children": []
+        },
+        {
+          "name": "Mates, termos y bombillas",
+          "url": "/hogar-y-bazar/mates-termos-y-bombillas",
+          "children": []
+        },
+        {
+          "name": "Decoración",
+          "url": "/hogar-y-bazar/decoracion",
+          "children": [
+            {
+              "name": "Relojes, espejos y porta-retratos",
+              "url": "/hogar-y-bazar/decoracion/relojes-espejos-y-porta-retratos",
+              "children": []
+            },
+            {
+              "name": "Velas y aromaterapia",
+              "url": "/hogar-y-bazar/decoracion/velas-y-aromaterapia",
+              "children": []
+            },
+            {
+              "name": "Varios decoración",
+              "url": "/hogar-y-bazar/decoracion/varios-decoracion",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Plásticos y descartables",
+          "url": "/hogar-y-bazar/plasticos-y-descartables",
+          "children": [
+            {
+              "name": "Plásticos",
+              "url": "/hogar-y-bazar/plasticos-y-descartables/plasticos",
+              "children": []
+            },
+            {
+              "name": "Descartables",
+              "url": "/hogar-y-bazar/plasticos-y-descartables/descartables",
+              "children": []
+            },
+            {
+              "name": "Bolsas reutilizables",
+              "url": "/hogar-y-bazar/plasticos-y-descartables/bolsas-reutilizables",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Cotillón",
+          "url": "/hogar-y-bazar/cotillon",
+          "children": [
+            {
+              "name": "Velas cumpleaños",
+              "url": "/hogar-y-bazar/cotillon/velas-cumpleanos",
+              "children": []
+            },
+            {
+              "name": "Globos",
+              "url": "/hogar-y-bazar/cotillon/globos",
+              "children": []
+            },
+            {
+              "name": "Varios",
+              "url": "/hogar-y-bazar/cotillon/varios",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Aire libre",
+          "url": "/hogar-y-bazar/aire-libre",
+          "children": [
+            {
+              "name": "Sillas y mesas",
+              "url": "/hogar-y-bazar/aire-libre/sillas-y-mesas",
+              "children": []
+            },
+            {
+              "name": "Carpas, gazebos y otros",
+              "url": "/hogar-y-bazar/aire-libre/carpas-gazebos-y-otros",
+              "children": []
+            },
+            {
+              "name": "Colchones y sobres de dormir",
+              "url": "/hogar-y-bazar/aire-libre/colchones-y-sobres-de-dormir",
+              "children": []
+            },
+            {
+              "name": "Conservadores",
+              "url": "/hogar-y-bazar/aire-libre/conservadoras",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Deportes y fitness",
+          "url": "/hogar-y-bazar/deportes-y-fitness",
+          "children": []
+        },
+        {
+          "name": "Artículos de mesa",
+          "url": "/hogar-y-bazar/articulos-de-mesa",
+          "children": [
+            {
+              "name": "Vajilla",
+              "url": "/hogar-y-bazar/articulos-de-mesa/vajilla",
+              "children": []
+            },
+            {
+              "name": "Cubiertos",
+              "url": "/hogar-y-bazar/articulos-de-mesa/cubiertos",
+              "children": []
+            },
+            {
+              "name": "Bowls y recipientes",
+              "url": "/hogar-y-bazar/articulos-de-mesa/bowls-y-recipientes",
+              "children": []
+            },
+            {
+              "name": "Complementos de mesa",
+              "url": "/hogar-y-bazar/articulos-de-mesa/complementos-de-mesa",
+              "children": []
+            },
+            {
+              "name": "Botellas y vasos para llevar",
+              "url": "/hogar-y-bazar/articulos-de-mesa/botellas-y-vasos-para-llevar",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Cristalería",
+          "url": "/hogar-y-bazar/cristaleria",
+          "children": [
+            {
+              "name": "Vasos y copas",
+              "url": "/hogar-y-bazar/cristaleria/vasos-y-copas",
+              "children": []
+            },
+            {
+              "name": "Jarras",
+              "url": "/hogar-y-bazar/cristaleria/jarras",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Cocina",
+          "url": "/hogar-y-bazar/cocina",
+          "children": [
+            {
+              "name": "Tablas",
+              "url": "/hogar-y-bazar/cocina/tablas",
+              "children": []
+            },
+            {
+              "name": "Asaderas y fuentes",
+              "url": "/hogar-y-bazar/cocina/asaderas-y-fuentes",
+              "children": []
+            },
+            {
+              "name": "Cacerolas y sartenes",
+              "url": "/hogar-y-bazar/cocina/cacerolas-y-sartenes",
+              "children": []
+            },
+            {
+              "name": "Utensilios para cocinar",
+              "url": "/hogar-y-bazar/cocina/utensillos-para-cocinar",
+              "children": []
+            },
+            {
+              "name": "Utensilios para servir",
+              "url": "/hogar-y-bazar/cocina/utensillos-para-servir",
+              "children": []
+            },
+            {
+              "name": "Almacenamiento de alimentos",
+              "url": "/hogar-y-bazar/cocina/almacenamiento-de-alimentos",
+              "children": []
+            },
+            {
+              "name": "Escurridores",
+              "url": "/hogar-y-bazar/cocina/escurridores",
+              "children": []
+            },
+            {
+              "name": "Calderas",
+              "url": "/hogar-y-bazar/cocina/calderas",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Organización",
+          "url": "/hogar-y-bazar/organizacion",
+          "children": [
+            {
+              "name": "Cajas, canastos y otros",
+              "url": "/hogar-y-bazar/organizacion/cajas-canastos-y-otros",
+              "children": []
+            },
+            {
+              "name": "Cestos y recipientes para residuos",
+              "url": "/hogar-y-bazar/organizacion/cestos-y-recipientes-para-residuos",
+              "children": []
+            },
+            {
+              "name": "Organización de ropa",
+              "url": "/hogar-y-bazar/organizacion/organizacion-de-ropa",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Accesorios de baño",
+          "url": "/hogar-y-bazar/accesorios-de-bano",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Belleza y cuidado personal ",
+      "url": "/belleza-y-cuidado-personal",
+      "children": [
+        {
+          "name": "Artefactos para el Cabello",
+          "url": "/belleza-y-cuidado-personal/artefactos-para-el-cabello",
+          "children": [
+            {
+              "name": "Bucleras",
+              "url": "/belleza-y-cuidado-personal/artefactos-para-el-cabello/bucleras",
+              "children": []
+            },
+            {
+              "name": "Cepillos eléctricos",
+              "url": "/belleza-y-cuidado-personal/artefactos-para-el-cabello/cepillos-electricos",
+              "children": []
+            },
+            {
+              "name": "Cortadoras de Pelo",
+              "url": "/belleza-y-cuidado-personal/artefactos-para-el-cabello/cortadoras-de-pelo",
+              "children": []
+            },
+            {
+              "name": "Planchitas",
+              "url": "/belleza-y-cuidado-personal/artefactos-para-el-cabello/planchitas",
+              "children": []
+            },
+            {
+              "name": "Secadores de Pelo",
+              "url": "/belleza-y-cuidado-personal/artefactos-para-el-cabello/secadores-de-pelo",
+              "children": []
+            },
+            {
+              "name": "Trimmers",
+              "url": "/belleza-y-cuidado-personal/artefactos-para-el-cabello/trimmers",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Barbería",
+          "url": "/belleza-y-cuidado-personal/barberia",
+          "children": [
+            {
+              "name": "Afeitadoras",
+              "url": "/belleza-y-cuidado-personal/barberia/afeitadoras",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Depilación",
+          "url": "/belleza-y-cuidado-personal/depilacion",
+          "children": [
+            {
+              "name": "Depiladoras",
+              "url": "/belleza-y-cuidado-personal/depilacion/depiladoras",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Tratamientos de Belleza",
+          "url": "/belleza-y-cuidado-personal/tratamientos-de-belleza",
+          "children": [
+            {
+              "name": "Otros",
+              "url": "/belleza-y-cuidado-personal/tratamientos-de-belleza/otros",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Celulares y Telefonía",
+      "url": "/celulares-y-telefonia",
+      "children": [
+        {
+          "name": "Accesorios para Celulares",
+          "url": "/celulares-y-telefonia/accesorios-para-celulares",
+          "children": [
+            {
+              "name": "Cables de Datos",
+              "url": "/celulares-y-telefonia/accesorios-para-celulares/cables-de-datos",
+              "children": []
+            },
+            {
+              "name": "Otros",
+              "url": "/celulares-y-telefonia/accesorios-para-celulares/otros",
+              "children": []
+            },
+            {
+              "name": "Cargadores",
+              "url": "/celulares-y-telefonia/accesorios-para-celulares/cargadores",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Celulares y Smartphones",
+          "url": "/celulares-y-telefonia/celulares-y-smartphones",
+          "children": []
+        },
+        {
+          "name": "Smartwatches y Accesorios",
+          "url": "/celulares-y-telefonia/smartwatches-y-accesorios",
+          "children": [
+            {
+              "name": "Smartwatches",
+              "url": "/celulares-y-telefonia/smartwatches-y-accesorios/smartwatches",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Telefonía Fija e Inalámbrica",
+          "url": "/celulares-y-telefonia/telefonia-fija-e-inalambrica",
+          "children": [
+            {
+              "name": "Teléfonos",
+              "url": "/celulares-y-telefonia/telefonia-fija-e-inalambrica/telefonos",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Computación",
+      "url": "/computacion",
+      "children": [
+        {
+          "name": "Almacenamiento",
+          "url": "/computacion/almacenamiento",
+          "children": [
+            {
+              "name": "Pen Drives",
+              "url": "/computacion/almacenamiento/pen-drives",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Cables y Hubs USB",
+          "url": "/computacion/cables-y-hubs-usb",
+          "children": []
+        },
+        {
+          "name": "Conectividad y Redes",
+          "url": "/computacion/conectividad-y-redes",
+          "children": [
+            {
+              "name": "Routers",
+              "url": "/computacion/conectividad-y-redes/routers",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Impresión",
+          "url": "/computacion/impresion",
+          "children": [
+            {
+              "name": "Impresoras",
+              "url": "/computacion/impresion/impresoras",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Laptops y Accesorios",
+          "url": "/computacion/laptops-y-accesorios",
+          "children": [
+            {
+              "name": "Notebooks",
+              "url": "/computacion/laptops-y-accesorios/notebooks",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Monitores y Accesorios",
+          "url": "/computacion/monitores-y-accesorios",
+          "children": [
+            {
+              "name": "Monitores",
+              "url": "/computacion/monitores-y-accesorios/monitores",
+              "children": []
+            },
+            {
+              "name": "Otros",
+              "url": "/computacion/monitores-y-accesorios/otros",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Periféricos de PC",
+          "url": "/computacion/perifericos-de-pc",
+          "children": [
+            {
+              "name": "Mouses y Teclados",
+              "url": "/computacion/perifericos-de-pc/mouses-y-teclados",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Tablets y Accesorios",
+          "url": "/computacion/tablets-y-accesorios",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Consolas y Videojuegos",
+      "url": "/consolas-y-videojuegos",
+      "children": [
+        {
+          "name": "Accesorios para PC Gaming",
+          "url": "/consolas-y-videojuegos/accesorios-para-pc-gaming",
+          "children": [
+            {
+              "name": "Auriculares",
+              "url": "/consolas-y-videojuegos/accesorios-para-pc-gaming/auriculares",
+              "children": []
+            },
+            {
+              "name": "Controles para Gamers",
+              "url": "/consolas-y-videojuegos/accesorios-para-pc-gaming/controles-para-gamers",
+              "children": []
+            },
+            {
+              "name": "Micrófonos",
+              "url": "/consolas-y-videojuegos/accesorios-para-pc-gaming/microfonos",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Consolas",
+          "url": "/consolas-y-videojuegos/consolas",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Deportes y Fitness",
+      "url": "/deportes-y-fitness",
+      "children": [
+        {
+          "name": "Ciclismo",
+          "url": "/deportes-y-fitness/ciclismo",
+          "children": [
+            {
+              "name": "Bicicletas",
+              "url": "/deportes-y-fitness/ciclismo/bicicletas",
+              "children": []
+            },
+            {
+              "name": "Bicicletas Fijas",
+              "url": "/deportes-y-fitness/ciclismo/bicicletas-fijas",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Fitness y Musculación",
+          "url": "/deportes-y-fitness/fitness-y-musculacion",
+          "children": [
+            {
+              "name": "Aparatos de Musculación",
+              "url": "/deportes-y-fitness/fitness-y-musculacion/aparatos-de-musculacion",
+              "children": []
+            },
+            {
+              "name": "Funcional, Pilates y Yoga",
+              "url": "/deportes-y-fitness/fitness-y-musculacion/funcional-pilates-y-yoga",
+              "children": []
+            },
+            {
+              "name": "Máquinas Cardiovasculares",
+              "url": "/deportes-y-fitness/fitness-y-musculacion/maquinas-cardiovasculares",
+              "children": []
+            },
+            {
+              "name": "Pesas, discos y barras",
+              "url": "/deportes-y-fitness/fitness-y-musculacion/pesas-discos-y-barras",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Electrodomésticos y Aires Ac.",
+      "url": "/electrodomesticos-y-aires-ac-",
+      "children": [
+        {
+          "name": "Climatización",
+          "url": "/electrodomesticos-y-aires-ac-/climatizacion",
+          "children": [
+            {
+              "name": "Aires Acondicionados",
+              "url": "/electrodomesticos-y-aires-ac-/climatizacion/aires-acondicionados",
+              "children": []
+            },
+            {
+              "name": "Estufas y Calefactores",
+              "url": "/electrodomesticos-y-aires-ac-/climatizacion/estufas-y-calefactores",
+              "children": []
+            },
+            {
+              "name": "Otros",
+              "url": "/electrodomesticos-y-aires-ac-/climatizacion/otros",
+              "children": []
+            },
+            {
+              "name": "Termotanques y Calefones",
+              "url": "/electrodomesticos-y-aires-ac-/climatizacion/termotanques-y-calefones",
+              "children": []
+            },
+            {
+              "name": "Ventiladores",
+              "url": "/electrodomesticos-y-aires-ac-/climatizacion/ventiladores",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Cocción",
+          "url": "/electrodomesticos-y-aires-ac-/coccion",
+          "children": [
+            {
+              "name": "Anafes",
+              "url": "/electrodomesticos-y-aires-ac-/coccion/anafes",
+              "children": []
+            },
+            {
+              "name": "Cocinas",
+              "url": "/electrodomesticos-y-aires-ac-/coccion/cocinas",
+              "children": []
+            },
+            {
+              "name": "Extractores y Purificadores",
+              "url": "/electrodomesticos-y-aires-ac-/coccion/extractores-y-purificadores",
+              "children": []
+            },
+            {
+              "name": "Hornos",
+              "url": "/electrodomesticos-y-aires-ac-/coccion/hornos",
+              "children": []
+            },
+            {
+              "name": "Kits de Anafes y Extractores",
+              "url": "/electrodomesticos-y-aires-ac-/coccion/kits-de-anafes-y-extractores",
+              "children": []
+            },
+            {
+              "name": "Microondas",
+              "url": "/electrodomesticos-y-aires-ac-/coccion/microondas",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Lavado",
+          "url": "/electrodomesticos-y-aires-ac-/lavado",
+          "children": [
+            {
+              "name": "Lavarropas y Lavasecarropas",
+              "url": "/electrodomesticos-y-aires-ac-/lavado/lavarropas-y-lavasecarropas",
+              "children": []
+            },
+            {
+              "name": "Lavavajillas",
+              "url": "/electrodomesticos-y-aires-ac-/lavado/lavavajillas",
+              "children": []
+            },
+            {
+              "name": "Secarropas",
+              "url": "/electrodomesticos-y-aires-ac-/lavado/secarropas",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Pequeños Electrodomésticos",
+          "url": "/electrodomesticos-y-aires-ac-/pequenos-electrodomesticos",
+          "children": [
+            {
+              "name": "Otros",
+              "url": "/electrodomesticos-y-aires-ac-/pequenos-electrodomesticos/otros",
+              "children": []
+            },
+            {
+              "name": "Para Cocina",
+              "url": "/electrodomesticos-y-aires-ac-/pequenos-electrodomesticos/para-cocina",
+              "children": []
+            },
+            {
+              "name": "Para Hogar",
+              "url": "/electrodomesticos-y-aires-ac-/pequenos-electrodomesticos/para-hogar",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Refrigeración",
+          "url": "/electrodomesticos-y-aires-ac-/refrigeracion",
+          "children": [
+            {
+              "name": "Cavas para Vinos",
+              "url": "/electrodomesticos-y-aires-ac-/refrigeracion/cavas-para-vinos",
+              "children": []
+            },
+            {
+              "name": "Freezers",
+              "url": "/electrodomesticos-y-aires-ac-/refrigeracion/freezers",
+              "children": []
+            },
+            {
+              "name": "Frigobares",
+              "url": "/electrodomesticos-y-aires-ac-/refrigeracion/frigobares",
+              "children": []
+            },
+            {
+              "name": "Heladeras",
+              "url": "/electrodomesticos-y-aires-ac-/refrigeracion/heladeras",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Electrónica, Audio y Video",
+      "url": "/electronica-audio-y-video",
+      "children": [
+        {
+          "name": "Audio",
+          "url": "/electronica-audio-y-video/audio",
+          "children": [
+            {
+              "name": "Auriculares",
+              "url": "/electronica-audio-y-video/audio/auriculares",
+              "children": []
+            },
+            {
+              "name": "Parlantes, Bafles y Subwoofers",
+              "url": "/electronica-audio-y-video/audio/parlantes-bafles-y-subwoofers",
+              "children": []
+            },
+            {
+              "name": "Radios AM/FM",
+              "url": "/electronica-audio-y-video/audio/radios-am-fm",
+              "children": []
+            },
+            {
+              "name": "Torres de Sonido",
+              "url": "/electronica-audio-y-video/audio/torres-de-sonido",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Cables",
+          "url": "/electronica-audio-y-video/cables",
+          "children": [
+            {
+              "name": "Otros Cables",
+              "url": "/electronica-audio-y-video/cables/otros-cables",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Televisores",
+          "url": "/electronica-audio-y-video/televisores",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

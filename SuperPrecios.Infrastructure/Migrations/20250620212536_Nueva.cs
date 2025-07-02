@@ -17,11 +17,18 @@ namespace SuperPrecios.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nombre = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    Nombre = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    PadreId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Categorias", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Categorias_Categorias_PadreId",
+                        column: x => x.PadreId,
+                        principalTable: "Categorias",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -131,8 +138,12 @@ namespace SuperPrecios.Infrastructure.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Categorias_Nombre",
                 table: "Categorias",
-                column: "Nombre",
-                unique: true);
+                column: "Nombre");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Categorias_PadreId",
+                table: "Categorias",
+                column: "PadreId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Marcas_Nombre",

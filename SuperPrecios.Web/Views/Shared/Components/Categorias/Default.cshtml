@@ -1,0 +1,48 @@
+﻿@using SuperPrecios.Application.DTO.Categoria
+@using SuperPrecios.Domain.TAD
+@model List<Nodo<DtoCategoriaGet>>
+
+
+<div id="categoria-overlay" class="categoria-overlay">
+    <div class="categoria-overlay__background"></div>
+
+    <div class="categoria-overlay__content">
+        <button id="btn-close-categorias" class="btn-close-categorias">&times;</button>
+
+        <div class="categoria-menu">
+            <div class="categoria-menu__sidebar">
+                <ul>
+                    @foreach (var nodo in Model)
+                    {
+                        <li class="categoria-menu__item" data-id="@nodo.Valor.Id">
+                            <a asp-action="ProductosPorCategoria"
+                               asp-route-categoriaId="@nodo.Valor.Id">
+                                @nodo.Valor.Nombre
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+
+            <div class="categoria-menu__content">
+                @foreach (var nodo in Model)
+                {
+                    <div class="submenu-panel" data-parent-id="@nodo.Valor.Id">
+                        <h2>@nodo.Valor.Nombre</h2>
+                        <ul>
+                            @foreach (var hijo in nodo.Siguientes)
+                            {
+                                <li>
+                                    <a asp-action="ProductosPorCategoria"
+                                       asp-route-categoriaId="@hijo.Valor.Id">
+                                        @hijo.Valor.Nombre
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

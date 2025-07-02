@@ -12,7 +12,7 @@ using SuperPrecios.Infrastructure.EF;
 namespace SuperPrecios.Infrastructure.Migrations
 {
     [DbContext(typeof(SuperPreciosDbContext))]
-    [Migration("20250609131456_Nueva")]
+    [Migration("20250620212536_Nueva")]
     partial class Nueva
     {
         /// <inheritdoc />
@@ -78,10 +78,14 @@ namespace SuperPrecios.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int?>("PadreId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("Nombre")
-                        .IsUnique();
+                    b.HasIndex("Nombre");
+
+                    b.HasIndex("PadreId");
 
                     b.ToTable("Categorias");
                 });
@@ -209,6 +213,16 @@ namespace SuperPrecios.Infrastructure.Migrations
                     b.HasDiscriminator().HasValue("Proveedor");
                 });
 
+            modelBuilder.Entity("SuperPrecios.Domain.Entities.Categoria", b =>
+                {
+                    b.HasOne("SuperPrecios.Domain.Entities.Categoria", "Padre")
+                        .WithMany("Hijos")
+                        .HasForeignKey("PadreId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Padre");
+                });
+
             modelBuilder.Entity("SuperPrecios.Domain.Entities.PrecioHistorico", b =>
                 {
                     b.HasOne("SuperPrecios.Domain.Entities.Producto", "Producto")
@@ -259,6 +273,8 @@ namespace SuperPrecios.Infrastructure.Migrations
 
             modelBuilder.Entity("SuperPrecios.Domain.Entities.Categoria", b =>
                 {
+                    b.Navigation("Hijos");
+
                     b.Navigation("Productos");
                 });
 

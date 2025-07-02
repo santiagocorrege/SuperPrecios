@@ -1,14 +1,9 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using SuperPrecios.Domain.DTORepository;
+using SuperPrecios.Application.Common;
 using SuperPrecios.Domain.Entities;
 using SuperPrecios.Domain.IRepositories;
-using System;
-using System.Collections.Generic;
 using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperPrecios.Infrastructure.EF
 {
@@ -244,11 +239,33 @@ namespace SuperPrecios.Infrastructure.EF
             }
         }
 
-        public async Task<DtoRepositorioProductoPaginado> GetProductosTodayWPrecioHistorico(int pagina)
+        public async Task<Producto> GetProductoTodayWPrecioHistorico(int id)
         {
             try
             {
-                var pageSize = 10;
+                DateOnly fechaHoy = DateOnly.FromDateTime(DateTime.Now);
+
+                var producto = await _context.Productos
+                    .AsNoTracking()
+                    .Where(p => p.Id == id && p.PreciosHistoricos.Any(ph => ph.Fecha == fechaHoy))
+                    .Include(p => p.Marca)
+                    .Include(p => p.Categoria)
+                    .Include(p => p.PreciosHistoricos.Where(ph => ph.Fecha == fechaHoy))
+                        .ThenInclude(ph => ph.Supermercado)
+                    .SingleOrDefaultAsync();
+
+                return producto;
+            }
+            catch (DbException dbEx)
+            {
+                throw new Exception("Error al consultar la base de datos de precios");
+            }
+        }
+
+        public async Task<PagedResult<Producto>> GetProductosTodayWPrecioHistorico(int pagina, int pageSize = 10)
+        {
+            try
+            {                
                 DateOnly fechaHoy = DateOnly.FromDateTime(DateTime.Now);
 
                 var totalRecords = await _context.Productos
@@ -272,9 +289,9 @@ namespace SuperPrecios.Infrastructure.EF
                     .Take(pageSize)
                     .ToListAsync();
                                 
-                return new DtoRepositorioProductoPaginado
+                return new PagedResult<Producto>
                 {
-                    Productos = productos,
+                    Items = productos,
                     PaginaActual = pagina,                    
                     TotalPaginas = (int)Math.Ceiling((double)totalRecords / pageSize)
                 };
@@ -286,11 +303,10 @@ namespace SuperPrecios.Infrastructure.EF
             }
         }
 
-        public async Task<DtoRepositorioProductoPaginado> GetProductosByNombreTodayWPrecioHistorico(string nombre, int pagina)
+        public async Task<PagedResult<Producto>> GetProductosByNombreTodayWPrecioHistorico(string nombre, int pagina, int pageSize = 10)
         {
             try
-            {
-                var pageSize = 10;
+            {                
                 DateOnly fechaHoy = DateOnly.FromDateTime(DateTime.Now);
 
                 var totalRecords = await _context.Productos
@@ -314,9 +330,9 @@ namespace SuperPrecios.Infrastructure.EF
                     .Take(pageSize)
                     .ToListAsync();
 
-                return new DtoRepositorioProductoPaginado
+                return new PagedResult<Producto>
                 {
-                    Productos = productos,
+                    Items = productos,
                     PaginaActual = pagina,
                     TotalPaginas = (int)Math.Ceiling((double)totalRecords / pageSize)
                 };
@@ -328,28 +344,35 @@ namespace SuperPrecios.Infrastructure.EF
             }
         }
 
-        public async Task<Producto> GetProductoTodayWPrecioHistorico(int id)
+        public async Task<PagedResult<Producto>> GetByCategoriasWithPrecioHistoricoAsync(IEnumerable<int> categoriaIds, int pagina, int pageSize=10)
         {
-            try
-            {                
-                DateOnly fechaHoy = DateOnly.FromDateTime(DateTime.Now);
+            var fechaHoy = DateOnly.FromDateTime(DateTime.Now);
+            var query = _context.Productos
+                .AsNoTracking()
+                .Where(p => categoriaIds.Contains(p.CategoriaId))
+                .Where(p => p.PreciosHistoricos.Any(ph => ph.Fecha == fechaHoy))
+                .Include(p => p.Marca)
+                .Include(p => p.Categoria)
+                .Include(p => p.PreciosHistoricos.Where(ph => ph.Fecha == fechaHoy))
+                    .ThenInclude(ph => ph.Supermercado)
+                .OrderBy(p => p.Nombre);
 
-                var producto = await _context.Productos
-                    .AsNoTracking()
-                    .Where(p => p.Id == id && p.PreciosHistoricos.Any(ph => ph.Fecha == fechaHoy))
-                    .Include(p => p.Marca)
-                    .Include(p => p.Categoria)
-                    .Include(p => p.PreciosHistoricos.Where(ph => ph.Fecha == fechaHoy))
-                        .ThenInclude(ph => ph.Supermercado)
-                    .SingleOrDefaultAsync();
-                    
-                return producto;
-            }
-            catch (DbException dbEx)
+            var total = await query.CountAsync();
+            var totalPaginas = (int)Math.Ceiling(total / (double)pageSize);
+
+            var productos = await query
+                .Skip((pagina - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            return new PagedResult<Producto>()
             {
-                throw new Exception("Error al consultar la base de datos de precios");
-            }
+                Items = productos,
+                PaginaActual = pagina,
+                TotalPaginas = totalPaginas                
+            };
         }
+
 
     }
 }
