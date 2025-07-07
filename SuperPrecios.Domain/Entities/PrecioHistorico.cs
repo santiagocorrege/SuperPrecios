@@ -44,6 +44,15 @@ namespace SuperPrecios.Domain.Entities
             Fecha = DateOnly.FromDateTime(DateTime.UtcNow);
             Validate();
         }
+
+        public PrecioHistorico(Producto producto, Supermercado supermercado, decimal precio)
+        {
+            Producto = producto;
+            Supermercado = supermercado;
+            Precio = precio;
+            Fecha = DateOnly.FromDateTime(DateTime.UtcNow);
+            Validate();
+        }
         internal PrecioHistorico() { }
 
         #endregion

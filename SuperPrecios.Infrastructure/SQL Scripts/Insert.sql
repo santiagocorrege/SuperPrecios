@@ -9,5 +9,6 @@ INSERT INTO Marcas VALUES
 ('Sibarita');
 GO
 INSERT INTO Supermercados (Nombre, WebsiteUrl) VALUES
-	('TA-TA', 'www.testwebA.com'),
-	('Tienda Inglesa', 'www.testwebB.com')
+	('Devoto', 'https://www.devoto.com.uy'),
+	('Geant', 'https://www.geant.com.uy'),
+	('Disco', 'https://www.disco.com.uy')

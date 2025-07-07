@@ -25,14 +25,14 @@ namespace SuperPrecios.Application.Mappers
             return proveedor;
         }
 
-        public static Proveedor ToProveedor(DtoProveedorAdd dto, Supermercado supermercado)
+        public static Proveedor ToProveedor(DtoProveedorAdd dto, Supermercado Supermercado)
         {            
             return new Proveedor(
                 dto.Nombre,
                 dto.Apellido,
                 dto.Email,
                 dto.Password,
-                supermercado
+                Supermercado
             );
         }
 

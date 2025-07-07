@@ -139,6 +139,9 @@ namespace SuperPrecios.Infrastructure.Migrations
                     b.Property<int>("CategoriaId")
                         .HasColumnType("int");
 
+                    b.Property<string>("ImgUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("MarcaId")
                         .HasColumnType("int");
 

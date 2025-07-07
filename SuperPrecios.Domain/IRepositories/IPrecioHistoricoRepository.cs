@@ -10,7 +10,10 @@ namespace SuperPrecios.Domain.IRepositories
 {
     public interface IPrecioHistoricoRepository
     {
+        
         public Task AddAsync(PrecioHistorico entity);
+
+        public Task AddAsyncBySupermercadoAndCategoria(IEnumerable<PrecioHistorico> entity, Supermercado supermercado, Categoria categoria);
 
         public Task<IEnumerable<PrecioHistorico>> GetPrecioHistoricoProductoBySupermercado(int supermercadoId, int productoId );
 

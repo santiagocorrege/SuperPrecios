@@ -10,9 +10,9 @@ namespace SuperPrecios.Application.IServices.PrecioHistorico
 {
     public interface IPrecioHistoricoGetService
     {
-        public Task<IEnumerable<DtoProductoPreciosHistoricosXSupermercado>> GetAllBySupermercado(int supermercadoId);
+        public Task<IEnumerable<DtoProductoPreciosHistoricosXSupermercado>> GetAllBySupermercado(int SupermercadoId);
 
-        public Task<IEnumerable<DtoPrecioHistoricoWOProducto>> GetPrecioHistoricoProductoBySupermercado(int supermercadoId, int productoId);
+        public Task<IEnumerable<DtoPrecioHistoricoWOProducto>> GetPrecioHistoricoProductoBySupermercado(int SupermercadoId, int productoId);
         
     }
 }

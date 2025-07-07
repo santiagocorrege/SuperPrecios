@@ -26,14 +26,14 @@ namespace SuperPrecios.Application.Mappers
                 Nombre = producto.Nombre,
                 Marca = MapperMarca.ToDto(producto.Marca),
                 Categoria = MapperCategoria.ToDto(producto.Categoria),
-                ImagenUrl = "",
+                ImagenUrl = producto.ImgUrl,
                 PreciosHistoricos = MapperPrecioHistorico.ToDtoCompletoWoProducto(producto.PreciosHistoricos)
             };
         }                
 
-        public static IEnumerable<DtoProductoPreciosHistoricosXSupermercado> ToDtoWPreciosHistoricos(IEnumerable<Producto> productos, string supermercado)
+        public static IEnumerable<DtoProductoPreciosHistoricosXSupermercado> ToDtoWPreciosHistoricos(IEnumerable<Producto> productos, string Supermercado)
         {
-            if (productos == null || String.IsNullOrWhiteSpace(supermercado)) throw new ArgumentNullException("Error mapper: La lista de productos no puede ser nula");
+            if (productos == null || String.IsNullOrWhiteSpace(Supermercado)) throw new ArgumentNullException("Error mapper: La lista de productos no puede ser nula");
 
             return productos.Select(p => new DtoProductoPreciosHistoricosXSupermercado
             {
@@ -41,7 +41,7 @@ namespace SuperPrecios.Application.Mappers
                 Nombre = p.Nombre,
                 Marca = MapperMarca.ToDto(p.Marca),
                 Categoria = MapperCategoria.ToDto(p.Categoria),
-                Supermercado = supermercado,
+                Supermercado = Supermercado,
                 PreciosHistoricos = MapperPrecioHistorico.ToDtoWOProductoWOSupermercadoList(p.PreciosHistoricos)
             });
         }
@@ -53,7 +53,7 @@ namespace SuperPrecios.Application.Mappers
                 Id = producto.Id,
                 Nombre = producto.Nombre,
                 Marca = MapperMarca.ToDto(producto.Marca),
-                Categoria = MapperCategoria.ToDto(producto.Categoria)
+                Categoria = MapperCategoria.ToDto(producto.Categoria)                 
             };
         }
 

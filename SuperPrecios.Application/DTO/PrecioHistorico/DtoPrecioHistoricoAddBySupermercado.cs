@@ -9,24 +9,16 @@ using System.Threading.Tasks;
 
 namespace SuperPrecios.Application.DTO.PrecioHistorico
 {
-    //Utilizado para PrecioHistoricoAdd : Lista sin importar supermercados
-    public class DtoPrecioHistoricoAdd
+    //Utilizado para PrecioHistoricoAdd : By supermercado, viaja en un DTO junto con CategoriaId y SupermercadoId
+    public class DtoPrecioHistoricoAddBySupermercado
     {
         [Length(2, 100, ErrorMessage = "El nombre debe tener entre 2 y 50 caracteres.")]
         [Required]
-        public string Producto { get; set; }
+        public string Nombre { get; set; }
 
         [Length(2, 50, ErrorMessage = "La marca debe tener entre 1 y 50 caracteres.")]
         [Required]
-        public string Marca { get; set; }
-
-        [Length(2, 50, ErrorMessage = "La categoria debe tener entre 1 y 50 caracteres.")]
-        [Required]
-        public string Categoria { get; set; }
-
-        [Range(1, int.MaxValue, ErrorMessage = "El id del Supermercado no es valido.")]
-        [Required]
-        public int SupermercadoId { get; set; }
+        public string Marca { get; set; }       
 
         [Range(1, int.MaxValue, ErrorMessage = "El precio debe ser mayor a 0")]
         [Required]
@@ -34,5 +26,7 @@ namespace SuperPrecios.Application.DTO.PrecioHistorico
 
         [Length(2, 200, ErrorMessage = "La imagen debe tener entre 1 y 200 caracteres.")]
         public string? ImgUrl { get; set; }
+
+        public string? Divisa { get; set; }
     }
 }

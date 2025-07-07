@@ -67,10 +67,10 @@ namespace SuperPrecios.Application.Mappers
         {
             if (dto == null) throw new ArgumentNullException("El precio historico no puede ser nulo");
             if (dto.Precio <= 0) throw new ArgumentException("El precio no puede ser menor a 0");
-            if (dto.SupermercadoId <= 0) throw new ArgumentException("El id del supermercado no es valido");
+            if (dto.SupermercadoId <= 0) throw new ArgumentException("El id del Supermercado no es valido");
             Categoria categoria = new Categoria(dto.Categoria);
             Marca marca = new Marca(dto.Marca);
-            Producto producto = new Producto(dto.Producto, marca, categoria);
+            Producto producto = new Producto(dto.Producto, marca, categoria, dto.ImgUrl);
             PrecioHistorico precioHistorico = new PrecioHistorico(producto, dto.SupermercadoId, dto.Precio);
             return precioHistorico;
         }
@@ -81,6 +81,20 @@ namespace SuperPrecios.Application.Mappers
             return dtoList.Select(p => ToPrecioHistorico(p));
         }
 
+        private static PrecioHistorico ToPrecioHistorico(DtoPrecioHistoricoAddBySupermercado dto, Supermercado supermercado, Categoria categoria)
+        {
+            if (dto == null) throw new ArgumentNullException("El precio historico no puede ser nulo");
+            if (dto.Precio <= 0) throw new ArgumentException("El precio no puede ser menor a 0");                        
+            Marca marca = new Marca(dto.Marca);
+            Producto producto = new Producto(dto.Nombre, marca, categoria, dto.ImgUrl);
+            PrecioHistorico precioHistorico = new PrecioHistorico(producto, supermercado, dto.Precio);
+            return precioHistorico;
+        }
 
+        public static IEnumerable<PrecioHistorico> ToPrecioHistoricoList(List<DtoPrecioHistoricoAddBySupermercado> dtoList, Supermercado supermercado, Categoria categoria)
+        {            
+            if (dtoList == null || dtoList.Count == 0) throw new ArgumentException("La lista de precios historicos no puede ser nula o vacía.", nameof(dtoList));
+            return dtoList.Select(p => ToPrecioHistorico(p, supermercado, categoria));
+        }
     }
 }

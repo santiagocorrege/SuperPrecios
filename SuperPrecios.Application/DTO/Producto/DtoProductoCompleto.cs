@@ -14,8 +14,9 @@ namespace SuperPrecios.Application.DTO.Producto
         public int Id { get; set; }
         public string Nombre { get; set; }
         public DtoMarcaGet Marca { get; set; }
-        public DtoCategoriaGet Categoria { get; set; }        
-        public string ImagenUrl { get; set; }
+        public DtoCategoriaGet Categoria { get; set; }
+
+        public string? ImagenUrl { get; set; }
         public IEnumerable<DtoPrecioHistoricoWOProducto> PreciosHistoricos { get; set; }
     }
 }

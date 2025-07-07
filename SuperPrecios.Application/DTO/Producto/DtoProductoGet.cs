@@ -1,5 +1,6 @@
 ﻿using SuperPrecios.Application.DTO.Categoria;
 using SuperPrecios.Application.DTO.Marca;
+using SuperPrecios.Application.DTO.PrecioHistorico;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,7 @@ namespace SuperPrecios.Application.DTO.Producto
         public DtoCategoriaGet Categoria { get; set; }        
 
         public decimal Precio { get; set; }
+        
+        public IEnumerable<DtoPrecioHistoricoWOProducto> PreciosHistoricos { get; set; }
     }
 }

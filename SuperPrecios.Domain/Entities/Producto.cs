@@ -21,6 +21,7 @@ namespace SuperPrecios.Domain.Entities
         public int MarcaId { get; set; }
         public Categoria Categoria { get; set; }       
         public int CategoriaId {  get; set; }
+        public string? ImgUrl { get; set; }
 
         public List<PrecioHistorico> PreciosHistoricos { get; set; }
         
@@ -33,12 +34,13 @@ namespace SuperPrecios.Domain.Entities
             Validate();
         }
 
-        public Producto(string nombre, Marca marca, Categoria categoria)
+        public Producto(string nombre, Marca marca, Categoria categoria, string? imgUrl)
         {
             PreciosHistoricos = new List<PrecioHistorico>();
             Nombre = UtilidadesString.FormatearTexto(nombre);
             Marca = marca;
-            Categoria = categoria;                        
+            Categoria = categoria;
+            ImgUrl = imgUrl;
             Validate();
         }
 
@@ -60,6 +62,10 @@ namespace SuperPrecios.Domain.Entities
             if(Categoria == null && CategoriaId <= 0)
             {
                 throw new ProductoException("La Categoria del producto no puede ser nula");
+            }
+            if(ImgUrl != null && String.IsNullOrWhiteSpace(ImgUrl))
+            {
+                throw new ProductoException("La Imagen del producto no es valida");
             }
         }
 

@@ -22,8 +22,8 @@ namespace SuperPrecios.WebAPI.Controllers
         }
 
         // POST api/<PrecioHistoricoController>
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] List<DtoPrecioHistoricoAdd> dtoList)
+        [HttpPost("add-list")]
+        public async Task<IActionResult> AddList([FromBody] List<DtoPrecioHistoricoAdd> dtoList)
         {
             if (dtoList == null || dtoList.Count <= 0)
             {
@@ -43,6 +43,45 @@ namespace SuperPrecios.WebAPI.Controllers
                 return StatusCode(500, $"Error interno del servidor: {ex.Message}");
             }
         }
+
+        // POST api/<PrecioHistoricoController>
+        [HttpPost("add-by-supermercado")]
+        public async Task<IActionResult> AddListBySupermercado(
+            [FromBody] DtoPrecioHistoricoAddBySupermercadoList dto)
+        {
+            // 1. Validaciones de entrada
+            if (dto == null)
+                return BadRequest("El cuerpo de la petición no puede ser nulo.");
+
+            if (dto.PreciosHistoricos == null || !dto.PreciosHistoricos.Any())
+                return BadRequest("Debe indicar la lista de precios históricos a agregar.");
+
+            if (dto.SupermercadoId <= 0 || dto.CategoriaId <= 0)
+                return BadRequest("Los Id de supermercado y/o categoría no son válidos.");
+
+            try
+            {
+                // 2. Llamada al servicio que orquesta el mapeo y la persistencia
+                await _precioHistoricoAddService.AddBySupermercadoAsync(dto);
+
+                // 3. Respuesta satisfactoria
+                return Ok("Precios históricos agregados correctamente.");
+            }
+            catch (ArgumentException ex)
+            {
+                // Errores de validación desde el servicio o mapeo
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                // Cualquier otro error inesperado
+                return StatusCode(
+                    StatusCodes.Status500InternalServerError,
+                    $"Error interno del servidor: {ex.Message}"
+                );
+            }
+        }
+
 
         // GET: api/<PrecioHistoricoController>
         [HttpGet("GetBySupermercado/{supermercadoId:int}")]

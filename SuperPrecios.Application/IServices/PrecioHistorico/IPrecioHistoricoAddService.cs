@@ -10,6 +10,8 @@ namespace SuperPrecios.Application.IServices.PrecioHistorico
 {
     public interface IPrecioHistoricoAddService
     {        
-        public Task AddAsync(List<DtoPrecioHistoricoAdd> dtoList);        
+        public Task AddAsync(List<DtoPrecioHistoricoAdd> dtoList);
+
+        public Task AddBySupermercadoAsync(DtoPrecioHistoricoAddBySupermercadoList dtoList);
     }
 }

@@ -12,19 +12,24 @@ namespace SuperPrecios.Application.Mappers
     {
         public static Supermercado ToSupermercado(DtoSupermercadoAdd dto)
         {
-            if (dto == null) throw new ArgumentNullException("Error mapper: El supermercado no puede ser nulo");
+            if (dto == null) throw new ArgumentNullException("Error mapper: El Supermercado no puede ser nulo");
             return new Supermercado(dto.Nombre);
         }
 
-        public static DtoSupermercadoGet ToDto (Supermercado supermercado)
+        public static DtoSupermercadoGet ToDto (Supermercado Supermercado)
         {
-            if (supermercado == null) throw new ArgumentNullException("Error mapper: El dto de supermercado no puede ser nulo");
+            if (Supermercado == null) throw new ArgumentNullException("Error mapper: El dto de Supermercado no puede ser nulo");
             return new DtoSupermercadoGet
             {
-                Id = supermercado.Id,
-                Nombre = supermercado.Nombre,
-                WebsiteUrl = supermercado.WebsiteUrl
+                Id = Supermercado.Id,
+                Nombre = Supermercado.Nombre,
+                WebsiteUrl = Supermercado.WebsiteUrl
             };
+        }
+
+        public static IEnumerable<DtoSupermercadoGet> ToDto (IEnumerable<Supermercado> Supermercados)
+        {
+            return Supermercados.Select(s => ToDto(s));
         }
     }
 }

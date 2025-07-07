@@ -15,6 +15,7 @@ namespace SuperPrecios.Application.DTO.Producto
         public string Nombre { get; set; }
         public DtoMarcaGet Marca { get; set; }
         public DtoCategoriaGet Categoria { get; set; }
+        
         public string Supermercado { get; set; }
         public IEnumerable<DtoPrecioHistoricoWOProductoWOSupermercado> PreciosHistoricos { get; set; }
     }

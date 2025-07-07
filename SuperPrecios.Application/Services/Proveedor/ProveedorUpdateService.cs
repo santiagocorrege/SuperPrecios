@@ -16,12 +16,12 @@ namespace SuperPrecios.Application.Services.Proveedor
     public class ProveedorUpdateService : IProveedorUpdateService
     {
         private readonly IProveedorRepository _proveedorRepository;
-        private readonly ISupermercadoRepository _supermercadoRepository;
+        private readonly ISupermercadoRepository _SupermercadoRepository;
 
-        public ProveedorUpdateService(IProveedorRepository proveedorRepository, ISupermercadoRepository supermercadoRepository)
+        public ProveedorUpdateService(IProveedorRepository proveedorRepository, ISupermercadoRepository SupermercadoRepository)
         {
             _proveedorRepository = proveedorRepository;
-            _supermercadoRepository = supermercadoRepository;
+            _SupermercadoRepository = SupermercadoRepository;
         }
         public async Task Run(DtoProveedorUpdate dto)
         {

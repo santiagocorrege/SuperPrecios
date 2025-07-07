@@ -11,63 +11,64 @@ using System.Text;
 using System.Threading.Tasks;
 using PrecioHistoricoCore = SuperPrecios.Domain.Entities.PrecioHistorico;
 using ProductoCore = SuperPrecios.Domain.Entities.Producto;
+using SupermercadoCore = SuperPrecios.Domain.Entities.Supermercado;
 
 namespace SuperPrecios.Application.Services.PrecioHistorico
 {
     public class PrecioHistoricoGetService : IPrecioHistoricoGetService
     {
         private readonly IPrecioHistoricoRepository _precioHistoricoRepository;
-        private readonly ISupermercadoRepository _supermercadoRepository;
+        private readonly ISupermercadoRepository _SupermercadoRepository;
 
         //DI
-        public PrecioHistoricoGetService(IPrecioHistoricoRepository repository, ISupermercadoRepository supermercadoRepository)
+        public PrecioHistoricoGetService(IPrecioHistoricoRepository repository, ISupermercadoRepository SupermercadoRepository)
         {
             _precioHistoricoRepository = repository;
-            _supermercadoRepository = supermercadoRepository;
+            _SupermercadoRepository = SupermercadoRepository;
         }
 
-        public async Task<IEnumerable<DtoProductoPreciosHistoricosXSupermercado>> GetAllBySupermercado(int supermercadoId)
+        public async Task<IEnumerable<DtoProductoPreciosHistoricosXSupermercado>> GetAllBySupermercado(int SupermercadoId)
         {
-            if (supermercadoId <= 0)
+            if (SupermercadoId <= 0)
             {
-                throw new ArgumentException("Error: El id del supermercado no es valido");
+                throw new ArgumentException("Error: El id del Supermercado no es valido");
             }
             try
             {
-                Supermercado super = await _supermercadoRepository.GetByIdAsync(supermercadoId);
+                SupermercadoCore super = await _SupermercadoRepository.GetByIdAsync(SupermercadoId);
                 if (super == null)
                 {
-                    throw new ArgumentException("Error: El supermercado no existe");
+                    throw new ArgumentException("Error: El Supermercado no existe");
                 }
-                IEnumerable<ProductoCore> productosConPreciosHistoricos  = await _precioHistoricoRepository.GetAllBySupermercado(supermercadoId);
+                IEnumerable<ProductoCore> productosConPreciosHistoricos  = await _precioHistoricoRepository.GetAllBySupermercado(SupermercadoId);
                 return MapperProducto.ToDtoWPreciosHistoricos(productosConPreciosHistoricos, super.Nombre);
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al obtener los productos con precios historicos del supermercado: {ex.Message}", ex);
+                throw new Exception($"Error al obtener los productos con precios historicos del Supermercado: {ex.Message}", ex);
             }
             
         }
 
-        public async Task<IEnumerable<DtoPrecioHistoricoWOProducto>> GetPrecioHistoricoProductoBySupermercado(int supermercadoId, int productoId)
+        public async Task<IEnumerable<DtoPrecioHistoricoWOProducto>> GetPrecioHistoricoProductoBySupermercado(int SupermercadoId, int productoId)
         {
-            if (supermercadoId <= 0 || productoId <= 0 )
+            if (SupermercadoId <= 0 || productoId <= 0 )
             {
-                throw new ArgumentException("Error: El id del supermercado/producto no es valido");
+                throw new ArgumentException("Error: El id del Supermercado/producto no es valido");
             }
             try
             {
-                Supermercado super = await _supermercadoRepository.GetByIdAsync(supermercadoId);
+                SupermercadoCore super = await _SupermercadoRepository.GetByIdAsync(SupermercadoId);
                 if (super == null)
                 {
-                    throw new ArgumentException("Error: El supermercado no existe");
+                    throw new ArgumentException("Error: El Supermercado no existe");
                 }
-                IEnumerable<PrecioHistoricoCore> preciosHistoricos = await _precioHistoricoRepository.GetPrecioHistoricoProductoBySupermercado(supermercadoId, productoId);
+                IEnumerable<PrecioHistoricoCore> preciosHistoricos = await _precioHistoricoRepository.GetPrecioHistoricoProductoBySupermercado(SupermercadoId, productoId);
                 return MapperPrecioHistorico.ToDtoCompletoWoProducto(preciosHistoricos);
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al obtener los productos con precios historicos del supermercado: {ex.Message}", ex);
+                throw new Exception($"Error al obtener los productos con precios historicos del Supermercado: {ex.Message}", ex);
             }
         }
 
