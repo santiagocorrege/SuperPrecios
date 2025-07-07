@@ -1,0 +1,3016 @@
+{
+  "supermercadoId": 1,
+  "categoriaId": 1,
+  "preciosHistoricos": [
+    {
+      "Nombre": "Galletitas OREO Rellenas Chantilly 351 g",
+      "Marca": "OREO",
+      "Precio": 199.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1525439-500-auto?v=638619536652600000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Arroz patna BLUE PATNA 1 kg",
+      "Marca": "BLUE PATNA",
+      "Precio": 79.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1515014-500-auto?v=638619350917700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas María PRECIO LIDER 300 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 79.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508125-500-auto?v=638619300891500000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Mayonesa URUGUAY 500 cc",
+      "Marca": "URUGUAY",
+      "Precio": 85.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508822-500-auto?v=638619303478530000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Harina 0000 COLOLÓ 1 kg",
+      "Marca": "COLOLÓ",
+      "Precio": 45.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1517447-500-auto?v=638619359081100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pan tortuga PAGNIFIQUE 6 un. 300 g",
+      "Marca": "PAGNIFIC",
+      "Precio": 119.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518901-500-auto?v=638619362528770000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pan de viena PAGNIFIQUE 8 un. 200 g",
+      "Marca": "PAGNIFIC",
+      "Precio": 119.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518898-500-auto?v=638619362522800000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Arroz parboiled SAMAN 1 kg",
+      "Marca": "SAMAN",
+      "Precio": 69.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1505620-500-auto?v=638619286845630000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pulpa de tomate CONAPROLE 260 g",
+      "Marca": "CONAPROLE",
+      "Precio": 39.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1509393-500-auto?v=638619306006130000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Azúcar blanca PRECIO LÍDER 1 kg",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 48.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1634794-500-auto?v=638797152919270000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos tirabuzón PRECIO LÍDER 500 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 58.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1511500-500-auto?v=638619338234900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pan rallado PRECIO LÍDER 1 kg",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 190.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1472306-500-auto?v=638580442006730000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos al huevo ADRIA moña chica 500 g",
+      "Marca": "ADRIA",
+      "Precio": 75.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1534041-500-auto?v=638620009817270000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Arroz patna BLUE PATNA 500 g",
+      "Marca": "BLUE PATNA",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1505623-500-auto?v=638619286869800000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Puré de papa PRECIO LÍDER 125 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 45.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1502131-500-auto?v=638619268089470000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletita Oreo Golden 117 g",
+      "Marca": "GOLDEN",
+      "Precio": 77.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1525428-500-auto?v=638619536651070000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Bombonera GAROTO Surtida 250 g + Choc. GAROTO 80 g",
+      "Marca": "GAROTO",
+      "Precio": 249.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1638036-500-auto?v=638802123269630000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Arroz parboiled BLUE PATNA 500 g",
+      "Marca": "BLUE PATNA",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1493426-500-auto?v=638619218057300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Arroz Patna PRECIO LÍDER 1 kg",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 68.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1618554-500-auto?v=638778353504270000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chocolate KIT KAT 4 finger dark 41,5 g",
+      "Marca": "KIT KAT",
+      "Precio": 49.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518203-500-auto?v=638619360992300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas OREO bañadas chocolate 119 g",
+      "Marca": "OREO",
+      "Precio": 154.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508450-500-auto?v=638619302055230000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas OREO Rellenas Chantilly 117 g",
+      "Marca": "MILKA",
+      "Precio": 77.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508962-500-auto?v=638619303977000000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pulpa de tomate PRECIO LÍDER tamizada 1.02 kg",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 76.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1568751-500-auto?v=638694349381100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas María EL TRIGAL Rika 300 g",
+      "Marca": "EL TRIGAL",
+      "Precio": 135.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1449924-500-auto?v=638542286177430000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Atún lomito al natural EMIGRANTE 170 g",
+      "Marca": "EMIGRANTE",
+      "Precio": 149.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1483120-500-auto?v=638580492401700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Levadura seca instantánea terry sb 10g",
+      "Marca": "-",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1493179-500-auto?v=638619217446030000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Mayonesa light HELLMANN'S 500 cc",
+      "Marca": "HELLMANN'S",
+      "Precio": 185.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1484152-500-auto?v=638580511771170000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletita OREO milkshake frutilla 117 g",
+      "Marca": "OREO",
+      "Precio": 77.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508292-500-auto?v=638619301483470000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Dulce de leche CONAPROLE 970 g",
+      "Marca": "CONAPROLE",
+      "Precio": 293.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1471889-500-auto?v=638580441574570000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Cápsulas Cappuccino DOLCE GUSTO 10 un.",
+      "Marca": "NESCAFÉ",
+      "Precio": 435.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1663803-500-auto?v=638838620725630000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas Oreo Rellenas Chocolate 117 g",
+      "Marca": "OREO",
+      "Precio": 77.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1525433-500-auto?v=638619536652000000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Polenta Prestopronta ARCOR 500 g",
+      "Marca": "ARCOR",
+      "Precio": 60.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1516140-500-auto?v=638619354875430000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pulpa de tomate CONAPROLE 1.030 kg",
+      "Marca": "CONAPROLE",
+      "Precio": 94.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1509379-500-auto?v=638619305952170000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Yerba CANARIAS 1 kg",
+      "Marca": "CANARIAS",
+      "Precio": 194.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1517835-500-auto?v=638619360031400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chocolate KIT KAT 4 finger white 41,5 g",
+      "Marca": "KIT KAT",
+      "Precio": 49.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508276-500-auto?v=638619301415300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Café BRACAFÉ 170 g pack ahorro",
+      "Marca": "NESCAFÉ",
+      "Precio": 260.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1619894-500-auto?v=638780022114000000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pulpa de Tomate Tamizada PONTEVEDRA 510 g",
+      "Marca": "PONTEVEDRA",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1691516-500-auto?v=638864591358130000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Harina integral CAÑUELAS 1 kg",
+      "Marca": "CAÑUELAS",
+      "Precio": 108.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1504895-500-auto?v=638619282601670000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chocolate taza ÁGUILA 225 g",
+      "Marca": "ÁGUILA",
+      "Precio": 199.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1477504-500-auto?v=638580443692430000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Tomates en cubos RIO DE LA PLATA 400 g",
+      "Marca": "RIO DE LA PLATA",
+      "Precio": 69.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1519808-500-auto?v=638619364902170000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Yerba CANARIAS serena 1 kg",
+      "Marca": "CANARIAS",
+      "Precio": 199.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1526596-500-auto?v=638619537565870000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Dulce crema de leche CONAPROLE 925 g",
+      "Marca": "CONAPROLE",
+      "Precio": 293.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1471929-500-auto?v=638580441581100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Café NESCAFÉ tradicao 200 g",
+      "Marca": "NESCAFÉ",
+      "Precio": 594.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1517697-500-auto?v=638619359653530000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Aceite OPTIMO Altoleico 1.5 L",
+      "Marca": "ÓPTIMO",
+      "Precio": 190.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1657625-500-auto?v=638830050815430000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Mayonesa PRECIO LÍDER 500 cc",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 109.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1473239-500-auto?v=638580442418670000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideo al huevo rigatti PRECIO LIDER 400 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1675485-500-auto?v=638854271247400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletas crackers al agua PRECIO LÍDER 400 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 118.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518025-500-auto?v=638619360613300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Harina 000 PRECIO LÍDER",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 51.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1535573-500-auto?v=638620010601730000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Dulce de leche PRECIO LÍDER 1 kg",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 190.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518787-500-auto?v=638619362257730000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pan BIMBO integral artesano 530g",
+      "Marca": "BIMBO",
+      "Precio": 219.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1675260-500-auto?v=638851810826200000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletas HOGAREÑAS 7 semillas 543g",
+      "Marca": "ARCOR",
+      "Precio": 149.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1526400-500-auto?v=638619537367500000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Alfajor Black PORTEZUELO extra blanco 60 g",
+      "Marca": "PORTEZUELO",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1551260-500-auto?v=638633276352300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Risotto MONTE CUDINE 17 g",
+      "Marca": "MONTE CUDINE",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1516274-500-auto?v=638619355189800000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Dulce de leche CONAPROLE dietético 0% 440 g",
+      "Marca": "CONAPROLE",
+      "Precio": 228.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1525819-500-auto?v=638619536964730000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chips de vegetales DE LA TIERRA 120 g",
+      "Marca": "DE LA TIERRA",
+      "Precio": 206.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1474982-500-auto?v=638580442900370000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pan con semillas BIMBO vital 540 g",
+      "Marca": "BIMBO",
+      "Precio": 225.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1608709-500-auto?v=638768619986300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pasta ramen NISSIN carne 85 g",
+      "Marca": "NISSIN",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1675476-500-auto?v=638854271239100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pan de Viena PRECIO LIDER 8 un.",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 104.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1480595-500-auto?v=638580447961100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideo al huevo moña PRECIO LÍDER 400 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1502108-500-auto?v=638619268033900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Arvejas rehidratadas PRECIO LÍDER 300 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 35.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1502374-500-auto?v=638619268992830000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas de Coco germani 300 g",
+      "Marca": "-",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1527633-500-auto?v=638619538630830000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Azúcar blanca AZUCARLITO nylon 1 kg",
+      "Marca": "AZUCARLITO",
+      "Precio": 50.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1529374-500-auto?v=638619540574830000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Caldo carne KNORR 12 un.",
+      "Marca": "KNORR",
+      "Precio": 109.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1476499-500-auto?v=638580443472530000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Arroz milanés BLUE PATNA 200g",
+      "Marca": "BLUE PATNA",
+      "Precio": 95.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1504982-500-auto?v=638619282958930000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Salsa napolitana GOURMET 1.03 kg",
+      "Marca": "GOURMET",
+      "Precio": 78.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1534531-500-auto?v=638620010054400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Alfajor Classic PORTEZUELO 60 g",
+      "Marca": "PORTEZUELO",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1674866-500-auto?v=638851371776570000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas Mini Miel EL TRIGAL 110 g",
+      "Marca": "EL TRIGAL",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1527581-500-auto?v=638619538572470000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pasta ramen NISSIN verduras 85 g",
+      "Marca": "NISSIN",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1675486-500-auto?v=638854271247730000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Cápsulas Café Espresso DOLCE GUSTO 10 un.",
+      "Marca": "NESCAFÉ",
+      "Precio": 435.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1645631-500-auto?v=638814219315730000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Arroz con hongos BLUE PATNA 200g",
+      "Marca": "BLUE PATNA",
+      "Precio": 95.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1473918-500-auto?v=638580442668030000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Mayonesa HELLMANN'S doy pack 500 cc",
+      "Marca": "HELLMANN'S",
+      "Precio": 138.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1556889-500-auto?v=638669374349230000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Cápsulas de Café Espresso Intense DOLCE GUSTO 10 un.",
+      "Marca": "NESCAFÉ",
+      "Precio": 435.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1674867-500-auto?v=638851371784370000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Alfajor PORTEZUELO nieve 6 un.",
+      "Marca": "PORTEZUELO",
+      "Precio": 170.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1593167-500-auto?v=638748794979900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Arvejas EMIGRANTE 300 g",
+      "Marca": "EMIGRANTE",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1483161-500-auto?v=638580494966570000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Puré de papas KNORR 125 g",
+      "Marca": "KNORR",
+      "Precio": 115.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1509561-500-auto?v=638619306800000000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Atún lomito al natural PRECIO LÍDER 160 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 112.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1472455-500-auto?v=638580442233930000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Alfajor BON O BON chocolate leche",
+      "Marca": "BON O BON",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1450336-500-auto?v=638542286277700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Papas Fritas LAYS 235 g",
+      "Marca": "LAY'S",
+      "Precio": 228.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1490484-500-auto?v=638609846274200000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Te PRESIDENT 30 sobres pack 3x2 60 g",
+      "Marca": "PRESIDENT",
+      "Precio": 150.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1526626-500-auto?v=638619537587670000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pan tortuga PRECIO LIDER 6 un.",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 104.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1480604-500-auto?v=638580447961900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Bombón RICARDITO Clásico Haas 36 g",
+      "Marca": "RICARDITO",
+      "Precio": 85.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1516867-500-auto?v=638619357173270000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Merengues ED+ Tradicional 30 g",
+      "Marca": "ED+",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1674859-500-auto?v=638851371698930000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Harina de fainá PRECIO LÍDER 250 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 72.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1511514-500-auto?v=638619338287700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos al huevo ADRIA nido 2 500 g",
+      "Marca": "ADRIA",
+      "Precio": 75.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1509831-500-auto?v=638619308014500000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Vinagre de alcohol PRINZ 500 cc",
+      "Marca": "PRINZ",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1473745-500-auto?v=638580442630170000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Merengues ED+ Morango 30 g",
+      "Marca": "ED+",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1674858-500-auto?v=638851371688470000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Lentejas PRECIO LÍDER 420 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 55.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1484945-500-auto?v=638580517302200000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Alfajor MILKA mousse leche 42 g",
+      "Marca": "MILKA",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1471938-500-auto?v=638580441583300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos al huevo ADRIA moñas 500 g",
+      "Marca": "ADRIA",
+      "Precio": 75.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1524433-500-auto?v=638619535671400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pan de papa para hamburguesa artesano BIMBO 300 g",
+      "Marca": "BIMBO",
+      "Precio": 117.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1599622-500-auto?v=638756594996100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Yerba BALDO 500 g",
+      "Marca": "BALDO",
+      "Precio": 102.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1507962-500-auto?v=638619299915570000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Levadura seca FLEISCHMANN 100 g",
+      "Marca": "FLEISCHMANN",
+      "Precio": 248.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1482917-500-auto?v=638580448725070000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Salsa de tomate con albahaca GOURMET 1 kg",
+      "Marca": "GOURMET",
+      "Precio": 78.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1524724-500-auto?v=638619535945630000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Yerba CABRAL Silueta Ideal 1 kg",
+      "Marca": "CABRAL",
+      "Precio": 215.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1526605-500-auto?v=638619537580030000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas Mini Coco EL TRIGAL 110 g",
+      "Marca": "EL TRIGAL",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1483807-500-auto?v=638580510204630000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Barquillo Bañado NATIVO Dulce de Leche 30 g",
+      "Marca": "NATIVO",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1449760-500-auto?v=638542286062900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Jardinera 3 Legumbres PRECIO LÍDER 300 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 45.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1675513-500-auto?v=638854271270200000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Té verde LA SELVA 10 un.",
+      "Marca": "LA SELVA",
+      "Precio": 75.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1517851-500-auto?v=638619360061400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Aceite de girasol NATURA 1,5 L + mayonesa NATURA",
+      "Marca": "NATURA",
+      "Precio": 199.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1553159-500-auto?v=638645085744070000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas BRIDGE Bañadas Chocolate",
+      "Marca": "EL TRIGAL",
+      "Precio": 114.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1450041-500-auto?v=638542286212830000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Papas fritas LAY'S Stax original tubo 163 g",
+      "Marca": "LAY'S",
+      "Precio": 230.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518734-500-auto?v=638619362151800000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Té LA SELVA manzanilla 10 un.",
+      "Marca": "LA SELVA",
+      "Precio": 72.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1476921-500-auto?v=638580443559070000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pulpa Tomate Concentrada PONTEVEDRA 1.03 kg",
+      "Marca": "PONTEVEDRA",
+      "Precio": 89.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1671531-500-auto?v=638847916844300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Lentejas SUNSET 200 g",
+      "Marca": "SUNSET",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1657603-500-auto?v=638830045114600000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chocolate GAROTO Talento Artesano Almendras 75 g",
+      "Marca": "GAROTO",
+      "Precio": 135.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1685259-500-auto?v=638859148887530000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Arroz VIDARROZ 1 kg",
+      "Marca": "VIDARROZ",
+      "Precio": 54.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1529410-500-auto?v=638619540603730000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pan americano grande LOS SORCHANTES 480 g",
+      "Marca": "LOS SORCHANTES",
+      "Precio": 119.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1590233-500-auto?v=638741987376800000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pionono PRECIO LÍDER 150 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 109.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1604465-500-auto?v=638762692081830000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos BARILLA Spaghettini N°3 500 g",
+      "Marca": "BARILLA",
+      "Precio": 146.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1509847-500-auto?v=638619308096270000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Arvejas Rehidratadas ODERICH 300 g",
+      "Marca": "ODERICH",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1519072-500-auto?v=638619362872700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pan mix de cerales Vital BIMBO 540 g",
+      "Marca": "BIMBO",
+      "Precio": 225.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1599641-500-auto?v=638756595005770000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas mini PEPITOS con Chispas 50 g",
+      "Marca": "PEPITOS",
+      "Precio": 40.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518968-500-auto?v=638619362665900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Cápsulas DOLCE GUSTO Café Americano 10 un.",
+      "Marca": "NESCAFÉ",
+      "Precio": 435.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1659329-500-auto?v=638832363826500000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Azúcar blanca BELLA UNIÓN 1 kg",
+      "Marca": "BELLA UNIÓN",
+      "Precio": 50.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1529373-500-auto?v=638619540574770000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletita BAUDUCCO Choco Biscuit 36 g",
+      "Marca": "BAUDUCCO",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1527534-500-auto?v=638619538517700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Papas fritas LAY'S 150 g",
+      "Marca": "LAY'S",
+      "Precio": 175.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1481745-500-auto?v=638580448228270000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletita OREO Maní 118 g",
+      "Marca": "OREO",
+      "Precio": 77.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1660704-500-auto?v=638834091754600000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Mayonesa COLOLO 200 g",
+      "Marca": "EQUAL SWEET",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1472754-500-auto?v=638580442300700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Snack DORITOS queso 380 g",
+      "Marca": "DORITOS",
+      "Precio": 310.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1472730-500-auto?v=638580442294600000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletas HOGAREÑAS mix cereales 555 g",
+      "Marca": "ARCOR",
+      "Precio": 149.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518403-500-auto?v=638619361440000000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Alfajor Black PORTEZUELO extra dulce de leche 55 g",
+      "Marca": "PORTEZUELO",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1520194-500-auto?v=638619366074900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Barras Cereal Proteins & Joy Cranberry/Amaranto 35 g",
+      "Marca": "AGTAL",
+      "Precio": 69.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1670808-500-auto?v=638847052620430000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Papas fritas LAY´S Rústicas 105 g",
+      "Marca": "LAY'S",
+      "Precio": 170.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1532322-500-auto?v=638619543917100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Mostaza DEL GAUCHO 250 g",
+      "Marca": "DEL GAUCHO",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1473148-500-auto?v=638580442394400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "CHEETOS Palitos 280 g",
+      "Marca": "CHEETOS",
+      "Precio": 210.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1551658-500-auto?v=638639088448870000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Cafe Molido STARBUCKS Veranda Blend 250 g",
+      "Marca": "STARBUCKS",
+      "Precio": 479.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1525751-500-auto?v=638619536892630000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Atún lomito al natural PRECIO LÍDER 354 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 229.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1502168-500-auto?v=638619268184100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Barrita REBEL NUTS chocolate avellanas y cacao 40 g",
+      "Marca": "REBEL NUTS",
+      "Precio": 81.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518552-500-auto?v=638619361758930000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Tostadas MAGIC Toast Original 110 g",
+      "Marca": "MAGIC",
+      "Precio": 104.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1507138-500-auto?v=638619295315370000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Oblea PORTEZUELO Frutilla 80 g",
+      "Marca": "PORTEZUELO",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1634001-500-auto?v=638796074918900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Ajo y perejil PRECIO LÍDER 25 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 79.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1675484-500-auto?v=638854271247400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Café molido EL CHANÁ 500 g + 100 g gratis",
+      "Marca": "EL CHANA",
+      "Precio": 525.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1517702-500-auto?v=638619359667170000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Salsa kétchup ODERICH 200 g",
+      "Marca": "ODERICH",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508720-500-auto?v=638619303104430000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos dedales PRECIO LÍDER 500 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 58.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1511502-500-auto?v=638619338240070000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Mayonesa NATURA 500 cc",
+      "Marca": "NATURA",
+      "Precio": 129.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1483322-500-auto?v=638580506253500000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Café NESCAFÉ Bracafé sticks x 12 un.",
+      "Marca": "BRACAFE",
+      "Precio": 81.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1645559-500-auto?v=638814218611030000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideo Fettuccini integral LAS ACACIAS 400 g",
+      "Marca": "LAS ACACIAS",
+      "Precio": 95.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1550101-500-auto?v=638626936849730000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Papas fritas RUFFLES 30 g",
+      "Marca": "RUFFLES",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1609991-500-auto?v=638768631088300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Aceite de oliva extra virgen FRESH MARKET 500 cc",
+      "Marca": "FRESH MARKET",
+      "Precio": 496.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1659375-500-auto?v=638832580213300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Papas Fritas Onduladas PORTEZUELO 80 g",
+      "Marca": "PORTEZUELO",
+      "Precio": 79.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1669463-500-auto?v=638845324388730000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletas LA PAZ sin gluten cracker mix semillas 180 g",
+      "Marca": "LA PAZ",
+      "Precio": 183.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1484126-500-auto?v=638580511769130000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pack x 6 Mix Alfajores Salchichón JUANA LA LOCA",
+      "Marca": "JUANA LA LOCA",
+      "Precio": 439.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1665083-500-auto?v=638840140379330000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Salsa kétchup NATURA 250 g",
+      "Marca": "NATURA",
+      "Precio": 72.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508546-500-auto?v=638619302421000000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Avena arrollada LA ABUNDANCIA 400 g",
+      "Marca": "LA ABUNDANCIA",
+      "Precio": 85.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1505556-500-auto?v=638619286555770000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Gelatina PRECIO LÍDER frutilla light 8 porciones",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 79.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518645-500-auto?v=638619361950100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Barrita REBEL NUTS chocolate almendras y coco 40 g",
+      "Marca": "REBEL NUTS",
+      "Precio": 81.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518533-500-auto?v=638619361727670000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Mani pelado MANIX 350 g",
+      "Marca": "MANIX",
+      "Precio": 195.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1502227-500-auto?v=638619268357600000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pimentón HIDALGO 30 g",
+      "Marca": "HIDALGO",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1609996-500-auto?v=638768631146270000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Edulcorante liquido PRECIO LÍDER 600 cc",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 147.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1480166-500-auto?v=638580447870670000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Atún lomito al natural EMIGRANTE 345 g",
+      "Marca": "EMIGRANTE",
+      "Precio": 347.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1524706-500-auto?v=638619535931430000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos al huevo LAS ACACIAS corbatita 500 g",
+      "Marca": "LAS ACACIAS",
+      "Precio": 86.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1524400-500-auto?v=638619535640430000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Té LA VIRGINIA 25 un. 50 g",
+      "Marca": "VIRGINIA",
+      "Precio": 82.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1507904-500-auto?v=638619299658370000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Café molido STARBUCKS medium colombia 250g",
+      "Marca": "STARBUCKS",
+      "Precio": 479.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508571-500-auto?v=638619302513730000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Papas fritas LAYS rusticas 160 G",
+      "Marca": "PEPSICO",
+      "Precio": 230.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1532346-500-auto?v=638619543941830000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Salsa Barbacoa DEL GAUCHO 100 g",
+      "Marca": "DEL GAUCHO",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1675438-500-auto?v=638854271215100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Obleas rellenas chocolate PRECIO LÍDER 140 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 109.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518015-500-auto?v=638619360593170000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pop corn dulce MARLOMS 95 g",
+      "Marca": "MARLOMS",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1612501-500-auto?v=638772084785900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Barrita Cereal Ritter Brownie Chocolate Blanco 20 g",
+      "Marca": "RITTER",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1517159-500-auto?v=638619358126370000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Palmitos enteros PRECIO LÍDER 400 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 149.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1472888-500-auto?v=638580442333770000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Yerba LA SELVA para nerviosos 500 g",
+      "Marca": "LA SELVA",
+      "Precio": 119.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1477164-500-auto?v=638580443617800000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pan para hamburguesa x4 BIMBO artesano 240 g",
+      "Marca": "BIMBO",
+      "Precio": 117.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1599620-500-auto?v=638756594995130000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Papas fritas LAY'S Stax cebolla tubo 163 g",
+      "Marca": "LAY'S",
+      "Precio": 230.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508733-500-auto?v=638619303133970000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Té PRECIO LÍDER 25 sobres",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 69.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1484307-500-auto?v=638580511861830000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Mayonesa HELLMANN'S tipo casera 473 cc",
+      "Marca": "HELLMANN'S",
+      "Precio": 184.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1519177-500-auto?v=638619363124300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Oblea PORTEZUELO Limón 80 g",
+      "Marca": "PORTEZUELO",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1634003-500-auto?v=638796074929500000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Almidon MONTE CUDINE 200 g",
+      "Marca": "MONTE CUDINE",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1504949-500-auto?v=638619282832230000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Café soluble PRECIO LÍDER clásico 170 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 278.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1479433-500-auto?v=638580444231300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Gelatina PRECIO LÍDER manzana verde light 8 porciones",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 79.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518504-500-auto?v=638619361673900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Porotos colorados PRECIO LÍDER 420 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 55.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1512299-500-auto?v=638619341148270000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Cereal NESFIT sin azúcar 220 g",
+      "Marca": "NESFIT",
+      "Precio": 260.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1480084-500-auto?v=638580447856070000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pan integral familiar LOS SORCHANTES 550 g",
+      "Marca": "LOS SORCHANTES",
+      "Precio": 149.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1475542-500-auto?v=638580443051200000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Sopa casera KNORR vegetales con fideos caracolitos",
+      "Marca": "KNORR",
+      "Precio": 94.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1507708-500-auto?v=638619298655900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Levadura seca FLEISCHMANN 50 g",
+      "Marca": "FLEISCHMANN",
+      "Precio": 143.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1516852-500-auto?v=638619357116530000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Té PRESIDENT 90 g",
+      "Marca": "PRESIDENT",
+      "Precio": 165.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1527803-500-auto?v=638619538840900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Porotos negros PRECIO LÍDER 420 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 55.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1473316-500-auto?v=638580442440700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Barrita Cereal ARCOR Yogur de Frutilla 28 g",
+      "Marca": "ARCOR",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1652269-500-auto?v=638822407520700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Puré de papas KNORR receta completa 125 g",
+      "Marca": "KNORR",
+      "Precio": 133.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1516129-500-auto?v=638619354850700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Atún lomito en aceite PRECIO LÍDER tripack 240 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 190.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1511541-500-auto?v=638619338359400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Atún desmenuzado en aceite PRECIO LÍDER 170 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 59.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1511629-500-auto?v=638619338650700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Porotos negros SUNSET 300 g",
+      "Marca": "SUNSET",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1512284-500-auto?v=638619341113930000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Salsa blanca con panceta y cebolla MONTE CUDINE",
+      "Marca": "MONTE CUDINE",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1478984-500-auto?v=638580444126000000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Alfajor BON O BON chocolate blanco 40 g",
+      "Marca": "BON O BON",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1450042-500-auto?v=638542286212830000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Salsa pizza ARCOR 340 g",
+      "Marca": "ARCOR",
+      "Precio": 79.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1480677-500-auto?v=638580447975730000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Dulce de membrillo PRECIO LÍDER 500 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 79.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518214-500-auto?v=638619361018600000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Polvo de hornear FLEISCHMANN 30 g",
+      "Marca": "FLEISCHMANN",
+      "Precio": 23.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1526337-500-auto?v=638619537320870000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Café NESCAFÉ Bracafé Sticks x 14 un. 3 x 2",
+      "Marca": "NESCAFÉ",
+      "Precio": 169.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1645629-500-auto?v=638814219307800000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chocolate ANTIU XIXONA sin azúcar Negro 125 g",
+      "Marca": "ANTIU XIXONA",
+      "Precio": 279.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1481976-500-auto?v=638580448272900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Salsa Pomarola ODERICH 300 g",
+      "Marca": "ODERICH",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1609180-500-auto?v=638768624620470000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Obleas Chiquilin 80 g",
+      "Marca": "EL TRIGAL",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1526360-500-auto?v=638619537341500000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Porotos de alubia PRECIO LÍDER",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 55.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1532278-500-auto?v=638619543857700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Barrita Cereal ARCOR Yogur/Frutilla Light 28 g",
+      "Marca": "ARCOR",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1652256-500-auto?v=638822404594200000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Puré tomate tetra ARCOR 530 g",
+      "Marca": "ARCOR",
+      "Precio": 60.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1509555-500-auto?v=638619306766170000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Tortilla PRECIO LÍDER light 380 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 145.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1652145-500-auto?v=638822225787300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galleta arroz SAMAN Mini Dulces 150 g",
+      "Marca": "SAMAN",
+      "Precio": 84.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508946-500-auto?v=638619303924830000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Aceite de oliva OLIOVITA extra virgen clásico 500 cc",
+      "Marca": "OLIOVITA",
+      "Precio": 604.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1525341-500-auto?v=638619536594630000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Harina 0000 ADRIA 1 kg",
+      "Marca": "ADRIA",
+      "Precio": 59.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1507663-500-auto?v=638619298433900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Alfajor SIERRAS DE MINAS de nieve 60 g",
+      "Marca": "SIERRA DE MINAS",
+      "Precio": 95.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1593161-500-auto?v=638748794837700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Mermelada de frutilla PRECIO LÍDER 500 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 140.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518302-500-auto?v=638619361231070000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Té LA SELVA mixto 20 un. 40 g",
+      "Marca": "LA SELVA",
+      "Precio": 137.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1476933-500-auto?v=638580443561900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Yerba CANARIAS mezcla natural serena 500 g",
+      "Marca": "CANARIAS",
+      "Precio": 115.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1533894-500-auto?v=638620009759030000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletita María FAMOSA 300 g",
+      "Marca": "FAMOSA",
+      "Precio": 122.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1520252-500-auto?v=638619366237530000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pack x 6 PORTEZUELO Bocado black dulce de leche 150 g",
+      "Marca": "PORTEZUELO",
+      "Precio": 121.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1524259-500-auto?v=638619535529630000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Vinagre de alcohol JOSÉ G. GAMBERONI 1 L",
+      "Marca": "JOSÉ G. GAMBERONI",
+      "Precio": 83.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1480478-500-auto?v=638580447935800000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Espinaca Deshidratada KNORR 50 g",
+      "Marca": "KNORR",
+      "Precio": 69.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1675724-500-auto?v=638854271476730000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Mayonesa con aceite de oliva MAYOLIVA 250 cc",
+      "Marca": "MAYOLIVA",
+      "Precio": 132.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1484211-500-auto?v=638580511852100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fécula de mandioca EXENT 500 g",
+      "Marca": "EXENT",
+      "Precio": 148.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1481757-500-auto?v=638580448231070000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Mini torta RAPSODIA nevares 60 g",
+      "Marca": "NEVARES",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1477538-500-auto?v=638580443828170000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Alimento achocolatado VASCOLET 1 kg",
+      "Marca": "VASCOLET",
+      "Precio": 559.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1526373-500-auto?v=638619537345570000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Salsa blanca con queso MONTE CUDINE 54 g",
+      "Marca": "MONTE CUDINE",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518489-500-auto?v=638619361633400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Arvejas Rehidratadas COLOLÓ 380 g",
+      "Marca": "COLOLÓ",
+      "Precio": 39.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1534571-500-auto?v=638620010076700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletas Mini Uruguayitas EL TRIGAL 100 g",
+      "Marca": "EL TRIGAL",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1483803-500-auto?v=638580510204470000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos al huevo ADRIA nido cabello 500 g",
+      "Marca": "ADRIA",
+      "Precio": 75.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1509912-500-auto?v=638619308390500000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas PLAYERAS rellenas Limón 90 g",
+      "Marca": "EL TRIGAL",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518709-500-auto?v=638619362104100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Yerba LA SELVA para hepáticos 1 kg",
+      "Marca": "LA SELVA",
+      "Precio": 219.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1526616-500-auto?v=638619537584100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas ARCOR Rellenas Chocolate 120 g",
+      "Marca": "ARCOR",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1481675-500-auto?v=638580448210330000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Sopa crema de verduras KNORR 76 g",
+      "Marca": "KNORR",
+      "Precio": 94.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1526902-500-auto?v=638619537846670000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Papas Fritas PRINGLES Cebolla 109 g",
+      "Marca": "PRINGLES",
+      "Precio": 187.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1512309-500-auto?v=638619341198400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas OREO Sin Glúten 95 g",
+      "Marca": "OREO",
+      "Precio": 86.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1516872-500-auto?v=638619357185670000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pulpa de tomate GOURMET sin azúcar 1.02 g",
+      "Marca": "GOURMET",
+      "Precio": 78.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1484396-500-auto?v=638580512800930000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Edulcorante SUCRALIGHT 50 sobres",
+      "Marca": "SUCRALIGHT",
+      "Precio": 294.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1505679-500-auto?v=638619287083970000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pasta de Maní Crunchy CROPPERS 305 g",
+      "Marca": "CROPPERS",
+      "Precio": 170.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1645625-500-auto?v=638814219282730000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chocolate Baton GAROTO 16 g",
+      "Marca": "GAROTO",
+      "Precio": 28.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1527217-500-auto?v=638619538164670000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Alimento achocolatado VASCOLET 500 g + regalo",
+      "Marca": "VASCOLET",
+      "Precio": 325.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1647005-500-auto?v=638816129065900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Snack DORITOS queso 150 g",
+      "Marca": "DORITOS",
+      "Precio": 180.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518909-500-auto?v=638619362548600000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chocolate GAROTO Leche 80 g",
+      "Marca": "GAROTO",
+      "Precio": 109.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1480324-500-auto?v=638580447901870000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Barrita cereal RITTER frutilla chocolate 25 g",
+      "Marca": "RITTER",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1476266-500-auto?v=638580443436100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Te CANARIAS negro 10 un.",
+      "Marca": "CANARIAS",
+      "Precio": 50.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1478123-500-auto?v=638580443935200000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletas HOGAREÑAS mix cereales 185 g",
+      "Marca": "ARCOR",
+      "Precio": 77.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518372-500-auto?v=638619361383200000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Alfajor clásico JUANA LA LOCA negro 80 g",
+      "Marca": "JUANA LA LOCA",
+      "Precio": 60.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1479251-500-auto?v=638580444188600000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Vainillas PRECIO LÍDER 444g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 285.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1527665-500-auto?v=638619538669530000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Dulce de leche COLONIAL Diet 440 g",
+      "Marca": "COLONIAL",
+      "Precio": 193.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1480673-500-auto?v=638580447974670000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Yerba CANARIAS té verde y jengibre 1 kg",
+      "Marca": "CANARIAS",
+      "Precio": 199.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1478638-500-auto?v=638580444059330000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Sopa vegetales KNORR Quick 5 un.",
+      "Marca": "KNORR",
+      "Precio": 146.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1526937-500-auto?v=638619537882430000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Yerba LA SELVA sabor naranja pq. 1 kg",
+      "Marca": "LA SELVA",
+      "Precio": 234.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518478-500-auto?v=638619361622600000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Mayonesa NATURA 1000 cc",
+      "Marca": "NATURA",
+      "Precio": 229.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1484207-500-auto?v=638580511851630000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chicle Menta Fuerte BELDENT",
+      "Marca": "BELDENT",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1527416-500-auto?v=638619538379700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Cereal Nesquik matinal NESTLÉ 400 g",
+      "Marca": "NESTLÉ",
+      "Precio": 342.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518685-500-auto?v=638619362052030000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Cereal barra NUTRY avellana con chocolate x3 66 g",
+      "Marca": "NUTRY",
+      "Precio": 63.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1572216-500-auto?v=638701452455830000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Tostadas MAGIC TOAST marilan multicereal 110 g",
+      "Marca": "-",
+      "Precio": 104.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1507108-500-auto?v=638619295159100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Sopa de pollo GOURMET 1 L",
+      "Marca": "GOURMET",
+      "Precio": 93.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1526899-500-auto?v=638619537845130000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos LA MARITTIMA penne rigatti 400 g",
+      "Marca": "LA MARITTIMA",
+      "Precio": 43.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1593530-500-auto?v=638748800290870000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Polvo para hornear ROYAL 200 g",
+      "Marca": "ROYAL",
+      "Precio": 123.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1482933-500-auto?v=638580448727230000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chocolate KIT KAT 4 Triple 41.5 g",
+      "Marca": "KIT KAT",
+      "Precio": 69.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1659323-500-auto?v=638832363744100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Obleas Playeras limón 80 g",
+      "Marca": "EL TRIGAL",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508173-500-auto?v=638619301050670000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chicle TOPLINE 7 Explosive Mint 14 g",
+      "Marca": "TOPLINE",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1475959-500-auto?v=638580443367430000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Yerba CABRAL Suave 1 kg",
+      "Marca": "CABRAL",
+      "Precio": 192.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1484068-500-auto?v=638580511764130000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Atún lomito en aceite PRECIO LÍDER 160 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 112.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1472917-500-auto?v=638580442341430000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Arvejas + zanahoria ODERICH 300 g",
+      "Marca": "ODERICH",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1509015-500-auto?v=638619304138670000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galleta la trigueña sin sal 500 g",
+      "Marca": "-",
+      "Precio": 170.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1516758-500-auto?v=638619356767670000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Adobo PRECIO LIDER 25 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 61.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1535520-500-auto?v=638620010576070000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Caramelos rellenos de miel ARCOR 150 g",
+      "Marca": "ARCOR",
+      "Precio": 92.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1476238-500-auto?v=638580443431130000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas Bañadas COFLER Bon o Bon 105.6 g",
+      "Marca": "COFLER",
+      "Precio": 135.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1507228-500-auto?v=638619295872100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chocolate Taza AGUILA Blanco 100 g",
+      "Marca": "ÁGUILA",
+      "Precio": 109.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1516815-500-auto?v=638619356979500000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos BARILLA Spaghettoni N°7 500 g",
+      "Marca": "BARILLA",
+      "Precio": 146.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1520033-500-auto?v=638619365690500000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Maicitos BUN 330gr",
+      "Marca": "BUN",
+      "Precio": 210.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1664500-500-auto?v=638839738767070000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Alfajor PORTEZUELO blanco relleno dulce de leche 40 g",
+      "Marca": "PORTEZUELO",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1482808-500-auto?v=638580448698100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos COLOLÓ Corbatas Tipo Casero 500 g",
+      "Marca": "COLOLÓ",
+      "Precio": 76.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1517985-500-auto?v=638619360516000000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pack Tremenda Picada LAY'S 670 g",
+      "Marca": "LAY'S",
+      "Precio": 499.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1558006-500-auto?v=638672962471930000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Gelatina PRECIO LÍDER frutilla 8 porciones",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 79.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1525966-500-auto?v=638619537060030000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos LA MOLISANA Spaghetti 500 g",
+      "Marca": "LA MOLISANA",
+      "Precio": 120.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1528244-500-auto?v=638619539257700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Barrita Proteína b3 NATURAL BARS Frutos Rojos 60 g",
+      "Marca": "NATURAL BARS",
+      "Precio": 95.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1695785-500-auto?v=638872109857100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Alfajor GUACHO Mousse Frutilla 45 g",
+      "Marca": "GÜACHO",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1638101-500-auto?v=638802123591500000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Alfajor PORTEZUELO nieve",
+      "Marca": "PORTEZUELO",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1589325-500-auto?v=638736873759700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos al huevo LAS ACACIAS nido 2 500 g",
+      "Marca": "LAS ACACIAS",
+      "Precio": 86.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1533995-500-auto?v=638620009807030000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos COLOLÓ Moñas Tipo Casero 500 g",
+      "Marca": "COLOLÓ",
+      "Precio": 76.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1431256-500-auto?v=638542047127430000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Aceite de oliva extra virgen FRESH MARKET 250cc",
+      "Marca": "FRESH MARKET",
+      "Precio": 304.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1659372-500-auto?v=638832580208900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Morron Deshidratado KNORR 75 g",
+      "Marca": "KNORR",
+      "Precio": 129.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1675725-500-auto?v=638854271476900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Alfajor clásico TERRABUSI con dulce de leche 50 g",
+      "Marca": "TERRABUSI",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1526065-500-auto?v=638619537132400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Cebolla Deshidratada KNORR 100 g",
+      "Marca": "KNORR",
+      "Precio": 129.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1675723-500-auto?v=638854271474400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos al huevo ADRIA macarrones 500 g",
+      "Marca": "ADRIA",
+      "Precio": 75.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1509844-500-auto?v=638619308095100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Gnocchi de papa EMIGRANTE sin gluten 500 g",
+      "Marca": "EMIGRANTE",
+      "Precio": 266.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1506671-500-auto?v=638619292899030000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Alfajor PORTEZUELO nieve triple 55 g",
+      "Marca": "PORTEZUELO",
+      "Precio": 48.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1450107-500-auto?v=638542286219400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Cápsula NESCAFÉ Dolce Gusto Americano 128 g",
+      "Marca": "NESCAFÉ",
+      "Precio": 599.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1525484-500-auto?v=638619536698530000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Café SENIOR tradicional 500g",
+      "Marca": "SENIOR",
+      "Precio": 625.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518188-500-auto?v=638619360963130000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Sopa zapallo KNORR Quick con 5 un.",
+      "Marca": "KNORR",
+      "Precio": 146.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1476622-500-auto?v=638580443498030000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Tostaditas SANISSIMO salmas x 5 un. 90 g",
+      "Marca": "SANISSIMO",
+      "Precio": 148.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508705-500-auto?v=638619303051930000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Café molido NESCAFÉ Gold intenso 250 g",
+      "Marca": "NESTLÉ",
+      "Precio": 429.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518436-500-auto?v=638619361519800000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletita snack SALADIX jamón",
+      "Marca": "SALADIX",
+      "Precio": 78.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1520141-500-auto?v=638619365928330000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Cereal barra NUTRY Frutilla con Chocolate 66 g 3 un.",
+      "Marca": "NUTRY",
+      "Precio": 63.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1572240-500-auto?v=638701452475000000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos semolados ADRIA Moñitas 500 g",
+      "Marca": "ADRIA",
+      "Precio": 66.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1509817-500-auto?v=638619307959830000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Barrita cereal RITTER frutos del bosque 25 g",
+      "Marca": "RITTER",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1517195-500-auto?v=638619358289670000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Papas Fritas LAY'S Rústicas Pimentón Picante 100 g",
+      "Marca": "LAY'S",
+      "Precio": 170.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1634784-500-auto?v=638796939506500000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos Vermicelli STAR LION de Arroz 200 g",
+      "Marca": "STAR LION",
+      "Precio": 90.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1526459-500-auto?v=638619537416600000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Té LA SELVA manzanilla, menta y jengibre 10 sobres",
+      "Marca": "LA SELVA",
+      "Precio": 93.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1525866-500-auto?v=638619536990300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Yerba compuesta CABRAL 1 kg",
+      "Marca": "CABRAL",
+      "Precio": 215.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1517805-500-auto?v=638619359943700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos al huevo LAS ACACIAS trompetín 500 g",
+      "Marca": "LAS ACACIAS",
+      "Precio": 86.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1524397-500-auto?v=638619535638900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos semolados ADRIA Vermicelli",
+      "Marca": "ADRIA",
+      "Precio": 66.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1509840-500-auto?v=638619308068600000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chocolate HAAS 0% Almendras 150 g",
+      "Marca": "HAAS",
+      "Precio": 323.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508234-500-auto?v=638619301270900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Palmitos enteros PRECIO LÍDER 250 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 119.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1472884-500-auto?v=638580442333130000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Café molido STARBUCKS dark verona 250g",
+      "Marca": "STARBUCKS",
+      "Precio": 479.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508556-500-auto?v=638619302452130000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Té LA SELVA bororo 10 un. 20 g",
+      "Marca": "LA SELVA",
+      "Precio": 87.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1476947-500-auto?v=638580443566230000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Cappuccino NESCAFÉ vainilla 8 sobres",
+      "Marca": "NESCAFÉ",
+      "Precio": 497.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1668724-500-auto?v=638844690231930000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Cappuccino tradicional PRECIO LÍDER 6 un",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 185.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508506-500-auto?v=638619302288930000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Té PRESIDENT verde jengibre limón 10 sobres",
+      "Marca": "PRESIDENT",
+      "Precio": 88.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508229-500-auto?v=638619301245000000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pulpa tomate ARCOR 1050 g",
+      "Marca": "ARCOR",
+      "Precio": 85.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1502074-500-auto?v=638619267943070000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pan rallado rebozador RALLOPAN sin sal 450 g",
+      "Marca": "RALLOPAN",
+      "Precio": 141.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1516264-500-auto?v=638619355166070000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Premezcla bizcochuelo HORNEX vainilla sin gluten",
+      "Marca": "HORNEX",
+      "Precio": 249.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508341-500-auto?v=638619301669770000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Nucrem GEORGALOS 85 g",
+      "Marca": "GEORGALOS",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1484051-500-auto?v=638580511677670000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Cereal TRIX Nestlé 230 g",
+      "Marca": "NESTLÉ",
+      "Precio": 269.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1514971-500-auto?v=638619350795170000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Tortilla PRECIO LÍDER clásica 380 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 145.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1652146-500-auto?v=638822225787770000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletas LA TRIGUEÑA finitas sin sal 275 g",
+      "Marca": "LA TRIGUEÑA",
+      "Precio": 157.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1650279-500-auto?v=638820266461130000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "PALI CHIPS jamón 150 g",
+      "Marca": "PALI CHIPS",
+      "Precio": 110.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1522283-500-auto?v=638619529258230000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Duraznos en almíbar ARCOR lata 820 g",
+      "Marca": "ARCOR",
+      "Precio": 169.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1482254-500-auto?v=638580448336630000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Caramelos rellenos fruta ARCOR 150 g",
+      "Marca": "ARCOR",
+      "Precio": 92.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1475926-500-auto?v=638580443360300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos al huevo ADRIA foratti 500 g",
+      "Marca": "ADRIA",
+      "Precio": 75.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1520014-500-auto?v=638619365636300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galleta LA TRIGUEÑA Malteada 500 g",
+      "Marca": "LA TRIGUEÑA",
+      "Precio": 179.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1449919-500-auto?v=638542286137500000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Gelatina light FLEISCHMANN manzana 8 porciones",
+      "Marca": "FLEISCHMANN",
+      "Precio": 98.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1478105-500-auto?v=638580443932130000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Compota de Manzana WATTS Pouch 90 g",
+      "Marca": "WATTS",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1558621-500-auto?v=638672962633470000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Sopa casera KNORR vegetales con amaranto 78 g",
+      "Marca": "KNORR",
+      "Precio": 94.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1472271-500-auto?v=638580441999400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas TERRABUSI con Chips Pepitos 118 g",
+      "Marca": "TERRABUSI",
+      "Precio": 72.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1482802-500-auto?v=638580448697170000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Papas fritas LAY'S 95 g",
+      "Marca": "LAY'S",
+      "Precio": 135.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1521647-500-auto?v=638619370381400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Aceitunas con limón EMIGRANTE 120 g",
+      "Marca": "EMIGRANTE",
+      "Precio": 181.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1474901-500-auto?v=638580442883370000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos de arroz BLUE PATNA mostacholes 500 g",
+      "Marca": "BLUE PATNA",
+      "Precio": 131.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1520000-500-auto?v=638619365601200000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pop BAMBOO orgánicos Sweet & Salty 80g",
+      "Marca": "BAMBOO",
+      "Precio": 129.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518273-500-auto?v=638619361153700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Yerba SARA 1 kg",
+      "Marca": "SARA",
+      "Precio": 189.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1477161-500-auto?v=638580443617330000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Gomas Mogul ARCOR Exteme Rocks 45 g",
+      "Marca": "ARCOR",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1475856-500-auto?v=638580443347930000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Café descafeinado SENIOR 250 g",
+      "Marca": "SENIOR",
+      "Precio": 496.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1507848-500-auto?v=638619299403600000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "YERBA SARA coco 500 g",
+      "Marca": "SARA",
+      "Precio": 115.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1587483-500-auto?v=638724358812800000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Snack Tostitos 150 g",
+      "Marca": "DORITOS",
+      "Precio": 182.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1503178-500-auto?v=638619272676400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Té LA VIRGINIA 50 un. 100 g",
+      "Marca": "VIRGINIA",
+      "Precio": 165.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1507922-500-auto?v=638619299747400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Atún en trozos al natural RIO DE LA PLATA pouch 120 g",
+      "Marca": "RIO DE LA PLATA",
+      "Precio": 122.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1530221-500-auto?v=638619541586730000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Snack 3D'S mega barbacoa 88 g",
+      "Marca": "3D'S",
+      "Precio": 125.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1515132-500-auto?v=638619351164330000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Aceitunas con pimiento EMIGRANTE 120 g",
+      "Marca": "EMIGRANTE",
+      "Precio": 181.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1474959-500-auto?v=638580442894470000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Té PRESIDENT 10 un. 20 g",
+      "Marca": "PRESIDENT",
+      "Precio": 75.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1517786-500-auto?v=638619359880270000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos fusilli DIVELLA 500 g",
+      "Marca": "DIVELLA",
+      "Precio": 113.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1524413-500-auto?v=638619535650730000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Choclo en crema ODERICH 350 g",
+      "Marca": "ODERICH",
+      "Precio": 55.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1578340-500-auto?v=638711808053470000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Cereal barra NUTRY coco y chocolate 66 g 3 un.",
+      "Marca": "NUTRY",
+      "Precio": 63.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1572230-500-auto?v=638701452468100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Granola JASMINE arandanos y acaí sin gluten 250 g",
+      "Marca": "JASMINE",
+      "Precio": 222.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1478882-500-auto?v=638580444104130000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Granola DE LA TIERRA 250 g",
+      "Marca": "DE LA TIERRA",
+      "Precio": 175.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1645544-500-auto?v=638814218507070000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos capeletis de verdura GIACOMO capelettini 500 g",
+      "Marca": "GIACOMO",
+      "Precio": 203.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1509875-500-auto?v=638619308228930000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas BAUDUCCO Cookies chocolate 60 g",
+      "Marca": "BAUDUCCO",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1483732-500-auto?v=638580510132370000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Sopa instantánea calabaza MONTE CUDINE 4 un.",
+      "Marca": "MONTE CUDINE",
+      "Precio": 89.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1476683-500-auto?v=638580443508070000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Mermelada de durazno PRECIO LÍDER 500 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 137.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508351-500-auto?v=638619301706770000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Palmitos enteros EMIGRANTE 400 g",
+      "Marca": "EMIGRANTE",
+      "Precio": 220.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1643256-500-auto?v=638811200025630000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Salsa kétchup HELLMANN'S 60 g",
+      "Marca": "HELLMANN'S",
+      "Precio": 48.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1480496-500-auto?v=638580447938730000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pan integral BIMBO cero 520 g",
+      "Marca": "BIMBO",
+      "Precio": 218.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1599612-500-auto?v=638756594990330000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos trompetines con vegetales COLOLÓ 500g",
+      "Marca": "EQUAL SWEET",
+      "Precio": 76.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1473068-500-auto?v=638580442376670000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos LAS ACACIAS Corbatita 500 g",
+      "Marca": "LAS ACACIAS",
+      "Precio": 65.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1431198-500-auto?v=638542047080100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Bombonera GAROTO serenata de amor 148 g",
+      "Marca": "GAROTO",
+      "Precio": 159.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1527197-500-auto?v=638619538144000000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Polvo de hornear FLEISCHMANN 100 g",
+      "Marca": "FLEISCHMANN",
+      "Precio": 70.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1520300-500-auto?v=638619366375030000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Yerba LA SELVA especial con hierbas 1 kg",
+      "Marca": "LA SELVA",
+      "Precio": 218.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1483953-500-auto?v=638580511413770000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Papas Fritas LAYS rusticas caprese 100 G",
+      "Marca": "PEPSICO",
+      "Precio": 170.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1503164-500-auto?v=638619272597570000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Premezcla para Pan HORNEX sin Glúten 240 g",
+      "Marca": "HORNEX",
+      "Precio": 122.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1609496-500-auto?v=638768627044270000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Obleas Playeras frutilla 80 g",
+      "Marca": "EL TRIGAL",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508194-500-auto?v=638619301117330000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas Cerealitas Avena y Chocolate 231g",
+      "Marca": "CEREALITAS",
+      "Precio": 79.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1519035-500-auto?v=638619362795800000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pack x 6 alfajor merengue de las SIERRAS DE MINAS",
+      "Marca": "DE LAS SIERRAS DE MINAS",
+      "Precio": 549.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1533837-500-auto?v=638620009731370000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Atún lomito EMIGRANTE en aceite de oliva 345 g",
+      "Marca": "EMIGRANTE",
+      "Precio": 389.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1519857-500-auto?v=638619365069500000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Cereal GRANIX Corn Flakes 200 g",
+      "Marca": "GRANIX",
+      "Precio": 101.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1477490-500-auto?v=638580443690100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Mayonesa HELLMANNS vegana 500 g",
+      "Marca": "HELLMANN'S",
+      "Precio": 184.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1530131-500-auto?v=638619541506700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Tostadas Integrales Magic Toast MARILAN 110 g",
+      "Marca": "MARILAN",
+      "Precio": 104.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1527604-500-auto?v=638619538595400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Dulce de Membrillo RINCON DEL GIGANTE 400 g",
+      "Marca": "RINCON DEL GIGANTE",
+      "Precio": 60.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1527557-500-auto?v=638619538544030000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pack x 6 bocado dulce de leche PRECIO LÍDER",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 111.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1525899-500-auto?v=638619537017700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Alfajor PORTEZUELO triple chocolate blanco 60 g",
+      "Marca": "PORTEZUELO",
+      "Precio": 48.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1471888-500-auto?v=638580441574400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Aceite de oliva DE LA SIERRA extra virgen 3L",
+      "Marca": "DE LA SIERRA",
+      "Precio": 2.725,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1504888-500-auto?v=638619282562030000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Ananá en almibar PRECIO LÍDER 830 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 195.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1516792-500-auto?v=638619356893500000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos al huevo ADRIA fettuccine",
+      "Marca": "ADRIA",
+      "Precio": 75.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1484555-500-auto?v=638580513151930000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pop BAMBOO orgánico con azúcar",
+      "Marca": "BAMBOO",
+      "Precio": 129.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518167-500-auto?v=638619360913230000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Bombón MILKA oreo 19 g",
+      "Marca": "MILKA",
+      "Precio": 21.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1479975-500-auto?v=638580447832500000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Sopa crema choclo KNORR 67 g",
+      "Marca": "KNORR",
+      "Precio": 94.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1549544-500-auto?v=638621923056800000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Magdalenas rellenas dulce de leche PRECIO LÍDER 200g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 125.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1527671-500-auto?v=638619538672470000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Papas fritas RUFFLES 85 g",
+      "Marca": "RUFFLES",
+      "Precio": 125.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1511685-500-auto?v=638619338874570000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Mostaza PRECIO LÍDER 250 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 96.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1473152-500-auto?v=638580442395330000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Cappuccino vainilla PRECIO LÍDER 6 un",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 185.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1525971-500-auto?v=638619537068730000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Atún entero en aceite de oliva RIO DE LA PLATA 170 g",
+      "Marca": "RIO DE LA PLATA",
+      "Precio": 179.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1519870-500-auto?v=638619365120570000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos BARILLA penne rigate sin gluten 400 g",
+      "Marca": "BARILLA",
+      "Precio": 325.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1514842-500-auto?v=638619350332570000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Lentejas LA ABUNDANCIA 450 g",
+      "Marca": "LA ABUNDANCIA",
+      "Precio": 120.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1526576-500-auto?v=638619537555700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Aceitunas verdes con carozo PRECIO LÍDER 100 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 59.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1472677-500-auto?v=638580442281900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Maní CROKISSIMO salsa y cebolla 150 g",
+      "Marca": "SANTA HELENA",
+      "Precio": 55.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518928-500-auto?v=638619362582670000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Alfajor clásico nieve PUNTA BALLENA 35 g",
+      "Marca": "PUNTA BALLENA",
+      "Precio": 39.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1529438-500-auto?v=638619540630400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pack PALI CHIPS jamón 150+mani 150 g",
+      "Marca": "PALI CHIPS",
+      "Precio": 210.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1535511-500-auto?v=638620010574000000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Sopa casera KNORR vegetales con pasta verde 80 g",
+      "Marca": "KNORR",
+      "Precio": 94.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1472325-500-auto?v=638580442010300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chicle TOPLINE 7 Atomic Strongt 14 g",
+      "Marca": "TOPLINE",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1526389-500-auto?v=638619537364870000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Sopa de verduras GOURMET light sin sal 1 L",
+      "Marca": "GOURMET",
+      "Precio": 93.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1476736-500-auto?v=638580443516200000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chocolate con Leche GEORGALOS sin azúcar 70 g",
+      "Marca": "GEORGALOS",
+      "Precio": 161.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1507512-500-auto?v=638619297597400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos BARILLA mini farfalle piccolini 500 g",
+      "Marca": "BARILLA",
+      "Precio": 277.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1520052-500-auto?v=638619365757700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Té LA SELVA mixto 10 un.",
+      "Marca": "LA SELVA",
+      "Precio": 74.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1476926-500-auto?v=638580443560800000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Café NESCAFÉ Gold Alta Rica 100 g",
+      "Marca": "NESCAFÉ",
+      "Precio": 569.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508491-500-auto?v=638619302216600000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletita WHEY PROTEIN Frutilla y Chocolate 25 g",
+      "Marca": "WHEY PROTEIN",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1618516-500-auto?v=638778233448270000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Alfajor triple chocolate PRECIO LÍDER 60 g",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 42.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518522-500-auto?v=638619361706730000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Café molido STARBUCKS medium house blend 250g",
+      "Marca": "STARBUCKS",
+      "Precio": 479.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518565-500-auto?v=638619361786470000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Edulcorante CHUKER Sucralosa 500 cc + 100 cc",
+      "Marca": "CHUKER",
+      "Precio": 199.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1558708-500-auto?v=638672962651330000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chocolate HAAS Noir Premium 100 g",
+      "Marca": "HAAS",
+      "Precio": 236.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1507498-500-auto?v=638619297499400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pistacho EMIGRANTE 70 g",
+      "Marca": "EMIGRANTE",
+      "Precio": 172.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1558826-500-auto?v=638672962687000000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chips de Quinoa guacamole sin gluten QFOODS 100 g",
+      "Marca": "QFOODS",
+      "Precio": 149.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1503093-500-auto?v=638619272249870000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Yerba CABRAL Silueta Ideal 500 g",
+      "Marca": "CABRAL",
+      "Precio": 118.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1477098-500-auto?v=638580443605130000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Baño de repostería AGUILA semi amargo",
+      "Marca": "ÁGUILA",
+      "Precio": 127.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1527375-500-auto?v=638619538343430000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas GULLÓN sin gluten con Chips Choc 130 g",
+      "Marca": "GULLÓN",
+      "Precio": 206.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1526369-500-auto?v=638619537344130000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Postre PRECIO LÍDER vainilla light 8 porciones",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 79.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518483-500-auto?v=638619361626500000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Nachos Clásicos SANISSIMOS 160 g",
+      "Marca": "SANISSIMO",
+      "Precio": 223.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1503188-500-auto?v=638619272755700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Gelatina PRECIO LÍDER cereza 8 porciones",
+      "Marca": "PRECIO LÍDER",
+      "Precio": 79.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508512-500-auto?v=638619302310630000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Gomitas Mogul ARCOR frutales 80 g",
+      "Marca": "MOGUL",
+      "Precio": 63.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1525493-500-auto?v=638619536703370000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Caramelos ARCOR menta cristal 150 g",
+      "Marca": "ARCOR",
+      "Precio": 92.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1476226-500-auto?v=638580443429730000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Caramelos masticables MENTOS Menta 29 g",
+      "Marca": "MENTOS",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1583090-500-auto?v=638718716188170000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas LA PAZ sin gluten de cacao sésamo y nueces 150 g",
+      "Marca": "LA PAZ",
+      "Precio": 183.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1479473-500-auto?v=638580444238270000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pastillas goma MOGUL 35 g",
+      "Marca": "MOGUL",
+      "Precio": 27.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1517012-500-auto?v=638619357603330000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos BARILLA bucatini N°9 500 g",
+      "Marca": "BARILLA",
+      "Precio": 207.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1479913-500-auto?v=638580447818800000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Barrita Cereal RITTER Light Cappuccino 22 g",
+      "Marca": "RITTER",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1517222-500-auto?v=638619358350200000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chips de vegetales DE LA TIERRA sin sal 120 g",
+      "Marca": "DE LA TIERRA",
+      "Precio": 209.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1474979-500-auto?v=638580442899270000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Avena orgánica CAMPOCLARO 300 gr",
+      "Marca": "CAMPOCLARO",
+      "Precio": 201.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1530115-500-auto?v=638619541490300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Papas fritas MARIA BONITA campesinas 120 g",
+      "Marca": "MARÍA BONITA",
+      "Precio": 194.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1525687-500-auto?v=638619536859930000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos capeletis COLOLÓ tipo casero 500 g",
+      "Marca": "COLOLÓ",
+      "Precio": 76.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1509888-500-auto?v=638619308283200000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Polakitos Cebolla MANOLO 150 g",
+      "Marca": "MANOLO",
+      "Precio": 141.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1563009-500-auto?v=638682889441500000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Barrita cereal RITTER limón con chocolate 25 g",
+      "Marca": "RITTER",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1507187-500-auto?v=638619295632100000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Marmolado 110 g",
+      "Marca": "MARMOLADO",
+      "Precio": 111.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1517035-500-auto?v=638619357677970000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "PALICHIPS de queso 120 g",
+      "Marca": "PALI CHIPS",
+      "Precio": 100.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1502060-500-auto?v=638619267894200000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos de arroz BLUE PATNA tirabuzone 500 g",
+      "Marca": "BLUE PATNA",
+      "Precio": 131.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1484574-500-auto?v=638580513153800000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Yerba DEL CEBADOR intenso 500 g",
+      "Marca": "DEL CEBADOR",
+      "Precio": 100.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1481706-500-auto?v=638580448218400000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Obleas COFLER Rellenas Chocolate 87 g",
+      "Marca": "COFLER",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1527566-500-auto?v=638619538552700000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Café molido STARBUCKS medium pike place 250g",
+      "Marca": "STARBUCKS",
+      "Precio": 479.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1518562-500-auto?v=638619361781130000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Yerba LA SELVA en forma 1 kg",
+      "Marca": "LA SELVA",
+      "Precio": 219.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1517820-500-auto?v=638619359996830000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pack 6 un. Alfajor black PORTEZUELO extra dulce de leche",
+      "Marca": "PORTEZUELO",
+      "Precio": 220.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1603271-500-auto?v=638761115562000000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Fideos semolados ADRIA Nido",
+      "Marca": "ADRIA",
+      "Precio": 66.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1488548-500-auto?v=638594193802300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Edulcorante SUCRALIGHT 100 sobres",
+      "Marca": "SUCRALIGHT",
+      "Precio": 386.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1474630-500-auto?v=638580442823900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Pasta instantánea COLOLÓ sabor carne 63 g",
+      "Marca": "COLOLÓ",
+      "Precio": 20.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1665095-500-auto?v=638840382655870000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Boniatos DE LA TIERRA con sal marina 100 g",
+      "Marca": "DE LA TIERRA",
+      "Precio": 153.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1530258-500-auto?v=638619541613300000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Sémola 1 minuto PURITAS 450 g",
+      "Marca": "PURITAS",
+      "Precio": 169.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1533951-500-auto?v=638620009782670000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletita snack SALADIX calabresa",
+      "Marca": "SALADIX",
+      "Precio": 78.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1533889-500-auto?v=638620009757970000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chicle TOPLINE Seven Menthol 14 g",
+      "Marca": "TOPLINE",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1508830-500-auto?v=638619303506900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Maní agridulce horneado DE LA TIERRA 150 g",
+      "Marca": "DE LA TIERRA",
+      "Precio": 89.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1516162-500-auto?v=638619354926870000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletas HOGAREÑAS salvado 200 g",
+      "Marca": "ARCOR",
+      "Precio": 77.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1509984-500-auto?v=638619308663900000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Atún en trozos en aceite RIO DE LA PLATA pouch 120 g",
+      "Marca": "RIO DE LA PLATA",
+      "Precio": 122.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1530225-500-auto?v=638619541588000000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Té LA SELVA rojo 10 un.",
+      "Marca": "LA SELVA",
+      "Precio": 75.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1507908-500-auto?v=638619299670130000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chicle TOPLINE Seven frutal 14 g",
+      "Marca": "TOPLINE",
+      "Precio": 25.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1475955-500-auto?v=638580443366800000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Edulcorante ASPARTIL líquido 60ml",
+      "Marca": "ASPARTIL",
+      "Precio": 223.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1533895-500-auto?v=638620009759200000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Galletitas LULU rellenas de Chocolate 115 g",
+      "Marca": "FAMOSA",
+      "Precio": 57.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1520191-500-auto?v=638619366060370000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Yerba LA SELVA sabor pomelo 1 kg",
+      "Marca": "LA SELVA",
+      "Precio": 234.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1525956-500-auto?v=638619537053470000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Maní amindus pimienta con limón SANTA HELENA 150 g",
+      "Marca": "SANTA HELENA",
+      "Precio": 30.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1481693-500-auto?v=638580448215230000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Chocolate GAROTO Crocante 150 g",
+      "Marca": "GAROTO",
+      "Precio": 169.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1483829-500-auto?v=638580510208830000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Premezcla para pizza sin gluten ARCOR 500g",
+      "Marca": "ARCOR",
+      "Precio": 225.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1514289-500-auto?v=638619348204030000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    },
+    {
+      "Nombre": "Yerba CABRAL Díab 1 kg",
+      "Marca": "CABRAL",
+      "Precio": 215.0,
+      "Imagen": "https://devotouy.vtexassets.com/arquivos/ids/1483912-500-auto?v=638580511242270000&width=500&height=auto&aspect=true",
+      "Divisa": "pesos"
+    }
+  ]
+}

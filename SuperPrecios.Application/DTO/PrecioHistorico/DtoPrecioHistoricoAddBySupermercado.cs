@@ -16,7 +16,7 @@ namespace SuperPrecios.Application.DTO.PrecioHistorico
         [Required]
         public string Nombre { get; set; }
 
-        [Length(2, 50, ErrorMessage = "La marca debe tener entre 1 y 50 caracteres.")]
+        [Length(1, 100, ErrorMessage = "La marca debe tener entre 1 y 50 caracteres.")]
         [Required]
         public string Marca { get; set; }       
 
@@ -25,7 +25,7 @@ namespace SuperPrecios.Application.DTO.PrecioHistorico
         public decimal Precio { get; set; }
 
         [Length(2, 200, ErrorMessage = "La imagen debe tener entre 1 y 200 caracteres.")]
-        public string? ImgUrl { get; set; }
+        public string? Imagen { get; set; }
 
         public string? Divisa { get; set; }
     }

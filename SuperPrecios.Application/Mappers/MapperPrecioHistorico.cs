@@ -86,7 +86,7 @@ namespace SuperPrecios.Application.Mappers
             if (dto == null) throw new ArgumentNullException("El precio historico no puede ser nulo");
             if (dto.Precio <= 0) throw new ArgumentException("El precio no puede ser menor a 0");                        
             Marca marca = new Marca(dto.Marca);
-            Producto producto = new Producto(dto.Nombre, marca, categoria, dto.ImgUrl);
+            Producto producto = new Producto(dto.Nombre, marca, categoria, dto.Imagen);
             PrecioHistorico precioHistorico = new PrecioHistorico(producto, supermercado, dto.Precio);
             return precioHistorico;
         }

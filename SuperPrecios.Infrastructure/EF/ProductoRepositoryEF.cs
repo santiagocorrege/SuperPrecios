@@ -265,67 +265,25 @@ namespace SuperPrecios.Infrastructure.EF
         public async Task<PagedResult<Producto>> GetProductosTodayWPrecioHistorico(int pagina, int pageSize = 10)
         {
             try
-            {                
-                DateOnly fechaHoy = DateOnly.FromDateTime(DateTime.Now);
-
-                var totalRecords = await _context.Productos
-                .AsNoTracking()
-                .Where(p => p.PreciosHistoricos.Any(ph => ph.Fecha == fechaHoy))
-                .CountAsync();
-                if (totalRecords == 0) throw new Exception("No existen precios para el dia de hoy");
-                if (pagina < 1 || pagina > (int)Math.Ceiling((double)totalRecords / pageSize))
-                {
-                    throw new ArgumentOutOfRangeException("La pagina solicitada no es valida");
-                }
-
-                var productos = await _context.Productos
-                    .AsNoTracking()
-                    .Where(p => p.PreciosHistoricos.Any(ph => ph.Fecha == fechaHoy)) // primero el filtro
-                    .Include(p => p.Marca)
-                    .Include(p => p.Categoria)
-                    .Include(p => p.PreciosHistoricos.Where(ph => ph.Fecha == fechaHoy))
-                        .ThenInclude(ph => ph.Supermercado)
-                    .Skip((pagina - 1) * pageSize)
-                    .Take(pageSize)
-                    .ToListAsync();
-                                
-                return new PagedResult<Producto>
-                {
-                    Items = productos,
-                    PaginaActual = pagina,                    
-                    TotalPaginas = (int)Math.Ceiling((double)totalRecords / pageSize)
-                };
-
-            }
-            catch (DbException dbEx)
             {
-                throw new Exception("Error al consultar la base de datos de precios");
-            }
-        }
-
-        public async Task<PagedResult<Producto>> GetProductosByNombreTodayWPrecioHistorico(string nombre, int pagina, int pageSize = 10)
-        {
-            try
-            {                
                 DateOnly fechaHoy = DateOnly.FromDateTime(DateTime.Now);
 
                 var totalRecords = await _context.Productos
-                .AsNoTracking()
-                .Where(p => p.Nombre.Contains(nombre) && p.PreciosHistoricos.Any(ph => ph.Fecha == fechaHoy))
-                .CountAsync();
+                    .AsNoTracking()
+                    .Where(p => p.PreciosHistoricos.Any(ph => ph.Fecha == fechaHoy))
+                    .CountAsync();
                 if (totalRecords == 0) throw new Exception("No existen precios para el dia de hoy");
                 if (pagina < 1 || pagina > (int)Math.Ceiling((double)totalRecords / pageSize))
-                {
                     throw new ArgumentOutOfRangeException("La pagina solicitada no es valida");
-                }
 
                 var productos = await _context.Productos
                     .AsNoTracking()
-                    .Where(p => p.Nombre.Contains(nombre) && p.PreciosHistoricos.Any(ph => ph.Fecha == fechaHoy)) // primero el filtro
+                    .Where(p => p.PreciosHistoricos.Any(ph => ph.Fecha == fechaHoy)) // filtro
                     .Include(p => p.Marca)
                     .Include(p => p.Categoria)
                     .Include(p => p.PreciosHistoricos.Where(ph => ph.Fecha == fechaHoy))
                         .ThenInclude(ph => ph.Supermercado)
+                    .OrderBy(p => p.Id)                            // <-- aquí el ORDER BY
                     .Skip((pagina - 1) * pageSize)
                     .Take(pageSize)
                     .ToListAsync();
@@ -336,17 +294,59 @@ namespace SuperPrecios.Infrastructure.EF
                     PaginaActual = pagina,
                     TotalPaginas = (int)Math.Ceiling((double)totalRecords / pageSize)
                 };
-
             }
-            catch (DbException dbEx)
+            catch (DbException)
             {
                 throw new Exception("Error al consultar la base de datos de precios");
             }
         }
 
-        public async Task<PagedResult<Producto>> GetByCategoriasWithPrecioHistoricoAsync(IEnumerable<int> categoriaIds, int pagina, int pageSize=10)
+
+        public async Task<PagedResult<Producto>> GetProductosByNombreTodayWPrecioHistorico(string nombre, int pagina, int pageSize = 10)
+        {
+            try
+            {
+                DateOnly fechaHoy = DateOnly.FromDateTime(DateTime.Now);
+
+                var totalRecords = await _context.Productos
+                    .AsNoTracking()
+                    .Where(p => p.Nombre.Contains(nombre) && p.PreciosHistoricos.Any(ph => ph.Fecha == fechaHoy))
+                    .CountAsync();
+                if (totalRecords == 0) throw new Exception("No existen precios para el dia de hoy");
+                if (pagina < 1 || pagina > (int)Math.Ceiling((double)totalRecords / pageSize))
+                    throw new ArgumentOutOfRangeException("La pagina solicitada no es valida");
+
+                var productos = await _context.Productos
+                    .AsNoTracking()
+                    .Where(p => p.Nombre.Contains(nombre) && p.PreciosHistoricos.Any(ph => ph.Fecha == fechaHoy))
+                    .Include(p => p.Marca)
+                    .Include(p => p.Categoria)
+                    .Include(p => p.PreciosHistoricos.Where(ph => ph.Fecha == fechaHoy))
+                        .ThenInclude(ph => ph.Supermercado)
+                    .OrderBy(p => p.Id)                        // <-- añadido aquí
+                    .Skip((pagina - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToListAsync();
+
+                return new PagedResult<Producto>
+                {
+                    Items = productos,
+                    PaginaActual = pagina,
+                    TotalPaginas = (int)Math.Ceiling((double)totalRecords / pageSize)
+                };
+            }
+            catch (DbException)
+            {
+                throw new Exception("Error al consultar la base de datos de precios");
+            }
+        }
+
+
+        public async Task<PagedResult<Producto>> GetByCategoriasWithPrecioHistoricoAsync(IEnumerable<int> categoriaIds, int pagina, int pageSize = 10)
         {
             var fechaHoy = DateOnly.FromDateTime(DateTime.Now);
+
+            // Prepara la consulta base
             var query = _context.Productos
                 .AsNoTracking()
                 .Where(p => categoriaIds.Contains(p.CategoriaId))
@@ -355,11 +355,13 @@ namespace SuperPrecios.Infrastructure.EF
                 .Include(p => p.Categoria)
                 .Include(p => p.PreciosHistoricos.Where(ph => ph.Fecha == fechaHoy))
                     .ThenInclude(ph => ph.Supermercado)
-                .OrderBy(p => p.Nombre);
+                .OrderBy(p => p.Id);    // <-- Orden por Id antes del Skip/Take
 
+            // Cálculo de totales
             var total = await query.CountAsync();
             var totalPaginas = (int)Math.Ceiling(total / (double)pageSize);
 
+            // Paginación
             var productos = await query
                 .Skip((pagina - 1) * pageSize)
                 .Take(pageSize)
@@ -369,9 +371,10 @@ namespace SuperPrecios.Infrastructure.EF
             {
                 Items = productos,
                 PaginaActual = pagina,
-                TotalPaginas = totalPaginas                
+                TotalPaginas = totalPaginas
             };
         }
+
 
 
     }
