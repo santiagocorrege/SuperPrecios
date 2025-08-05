@@ -1,5 +1,6 @@
 using System;
 using System.Net.Http;
+using System.Text.Json.Nodes;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
@@ -12,8 +13,9 @@ namespace SuperPrecios.Worker
         private readonly ILogger<Worker> _logger;
         //Ventajas y desventajas con IHTTPClientFactory, new HttpClient();
         private readonly HttpClient _httpClientScraper;
+        private readonly HttpClient _httpClientMatcher;
         private readonly HttpClient _httpClientSuperpreciosAPI;
-        private readonly TimeSpan _delay = TimeSpan.FromSeconds(20);
+        private readonly TimeSpan _delay = TimeSpan.FromMinutes(5);
 
         public Worker(ILogger<Worker> logger, IHttpClientFactory httpFactory)
         {
@@ -22,21 +24,17 @@ namespace SuperPrecios.Worker
             _httpClientSuperpreciosAPI = httpFactory.CreateClient("SuperPreciosAPI");
         }
 
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        protected override async Task ExecuteAsync(CancellationToken ct)
         {
-            while (!stoppingToken.IsCancellationRequested)
+            while (!ct.IsCancellationRequested)
             {
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
 
                 try
                 {
 
-                    //var baseUrl = "https://www.devoto.com.uy";                    
-                    //var url = $"/scrapeAll?base_url={Uri.EscapeDataString(baseUrl)}";
-                    //var response = await _httpClientScraper.GetAsync(url, stoppingToken);
-                    //response.EnsureSuccessStatusCode();
-                    //var body = await response.Content.ReadAsStringAsync(stoppingToken);                   
-                    //_logger.LogInformation("Scrape result: {body}", body);
+                    //var supermarketUrl = "https://www.devoto.com.uy";
+                    //string routes = await SiteMaps(supermarketUrl, ct);                                                            
                 }
                 catch (TaskCanceledException)
                 {
@@ -47,8 +45,21 @@ namespace SuperPrecios.Worker
                     _logger.LogError(ex, "Error al llamar al servicio de scraping");
                 }
 
-                await Task.Delay(_delay, stoppingToken);
+                await Task.Delay(_delay, ct);
             }
         }
+
+        private async Task<string> SiteMaps(string baseUrl, CancellationToken ct)
+        {
+            HttpClient cliente = _httpClientScraper;
+            
+            var url = $"/sitemaps?base_url={Uri.EscapeDataString(baseUrl)}";
+            var response = await _httpClientScraper.GetAsync(url, ct);
+            response.EnsureSuccessStatusCode();
+            var body = await response.Content.ReadAsStringAsync(ct);
+            _logger.LogInformation("Scrape result: {body}", body);
+            return body;
+        }
+        
     }
 }

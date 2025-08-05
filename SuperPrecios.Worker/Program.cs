@@ -21,10 +21,18 @@ namespace SuperPrecios.Worker
                                       ?? throw new InvalidOperationException("Scraper:BaseUrl not configured");
                         client.BaseAddress = new Uri(baseUrl);
                         // Ajusta timeouts, headers, etc., si es necesario
-                    })
+                    });
+
+                    services.AddHttpClient("Matcher", client =>
+                    {
+                        var baseUrl = hostContext.Configuration["Matcher:BaseUrl"]
+                                      ?? throw new InvalidOperationException("Matcher:BaseUrl not configured");
+                        client.BaseAddress = new Uri(baseUrl);
+                        // Ajusta timeouts, headers, etc., si es necesario
+                    });
                     // Opcional: controlar lifetime de handlers
                     // .SetHandlerLifetime(TimeSpan.Zero)
-                    ;
+
                     services.AddHttpClient("SuperPreciosAPI", client =>
                     {
                         var baseUrl = hostContext.Configuration["SuperPreciosAPI:BaseUrl"]

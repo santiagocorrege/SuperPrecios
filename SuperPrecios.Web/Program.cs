@@ -74,6 +74,7 @@ namespace SuperPrecios.Web
             builder.Services.AddScoped<ICategoriaGetService, CategoriaGetService>();
             builder.Services.AddScoped<ICategoriaAddService, CategoriaAddService>();
             builder.Services.AddScoped<ICategoriaDeleteService, CategoriaDeleteService>();
+            builder.Services.AddScoped<ICategoriaRutaService, CategoriaRutaService>();
             //Marca
             builder.Services.AddScoped<IMarcaGetService, MarcaGetService>();
             builder.Services.AddScoped<IMarcaAddService, MarcaAddService>();            

@@ -15,6 +15,7 @@ namespace SuperPrecios.Infrastructure.EF
         {
             _context = context;
         }
+        //Descontinuado
         public async Task AddAsync(PrecioHistorico precioHistorico)
         {
             if (precioHistorico == null)

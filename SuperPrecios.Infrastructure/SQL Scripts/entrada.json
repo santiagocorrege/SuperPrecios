@@ -1,0 +1,1317 @@
+{
+  "resultados": [
+    {
+      "supermercado": {
+        "id": 1,
+        "nombre": "Devoto",
+        "websiteUrl": "https://www.devoto.com.uy/"
+      },
+      "ruta": {
+        "ruta": "https://www.devoto.com.uy/bebidas/refrescos",
+        "id": 3,
+        "rutaCompleta": "Refrescos > Bebidas",
+        "score": 0.9891484975814819,
+        "matched": true
+      },
+      "productos_procesados": [
+        {
+          "nombre": "Refresco COCA COLA Zero 1.5 L",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 145.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701534-500-auto?v=638882012387270000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 2
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 2 L Retornable",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 130.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701365-500-auto?v=638881882464870000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 3
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 2.25 L",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 185.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701353-500-auto?v=638881882459870000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 4
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 250 ml",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 35.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701525-500-auto?v=638882012192830000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 5
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 3 L",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 220.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701350-500-auto?v=638881882459700000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 6
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 600 ml",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 70.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701516-500-auto?v=638882012182570000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 7
+        },
+        {
+          "nombre": "Refresco PEPSI Black 2 L",
+          "marca": "PEPSI",
+          "marca_id": 18,
+          "precio": 137.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1610048-500-auto?v=638768856068430000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 8
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 1.5 L",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 145.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701473-500-auto?v=638882011805370000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 2
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 1.5 L",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 145.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701543-500-auto?v=638882012396430000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 2
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 2.25 L",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 185.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1590257-500-auto?v=638742043824600000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 4
+        },
+        {
+          "nombre": "Refresco PEPSI Black 2 L",
+          "marca": "PEPSI",
+          "marca_id": 18,
+          "precio": 137.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1610047-500-auto?v=638768856068130000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 8
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 354 ml",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 62.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701531-500-auto?v=638882012386330000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 9
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 3 L",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 220.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1630784-500-auto?v=638792129091030000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 6
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 250 ml",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 35.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1707887-500-auto?v=638889757767330000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 5
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 250 ml",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 35.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701524-500-auto?v=638882012192670000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 5
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 3 L",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 220.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1590272-500-auto?v=638742051605900000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 6
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 600 ml",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 70.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701521-500-auto?v=638882012188030000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 7
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 2 L Retornable",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 130.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1629232-500-auto?v=638791190867500000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 3
+        },
+        {
+          "nombre": "Refresco COCA COLA 2.5 L",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 195.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1609453-500-auto?v=638768626762370000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 10
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 1 L Retornable",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 95.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701363-500-auto?v=638881882464700000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 11
+        },
+        {
+          "nombre": "Refresco SPRITE sin azúcar 2.25 L",
+          "marca": "SPRITE",
+          "marca_id": 2,
+          "precio": 185.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1682489-500-auto?v=638857771780200000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 12
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 2 L Retornable",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 130.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1629235-500-auto?v=638791190873470000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 3
+        },
+        {
+          "nombre": "Refresco SPRITE sin azúcar 1,5 L",
+          "marca": "SPRITE",
+          "marca_id": 2,
+          "precio": 145.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701578-500-auto?v=638882012539130000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 13
+        },
+        {
+          "nombre": "Refresco SCHWEPPES Pomelo sin azúcar 1.5 L",
+          "marca": "SCHWEPPES",
+          "marca_id": 7,
+          "precio": 130.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701564-500-auto?v=638882012410100000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 14
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 354 ml",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 62.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701453-500-auto?v=638882011739230000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 9
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 600 ml",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 70.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701459-500-auto?v=638882011740730000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 7
+        },
+        {
+          "nombre": "Refresco PEPSI black 1.5 L",
+          "marca": "PEPSI",
+          "marca_id": 18,
+          "precio": 133.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701548-500-auto?v=638882012399000000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 15
+        },
+        {
+          "nombre": "Refresco PEPSI black 354 ml",
+          "marca": "PEPSI",
+          "marca_id": 18,
+          "precio": 52.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701528-500-auto?v=638882012200730000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 16
+        },
+        {
+          "nombre": "Refresco SCHWEPPES Pomelo sin azúcar 1.5 L",
+          "marca": "SCHWEPPES",
+          "marca_id": 7,
+          "precio": 130.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1418777-500-auto?v=638542039541030000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 14
+        },
+        {
+          "nombre": "Refresco PEPSI black 354 ml",
+          "marca": "PEPSI",
+          "marca_id": 18,
+          "precio": 40.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1609833-500-auto?v=638768630120470000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 16
+        },
+        {
+          "nombre": "Refresco PEPSI black 354 ml",
+          "marca": "PEPSI",
+          "marca_id": 18,
+          "precio": 52.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701452-500-auto?v=638882011739230000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 16
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 1 L Retornable",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 95.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701465-500-auto?v=638882011799000000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 11
+        },
+        {
+          "nombre": "Refresco SCHWEPPES Pomelo sin azúcar 1.5 L",
+          "marca": "SCHWEPPES",
+          "marca_id": 7,
+          "precio": 130.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701570-500-auto?v=638882012413070000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 14
+        },
+        {
+          "nombre": "Refresco PASO DE LOS TOROS Pomelo sin azúcar 1.5 L",
+          "marca": "PASO DE LOS TOROS",
+          "marca_id": 15,
+          "precio": 142.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701559-500-auto?v=638882012406670000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 17
+        },
+        {
+          "nombre": "Refresco SCHWEPPES pomelo sin azúcar 250 ml",
+          "marca": "SCHWEPPES",
+          "marca_id": 7,
+          "precio": 35.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701553-500-auto?v=638882012401370000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 18
+        },
+        {
+          "nombre": "Refresco GUARANÁ Antarctica sin azúcar 350 ml",
+          "marca": "ANTARCTICA",
+          "marca_id": 4,
+          "precio": 35.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1516536-500-auto?v=638619355907900000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 19
+        },
+        {
+          "nombre": "Refresco SPRITE sin azúcar 250 ml",
+          "marca": "SPRITE",
+          "marca_id": 2,
+          "precio": 35.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1670866-500-auto?v=638847315588970000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 20
+        },
+        {
+          "nombre": "Agua SALUS Frutté sin azúcar manzana verde 1.5 L",
+          "marca": "SALUS",
+          "marca_id": 14,
+          "precio": 111.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701622-500-auto?v=638882012711900000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 21
+        },
+        {
+          "nombre": "Refresco SCHWEPPES pomelo sin azúcar 250 ml",
+          "marca": "SCHWEPPES",
+          "marca_id": 7,
+          "precio": 35.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701558-500-auto?v=638882012405570000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 18
+        },
+        {
+          "nombre": "Refresco SALUS tónica sin azúcar 1,5 L",
+          "marca": "SALUS",
+          "marca_id": 14,
+          "precio": 121.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701562-500-auto?v=638882012407600000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 22
+        },
+        {
+          "nombre": "Refresco PASO DE LOS TOROS Pomelo sin azúcar 1.5 L",
+          "marca": "PASO DE LOS TOROS",
+          "marca_id": 15,
+          "precio": 142.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1440713-500-auto?v=638542282779570000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 17
+        },
+        {
+          "nombre": "Refresco PASO DE LOS TOROS Pomelo sin azúcar 1.5 L",
+          "marca": "PASO DE LOS TOROS",
+          "marca_id": 15,
+          "precio": 142.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701504-500-auto?v=638882012172930000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 17
+        },
+        {
+          "nombre": "Refresco SCHWEPPES pomelo sin azúcar 3 L",
+          "marca": "SCHWEPPES",
+          "marca_id": 7,
+          "precio": 180.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1593539-500-auto?v=638748800400570000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 23
+        },
+        {
+          "nombre": "Refresco PASO DE LOS TOROS Pomelo sin azúcar 1.5 L",
+          "marca": "PASO DE LOS TOROS",
+          "marca_id": 15,
+          "precio": 142.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1440399-500-auto?v=638542282678070000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 17
+        },
+        {
+          "nombre": "Refresco Guaraná ANTARCTICA sin Azúcar 2 L",
+          "marca": "ANTARCTICA",
+          "marca_id": 4,
+          "precio": 140.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1647029-500-auto?v=638816360223930000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 24
+        },
+        {
+          "nombre": "Refresco SPRITE sin azúcar 2.25 L",
+          "marca": "SPRITE",
+          "marca_id": 2,
+          "precio": 185.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1440608-500-auto?v=638542282742670000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 12
+        },
+        {
+          "nombre": "Refresco SPRITE sin azúcar 2 L Retornable",
+          "marca": "SPRITE",
+          "marca_id": 2,
+          "precio": 130.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1629237-500-auto?v=638791190873630000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 25
+        },
+        {
+          "nombre": "Refresco FANTA Naranja sin azúcar 1.5 L",
+          "marca": "FANTA",
+          "marca_id": 19,
+          "precio": 145.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1440483-500-auto?v=638542282697370000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 26
+        },
+        {
+          "nombre": "Refresco COCA COLA 2.5 L",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 190.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1608075-500-auto?v=638768020674230000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 10
+        },
+        {
+          "nombre": "Refresco PEPSI black 500 ml",
+          "marca": "PEPSI",
+          "marca_id": 18,
+          "precio": 58.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701529-500-auto?v=638882012200900000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 27
+        },
+        {
+          "nombre": "Refresco COCA COLA Zero 1 L Retornable",
+          "marca": "COCA COLA",
+          "marca_id": 8,
+          "precio": 95.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701536-500-auto?v=638882012388370000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 11
+        },
+        {
+          "nombre": "Refresco SALUS tónica sin azúcar 1,5 L",
+          "marca": "SALUS",
+          "marca_id": 14,
+          "precio": 121.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701563-500-auto?v=638882012407930000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 22
+        },
+        {
+          "nombre": "Refresco PEPSI black 1.5 L",
+          "marca": "PEPSI",
+          "marca_id": 18,
+          "precio": 133.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701480-500-auto?v=638882011813500000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 15
+        },
+        {
+          "nombre": "Refresco PEPSI 2.5 L",
+          "marca": "PEPSI",
+          "marca_id": 18,
+          "precio": 178.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1610042-500-auto?v=638768856062170000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 28
+        },
+        {
+          "nombre": "Refresco PASO DE LOS TOROS Pomelo 2.5 L",
+          "marca": "PASO DE LOS TOROS",
+          "marca_id": 15,
+          "precio": 180.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1440582-500-auto?v=638542282740500000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 29
+        },
+        {
+          "nombre": "Refresco FANTA naranja 500 ml",
+          "marca": "FANTA",
+          "marca_id": 19,
+          "precio": 70.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701481-500-auto?v=638882011818030000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 30
+        },
+        {
+          "nombre": "Refresco SEVEN UP 1.5 L",
+          "marca": "SEVEN UP",
+          "marca_id": 10,
+          "precio": 122.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701511-500-auto?v=638882012180830000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 31
+        },
+        {
+          "nombre": "Agua SALUS Frutté sin azúcar manzana verde 1.5 L",
+          "marca": "SALUS",
+          "marca_id": 14,
+          "precio": 111.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701618-500-auto?v=638882012709400000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 21
+        },
+        {
+          "nombre": "Refresco PASO DE LOS TOROS Pomelo 2.5 L",
+          "marca": "PASO DE LOS TOROS",
+          "marca_id": 15,
+          "precio": 180.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1598304-500-auto?v=638755078000930000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 29
+        },
+        {
+          "nombre": "Refresco SPRITE sin azúcar 600 ml",
+          "marca": "SPRITE",
+          "marca_id": 2,
+          "precio": 70.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701573-500-auto?v=638882012413230000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 32
+        },
+        {
+          "nombre": "Refresco SPRITE sin azúcar 1,5 L",
+          "marca": "SPRITE",
+          "marca_id": 2,
+          "precio": 145.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701514-500-auto?v=638882012181630000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 13
+        },
+        {
+          "nombre": "Refresco SCHWEPPES pomelo sin azúcar 3 L",
+          "marca": "SCHWEPPES",
+          "marca_id": 7,
+          "precio": 180.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1593786-500-auto?v=638748801844630000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 23
+        },
+        {
+          "nombre": "Refresco SPRITE sin azúcar 600 ml",
+          "marca": "SPRITE",
+          "marca_id": 2,
+          "precio": 70.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701493-500-auto?v=638882012170970000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 32
+        },
+        {
+          "nombre": "Refresco SPRITE sin azúcar 2 L Retornable",
+          "marca": "SPRITE",
+          "marca_id": 2,
+          "precio": 130.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1629245-500-auto?v=638791344155870000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 25
+        },
+        {
+          "nombre": "Refresco FANTA naranja 250 ml",
+          "marca": "FANTA",
+          "marca_id": 19,
+          "precio": 35.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701475-500-auto?v=638882011811600000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 33
+        },
+        {
+          "nombre": "Refresco FANTA naranja 2.25 L",
+          "marca": "FANTA",
+          "marca_id": 19,
+          "precio": 185.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701371-500-auto?v=638881882466430000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 34
+        },
+        {
+          "nombre": "Refresco SCHWEPPES Pomelo sin azúcar 1.5 L",
+          "marca": "SCHWEPPES",
+          "marca_id": 7,
+          "precio": 130.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701497-500-auto?v=638882012171270000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 14
+        },
+        {
+          "nombre": "Refresco PEPSI black 500 ml",
+          "marca": "PEPSI",
+          "marca_id": 18,
+          "precio": 58.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701448-500-auto?v=638882011738130000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 27
+        },
+        {
+          "nombre": "Refresco PEPSI 1 L",
+          "marca": "PEPSI",
+          "marca_id": 18,
+          "precio": 76.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701462-500-auto?v=638882011798400000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 35
+        },
+        {
+          "nombre": "Refresco PASO DE LOS TOROS Tónica 500 ml",
+          "marca": "PASO DE LOS TOROS",
+          "marca_id": 15,
+          "precio": 74.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701519-500-auto?v=638882012185070000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 36
+        },
+        {
+          "nombre": "Refresco PASO DE LOS TOROS Tónica 500 ml",
+          "marca": "PASO DE LOS TOROS",
+          "marca_id": 15,
+          "precio": 67.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701582-500-auto?v=638882012545070000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 36
+        },
+        {
+          "nombre": "Refresco FANTA naranja 2 L Retornable",
+          "marca": "FANTA",
+          "marca_id": 19,
+          "precio": 130.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701143-500-auto?v=638881816293700000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 37
+        },
+        {
+          "nombre": "Refresco SEVEN UP 2.5L",
+          "marca": "SEVEN UP",
+          "marca_id": 10,
+          "precio": 178.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1570117-500-auto?v=638696958010530000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 38
+        },
+        {
+          "nombre": "Refresco PEPSI 1 L",
+          "marca": "PEPSI",
+          "marca_id": 18,
+          "precio": 76.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701466-500-auto?v=638882011799000000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 35
+        },
+        {
+          "nombre": "Refresco SCHWEPPES pomelo sin azúcar 2 L Retornable",
+          "marca": "SCHWEPPES",
+          "marca_id": 7,
+          "precio": 130.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1629248-500-auto?v=638791348750030000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 39
+        },
+        {
+          "nombre": "Refresco SALUS tónica sin azúcar 500 ml",
+          "marca": "SALUS",
+          "marca_id": 14,
+          "precio": 66.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701587-500-auto?v=638882012546300000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 40
+        },
+        {
+          "nombre": "Refresco MIRINDA Naranja sin azúcar 2.5 L",
+          "marca": "MIRINDA",
+          "marca_id": 9,
+          "precio": 125.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1685429-500-auto?v=638859398842170000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 41
+        },
+        {
+          "nombre": "Refresco SCHWEPPES tónica sin azucar 500 ml",
+          "marca": "SCHWEPPES",
+          "marca_id": 7,
+          "precio": 70.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701577-500-auto?v=638882012539130000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 42
+        },
+        {
+          "nombre": "Refresco TEEM 2.5 L",
+          "marca": "TEEM",
+          "marca_id": 12,
+          "precio": 153.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1506881-500-auto?v=638619293865870000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 43
+        },
+        {
+          "nombre": "Refresco SCHWEPPES tónica sin azucar 500 ml",
+          "marca": "SCHWEPPES",
+          "marca_id": 7,
+          "precio": 70.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701551-500-auto?v=638882012400100000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 42
+        },
+        {
+          "nombre": "Refresco PASO DE LOS TOROS Tónica 500 ml",
+          "marca": "PASO DE LOS TOROS",
+          "marca_id": 15,
+          "precio": 74.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701491-500-auto?v=638882012170200000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 36
+        },
+        {
+          "nombre": "Refresco SPRITE sin azúcar 250 ml",
+          "marca": "SPRITE",
+          "marca_id": 2,
+          "precio": 35.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701508-500-auto?v=638882012174970000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 20
+        },
+        {
+          "nombre": "Refresco SCHWEPPES tónica sin azucar 500 ml",
+          "marca": "SCHWEPPES",
+          "marca_id": 7,
+          "precio": 70.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701557-500-auto?v=638882012403230000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 42
+        },
+        {
+          "nombre": "Refresco MIRINDA Naranja sin azúcar 1.5 L",
+          "marca": "MIRINDA",
+          "marca_id": 9,
+          "precio": 120.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701483-500-auto?v=638882011821630000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 44
+        },
+        {
+          "nombre": "Refresco FANTA naranja 1 L",
+          "marca": "FANTA",
+          "marca_id": 19,
+          "precio": 95.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701482-500-auto?v=638882011819370000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 45
+        },
+        {
+          "nombre": "Refresco SPRITE 3 L",
+          "marca": "SPRITE",
+          "marca_id": 2,
+          "precio": 220.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1419090-500-auto?v=638542039657800000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 46
+        },
+        {
+          "nombre": "Refresco FANTA Naranja 3 L",
+          "marca": "FANTA",
+          "marca_id": 19,
+          "precio": 220.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701359-500-auto?v=638881882460500000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 47
+        },
+        {
+          "nombre": "Refresco SCHWEPPES tónica sin azucar 500 ml",
+          "marca": "SCHWEPPES",
+          "marca_id": 7,
+          "precio": 70.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701490-500-auto?v=638882011828670000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 42
+        },
+        {
+          "nombre": "Agua SALUS Frutté sin azúcar manzana verde 600 ml",
+          "marca": "SALUS",
+          "marca_id": 14,
+          "precio": 67.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701589-500-auto?v=638882012548330000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 48
+        },
+        {
+          "nombre": "Refresco SEVEN UP 500 ml",
+          "marca": "SEVEN UP",
+          "marca_id": 10,
+          "precio": 58.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701506-500-auto?v=638882012174030000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 49
+        },
+        {
+          "nombre": "Refresco SCHWEPPES Pomelo 2.25 L",
+          "marca": "SCHWEPPES",
+          "marca_id": 7,
+          "precio": 160.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1440602-500-auto?v=638542282741900000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 50
+        },
+        {
+          "nombre": "Refresco PASO DE LOS TOROS Tónica 500 ml",
+          "marca": "PASO DE LOS TOROS",
+          "marca_id": 15,
+          "precio": 74.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701545-500-auto?v=638882012397930000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 36
+        },
+        {
+          "nombre": "Refresco MIRINDA Naranja sin azúcar 500 ml",
+          "marca": "MIRINDA",
+          "marca_id": 9,
+          "precio": 58.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701476-500-auto?v=638882011811930000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 51
+        },
+        {
+          "nombre": "Refresco PASO DE LOS TOROS 1 L",
+          "marca": "PASO DE LOS TOROS",
+          "marca_id": 15,
+          "precio": 95.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701468-500-auto?v=638882011804430000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 52
+        },
+        {
+          "nombre": "Jugo de lima BADIA 295ml",
+          "marca": "BADIA",
+          "marca_id": 13,
+          "precio": 216.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1528389-500-auto?v=638619539379500000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 53
+        },
+        {
+          "nombre": "Refresco SALUS tónica sin azúcar 500 ml",
+          "marca": "SALUS",
+          "marca_id": 14,
+          "precio": 66.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1701576-500-auto?v=638882012538800000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 40
+        },
+        {
+          "nombre": "Refresco SCHWEPPES sin azúcar 1 L Retornable",
+          "marca": "SCHWEPPES",
+          "marca_id": 7,
+          "precio": 95.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1629246-500-auto?v=638791348749730000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 54
+        }
+      ],
+      "marcas_procesadas": [
+        {
+          "nombre": "SPRITE",
+          "marca_id": 2,
+          "matched": false
+        },
+        {
+          "nombre": "ANTARCTICA",
+          "marca_id": 4,
+          "matched": false
+        },
+        {
+          "nombre": "SCHWEPPES",
+          "marca_id": 7,
+          "matched": false
+        },
+        {
+          "nombre": "COCA COLA",
+          "marca_id": 8,
+          "matched": false
+        },
+        {
+          "nombre": "MIRINDA",
+          "marca_id": 9,
+          "matched": false
+        },
+        {
+          "nombre": "SEVEN UP",
+          "marca_id": 10,
+          "matched": false
+        },
+        {
+          "nombre": "TEEM",
+          "marca_id": 12,
+          "matched": false
+        },
+        {
+          "nombre": "BADIA",
+          "marca_id": 13,
+          "matched": false
+        },
+        {
+          "nombre": "SALUS",
+          "marca_id": 14,
+          "matched": false
+        },
+        {
+          "nombre": "PASO DE LOS TOROS",
+          "marca_id": 15,
+          "matched": false
+        },
+        {
+          "nombre": "PEPSI",
+          "marca_id": 18,
+          "matched": false
+        },
+        {
+          "nombre": "FANTA",
+          "marca_id": 19,
+          "matched": false
+        }
+      ],
+      "estadisticas": {
+        "nuevos": 53,
+        "matched": 44,
+        "matched_MatchType.FUZZY": 44
+      }
+    },
+    {
+      "supermercado": {
+        "id": 1,
+        "nombre": "Devoto",
+        "websiteUrl": "https://www.devoto.com.uy/"
+      },
+      "ruta": {
+        "ruta": "https://www.devoto.com.uy/bebidas/almacen",
+        "id": 3,
+        "rutaCompleta": "Almacen",
+        "score": 0.98,
+        "matched": true
+      },
+      "productos_procesados": [
+        {
+          "nombre": "Fideos LA MOLISANA gnocchi 500 g",
+          "marca": "LA MOLISANA",
+          "marca_id": 6,
+          "precio": 99.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1712014-500-auto?v=638893979423600000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 55
+        },
+        {
+          "nombre": "Fideos LA MOLISANA gnocchi 500 g",
+          "marca": "LA MOLISANA",
+          "marca_id": 6,
+          "precio": 149.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1715737-500-auto?v=638897161878800000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 55
+        },
+        {
+          "nombre": "Passata LA MOLISANA 690 g",
+          "marca": "LA MOLISANA",
+          "marca_id": 6,
+          "precio": 115.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1712031-500-auto?v=638893979440000000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 56
+        },
+        {
+          "nombre": "Fideos LA MOLISANA gnocchi 500 g",
+          "marca": "LA MOLISANA",
+          "marca_id": 6,
+          "precio": 120.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1712006-500-auto?v=638893979416730000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 55
+        },
+        {
+          "nombre": "Fideos LA MOLISANA gnocchi 500 g",
+          "marca": "LA MOLISANA",
+          "marca_id": 6,
+          "precio": 195.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1630759-500-auto?v=638791983855470000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 55
+        },
+        {
+          "nombre": "Fideos LA MOLISANA gnocchi 500 g",
+          "marca": "LA MOLISANA",
+          "marca_id": 6,
+          "precio": 120.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1528261-500-auto?v=638619539271170000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 55
+        },
+        {
+          "nombre": "Fideos fusilli LA MOLISANA sin gluten 400 g",
+          "marca": "LA MOLISANA",
+          "marca_id": 6,
+          "precio": 229.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1712027-500-auto?v=638893979437970000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 57
+        },
+        {
+          "nombre": "Fideos LA MOLISANA gnocchi 500 g",
+          "marca": "LA MOLISANA",
+          "marca_id": 6,
+          "precio": 161.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1712033-500-auto?v=638893979440000000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 55
+        },
+        {
+          "nombre": "Fideos fusilli LA MOLISANA sin gluten 400 g",
+          "marca": "LA MOLISANA",
+          "marca_id": 6,
+          "precio": 217.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1712025-500-auto?v=638893979434030000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 57
+        },
+        {
+          "nombre": "Fideos LA MOLISANA gnocchi 500 g",
+          "marca": "LA MOLISANA",
+          "marca_id": 6,
+          "precio": 161.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1712028-500-auto?v=638893979438730000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 55
+        },
+        {
+          "nombre": "Fideos LA MOLISANA gnocchi 500 g",
+          "marca": "LA MOLISANA",
+          "marca_id": 6,
+          "precio": 120.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1711997-500-auto?v=638893979413130000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 55
+        },
+        {
+          "nombre": "Fideo penne rigate orgánico LA MOLISANA 500g",
+          "marca": "LA MOLISANA",
+          "marca_id": 6,
+          "precio": 142.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1473742-500-auto?v=638580442630170000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 58
+        },
+        {
+          "nombre": "Papas bastón McCAIN Tradicional 2 kg",
+          "marca": "MCCAIN",
+          "marca_id": 3,
+          "precio": 199.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1676197-500-auto?v=638854271886270000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 59
+        },
+        {
+          "nombre": "Caldo verduras KNORR 12 un.",
+          "marca": "KNORR",
+          "marca_id": 16,
+          "precio": 82.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1476513-500-auto?v=638580443474870000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 60
+        },
+        {
+          "nombre": "Galletitas OREO Rellenas Chantilly 351 g",
+          "marca": "OREO",
+          "marca_id": 11,
+          "precio": 189.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1525439-500-auto?v=638619536652600000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 61
+        },
+        {
+          "nombre": "Atún en trozos natural RIO DE LA PLATA 170 g",
+          "marca": "RIO DE LA PLATA",
+          "marca_id": 17,
+          "precio": 99.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1534279-500-auto?v=638620009969430000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 62
+        },
+        {
+          "nombre": "Queso muzzarella CONAPROLE 50 g",
+          "marca": "CONAPROLE",
+          "marca_id": 5,
+          "precio": 21.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1600444-500-auto?v=638757459343200000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 63
+        },
+        {
+          "nombre": "Queso muzzarella CONAPROLE 50 g",
+          "marca": "CONAPROLE",
+          "marca_id": 5,
+          "precio": 30.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1624748-500-auto?v=638786071070970000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": true,
+          "producto_id": 63
+        },
+        {
+          "nombre": "Leche descremada CONAPROLE larga vida 1 L",
+          "marca": "CONAPROLE",
+          "marca_id": 5,
+          "precio": 74.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1676133-500-auto?v=638854271826230000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 64
+        },
+        {
+          "nombre": "Queso para sandwich CONAPROLE x 50 g",
+          "marca": "CONAPROLE",
+          "marca_id": 5,
+          "precio": 27.0,
+          "imagen": "https://devotouy.vtexassets.com/arquivos/ids/1600442-500-auto?v=638757459342730000&width=500&height=auto&aspect=true",
+          "divisa": "$",
+          "matched": false,
+          "producto_id": 65
+        }
+      ],
+      "marcas_procesadas": [
+        {
+          "nombre": "MCCAIN",
+          "marca_id": 3,
+          "matched": false
+        },
+        {
+          "nombre": "CONAPROLE",
+          "marca_id": 5,
+          "matched": false
+        },
+        {
+          "nombre": "LA MOLISANA",
+          "marca_id": 6,
+          "matched": false
+        },
+        {
+          "nombre": "OREO",
+          "marca_id": 11,
+          "matched": false
+        },
+        {
+          "nombre": "KNORR",
+          "marca_id": 16,
+          "matched": false
+        },
+        {
+          "nombre": "RIO DE LA PLATA",
+          "marca_id": 17,
+          "matched": false
+        }
+      ],
+      "estadisticas": {
+        "nuevos": 11,
+        "matched": 9,
+        "matched_MatchType.FUZZY": 9
+      }
+    }
+  ],
+  "total_productos": 117,
+  "productos_matched": 53,
+  "productos_nuevos": 64,
+  "total_marcas": 18,
+  "marcas_matched": 0,
+  "marcas_nuevas": 18,
+  "tiempo_procesamiento": 3.8981170654296875
+}

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SuperPrecios.Application.DTO.Categoria;
 using SuperPrecios.Application.IServices.Categoria;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -9,27 +10,29 @@ namespace SuperPrecios.WebAPI.Controllers
     [ApiController]
     public class CategoriaController : ControllerBase
     {
-        private readonly ICategoriaGetService _categoriaGetService;
+        private readonly ICategoriaRutaService _categoriaRutaService;
 
-        public CategoriaController(ICategoriaGetService categoriaGetService)
+        public CategoriaController(ICategoriaRutaService categoriaRutaService)
         {
-            _categoriaGetService = categoriaGetService;
+            _categoriaRutaService = categoriaRutaService;
         }
 
-        // GET: api/<CategoriasController>
+        // GET: api/Categoria
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             try
             {
-                var categorias = await _categoriaGetService.GetAll();
-                return Ok(categorias);
+                // Llamas al método que reconstruye rutas
+                IEnumerable<DtoCategoriaConRuta> categoriasConRuta =
+                    await _categoriaRutaService.ObtenerCategoriasConRuta();
+
+                return Ok(categoriasConRuta);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return BadRequest(e.Message);
-            }           
+            }
         }
-    
     }
 }

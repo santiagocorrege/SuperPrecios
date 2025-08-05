@@ -12,8 +12,7 @@ namespace SuperPrecios.Domain.IRepositories
     public interface IProductoRepository : IRepository<Producto>
     {
         public Task<Producto> GetByNombreAsync(string nombreProducto);
-        public Task<IEnumerable<Producto>> GetProductosByMarca (Marca marca);
-        public Task AddAsyncCompleto(Producto producto);
+        public Task<IEnumerable<Producto>> GetProductosByMarca (Marca marca);        
         public Task<Producto> GetProductoTodayWPrecioHistorico(int id);
         public Task<PagedResult<Producto>> GetProductosTodayWPrecioHistorico(int pagina, int pageSize);        
         public Task<PagedResult<Producto>> GetProductosByNombreTodayWPrecioHistorico(string nombre, int pagina, int pageSize);        

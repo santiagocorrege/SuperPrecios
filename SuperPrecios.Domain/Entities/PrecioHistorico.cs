@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SuperPrecios.Domain.Excepciones;
+using SuperPrecios.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -32,7 +33,7 @@ namespace SuperPrecios.Domain.Entities
             ProductoId = productoId;
             SupermercadoId = supermercadoId;
             Precio = precio;
-            Fecha = DateOnly.FromDateTime(DateTime.UtcNow);
+            Fecha = TimeHelper.DateOnlyNowInMontevideo();
             Validate();
         }
 
@@ -41,7 +42,7 @@ namespace SuperPrecios.Domain.Entities
             Producto = producto;
             SupermercadoId = supermercadoId;
             Precio = precio;
-            Fecha = DateOnly.FromDateTime(DateTime.UtcNow);
+            Fecha = TimeHelper.DateOnlyNowInMontevideo();
             Validate();
         }
 
@@ -50,7 +51,7 @@ namespace SuperPrecios.Domain.Entities
             Producto = producto;
             Supermercado = supermercado;
             Precio = precio;
-            Fecha = DateOnly.FromDateTime(DateTime.UtcNow);
+            Fecha = TimeHelper.DateOnlyNowInMontevideo();
             Validate();
         }
         internal PrecioHistorico() { }

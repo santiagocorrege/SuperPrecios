@@ -12,8 +12,8 @@ using SuperPrecios.Infrastructure.EF;
 namespace SuperPrecios.Infrastructure.Migrations
 {
     [DbContext(typeof(SuperPreciosDbContext))]
-    [Migration("20250703194809_Agregada imagen a producto y a API endpoint")]
-    partial class AgregadaimagenaproductoyaAPIendpoint
+    [Migration("20250802212415_nueva")]
+    partial class nueva
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

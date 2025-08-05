@@ -13,6 +13,8 @@ using SuperPrecios.Infrastructure.EF;
 using SuperPrecios.Application.Services.Supermercado;
 using SuperPrecios.Application.IServices.Categoria;
 using SuperPrecios.Application.Services.Categoria;
+using SuperPrecios.Application.IServices.Matcher;
+using SuperPrecios.Application.Services;
 
 namespace SuperPrecios.WebAPI
 {
@@ -52,7 +54,10 @@ namespace SuperPrecios.WebAPI
             builder.Services.AddScoped<ISupermercadoGetService, SupermercadoGetService>();
             //Categoria
             builder.Services.AddScoped<ICategoriaGetService, CategoriaGetService>();
+            builder.Services.AddScoped<ICategoriaRutaService, CategoriaRutaService>();
 
+            //Matcher
+            builder.Services.AddScoped<IMatchingProcessService, MatchingProcessService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -61,8 +66,8 @@ namespace SuperPrecios.WebAPI
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
-            app.UseHttpsRedirection();
+            //Accptar redireccion
+            //app.UseHttpsRedirection();
 
             app.UseAuthorization();
 

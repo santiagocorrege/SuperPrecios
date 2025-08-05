@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SuperPrecios.Application.Common;
 using SuperPrecios.Domain.Entities;
 using SuperPrecios.Domain.IRepositories;
+using SuperPrecios.Shared;
 using System.Data.Common;
 
 namespace SuperPrecios.Infrastructure.EF
@@ -16,63 +17,6 @@ namespace SuperPrecios.Infrastructure.EF
             _context = context;
         }
 
-        public async Task AddAsyncCompleto(Producto entity)
-        {
-            if (entity == null)
-            {
-                throw new ArgumentNullException("El producto no puede ser nulo");
-            }
-            try
-            {
-                if(entity.MarcaId <= 0)
-                {
-                    throw new ArgumentException("El ID de la marca debe ser mayor que cero o la marca no puede ser nula.");
-                }
-                if(entity.CategoriaId <= 0)
-                {
-                    throw new ArgumentException("El ID de la categoria debe ser mayor que cero o la categoria no puede ser nula.");
-                }
-                Marca marcaBuscada = await _context.Marcas.FindAsync(entity.MarcaId);
-                if (marcaBuscada != null)
-                {
-                    entity.Marca = marcaBuscada;
-                    _context.Entry(entity.Marca).State = EntityState.Unchanged;
-                }
-                else
-                {
-                    throw new ArgumentException("El ID de la marca especificada no existe.");
-                }
-                Categoria categoriaBuscada = await _context.Categorias.FindAsync(entity.CategoriaId);
-                if (categoriaBuscada != null)
-                {
-                    entity.Categoria = categoriaBuscada;
-                    _context.Entry(entity.Categoria).State = EntityState.Unchanged;
-                }
-                else
-                {
-                    throw new ArgumentException("El ID de la categoria especificada no existe.");
-                }
-                await _context.Productos.AddAsync(entity);
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException dbEx)
-            {
-                if (dbEx.InnerException != null)
-                {
-                    SqlException sqlException = dbEx.InnerException as SqlException;
-                    if (sqlException.Number == 2627) // Unique constraint error
-                    {
-                        throw new Exception("Error: El producto ya existe en la base de datos.");
-                    }
-                    if (sqlException.Number == 547) // Foreign key violation
-                    {
-                        throw new Exception("Error: El producto no puede ser agregado debido a una violación de clave foránea.");
-                    }
-                }
-                throw new Exception("Error al agregar el producto a la base de datos.", dbEx);
-            }
-        }
-        //SE PUEDE ELIMINAR?
         public async Task AddAsync(Producto producto)
         {
             try
@@ -243,7 +187,7 @@ namespace SuperPrecios.Infrastructure.EF
         {
             try
             {
-                DateOnly fechaHoy = DateOnly.FromDateTime(DateTime.Now);
+                DateOnly fechaHoy = TimeHelper.DateOnlyNowInMontevideo();
 
                 var producto = await _context.Productos
                     .AsNoTracking()
@@ -266,7 +210,7 @@ namespace SuperPrecios.Infrastructure.EF
         {
             try
             {
-                DateOnly fechaHoy = DateOnly.FromDateTime(DateTime.Now);
+                DateOnly fechaHoy = TimeHelper.DateOnlyNowInMontevideo();
 
                 var totalRecords = await _context.Productos
                     .AsNoTracking()
@@ -306,7 +250,7 @@ namespace SuperPrecios.Infrastructure.EF
         {
             try
             {
-                DateOnly fechaHoy = DateOnly.FromDateTime(DateTime.Now);
+                DateOnly fechaHoy = TimeHelper.DateOnlyNowInMontevideo();
 
                 var totalRecords = await _context.Productos
                     .AsNoTracking()
@@ -344,7 +288,7 @@ namespace SuperPrecios.Infrastructure.EF
 
         public async Task<PagedResult<Producto>> GetByCategoriasWithPrecioHistoricoAsync(IEnumerable<int> categoriaIds, int pagina, int pageSize = 10)
         {
-            var fechaHoy = DateOnly.FromDateTime(DateTime.Now);
+            DateOnly fechaHoy = TimeHelper.DateOnlyNowInMontevideo();
 
             // Prepara la consulta base
             var query = _context.Productos

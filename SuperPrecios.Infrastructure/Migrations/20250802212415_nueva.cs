@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SuperPrecios.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class AgregadaimagenaproductoyaAPIendpoint : Migration
+    public partial class nueva : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

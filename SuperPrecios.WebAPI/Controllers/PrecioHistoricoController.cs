@@ -22,30 +22,7 @@ namespace SuperPrecios.WebAPI.Controllers
         }
 
         // POST api/<PrecioHistoricoController>
-        [HttpPost("add-list")]
-        public async Task<IActionResult> AddList([FromBody] List<DtoPrecioHistoricoAdd> dtoList)
-        {
-            if (dtoList == null || dtoList.Count <= 0)
-            {
-                return BadRequest("Debe indicar el precio historico a agregar");
-            }
-            try
-            {
-                await _precioHistoricoAddService.AddAsync(dtoList);
-                return Ok("Precio historico agregado correctamente");
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
-            }
-        }
-
-        // POST api/<PrecioHistoricoController>
-        [HttpPost("add-by-supermercado")]
+        [HttpPost]
         public async Task<IActionResult> AddListBySupermercado(
             [FromBody] DtoPrecioHistoricoAddBySupermercadoList dto)
         {
@@ -101,26 +78,5 @@ namespace SuperPrecios.WebAPI.Controllers
                 return StatusCode(500, $"Error : {e.Message}");
             }            
         }
-
-        /*
-        // GET api/<PrecioHistoricoController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }        
-
-        // PUT api/<PrecioHistoricoController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<PrecioHistoricoController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
-        */
     }
 }
