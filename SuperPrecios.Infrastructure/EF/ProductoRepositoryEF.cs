@@ -17,27 +17,40 @@ namespace SuperPrecios.Infrastructure.EF
             _context = context;
         }
 
+        // ✅ MÉTODO OPTIMIZADO PARA IDS SINCRONIZADOS
         public async Task AddAsync(Producto producto)
         {
             try
             {
-                var categoriaBuscado = await _context.Categorias.FindAsync(producto.CategoriaId);
-                if (categoriaBuscado == null)
+                // ✅ VALIDACIÓN: ID debe ser proporcionado por Python
+                if (producto.Id <= 0)
+                    throw new ArgumentException("El ID del producto debe ser proporcionado por el sistema externo (Python)");
+
+                // ✅ VERIFICAR: Si el producto ya existe
+                var productoExistente = await _context.Productos.FindAsync(producto.Id);
+                if (productoExistente != null)
                 {
-                    throw new ArgumentException("El la categoria especificada no existe.");
+                    throw new ArgumentException($"El producto con ID {producto.Id} ya existe en la base de datos.");
                 }
-                var marcaBuscado = await _context.Marcas.FindAsync(producto.MarcaId);
-                if (marcaBuscado == null)
+
+                // ✅ SECUENCIAL: Validar FK de forma secuencial (no paralela)
+                var categoriaExiste = await _context.Categorias.AnyAsync(c => c.Id == producto.CategoriaId);
+                if (!categoriaExiste)
                 {
-                    throw new ArgumentException("El la marca especificada no existe.");
+                    throw new ArgumentException($"La categoría con ID {producto.CategoriaId} no existe.");
                 }
-                var productoBuscado = await _context.Productos.FirstOrDefaultAsync(p => p.Nombre == producto.Nombre && p.MarcaId == producto.MarcaId);
-                if(productoBuscado != null)
+
+                var marcaExiste = await _context.Marcas.AnyAsync(m => m.Id == producto.MarcaId);
+                if (!marcaExiste)
                 {
-                    throw new ArgumentException("El producto ya existe en la base de datos.");
+                    throw new ArgumentException($"La marca con ID {producto.MarcaId} no existe.");
                 }
+
+                // ✅ INSERCIÓN
                 await _context.Productos.AddAsync(producto);
                 await _context.SaveChangesAsync();
+
+                Console.WriteLine($"[DEBUG] Producto agregado exitosamente: ID={producto.Id}, Nombre={producto.Nombre}");
             }
             catch (DbUpdateException dbEx)
             {
@@ -46,16 +59,82 @@ namespace SuperPrecios.Infrastructure.EF
                     SqlException sqlException = dbEx.InnerException as SqlException;
                     if (sqlException.Number == 2627) // Unique constraint error
                     {
-                        throw new Exception("Error: El producto ya existe en la base de datos.");
+                        throw new Exception($"Error: El producto con ID {producto.Id} ya existe en la base de datos.");
                     }
                     if (sqlException.Number == 547) // Foreign key violation
                     {
-                        throw new Exception("Error: El producto no puede ser agregado debido a una violación de clave foránea.");
+                        throw new Exception("Error: El producto no puede ser agregado debido a una violación de clave foránea (MarcaId o CategoriaId inválidos).");
                     }
                 }
                 throw new Exception("Error al agregar el producto a la base de datos.", dbEx);
             }
         }
+
+        // ✅ MÉTODO ADICIONAL: Inserción en lote para alta performance
+        public async Task AddRangeAsync(IEnumerable<Producto> productos)
+        {
+            if (productos == null || !productos.Any())
+                return;
+
+            var productosArray = productos.ToArray();
+            Console.WriteLine($"[INFO] Insertando {productosArray.Length} productos en lote...");
+
+            try
+            {
+                // Validar todos los IDs de una vez
+                var productosIds = productosArray.Select(p => p.Id).ToArray();
+                var marcasIds = productosArray.Select(p => p.MarcaId).Distinct().ToArray();
+                var categoriasIds = productosArray.Select(p => p.CategoriaId).Distinct().ToArray();
+
+                // Verificar existencia de dependencias en paralelo
+                var productosExistentes = _context.Productos
+                    .Where(p => productosIds.Contains(p.Id))
+                    .Select(p => p.Id)
+                    .ToListAsync();
+
+                var marcasExistentes = _context.Marcas
+                    .Where(m => marcasIds.Contains(m.Id))
+                    .Select(m => m.Id)
+                    .ToListAsync();
+
+                var categoriasExistentes = _context.Categorias
+                    .Where(c => categoriasIds.Contains(c.Id))
+                    .Select(c => c.Id)
+                    .ToListAsync();
+
+                var resultados = await Task.WhenAll(productosExistentes, marcasExistentes, categoriasExistentes);
+
+                var idsProductosExistentes = resultados[0].ToHashSet();
+                var idsMarcasExistentes = resultados[1].ToHashSet();
+                var idsCategoriasExistentes = resultados[2].ToHashSet();
+
+                // Filtrar productos válidos
+                var productosValidos = productosArray
+                    .Where(p => !idsProductosExistentes.Contains(p.Id) &&
+                               idsMarcasExistentes.Contains(p.MarcaId) &&
+                               idsCategoriasExistentes.Contains(p.CategoriaId))
+                    .ToList();
+
+                if (!productosValidos.Any())
+                {
+                    Console.WriteLine("[WARN] No hay productos válidos para insertar");
+                    return;
+                }
+
+                // Inserción en lote
+                await _context.Productos.AddRangeAsync(productosValidos);
+                await _context.SaveChangesAsync();
+
+                Console.WriteLine($"[SUCCESS] {productosValidos.Count} productos insertados en lote");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[ERROR] Error en inserción en lote: {ex.Message}");
+                throw;
+            }
+        }
+
+        // ===== MÉTODOS EXISTENTES (mantenidos para compatibilidad) =====
 
         public async Task DeleteAsync(Producto producto)
         {
@@ -65,7 +144,7 @@ namespace SuperPrecios.Infrastructure.EF
                 if (preciosHistoricos.Any())
                 {
                     throw new InvalidOperationException("No se puede eliminar el producto porque tiene precios históricos asociados.");
-                }                
+                }
                 _context.Remove(producto);
                 await _context.SaveChangesAsync();
             }
@@ -91,25 +170,25 @@ namespace SuperPrecios.Infrastructure.EF
             }
             catch (DbException ex)
             {
-                throw new Exception("BD Error: al consultar la base de datos de miembros");
+                throw new Exception("BD Error: al consultar la base de datos de productos");
             }
         }
 
         public async Task<Producto> GetByIdAsync(int id)
-        {                        
+        {
             try
             {
                 if (id <= 0) throw new ArgumentException("Error buscando el producto: El ID del producto debe ser mayor que cero.");
                 var producto = await _context.Productos.Include(p => p.Marca).Include(p => p.Categoria).FirstOrDefaultAsync(p => p.Id == id);
-                if(producto == null)
+                if (producto == null)
                 {
-                    throw new Exception("El producto con el ID especificado no existe.");
+                    throw new KeyNotFoundException("El producto con el ID especificado no existe.");
                 }
                 return producto;
             }
             catch (DbException ex)
             {
-                throw new Exception("BD Error: al consultar la base de datos de miembros");
+                throw new Exception("BD Error: al consultar la base de datos de productos");
             }
         }
 
@@ -117,9 +196,9 @@ namespace SuperPrecios.Infrastructure.EF
         {
             try
             {
-                if(String.IsNullOrWhiteSpace(nombreProducto))
+                if (String.IsNullOrWhiteSpace(nombreProducto))
                 {
-                    throw new ArgumentNullException("El producto que desea agregar no es valido");
+                    throw new ArgumentNullException("El producto que desea buscar no es válido");
                 }
                 Producto prodBuscado = await _context.Productos.FirstOrDefaultAsync(p => p.Nombre == nombreProducto);
                 if (prodBuscado == null) throw new KeyNotFoundException("El producto con el nombre especificado no existe.");
@@ -128,24 +207,24 @@ namespace SuperPrecios.Infrastructure.EF
             }
             catch (DbException ex)
             {
-                throw new Exception("BD Error: al consultar la base de datos de miembros");
+                throw new Exception("BD Error: al consultar la base de datos de productos");
             }
         }
 
         public async Task UpdateAsync(Producto entity)
         {
-            if(entity == null)
+            if (entity == null)
             {
-                throw new ArgumentNullException("El producto que desea agregar no puede estar vacio");
+                throw new ArgumentNullException("El producto que desea actualizar no puede estar vacío");
             }
-            if(entity.Id <= 0)
+            if (entity.Id <= 0)
             {
-                throw new ArgumentException("El ID del producto que desea agregar no es valido");
+                throw new ArgumentException("El ID del producto que desea actualizar no es válido");
             }
             try
             {
                 var productoBuscado = await _context.Productos.FindAsync(entity.Id);
-                if(productoBuscado == null)
+                if (productoBuscado == null)
                 {
                     throw new KeyNotFoundException("El producto con el ID especificado no existe.");
                 }
@@ -164,17 +243,18 @@ namespace SuperPrecios.Infrastructure.EF
                     {
                         throw new InvalidOperationException("La actualización viola una restricción de unicidad.", dbEx);
                     }
-                }                
-            }            
+                }
+                throw new Exception("Error al actualizar el producto en la base de datos.", dbEx);
+            }
         }
 
         public async Task<IEnumerable<Producto>> GetProductosByMarca(Marca marca)
         {
-            if(marca == null) throw new ArgumentNullException("Marca no puede ser nula");
+            if (marca == null) throw new ArgumentNullException("Marca no puede ser nula");
             try
             {
                 return await _context.Productos
-                    .Where(p => p.MarcaId == marca.Id)                    
+                    .Where(p => p.MarcaId == marca.Id)
                     .ToListAsync();
             }
             catch (DbException ex)
@@ -216,18 +296,18 @@ namespace SuperPrecios.Infrastructure.EF
                     .AsNoTracking()
                     .Where(p => p.PreciosHistoricos.Any(ph => ph.Fecha == fechaHoy))
                     .CountAsync();
-                if (totalRecords == 0) throw new Exception("No existen precios para el dia de hoy");
+                if (totalRecords == 0) throw new Exception("No existen precios para el día de hoy");
                 if (pagina < 1 || pagina > (int)Math.Ceiling((double)totalRecords / pageSize))
-                    throw new ArgumentOutOfRangeException("La pagina solicitada no es valida");
+                    throw new ArgumentOutOfRangeException("La página solicitada no es válida");
 
                 var productos = await _context.Productos
                     .AsNoTracking()
-                    .Where(p => p.PreciosHistoricos.Any(ph => ph.Fecha == fechaHoy)) // filtro
+                    .Where(p => p.PreciosHistoricos.Any(ph => ph.Fecha == fechaHoy))
                     .Include(p => p.Marca)
                     .Include(p => p.Categoria)
                     .Include(p => p.PreciosHistoricos.Where(ph => ph.Fecha == fechaHoy))
                         .ThenInclude(ph => ph.Supermercado)
-                    .OrderBy(p => p.Id)                            // <-- aquí el ORDER BY
+                    .OrderBy(p => p.Id)
                     .Skip((pagina - 1) * pageSize)
                     .Take(pageSize)
                     .ToListAsync();
@@ -244,7 +324,6 @@ namespace SuperPrecios.Infrastructure.EF
                 throw new Exception("Error al consultar la base de datos de precios");
             }
         }
-
 
         public async Task<PagedResult<Producto>> GetProductosByNombreTodayWPrecioHistorico(string nombre, int pagina, int pageSize = 10)
         {
@@ -256,9 +335,9 @@ namespace SuperPrecios.Infrastructure.EF
                     .AsNoTracking()
                     .Where(p => p.Nombre.Contains(nombre) && p.PreciosHistoricos.Any(ph => ph.Fecha == fechaHoy))
                     .CountAsync();
-                if (totalRecords == 0) throw new Exception("No existen precios para el dia de hoy");
+                if (totalRecords == 0) throw new Exception("No existen precios para el día de hoy");
                 if (pagina < 1 || pagina > (int)Math.Ceiling((double)totalRecords / pageSize))
-                    throw new ArgumentOutOfRangeException("La pagina solicitada no es valida");
+                    throw new ArgumentOutOfRangeException("La página solicitada no es válida");
 
                 var productos = await _context.Productos
                     .AsNoTracking()
@@ -267,7 +346,7 @@ namespace SuperPrecios.Infrastructure.EF
                     .Include(p => p.Categoria)
                     .Include(p => p.PreciosHistoricos.Where(ph => ph.Fecha == fechaHoy))
                         .ThenInclude(ph => ph.Supermercado)
-                    .OrderBy(p => p.Id)                        // <-- añadido aquí
+                    .OrderBy(p => p.Id)
                     .Skip((pagina - 1) * pageSize)
                     .Take(pageSize)
                     .ToListAsync();
@@ -285,12 +364,10 @@ namespace SuperPrecios.Infrastructure.EF
             }
         }
 
-
         public async Task<PagedResult<Producto>> GetByCategoriasWithPrecioHistoricoAsync(IEnumerable<int> categoriaIds, int pagina, int pageSize = 10)
         {
             DateOnly fechaHoy = TimeHelper.DateOnlyNowInMontevideo();
 
-            // Prepara la consulta base
             var query = _context.Productos
                 .AsNoTracking()
                 .Where(p => categoriaIds.Contains(p.CategoriaId))
@@ -299,13 +376,11 @@ namespace SuperPrecios.Infrastructure.EF
                 .Include(p => p.Categoria)
                 .Include(p => p.PreciosHistoricos.Where(ph => ph.Fecha == fechaHoy))
                     .ThenInclude(ph => ph.Supermercado)
-                .OrderBy(p => p.Id);    // <-- Orden por Id antes del Skip/Take
+                .OrderBy(p => p.Id);
 
-            // Cálculo de totales
             var total = await query.CountAsync();
             var totalPaginas = (int)Math.Ceiling(total / (double)pageSize);
 
-            // Paginación
             var productos = await query
                 .Skip((pagina - 1) * pageSize)
                 .Take(pageSize)
@@ -318,8 +393,5 @@ namespace SuperPrecios.Infrastructure.EF
                 TotalPaginas = totalPaginas
             };
         }
-
-
-
     }
 }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SuperPrecios.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class nueva : Migration
+    public partial class Nueva : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -35,8 +35,7 @@ namespace SuperPrecios.Infrastructure.Migrations
                 name: "Marcas",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<int>(type: "int", nullable: false),
                     Nombre = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
@@ -62,8 +61,7 @@ namespace SuperPrecios.Infrastructure.Migrations
                 name: "Productos",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<int>(type: "int", nullable: false),
                     Nombre = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     MarcaId = table.Column<int>(type: "int", nullable: false),
                     CategoriaId = table.Column<int>(type: "int", nullable: false),
@@ -117,7 +115,7 @@ namespace SuperPrecios.Infrastructure.Migrations
                     ProductoId = table.Column<int>(type: "int", nullable: false),
                     SupermercadoId = table.Column<int>(type: "int", nullable: false),
                     Fecha = table.Column<DateOnly>(type: "date", nullable: false),
-                    Precio = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    Precio = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -153,17 +151,27 @@ namespace SuperPrecios.Infrastructure.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_PrecioHistorico_Fecha",
+                table: "PreciosHistoricos",
+                column: "Fecha");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PrecioHistorico_ProductoSupermercadoFecha",
+                table: "PreciosHistoricos",
+                columns: new[] { "ProductoId", "SupermercadoId", "Fecha" });
+
+            migrationBuilder.CreateIndex(
                 name: "IX_PreciosHistoricos_SupermercadoId",
                 table: "PreciosHistoricos",
                 column: "SupermercadoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Productos_CategoriaId",
+                name: "IX_Producto_CategoriaId",
                 table: "Productos",
                 column: "CategoriaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Productos_MarcaId",
+                name: "IX_Producto_MarcaId",
                 table: "Productos",
                 column: "MarcaId");
 

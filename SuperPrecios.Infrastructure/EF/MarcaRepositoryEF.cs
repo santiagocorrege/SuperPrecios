@@ -26,7 +26,11 @@ namespace SuperPrecios.Infrastructure.EF
                 throw new ArgumentNullException("La marca no puede ser nula");
 
             try
-            {                
+            {
+                // ✅ NUEVO: Validar que Python haya enviado un ID válido
+                if (marca.Id <= 0)
+                    throw new ArgumentException("El ID de la marca debe ser proporcionado por el sistema externo");
+
                 await _context.Marcas.AddAsync(marca);
                 await _context.SaveChangesAsync();
             }
@@ -35,8 +39,8 @@ namespace SuperPrecios.Infrastructure.EF
                 if (dbEx.InnerException is SqlException sqlException)
                 {
                     if (sqlException.Number == 2627) // Unique constraint
-                        throw new Exception("Error: La marca ya existe en la base de datos.");
-                    if (sqlException.Number == 547) // Foreign key violation (poco probable aquí)
+                        throw new Exception($"Error: La marca con ID {marca.Id} ya existe en la base de datos.");
+                    if (sqlException.Number == 547) // Foreign key violation
                         throw new Exception("Error: Violación de clave foránea al agregar la marca.");
                 }
                 throw new Exception("Error al agregar la marca a la base de datos.", dbEx);

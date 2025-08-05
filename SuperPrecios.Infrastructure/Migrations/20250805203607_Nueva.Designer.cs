@@ -12,8 +12,8 @@ using SuperPrecios.Infrastructure.EF;
 namespace SuperPrecios.Infrastructure.Migrations
 {
     [DbContext(typeof(SuperPreciosDbContext))]
-    [Migration("20250802212415_nueva")]
-    partial class nueva
+    [Migration("20250805203607_Nueva")]
+    partial class Nueva
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -93,10 +93,7 @@ namespace SuperPrecios.Infrastructure.Migrations
             modelBuilder.Entity("SuperPrecios.Domain.Entities.Marca", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -122,11 +119,18 @@ namespace SuperPrecios.Infrastructure.Migrations
                         .HasColumnType("date");
 
                     b.Property<decimal>("Precio")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("ProductoId", "SupermercadoId", "Fecha");
 
+                    b.HasIndex("Fecha")
+                        .HasDatabaseName("IX_PrecioHistorico_Fecha");
+
                     b.HasIndex("SupermercadoId");
+
+                    b.HasIndex("ProductoId", "SupermercadoId", "Fecha")
+                        .HasDatabaseName("IX_PrecioHistorico_ProductoSupermercadoFecha");
 
                     b.ToTable("PreciosHistoricos");
                 });
@@ -134,10 +138,7 @@ namespace SuperPrecios.Infrastructure.Migrations
             modelBuilder.Entity("SuperPrecios.Domain.Entities.Producto", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("CategoriaId")
                         .HasColumnType("int");
@@ -154,9 +155,11 @@ namespace SuperPrecios.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoriaId");
+                    b.HasIndex("CategoriaId")
+                        .HasDatabaseName("IX_Producto_CategoriaId");
 
-                    b.HasIndex("MarcaId");
+                    b.HasIndex("MarcaId")
+                        .HasDatabaseName("IX_Producto_MarcaId");
 
                     b.HasIndex("Nombre", "MarcaId")
                         .IsUnique();

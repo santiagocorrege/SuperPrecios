@@ -22,10 +22,21 @@ namespace SuperPrecios.Application.Services.Marca
         }
         public async Task AddAsync(DtoMarcaAdd dto)
         {
-            if(dto == null) throw new ArgumentNullException("La marca no puede ser nula");
+            if (dto == null)
+                throw new ArgumentNullException("La marca no puede ser nula");
+
+            // ✅ CAMBIO: Validar que el DTO incluya el ID de Python
+            if (dto.Id <= 0)
+                throw new ArgumentException("El ID de la marca debe ser proporcionado por el sistema externo");
+
             MarcaCore marca = MapperMarca.ToMarca(dto);
-            MarcaCore marcaBuscada = await _marcaRepository.GetByNombreAsync(marca);
-            if (marcaBuscada != null) throw new MarcaException("La marca que se desea agregar ya existe");
+            marca.Id = dto.Id; // ✅ NUEVO: Asignar ID de Python
+
+            // ✅ CAMBIO: Buscar por ID en lugar de nombre
+            MarcaCore marcaBuscada = await _marcaRepository.GetByIdAsync(marca.Id);
+            if (marcaBuscada != null)
+                throw new MarcaException($"La marca con ID {marca.Id} ya existe");
+
             await _marcaRepository.AddAsync(marca);
         }
     }

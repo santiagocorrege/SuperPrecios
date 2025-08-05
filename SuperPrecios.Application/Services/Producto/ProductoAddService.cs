@@ -22,8 +22,18 @@ namespace SuperPrecios.Application.Services.Producto
 
         public async Task AddAsync(DtoProductoAdd dto)
         {
-            if (dto == null) throw new ArgumentException("El producto que se desea agregar posee valores vacios");            
-            ProductoCore producto = new ProductoCore(dto.Nombre, dto.MarcaId, dto.CategoriaId);
+            if (dto == null)
+                throw new ArgumentException("El producto que se desea agregar posee valores vacíos");
+
+            // ✅ CAMBIO: Validar que el DTO incluya el ID de Python
+            if (dto.Id <= 0)
+                throw new ArgumentException("El ID del producto debe ser proporcionado por el sistema externo");
+
+            ProductoCore producto = new ProductoCore(dto.Nombre, dto.MarcaId, dto.CategoriaId)
+            {
+                Id = dto.Id // ✅ NUEVO: Asignar ID de Python
+            };
+
             await _productoRepository.AddAsync(producto);
         }
     }
