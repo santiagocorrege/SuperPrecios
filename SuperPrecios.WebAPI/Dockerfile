@@ -27,4 +27,10 @@ RUN dotnet publish "./SuperPrecios.WebAPI.csproj" -c $BUILD_CONFIGURATION -o /ap
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+
+# Agregar curl para health checks (opcional)
+USER root
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+USER $APP_UID
+
 ENTRYPOINT ["dotnet", "SuperPrecios.WebAPI.dll"]

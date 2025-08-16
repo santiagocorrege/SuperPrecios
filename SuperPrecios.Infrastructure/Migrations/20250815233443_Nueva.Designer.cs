@@ -12,7 +12,7 @@ using SuperPrecios.Infrastructure.EF;
 namespace SuperPrecios.Infrastructure.Migrations
 {
     [DbContext(typeof(SuperPreciosDbContext))]
-    [Migration("20250805203607_Nueva")]
+    [Migration("20250815233443_Nueva")]
     partial class Nueva
     {
         /// <inheritdoc />
@@ -76,7 +76,8 @@ namespace SuperPrecios.Infrastructure.Migrations
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int?>("PadreId")
                         .HasColumnType("int");
@@ -97,7 +98,8 @@ namespace SuperPrecios.Infrastructure.Migrations
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
@@ -127,7 +129,8 @@ namespace SuperPrecios.Infrastructure.Migrations
                     b.HasIndex("Fecha")
                         .HasDatabaseName("IX_PrecioHistorico_Fecha");
 
-                    b.HasIndex("SupermercadoId");
+                    b.HasIndex("SupermercadoId")
+                        .HasDatabaseName("IX_PrecioHistorico_SupermercadoId");
 
                     b.HasIndex("ProductoId", "SupermercadoId", "Fecha")
                         .HasDatabaseName("IX_PrecioHistorico_ProductoSupermercadoFecha");
@@ -144,14 +147,16 @@ namespace SuperPrecios.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ImgUrl")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<int>("MarcaId")
                         .HasColumnType("int");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.HasKey("Id");
 
@@ -162,7 +167,8 @@ namespace SuperPrecios.Infrastructure.Migrations
                         .HasDatabaseName("IX_Producto_MarcaId");
 
                     b.HasIndex("Nombre", "MarcaId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasDatabaseName("IX_Producto_NombreMarca");
 
                     b.ToTable("Productos");
                 });
@@ -234,13 +240,13 @@ namespace SuperPrecios.Infrastructure.Migrations
                     b.HasOne("SuperPrecios.Domain.Entities.Producto", "Producto")
                         .WithMany("PreciosHistoricos")
                         .HasForeignKey("ProductoId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("SuperPrecios.Domain.Entities.Supermercado", "Supermercado")
                         .WithMany()
                         .HasForeignKey("SupermercadoId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Producto");
@@ -253,13 +259,13 @@ namespace SuperPrecios.Infrastructure.Migrations
                     b.HasOne("SuperPrecios.Domain.Entities.Categoria", "Categoria")
                         .WithMany("Productos")
                         .HasForeignKey("CategoriaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("SuperPrecios.Domain.Entities.Marca", "Marca")
                         .WithMany("Productos")
                         .HasForeignKey("MarcaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Categoria");

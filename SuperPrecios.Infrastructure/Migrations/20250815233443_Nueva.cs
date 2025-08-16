@@ -17,7 +17,7 @@ namespace SuperPrecios.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nombre = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Nombre = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     PadreId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -36,7 +36,7 @@ namespace SuperPrecios.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false),
-                    Nombre = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    Nombre = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -62,10 +62,10 @@ namespace SuperPrecios.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false),
-                    Nombre = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Nombre = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     MarcaId = table.Column<int>(type: "int", nullable: false),
                     CategoriaId = table.Column<int>(type: "int", nullable: false),
-                    ImgUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    ImgUrl = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -75,13 +75,13 @@ namespace SuperPrecios.Infrastructure.Migrations
                         column: x => x.CategoriaId,
                         principalTable: "Categorias",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Productos_Marcas_MarcaId",
                         column: x => x.MarcaId,
                         principalTable: "Marcas",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -125,13 +125,13 @@ namespace SuperPrecios.Infrastructure.Migrations
                         column: x => x.ProductoId,
                         principalTable: "Productos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_PreciosHistoricos_Supermercados_SupermercadoId",
                         column: x => x.SupermercadoId,
                         principalTable: "Supermercados",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -161,7 +161,7 @@ namespace SuperPrecios.Infrastructure.Migrations
                 columns: new[] { "ProductoId", "SupermercadoId", "Fecha" });
 
             migrationBuilder.CreateIndex(
-                name: "IX_PreciosHistoricos_SupermercadoId",
+                name: "IX_PrecioHistorico_SupermercadoId",
                 table: "PreciosHistoricos",
                 column: "SupermercadoId");
 
@@ -176,7 +176,7 @@ namespace SuperPrecios.Infrastructure.Migrations
                 column: "MarcaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Productos_Nombre_MarcaId",
+                name: "IX_Producto_NombreMarca",
                 table: "Productos",
                 columns: new[] { "Nombre", "MarcaId" },
                 unique: true);

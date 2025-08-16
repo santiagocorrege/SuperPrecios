@@ -16,24 +16,17 @@ namespace SuperPrecios.Application.Services
 {
     public class MatchingProcessService : IMatchingProcessService
     {
-        private readonly IProductoRepository _productoRepository;
-        private readonly IMarcaRepository _marcaRepository;
-        private readonly ICategoriaRepository _categoriaRepository;
-        private readonly ISupermercadoRepository _supermercadoRepository;
-        private readonly IPrecioHistoricoRepository _precioHistoricoRepository;
+        private readonly IMatchingRepository _matchingRepository;
 
         public MatchingProcessService(
             IProductoRepository productoRepository,
             IMarcaRepository marcaRepository,
             ICategoriaRepository categoriaRepository,
             ISupermercadoRepository supermercadoRepository,
-            IPrecioHistoricoRepository precioHistoricoRepository)
+            IPrecioHistoricoRepository precioHistoricoRepository,
+            IMatchingRepository matchingRepository)
         {
-            _productoRepository = productoRepository;
-            _marcaRepository = marcaRepository;
-            _categoriaRepository = categoriaRepository;
-            _supermercadoRepository = supermercadoRepository;
-            _precioHistoricoRepository = precioHistoricoRepository;
+            _matchingRepository = matchingRepository;
         }
 
         public async Task ProcessMatchingResultsAsync(MiniPssResultadoDto matchingResults)
@@ -41,251 +34,249 @@ namespace SuperPrecios.Application.Services
             if (matchingResults?.Resultados == null)
                 throw new ArgumentException("Los resultados del matching no pueden ser nulos");
 
-            Console.WriteLine($"[INFO] Iniciando procesamiento SECUENCIAL de {matchingResults.Resultados.Count} resultados de matching");
+            Console.WriteLine($"[INFO] Iniciando procesamiento de {matchingResults.Resultados.Count} supermercados con {matchingResults.TotalProductos} productos");
             var tiempoInicio = DateTime.Now;
 
-            // ✅ CRÍTICO: Procesar UN resultado a la vez (un supermercado a la vez)
+            try
+            {
+                // ✅ PASO 1: Validar supermercados y categorías usando el repositorio optimizado
+                var supermercadosIds = matchingResults.Resultados.Select(r => r.Supermercado.Id).Distinct();
+                var categoriasIds = matchingResults.Resultados.Select(r => r.Ruta.Id).Distinct();
+                await _matchingRepository.ValidateSupermercadosAndCategoriasAsync(supermercadosIds, categoriasIds);
+
+                // ✅ PASO 2: NUEVA VALIDACIÓN - Verificar integridad de productos matched
+                await ValidateProductosMatchedAsync(matchingResults);
+
+                // ✅ PASO 3: Obtener entidades existentes usando repositorio optimizado (evita N+1)
+                var entidadesExistentes = await GetEntidadesExistentesAsync(matchingResults);
+
+                // ✅ PASO 4: Procesar entidades en memoria
+                var entidadesProcesadas = GetEntidadesProcesadas(matchingResults, entidadesExistentes);
+
+                // ✅ PASO 5: Ejecutar operación transaccional usando repositorio optimizado
+                await _matchingRepository.ProcessMatchingTransactionAsync(
+                    entidadesProcesadas.MarcasNuevas,
+                    entidadesProcesadas.ProductosNuevos,
+                    entidadesProcesadas.PreciosHistoricos);
+
+                var tiempoTotal = DateTime.Now - tiempoInicio;
+                Console.WriteLine($"[SUCCESS] Procesamiento completo exitoso en {tiempoTotal.TotalSeconds:F2} segundos");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[ERROR] Error en procesamiento: {ex.Message}");
+                throw new Exception($"Error procesando resultados de matching: {ex.Message}", ex);
+            }
+        }
+
+        // ✅ NUEVO: Validación de integridad para productos matched
+        private async Task ValidateProductosMatchedAsync(MiniPssResultadoDto matchingResults)
+        {
+            Console.WriteLine("[INFO] Validando integridad de productos matched...");
+
+            // Obtener todos los IDs de productos que Mini PSS dice que están matched
+            var productosMatchedIds = matchingResults.Resultados
+                .SelectMany(r => r.ProductosProcesados
+                    .Where(p => p.Matched && p.ProductoId.HasValue)
+                    .Select(p => p.ProductoId.Value))
+                .Distinct()
+                .ToList();
+
+            if (!productosMatchedIds.Any())
+            {
+                Console.WriteLine("[INFO] No hay productos matched para validar");
+                return;
+            }
+
+            Console.WriteLine($"[INFO] Validando {productosMatchedIds.Count} productos matched...");
+
+            // Verificar que realmente existan en la base de datos
+            var productosExistentes = await _matchingRepository.GetProductosExistentesByIdsAsync(productosMatchedIds);
+
+            var productosMatchedInvalidos = productosMatchedIds
+                .Except(productosExistentes)
+                .ToList();
+
+            if (productosMatchedInvalidos.Any())
+            {
+                var idsInvalidos = string.Join(", ", productosMatchedInvalidos);
+                Console.WriteLine($"[ERROR] Productos matched no existen en BD: {idsInvalidos}");
+                throw new ArgumentException($"Mini PSS envió productos matched que no existen en la base de datos: {idsInvalidos}");
+            }
+
+            Console.WriteLine($"[SUCCESS] Todos los {productosMatchedIds.Count} productos matched son válidos");
+        }
+
+        private async Task<EntidadesExistentesDto> GetEntidadesExistentesAsync(MiniPssResultadoDto matchingResults)
+        {
+            Console.WriteLine("[INFO] Obteniendo entidades existentes...");
+
+            // Obtener IDs únicos de marcas y productos
+            var marcasIds = matchingResults.Resultados
+                .SelectMany(r => r.MarcasProcesadas.Select(m => m.MarcaId))
+                .Distinct();
+
+            var productosIds = matchingResults.Resultados
+                .SelectMany(r => r.ProductosProcesados
+                    .Where(p => p.ProductoId.HasValue)
+                    .Select(p => p.ProductoId.Value))
+                .Distinct();
+
+            // ✅ USAR REPOSITORIO OPTIMIZADO para consultas batch
+            var marcasExistentes = await _matchingRepository.GetMarcasExistentesByIdsAsync(marcasIds);
+            var productosExistentes = await _matchingRepository.GetProductosExistentesByIdsAsync(productosIds);
+
+            var entidadesExistentes = new EntidadesExistentesDto
+            {
+                MarcasExistentes = marcasExistentes,
+                ProductosExistentes = productosExistentes
+            };
+
+            Console.WriteLine($"[INFO] Entidades obtenidas - Marcas: {entidadesExistentes.MarcasExistentes.Count}, Productos: {entidadesExistentes.ProductosExistentes.Count}");
+
+            return entidadesExistentes;
+        }
+
+        private EntidadesProcesadasDto GetEntidadesProcesadas(
+            MiniPssResultadoDto matchingResults,
+            EntidadesExistentesDto entidadesExistentes)
+        {
+            Console.WriteLine("[INFO] Procesando entidades en memoria...");
+
+            var entidadesProcesadas = new EntidadesProcesadasDto();
+
             foreach (var resultado in matchingResults.Resultados)
             {
-                try
-                {
-                    Console.WriteLine($"[INFO] === PROCESANDO SUPERMERCADO {resultado.Supermercado.Id} ===");
+                // Procesar marcas nuevas
+                var marcasNuevas = GetMarcasNuevasBySupermercado(
+                    resultado.MarcasProcesadas,
+                    entidadesExistentes.MarcasExistentes);
+                entidadesProcesadas.MarcasNuevas.AddRange(marcasNuevas);
 
-                    // Validar supermercado y categoría
-                    SupermercadoCore supermercado = await _supermercadoRepository.GetByIdAsync(resultado.Supermercado.Id);
-                    if (supermercado == null)
-                        throw new ArgumentException($"Supermercado con ID {resultado.Supermercado.Id} no existe");
+                // Procesar productos nuevos (NO matched)
+                var productosNuevos = GetProductosNuevosBySupermercado(
+                    resultado.ProductosProcesados,
+                    entidadesExistentes.ProductosExistentes,
+                    resultado.Ruta.Id);
+                entidadesProcesadas.ProductosNuevos.AddRange(productosNuevos);
 
-                    CategoriaCore categoria = await _categoriaRepository.GetByIdAsync(resultado.Ruta.Id);
-                    if (categoria == null)
-                        throw new ArgumentException($"Categoría con ID {resultado.Ruta.Id} no existe");
+                // ✅ NUEVO: Procesar precios de productos MATCHED
+                var preciosProductosMatched = GetPreciosHistoricosProductosMatched(
+                    resultado.ProductosProcesados,
+                    resultado.Supermercado.Id);
+                entidadesProcesadas.PreciosHistoricos.AddRange(preciosProductosMatched);
 
-                    Console.WriteLine($"[INFO] Procesando {resultado.ProductosProcesados.Count} productos para {supermercado.Nombre}");
-
-                    // ✅ PASO 1: Procesar TODAS las marcas de este supermercado
-                    await ProcesarTodasLasMarcasDelSupermercado(resultado.MarcasProcesadas);
-
-                    // ✅ PASO 2: Procesar TODOS los productos de este supermercado  
-                    await ProcesarTodosLosProductosDelSupermercado(resultado.ProductosProcesados, categoria);
-
-                    // ✅ PASO 3: Procesar TODOS los precios históricos de este supermercado
-                    await ProcesarTodosLosPreciosDelSupermercado(resultado.ProductosProcesados, supermercado);
-
-                    Console.WriteLine($"[SUCCESS] Supermercado {supermercado.Nombre} procesado completamente");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"[ERROR] Error procesando supermercado {resultado.Supermercado.Id}: {ex.Message}");
-                    // ✅ DECIDIR: ¿Continuar con otros supermercados o fallar todo?
-                    // Para robustez, continuamos con otros supermercados
-                    continue;
-                }
+                // Procesar precios de productos NUEVOS
+                var preciosProductosNuevos = GetPreciosHistoricosProductosNuevos(
+                    resultado.ProductosProcesados,
+                    resultado.Supermercado.Id);
+                entidadesProcesadas.PreciosHistoricos.AddRange(preciosProductosNuevos);
             }
 
-            var tiempoTotal = DateTime.Now - tiempoInicio;
-            Console.WriteLine($"[SUCCESS] Procesamiento COMPLETO terminado en {tiempoTotal.TotalSeconds:F2} segundos");
+            Console.WriteLine($"[INFO] Procesamiento completado - Marcas: {entidadesProcesadas.MarcasNuevas.Count}, Productos nuevos: {entidadesProcesadas.ProductosNuevos.Count}, Precios: {entidadesProcesadas.PreciosHistoricos.Count}");
+
+            return entidadesProcesadas;
         }
 
-        /// <summary>
-        /// Procesa TODAS las marcas de un supermercado de forma completamente secuencial
-        /// </summary>
-        private async Task ProcesarTodasLasMarcasDelSupermercado(List<MarcaProcesadaDto> marcasProcesadas)
+        #region Métodos Get Para Procesamiento en Memoria
+
+        private List<MarcaCore> GetMarcasNuevasBySupermercado(
+            List<MarcaProcesadaDto> marcasProcesadas,
+            HashSet<int> marcasExistentes)
         {
-            if (marcasProcesadas == null || !marcasProcesadas.Any())
-                return;
-
-            var marcasNuevas = marcasProcesadas.Where(m => !m.Matched).ToList();
-
-            if (!marcasNuevas.Any())
-            {
-                Console.WriteLine("[INFO] No hay marcas nuevas para procesar");
-                return;
-            }
-
-            Console.WriteLine($"[INFO] Procesando {marcasNuevas.Count} marcas nuevas SECUENCIALMENTE...");
-
-            // ✅ COMPLETAMENTE SECUENCIAL: Una marca a la vez, esperando completamente
-            foreach (var marcaDto in marcasNuevas)
-            {
-                try
-                {
-                    // Verificar si ya existe ANTES de intentar crear
-                    MarcaCore marcaExistente = null;
-                    try
-                    {
-                        marcaExistente = await _marcaRepository.GetByIdAsync(marcaDto.MarcaId);
-                    }
-                    catch (KeyNotFoundException)
-                    {
-                        // No existe, está bien
-                    }
-
-                    if (marcaExistente != null)
-                    {
-                        Console.WriteLine($"[WARN] Marca ID {marcaDto.MarcaId} ya existe, saltando...");
-                        continue;
-                    }
-
-                    // Crear marca nueva
-                    var nuevaMarca = new MarcaCore(marcaDto.Nombre)
-                    {
-                        Id = marcaDto.MarcaId
-                    };
-
-                    await _marcaRepository.AddAsync(nuevaMarca);
-                    Console.WriteLine($"[DEBUG] Marca creada: ID={marcaDto.MarcaId}, Nombre={marcaDto.Nombre}");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"[ERROR] Error creando marca {marcaDto.Nombre} (ID: {marcaDto.MarcaId}): {ex.Message}");
-                    // Continuar con otras marcas
-                }
-            }
-
-            Console.WriteLine($"[SUCCESS] Marcas del supermercado procesadas");
+            return marcasProcesadas
+                .Where(m => !m.Matched && !marcasExistentes.Contains(m.MarcaId))
+                .Select(m => new MarcaCore(m.Nombre) { Id = m.MarcaId })
+                .ToList();
         }
 
-        /// <summary>
-        /// Procesa TODOS los productos de un supermercado de forma completamente secuencial
-        /// </summary>
-        private async Task ProcesarTodosLosProductosDelSupermercado(List<ProductoProcesadoDto> productosProcesados, CategoriaCore categoria)
+        private List<ProductoCore> GetProductosNuevosBySupermercado(
+            List<ProductoProcesadoDto> productosProcesados,
+            HashSet<int> productosExistentes,
+            int categoriaId)
         {
-            if (productosProcesados == null || !productosProcesados.Any())
-                return;
+            return productosProcesados
+                .Where(p => !p.Matched &&
+                           p.ProductoId.HasValue &&
+                           !productosExistentes.Contains(p.ProductoId.Value))
+                .Select(p => new ProductoCore(p.Nombre, p.MarcaId ?? 0, categoriaId)
+                {
+                    Id = p.ProductoId.Value,
+                    ImgUrl = p.Imagen
+                })
+                .ToList();
+        }
 
-            var productosNuevos = productosProcesados.Where(p => !p.Matched && p.ProductoId.HasValue).ToList();
+        // ✅ NUEVO: Precios históricos para productos MATCHED
+        private List<PrecioHistoricoCore> GetPreciosHistoricosProductosMatched(
+            List<ProductoProcesadoDto> productosProcesados,
+            int supermercadoId)
+        {
+            var productosMatched = productosProcesados
+                .Where(p => p.Matched && p.ProductoId.HasValue && p.Precio > 0)
+                .ToList();
+
+            if (!productosMatched.Any())
+            {
+                Console.WriteLine($"[INFO] No hay productos matched para supermercado {supermercadoId}");
+                return new List<PrecioHistoricoCore>();
+            }
+
+            Console.WriteLine($"[INFO] Procesando {productosMatched.Count} productos MATCHED para supermercado {supermercadoId}");
+
+            var preciosUnicos = new Dictionary<int, PrecioHistoricoCore>();
+
+            foreach (var producto in productosMatched)
+            {
+                var productoId = producto.ProductoId.Value;
+
+                // Para productos matched, el último precio gana (sobrescribir duplicados)
+                preciosUnicos[productoId] = new PrecioHistoricoCore(
+                    productoId,
+                    supermercadoId,
+                    producto.Precio);
+            }
+
+            Console.WriteLine($"[INFO] Creados {preciosUnicos.Count} precios históricos únicos para productos MATCHED");
+            return preciosUnicos.Values.ToList();
+        }
+
+        // ✅ RENOMBRADO: Precios históricos para productos NUEVOS solamente
+        private List<PrecioHistoricoCore> GetPreciosHistoricosProductosNuevos(
+            List<ProductoProcesadoDto> productosProcesados,
+            int supermercadoId)
+        {
+            var productosNuevos = productosProcesados
+                .Where(p => !p.Matched && p.ProductoId.HasValue && p.Precio > 0)
+                .ToList();
 
             if (!productosNuevos.Any())
             {
-                Console.WriteLine("[INFO] No hay productos nuevos para procesar");
-                return;
+                Console.WriteLine($"[INFO] No hay productos NUEVOS para supermercado {supermercadoId}");
+                return new List<PrecioHistoricoCore>();
             }
 
-            Console.WriteLine($"[INFO] Procesando {productosNuevos.Count} productos nuevos SECUENCIALMENTE...");
+            Console.WriteLine($"[INFO] Procesando {productosNuevos.Count} productos NUEVOS para supermercado {supermercadoId}");
 
-            // ✅ COMPLETAMENTE SECUENCIAL: Un producto a la vez, esperando completamente
-            foreach (var productoDto in productosNuevos)
+            var preciosUnicos = new Dictionary<int, PrecioHistoricoCore>();
+
+            foreach (var producto in productosNuevos)
             {
-                try
+                var productoId = producto.ProductoId.Value;
+
+                if (!preciosUnicos.ContainsKey(productoId))
                 {
-                    // Verificar si ya existe ANTES de intentar crear
-                    ProductoCore productoExistente = null;
-                    try
-                    {
-                        productoExistente = await _productoRepository.GetByIdAsync(productoDto.ProductoId.Value);
-                    }
-                    catch (KeyNotFoundException)
-                    {
-                        // No existe, está bien
-                    }
-
-                    if (productoExistente != null)
-                    {
-                        Console.WriteLine($"[WARN] Producto ID {productoDto.ProductoId} ya existe, saltando...");
-                        continue;
-                    }
-
-                    // Crear producto nuevo
-                    var nuevoProducto = new ProductoCore(
-                        productoDto.Nombre,
-                        productoDto.MarcaId ?? 0,
-                        categoria.Id)
-                    {
-                        Id = productoDto.ProductoId.Value,
-                        ImgUrl = productoDto.Imagen
-                    };
-
-                    await _productoRepository.AddAsync(nuevoProducto);
-                    Console.WriteLine($"[DEBUG] Producto creado: ID={productoDto.ProductoId}, Nombre={productoDto.Nombre}");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"[ERROR] Error creando producto {productoDto.Nombre} (ID: {productoDto.ProductoId}): {ex.Message}");
-                    // Continuar con otros productos
+                    preciosUnicos[productoId] = new PrecioHistoricoCore(
+                        productoId,
+                        supermercadoId,
+                        producto.Precio);
                 }
             }
 
-            Console.WriteLine($"[SUCCESS] Productos del supermercado procesados");
+            Console.WriteLine($"[INFO] Creados {preciosUnicos.Count} precios históricos únicos para productos NUEVOS");
+            return preciosUnicos.Values.ToList();
         }
 
-        /// <summary>
-        /// Procesa TODOS los precios históricos de un supermercado usando el método optimizado
-        /// </summary>
-        private async Task ProcesarTodosLosPreciosDelSupermercado(List<ProductoProcesadoDto> productosProcesados, SupermercadoCore supermercado)
-        {
-            if (productosProcesados == null || !productosProcesados.Any())
-                return;
-
-            Console.WriteLine($"[INFO] Preparando precios históricos para {supermercado.Nombre}...");
-
-            // ✅ Crear precios históricos únicos (evitar duplicados)
-            var preciosHistoricosMap = new Dictionary<(int ProductoId, int SupermercadoId), PrecioHistoricoCore>();
-
-            foreach (var productoDto in productosProcesados)
-            {
-                try
-                {
-                    int productoId = productoDto.ProductoId ?? 0;
-
-                    if (productoId <= 0)
-                    {
-                        Console.WriteLine($"[WARN] ProductoId inválido para {productoDto.Nombre}");
-                        continue;
-                    }
-
-                    if (productoDto.Precio <= 0)
-                    {
-                        Console.WriteLine($"[WARN] Precio inválido ({productoDto.Precio}) para producto {productoDto.Nombre}");
-                        continue;
-                    }
-
-                    var key = (productoId, supermercado.Id);
-
-                    if (!preciosHistoricosMap.ContainsKey(key))
-                    {
-                        var precioHistorico = new PrecioHistoricoCore(
-                            productoId,
-                            supermercado.Id,
-                            productoDto.Precio);
-
-                        preciosHistoricosMap[key] = precioHistorico;
-                    }
-                    else
-                    {
-                        Console.WriteLine($"[WARN] Precio histórico duplicado ignorado para ProductoId={productoId}");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"[ERROR] Error preparando precio histórico para producto {productoDto.Nombre}: {ex.Message}");
-                    continue;
-                }
-            }
-
-            var preciosHistoricosUnicos = preciosHistoricosMap.Values.ToList();
-
-            if (preciosHistoricosUnicos.Any())
-            {
-                try
-                {
-                    var tiempoInicio = DateTime.Now;
-
-                    // ✅ Esta operación es thread-safe y optimizada
-                    await _precioHistoricoRepository.AddAsyncBulkWithSyncedIds(preciosHistoricosUnicos);
-
-                    var tiempoInsercion = DateTime.Now - tiempoInicio;
-                    Console.WriteLine($"[SUCCESS] {preciosHistoricosUnicos.Count} precios históricos procesados para {supermercado.Nombre} en {tiempoInsercion.TotalSeconds:F2}s");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"[ERROR] Error guardando precios históricos para {supermercado.Nombre}: {ex.Message}");
-                    throw;
-                }
-            }
-            else
-            {
-                Console.WriteLine("[WARN] No hay precios históricos válidos para procesar");
-            }
-        }
+        #endregion
     }
 }

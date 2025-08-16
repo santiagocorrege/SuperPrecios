@@ -1,14 +1,11 @@
 ﻿use SuperPrecios;
-GO
 
 INSERT INTO Usuarios VALUES ('Admin', '', 'admin@admin.com', '$2a$12$Mpocyh6Qtixvpa9nbJgWG.ZSIHWd.r844f5KGuz9yh92VaekuOAIm', 'Administrador', NULL)
 GO
 
 INSERT INTO Supermercados (Nombre, WebsiteUrl) VALUES
 	('Devoto', 'https://www.devoto.com.uy'),
-	('Geant', 'https://www.geant.com.uy'),
-	('Disco', 'https://www.disco.com.uy'),
-	('Tienda Inglesa', 'https://www.tiendainglesa.com.uy')
+	('El Dorado', 'https://www.eldorado.com.uy')
 GO
 
 SET IDENTITY_INSERT Categorias ON;
