@@ -18,13 +18,7 @@ namespace SuperPrecios.Application.Services
     {
         private readonly IMatchingRepository _matchingRepository;
 
-        public MatchingProcessService(
-            IProductoRepository productoRepository,
-            IMarcaRepository marcaRepository,
-            ICategoriaRepository categoriaRepository,
-            ISupermercadoRepository supermercadoRepository,
-            IPrecioHistoricoRepository precioHistoricoRepository,
-            IMatchingRepository matchingRepository)
+        public MatchingProcessService(IMatchingRepository matchingRepository)
         {
             _matchingRepository = matchingRepository;
         }

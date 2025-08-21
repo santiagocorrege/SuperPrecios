@@ -1,12 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SuperPrecios.Application.IRepository;
-using SuperPrecios.Application.IServices.Miembro;
-using SuperPrecios.Application.IServices.PrecioHistorico;
-using SuperPrecios.Application.IServices.Usuario;
 using SuperPrecios.Application.IServices.Supermercado;
-using SuperPrecios.Application.Services.Miembro;
-using SuperPrecios.Application.Services.PrecioHistorico;
-using SuperPrecios.Application.Services.Usuario;
 using SuperPrecios.Domain.IRepositories;
 using SuperPrecios.Infrastructure.EF;
 using SuperPrecios.Application.Services.Supermercado;
@@ -47,14 +40,10 @@ namespace SuperPrecios.WebAPI
             builder.Services.AddScoped<IProductoRepository, ProductoRepositoryEF>();
             builder.Services.AddScoped<ICategoriaRepository, CategoriaRepositoryEF>();
             builder.Services.AddScoped<IMarcaRepository, MarcaRepositoryEF>();
-            builder.Services.AddScoped<ISupermercadoRepository, SupermercadoRepositoryEF>();
-            builder.Services.AddScoped<IPrecioHistoricoRepository, PrecioHistoricoRepositoryEF>();
+            builder.Services.AddScoped<ISupermercadoRepository, SupermercadoRepositoryEF>();            
             builder.Services.AddScoped<IMatchingRepository, MatchingRepositoryEF>();
 
-            //************DI: Services************
-            //PrecioHistorico
-            builder.Services.AddScoped<IPrecioHistoricoAddService, PrecioHistoricoAddService>();
-            builder.Services.AddScoped<IPrecioHistoricoGetService, PrecioHistoricoGetService>();
+            //************DI: Services************            
             //Supermercado
             builder.Services.AddScoped<ISupermercadoGetService, SupermercadoGetService>();
             //Categoria

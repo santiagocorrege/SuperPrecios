@@ -1,11 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using SuperPrecios.Application.DTO.Producto;
-using SuperPrecios.Application.IServices.Categoria;
-using SuperPrecios.Application.IServices.Marca;
-using SuperPrecios.Application.IServices.PrecioHistorico;
+﻿using Microsoft.AspNetCore.Mvc;
 using SuperPrecios.Application.IServices.Producto;
-using SuperPrecios.Domain.Excepciones;
 using SuperPrecios.Web.Models.Producto;
 
 namespace SuperPrecios.Web.Controllers.Shared

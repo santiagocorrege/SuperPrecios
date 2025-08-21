@@ -5,10 +5,7 @@ using SuperPrecios.Application.Services.Miembro;
 using SuperPrecios.Application.IRepository;
 using SuperPrecios.Application.IServices.Usuario;
 using SuperPrecios.Application.Services.Usuario;
-using Microsoft.Extensions.Options;
 using SuperPrecios.Domain.IRepositories;
-using SuperPrecios.Application.IServices.PrecioHistorico;
-using SuperPrecios.Application.Services.PrecioHistorico;
 using SuperPrecios.Application.IServices.Producto;
 using SuperPrecios.Application.Services.Producto;
 using SuperPrecios.Application.IServices.Categoria;
@@ -46,8 +43,7 @@ namespace SuperPrecios.Web
             builder.Services.AddScoped<IProductoRepository, ProductoRepositoryEF>();
             builder.Services.AddScoped<ICategoriaRepository, CategoriaRepositoryEF>();
             builder.Services.AddScoped<IMarcaRepository, MarcaRepositoryEF>();
-            builder.Services.AddScoped<ISupermercadoRepository, SupermercadoRepositoryEF>();
-            builder.Services.AddScoped<IPrecioHistoricoRepository, PrecioHistoricoRepositoryEF>();
+            builder.Services.AddScoped<ISupermercadoRepository, SupermercadoRepositoryEF>();            
             builder.Services.AddScoped<IProveedorRepository, ProveedorRepositoryEF>();
 
             //DI: Services
@@ -63,9 +59,7 @@ namespace SuperPrecios.Web
             builder.Services.AddScoped<IProveedorAddService, ProveedorAddService>();
             builder.Services.AddScoped<IProveedorDeleteService, ProveedorDeleteService>();
             builder.Services.AddScoped<IProveedorUpdateService, ProveedorUpdateService>();
-            //PrecioHistorico
-            builder.Services.AddScoped<IPrecioHistoricoAddService, PrecioHistoricoAddService>();
-            builder.Services.AddScoped<IPrecioHistoricoGetService, PrecioHistoricoGetService>();
+            
             //Producto
             builder.Services.AddScoped<IProductoAddService, ProductoAddService>();
             builder.Services.AddScoped<IProductoGetService, ProductoGetService>();
