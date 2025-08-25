@@ -1,9 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SuperPrecios.AuthenticationCore.Entities;
-using SuperPrecios.AuthenticationCore.ValueObject;
-using System.Reflection.Emit;
+using SuperPrecios.Domain.Entities;
+using SuperPrecios.Domain.Entities.ValueObject;
 
 namespace SuperPrecios.Infrastructure.Configuraciones
 {

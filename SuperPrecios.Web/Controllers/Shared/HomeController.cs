@@ -1,15 +1,10 @@
-using System.Diagnostics;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Identity.Client;
-using SuperPrecios.Application.DTO;
 using SuperPrecios.Application.IServices.Miembro;
 using SuperPrecios.Application.IServices.Usuario;
-using SuperPrecios.AuthenticationCore.Entities;
-using SuperPrecios.Web.Models;
 using SuperPrecios.Web.Models.Usuario;
 
 namespace SuperPrecios.Web.Controllers.Shared;

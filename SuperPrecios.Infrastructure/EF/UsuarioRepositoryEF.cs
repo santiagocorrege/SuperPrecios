@@ -1,11 +1,8 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using SuperPrecios.Application.IRepository;
-using SuperPrecios.AuthenticationCore.Entities;
-using SuperPrecios.AuthenticationCore.Exceptions.Email;
-using SuperPrecios.AuthenticationCore.Exceptions.Usuario;
-using SuperPrecios.AuthenticationCore.ValueObject;
 using SuperPrecios.Domain.Entities;
+using SuperPrecios.Domain.Entities.ValueObject;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;

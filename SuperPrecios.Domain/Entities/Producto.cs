@@ -12,7 +12,7 @@ namespace SuperPrecios.Domain.Entities
 {
     [Index(nameof(Nombre), nameof(MarcaId), IsUnique = true)]
 
-    public class Producto : IEntity, IValidate
+    public class Producto : IEntity, IValidate, IEquatable<Producto>
     {
         #region Properties
         public int Id { get; set; }
@@ -79,6 +79,34 @@ namespace SuperPrecios.Domain.Entities
             MarcaId = producto.MarcaId;
             CategoriaId = producto.CategoriaId;
             Validate();
+        }
+
+        public bool Equals(Producto? other)
+        {
+            if (other == null) return false;
+            if (ReferenceEquals(this, other)) return true;
+
+            // Si ambos tienen Id asignado, comparar por Id
+            if (Id > 0 && other.Id > 0)
+                return Id == other.Id;
+
+            // Si no, comparar por clave de negocio (Nombre + MarcaId)
+            return Nombre == other.Nombre && MarcaId == other.MarcaId;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return Equals(obj as Producto);
+        }
+
+        public override int GetHashCode()
+        {
+            // Si tiene Id asignado, usar Id
+            if (Id > 0)
+                return Id.GetHashCode();
+
+            // Si no, usar clave de negocio
+            return HashCode.Combine(Nombre, MarcaId);
         }
 
 

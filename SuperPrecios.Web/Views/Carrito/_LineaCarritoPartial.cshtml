@@ -1,0 +1,62 @@
+﻿@model SuperPrecios.Web.Models.Carrito.VMLineaCarrito
+
+<div class="border-bottom p-3" data-producto-id="@Model.Linea.ProductoId">
+    <div class="row align-items-center">
+        <!-- Imagen del producto -->
+        <div class="col-md-2 text-center">
+            @if (!string.IsNullOrWhiteSpace(Model.Linea.ImagenUrl))
+            {
+                <img src="@Model.Linea.ImagenUrl" alt="@Model.Linea.NombreProducto"
+                     class="img-fluid rounded" style="max-height: 80px; object-fit: contain;">
+            }
+            else
+            {
+                <div class="bg-light rounded d-flex align-items-center justify-content-center"
+                     style="width: 80px; height: 80px;">
+                    <i class="bi bi-image text-muted"></i>
+                </div>
+            }
+        </div>
+
+        <!-- Información del producto -->
+        <div class="col-md-4">
+            <h6 class="mb-1">@Model.Linea.NombreCompleto</h6>
+            @if (!string.IsNullOrEmpty(Model.Linea.SupermercadoMenorPrecio))
+            {
+                <small class="text-muted">Mejor precio en: @Model.Linea.SupermercadoMenorPrecio</small>
+            }
+        </div>
+
+        <!-- Precio unitario -->
+        <div class="col-md-2 text-center">
+            <strong>$@Model.Linea.PrecioUnitario.ToString("N2")</strong>
+        </div>
+
+        <!-- Controles de cantidad -->
+        <div class="col-md-2">
+            <div class="input-group input-group-sm">
+                <button type="button" class="btn btn-outline-secondary"
+                        onclick="modificarCantidad(@Model.Linea.ProductoId, @(Model.Linea.Cantidad - 1))">
+                    <i class="bi bi-dash"></i>
+                </button>
+                <input type="number" class="form-control text-center"
+                       value="@Model.Linea.Cantidad" min="1" max="1000" readonly>
+                <button type="button" class="btn btn-outline-secondary"
+                        onclick="modificarCantidad(@Model.Linea.ProductoId, @(Model.Linea.Cantidad + 1))">
+                    <i class="bi bi-plus"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Subtotal y botón eliminar -->
+        <div class="col-md-2 text-end">
+            <div class="d-flex flex-column align-items-end">
+                <strong class="text-success">$@Model.Linea.Subtotal.ToString("N2")</strong>
+                <button type="button" class="btn btn-outline-danger btn-sm mt-1"
+                        onclick="quitarLinea(@Model.Linea.ProductoId)">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

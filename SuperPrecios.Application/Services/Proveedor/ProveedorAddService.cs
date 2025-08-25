@@ -6,6 +6,7 @@ using ProveedorCore = SuperPrecios.Domain.Entities.Proveedor;
 using SupermercadoCore = SuperPrecios.Domain.Entities.Supermercado;
 using SuperPrecios.Domain.Entities;
 using SuperPrecios.Domain.Excepciones;
+using SuperPrecios.Domain.Exceptions;
 
 namespace SuperPrecios.Application.Services.Proveedor
 {

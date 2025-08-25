@@ -1,0 +1,316 @@
+﻿@model SuperPrecios.Web.Models.Recomendador.VMRecomendacion
+@{
+    ViewData["Title"] = "Recomendaciones de Compra";
+}
+
+<div class="container my-4">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mb-4">
+                <i class="bi bi-trophy me-2 text-warning"></i>Recomendaciones de Compra
+            </h2>
+        </div>
+    </div>
+
+    <!-- Supermercado Ganador -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card border-success">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0">
+                        <i class="bi bi-award me-2"></i>¡Mejor Opción!
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h3 class="text-success mb-2">@Model.SupermercadoGanador.Nombre</h3>
+                            <p class="lead mb-0">
+                                Compra tus @Model.CantidadProductos productos por solo:
+                                <strong class="text-success fs-2">$@Model.SupermercadoGanador.Total.ToString("N2")</strong>
+                            </p>
+                            @if (Model.AhorroTotal > 0)
+                            {
+                                <p class="text-muted">
+                                    <i class="bi bi-piggy-bank me-1"></i>
+                                    Ahorras <strong>$@Model.AhorroTotal.ToString("N2")</strong> comparado con la siguiente mejor opción
+                                </p>
+                            }
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <i class="bi bi-shop display-1 text-success"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detalle de Productos del Ganador -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="bi bi-list-check me-2"></i>Productos en @Model.SupermercadoGanador.Nombre
+                    </h5>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Producto</th>
+                                    <th class="text-center">Cantidad</th>
+                                    <th class="text-end">Precio Unit.</th>
+                                    <th class="text-end">Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var producto in Model.SupermercadoGanador.Productos)
+                                {
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                @if (!string.IsNullOrWhiteSpace(producto.ImagenUrl))
+                                                {
+                                                    <img src="@producto.ImagenUrl" alt="@producto.NombreCompleto"
+                                                         class="me-3 rounded" style="width: 40px; height: 40px; object-fit: contain;">
+                                                }
+                                                else
+                                                {
+                                                    <div class="me-3 bg-light rounded d-flex align-items-center justify-content-center"
+                                                         style="width: 40px; height: 40px;">
+                                                        <i class="bi bi-image text-muted"></i>
+                                                    </div>
+                                                }
+                                                <span>@producto.NombreCompleto</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge bg-primary">@producto.Cantidad</span>
+                                        </td>
+                                        <td class="text-end">
+                                            <span class="text-muted">$@producto.Precio.ToString("N2")</span>
+                                        </td>
+                                        <td class="text-end">
+                                            <strong class="text-success">$@producto.Subtotal.ToString("N2")</strong>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot class="table-light">
+                                <tr>
+                                    <th colspan="3" class="text-end">Total:</th>
+                                    <th class="text-end">
+                                        <strong class="text-success fs-5">$@Model.SupermercadoGanador.Total.ToString("N2")</strong>
+                                    </th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comparación con Otros Supermercados -->
+    @if (Model.SupermercadosComparativos.Any())
+    {
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="bi bi-bar-chart me-2"></i>Comparación de Precios
+                        </h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Supermercado</th>
+                                        <th class="text-end">Total</th>
+                                        <th class="text-end">Diferencia</th>
+                                        <th class="text-end">% Más Caro</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Ganador primero -->
+                                    <tr class="table-success">
+                                        <td>
+                                            <i class="bi bi-award me-2 text-warning"></i>
+                                            <strong>@Model.SupermercadoGanador.Nombre</strong>
+                                            <span class="badge bg-success ms-2">MEJOR PRECIO</span>
+                                        </td>
+                                        <td class="text-end">
+                                            <strong class="text-success">$@Model.SupermercadoGanador.Total.ToString("N2")</strong>
+                                        </td>
+                                        <td class="text-end">
+                                            <span class="text-success">-</span>
+                                        </td>
+                                        <td class="text-end">
+                                            <span class="text-success">-</span>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Otros supermercados -->
+                                    @foreach (var supermercado in Model.SupermercadosComparativos)
+                                    {
+                                        <tr>
+                                            <td>@supermercado.Nombre</td>
+                                            <td class="text-end">
+                                                <strong>$@supermercado.Total.ToString("N2")</strong>
+                                            </td>
+                                            <td class="text-end">
+                                                <span class="text-danger">+$@supermercado.DiferenciaConGanador.ToString("N2")</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <span class="text-danger">@supermercado.PorcentajeDiferencia</span>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <!-- Desglose Comparativo por Producto (Sección Expandible) -->
+    @if (Model.ProductosComparativos.Any() && Model.SupermercadosComparativos.Any())
+    {
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link text-decoration-none p-0 text-start w-100"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#desglose-productos"
+                                    aria-expanded="false"
+                                    aria-controls="desglose-productos">
+                                <i class="bi bi-graph-up me-2"></i>Desglose Comparativo por Producto
+                                <i class="bi bi-chevron-down float-end mt-1"></i>
+                            </button>
+                        </h5>
+                    </div>
+                    <div class="collapse" id="desglose-productos">
+                        <div class="card-body p-0">
+                            @foreach (var producto in Model.ProductosComparativos)
+                            {
+                                <div class="border-bottom">
+                                    <div class="p-3">
+                                        <h6 class="mb-3">
+                                            <i class="bi bi-box me-2"></i>@producto.NombreCompleto
+                                            <span class="badge bg-info ms-2">Cantidad: @producto.Cantidad</span>
+                                        </h6>
+
+                                        <div class="table-responsive">
+                                            <table class="table table-sm table-hover mb-0">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th>Supermercado</th>
+                                                        <th class="text-end">Precio Unit.</th>
+                                                        <th class="text-end">Subtotal</th>
+                                                        <th class="text-end">Diferencia</th>
+                                                        <th class="text-end">% Diferencia</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <!-- Ganador para este producto -->
+                                                    <tr class="table-success">
+                                                        <td>
+                                                            <i class="bi bi-award me-2 text-warning"></i>
+                                                            <strong>@producto.SupermercadoGanador.Nombre</strong>
+                                                            <span class="badge bg-success ms-2">MEJOR</span>
+                                                        </td>
+                                                        <td class="text-end">
+                                                            <strong class="text-success">$@producto.SupermercadoGanador.PrecioUnitario.ToString("N2")</strong>
+                                                        </td>
+                                                        <td class="text-end">
+                                                            <strong class="text-success">$@producto.SupermercadoGanador.Subtotal.ToString("N2")</strong>
+                                                        </td>
+                                                        <td class="text-end">
+                                                            <span class="text-success">-</span>
+                                                        </td>
+                                                        <td class="text-end">
+                                                            <span class="text-success">-</span>
+                                                        </td>
+                                                    </tr>
+
+                                                    <!-- Otros supermercados para este producto -->
+                                                    @foreach (var otroSuper in producto.OtrosSupermercados)
+                                                    {
+                                                        <tr>
+                                                            <td>@otroSuper.Nombre</td>
+                                                            <td class="text-end">$@otroSuper.PrecioUnitario.ToString("N2")</td>
+                                                            <td class="text-end">$@otroSuper.Subtotal.ToString("N2")</td>
+                                                            <td class="text-end">
+                                                                <span class="text-danger">+$@otroSuper.DiferenciaConMejor(producto.SupermercadoGanador.Subtotal).ToString("N2")</span>
+                                                            </td>
+                                                            <td class="text-end">
+                                                                <span class="text-danger">@otroSuper.PorcentajeDiferenciaConMejor(producto.SupermercadoGanador.Subtotal)</span>
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <!-- Acciones -->
+    <div class="row mt-4">
+        <div class="col-12 text-center">
+            <a asp-controller="Carrito" asp-action="Index" class="btn btn-outline-primary me-3">
+                <i class="bi bi-arrow-left me-2"></i>Volver al Carrito
+            </a>
+            <a href="#" class="btn btn-success" onclick="alert('Funcionalidad próximamente')">
+                <i class="bi bi-cart-check me-2"></i>Comprar en @Model.SupermercadoGanador.Nombre
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Funcionalidad para el colapso con animación del icono
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapseElement = document.getElementById('desglose-productos');
+            const chevronIcon = document.querySelector('[data-bs-target="#desglose-productos"] .bi-chevron-down');
+
+            if (collapseElement && chevronIcon) {
+                collapseElement.addEventListener('show.bs.collapse', function() {
+                    chevronIcon.classList.remove('bi-chevron-down');
+                    chevronIcon.classList.add('bi-chevron-up');
+                });
+
+                collapseElement.addEventListener('hide.bs.collapse', function() {
+                    chevronIcon.classList.remove('bi-chevron-up');
+                    chevronIcon.classList.add('bi-chevron-down');
+                });
+            }
+        });
+
+        // Funcionalidad futura: guardar recomendación, compartir, etc.
+        console.log('Recomendación cargada:', @Html.Raw(Json.Serialize(new
+            {
+                ganador = Model.SupermercadoGanador.Nombre,
+                total = Model.SupermercadoGanador.Total,
+                ahorro = Model.AhorroTotal,
+                cantidadProductos = Model.CantidadProductos
+            })));
+    </script>
+}

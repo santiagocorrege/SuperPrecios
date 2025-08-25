@@ -1,0 +1,74 @@
+﻿@model SuperPrecios.Web.Models.Carrito.VMCarritoMini
+
+<div class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle d-flex align-items-center p-0"
+       href="#" id="carritoDropdown" role="button"
+       data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="position-relative">
+            <i class="bi bi-cart3 fs-4"></i>
+            @if (Model.Carrito.TieneProductos)
+            {
+                <span class="@Model.CssClassBadge position-absolute top-0 start-100 translate-middle rounded-pill">
+                    @Model.TextoCantidad
+                </span>
+            }
+        </div>
+        <span class="ms-2 d-none d-lg-inline">@Model.TextoCantidad items</span>
+    </a>
+
+    <div class="dropdown-menu dropdown-menu-end shadow p-0" style="min-width: 350px;" aria-labelledby="carritoDropdown">
+        @if (Model.Carrito.TieneProductos)
+        {
+            <div class="dropdown-header">
+                <strong>Mi Carrito (@Model.Carrito.CantidadTiposProductos productos)</strong>
+            </div>
+
+            @foreach (var linea in Model.Carrito.UltimasLineas)
+            {
+                <div class="dropdown-item-text">
+                    <div class="d-flex align-items-center">
+                        @if (!string.IsNullOrWhiteSpace(linea.ImagenUrl))
+                        {
+                            <img src="@linea.ImagenUrl" alt="@linea.NombreProducto"
+                                 class="me-2 rounded" style="width: 40px; height: 40px; object-fit: contain;">
+                        }
+                        else
+                        {
+                            <div class="me-2 bg-light rounded d-flex align-items-center justify-content-center"
+                                 style="width: 40px; height: 40px;">
+                                <i class="bi bi-image text-muted"></i>
+                            </div>
+                        }
+                        <div class="flex-grow-1">
+                            <div class="fw-semibold small">@linea.NombreCompleto</div>
+                            <div class="text-muted small">Cantidad: @linea.Cantidad</div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-item-text">
+                <div class="d-flex justify-content-center">
+                    <strong>@Model.Carrito.CantidadTotalProductos productos en total</strong>
+                </div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <div class="p-2">
+                <a href="/Carrito" class="btn btn-primary w-100 btn-sm">
+                    <i class="bi bi-cart-check me-1"></i>Ver Carrito Completo
+                </a>
+            </div>
+        }
+        else
+        {
+            <div class="dropdown-item-text text-center py-3">
+                <i class="bi bi-cart-x fs-1 text-muted"></i>
+                <div class="mt-2">Tu carrito está vacío</div>
+                <a href="/Productos" class="btn btn-primary btn-sm mt-2">
+                    Ir a Productos
+                </a>
+            </div>
+        }
+    </div>
+</div>

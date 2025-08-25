@@ -1,7 +1,6 @@
 using SuperPrecios.Application.DTO.Proveedor;
 using SuperPrecios.Domain.IRepositories;
 using SuperPrecios.Application.Mappers;
-using SuperPrecios.AuthenticationCore.Exceptions;
 using SuperPrecios.Application.IServices.Proveedor;
 using SuperPrecios.Domain.Exceptions;
 

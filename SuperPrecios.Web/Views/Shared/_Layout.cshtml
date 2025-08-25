@@ -61,10 +61,23 @@
                     </form>
                 }
 
-                <!-- DERECHA: Login / Usuario autenticado -->
+                <!-- DERECHA: Mini-carrito + Login/Usuario -->
                 <ul class="navbar-nav ms-auto flex-row align-items-center">
+                    @if (User.IsInRole("Miembro"))
+                    {
+                        <!-- Mini-carrito para miembros -->
+                        <li class="nav-item me-3" id="mini-carrito-container">
+                            <!-- El contenido se carga desde localStorage -->
+                            <a class="nav-link d-flex align-items-center p-0" href="/Carrito">
+                                <i class="bi bi-cart3 fs-4"></i>
+                                <span class="ms-2 d-none d-lg-inline">Cargando...</span>
+                            </a>
+                        </li>
+                    }
+
                     @if (User.Identity?.IsAuthenticated ?? false)
                     {
+                        <!-- Dropdown del usuario autenticado -->
                         <li class="nav-item dropdown position-relative">
                             <a class="nav-link dropdown-toggle d-flex align-items-center p-0"
                                href="#"
@@ -104,6 +117,7 @@
                     }
                     else
                     {
+                        <!-- Login para usuarios no autenticados -->
                         <li class="nav-item">
                             <a class="nav-link d-flex align-items-center p-0"
                                asp-controller="Home" asp-action="Login">
@@ -137,11 +151,11 @@
         @RenderBody()
     </main>
 
-    <footer class="border-top footer text-muted mt-auto">
-        <div class="container">
-            &copy; 2025 - MVC - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    @* <footer class="border-top footer text-muted mt-auto"> *@
+    @*     <div class="container"> *@
+    @*         &copy; 2025 - MVC - <a asp-controller="Home" asp-action="Privacy">Privacy</a> *@
+    @*     </div> *@
+    @* </footer> *@
 
     <!-- Scripts -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -149,7 +163,68 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/productos-paginado.js"></script>
     <script src="~/js/categorias.js"></script>
+    <script src="~/js/carrito.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
+
+    <!-- ===== MODALES DE CONFIRMACIÓN DEL CARRITO ===== -->
+    <!-- Agregar este HTML justo ANTES del cierre </body> en _Layout.cshtml -->
+    <!-- Modal para eliminar producto -->
+    <div class="modal fade" id="modal-eliminar-producto" tabindex="-1" aria-labelledby="modalEliminarLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title text-danger" id="modalEliminarLabel">
+                        <i class="bi bi-exclamation-triangle me-2"></i>Eliminar Producto
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <div class="mb-3">
+                        <i class="bi bi-trash text-danger" style="font-size: 3rem;"></i>
+                    </div>
+                    <h6>¿Estás seguro?</h6>
+                    <p class="text-muted mb-0">Este producto se eliminará de tu carrito</p>
+                </div>
+                <div class="modal-footer border-0 pt-0 justify-content-center">
+                    <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">
+                        <i class="bi bi-x-lg me-1"></i>Cancelar
+                    </button>
+                    <button type="button" class="btn btn-danger px-4" id="btn-confirmar-eliminar">
+                        <i class="bi bi-trash me-1"></i>Eliminar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para vaciar carrito -->
+    <div class="modal fade" id="modal-vaciar-carrito" tabindex="-1" aria-labelledby="modalVaciarLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title text-warning" id="modalVaciarLabel">
+                        <i class="bi bi-exclamation-triangle me-2"></i>Vaciar Carrito
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <div class="mb-3">
+                        <i class="bi bi-cart-x text-warning" style="font-size: 3rem;"></i>
+                    </div>
+                    <h6>¿Vaciar todo el carrito?</h6>
+                    <p class="text-muted mb-0">Se eliminarán todos los productos. Esta acción no se puede deshacer.</p>
+                </div>
+                <div class="modal-footer border-0 pt-0 justify-content-center">
+                    <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">
+                        <i class="bi bi-x-lg me-1"></i>Cancelar
+                    </button>
+                    <button type="button" class="btn btn-warning px-4" id="btn-confirmar-vaciar">
+                        <i class="bi bi-trash3 me-1"></i>Vaciar Carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

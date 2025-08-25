@@ -1,10 +1,4 @@
-﻿using SuperPrecios.AuthenticationCore.Entities;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 using SuperPrecios.Infrastructure.Configuraciones;
 using SuperPrecios.Domain.Entities;
 
@@ -15,14 +9,14 @@ namespace SuperPrecios.Infrastructure.EF
         public DbSet<Supermercado> Supermercados { get; set; }
         public DbSet<Producto> Productos { get; set; }
         public DbSet<PrecioHistorico> PreciosHistoricos { get; set; }
-
         public DbSet<Marca> Marcas { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
-
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Administrador> Administradores { get; set; }
         public DbSet<Miembro> Miembros { get; set; }
         public DbSet<Proveedor> Proveedores { get; set; }
+        
+        public DbSet<Carrito> Carritos { get; set; }
 
         public SuperPreciosDbContext(DbContextOptions<SuperPreciosDbContext> options) : base(options)
         {

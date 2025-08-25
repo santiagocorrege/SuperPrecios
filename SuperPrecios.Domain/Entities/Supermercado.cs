@@ -1,12 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SuperPrecios.Domain.Excepciones;
+using SuperPrecios.Domain.Exceptions;
 using SuperPrecios.Shared;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace SuperPrecios.Domain.Entities
 {

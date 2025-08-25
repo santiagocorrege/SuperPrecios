@@ -1,4 +1,5 @@
-﻿@model SuperPrecios.Web.Models.Producto.VMProductoCompletoWPaginado
+﻿<!-- ===== Web/Views/Shared/_ProductosConPaginadoPartial.cshtml (ACTUALIZADO) ===== -->
+@model SuperPrecios.Web.Models.Producto.VMProductoCompletoWPaginado
 
 @* CSS específico para que el badge de categoría envuelva texto largo *@
 <style>
@@ -8,7 +9,7 @@
     }
 </style>
 
-<div class="row">    
+<div class="row">
     <aside class="col-lg-2 col-md-3 mb-4">
         <div class="card">
             <div class="card-header">
@@ -30,7 +31,7 @@
                 <hr />
 
                 <h6>Categorias populares</h6>
-                <ul class="list-unstyled">                    
+                <ul class="list-unstyled">
                     <li>
                         <a asp-action="ProductosPorCategoria" asp-route-categoriaId="1">
                             Almacen
@@ -114,17 +115,27 @@
                                    class="btn btn-outline-primary btn-sm me-1">
                                     Detalles
                                 </a>
-                                <button class="btn btn-success btn-sm">Agregar</button>
+
+                                @* Botón de carrito condicional *@
+                                @if (User.IsInRole("Miembro"))
+                                {
+                                    <button class="btn btn-success btn-sm btn-agregar-carrito"
+                                            data-producto-id="@item.Id"
+                                            data-cantidad="1">
+                                        <i class="bi bi-cart-plus me-1"></i>Agregar
+                                    </button>
+                                }
+                                else
+                                {
+                                    <a asp-controller="Home" asp-action="Login"
+                                       class="btn btn-outline-success btn-sm">
+                                        <i class="bi bi-person me-1"></i>Login para comprar
+                                    </a>
+                                }
                             </div>
                         </div>
                     </div>
                 }
-            }
-            else
-            {
-                <div class="alert alert-danger text-center align-self-center">
-                    No hay resultados de búsqueda
-                </div>
             }
         </div>
 

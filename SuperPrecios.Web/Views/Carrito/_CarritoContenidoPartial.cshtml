@@ -1,0 +1,57 @@
+﻿@using SuperPrecios.Web.Models.Carrito
+@model SuperPrecios.Web.Models.Carrito.VMCarritoCompleto
+
+@if (!string.IsNullOrEmpty(Model.MensajeInfo))
+{
+    <div class="alert alert-info">@Model.MensajeInfo</div>
+}
+
+@if (Model.TieneProductos)
+{
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Productos (@Model.CantidadProductos items)</h5>
+                </div>
+                <div class="card-body p-0">
+                    @foreach (var linea in Model.Carrito.Lineas)
+                    {
+                        @await Html.PartialAsync("_LineaCarritoPartial", new VMLineaCarrito { Linea = linea })
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Resumen de Compra</h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Total:</span>
+                        <strong class="text-success">$@Model.Total.ToString("N2")</strong>
+                    </div>
+
+                    <!-- EL BOTÓN AMARILLO QUE QUEREMOS -->
+                    <a asp-controller="Recomendaciones" asp-action="Index" class="btn btn-warning w-100 mb-2">
+                        <i class="bi bi-trophy me-1"></i>Ver Mejores Precios
+                    </a>
+
+                    <button class="btn btn-success w-100" disabled>
+                        <i class="bi bi-credit-card me-1"></i>Proceder al Pago
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="text-center py-5">
+        <i class="bi bi-cart-x display-1 text-muted"></i>
+        <h3 class="mt-3">Tu carrito está vacío</h3>
+        <a asp-controller="Visitante" asp-action="Productos" class="btn btn-primary">Ir a Productos</a>
+    </div>
+}

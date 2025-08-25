@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperPrecios.Domain.Excepciones
+namespace SuperPrecios.Domain.Exceptions
 {
     public class SupermercadoException : Exception
     {

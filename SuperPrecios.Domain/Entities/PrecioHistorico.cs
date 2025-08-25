@@ -73,6 +73,7 @@ namespace SuperPrecios.Domain.Entities
                 throw new ProductoHistoricoException("Error: El precio no puede ser menor o igual a 0");
             }
         }
+
         #endregion
     }
 }

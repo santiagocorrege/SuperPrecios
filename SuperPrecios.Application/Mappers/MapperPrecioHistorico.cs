@@ -31,6 +31,11 @@ namespace SuperPrecios.Application.Mappers
             };
         }
 
+        public static List<DtoPrecioHistoricoGet> ToDtoCompletoList(List<PrecioHistorico> preciosHistorico)
+        {
+            return preciosHistorico.Select(ph => ToDtoCompleto(ph)).ToList();
+        }
+
         public static DtoPrecioHistoricoWOProducto ToDtoCompletoWoProducto(PrecioHistorico ph)
         {
             return new DtoPrecioHistoricoWOProducto

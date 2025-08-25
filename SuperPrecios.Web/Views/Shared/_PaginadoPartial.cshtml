@@ -5,30 +5,33 @@
         : "";
 }
 
+@if(Model.TotalPaginas > 0)
+{
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+            <!-- Botón Anterior -->
+            <li class="page-item @(Model.PaginaActual <= 1 ? "disabled" : "")">
+                <a class="page-link pagina-link"
+                   href="?pagina=@(Model.PaginaActual - 1)@busquedaParam"
+                   data-pagina="@(Model.PaginaActual - 1)">
+                    Anterior
+                </a>
+            </li>
 
-<nav class="mt-4">
-    <ul class="pagination justify-content-center">
-        <!-- Botón Anterior -->
-        <li class="page-item @(Model.PaginaActual <= 1 ? "disabled" : "")">
-            <a class="page-link pagina-link"
-               href="?pagina=@(Model.PaginaActual - 1)@busquedaParam"
-               data-pagina="@(Model.PaginaActual - 1)">
-                Anterior
-            </a>
-        </li>
+            <!-- Página actual -->
+            <li class="page-item disabled">
+                <span class="page-link">Página @Model.PaginaActual de @Model.TotalPaginas</span>
+            </li>
 
-        <!-- Página actual -->
-        <li class="page-item disabled">
-            <span class="page-link">Página @Model.PaginaActual de @Model.TotalPaginas</span>
-        </li>
+            <!-- Botón Siguiente -->
+            <li class="page-item @(Model.PaginaActual >= Model.TotalPaginas ? "disabled" : "")">
+                <a class="page-link pagina-link"
+                   href="?pagina=@(Model.PaginaActual + 1)@busquedaParam"
+                   data-pagina="@(Model.PaginaActual + 1)">
+                    Siguiente
+                </a>
+            </li>
+        </ul>
+    </nav>
+}
 
-        <!-- Botón Siguiente -->
-        <li class="page-item @(Model.PaginaActual >= Model.TotalPaginas ? "disabled" : "")">
-            <a class="page-link pagina-link"
-               href="?pagina=@(Model.PaginaActual + 1)@busquedaParam"
-               data-pagina="@(Model.PaginaActual + 1)">
-                Siguiente
-            </a>
-        </li>
-    </ul>
-</nav>

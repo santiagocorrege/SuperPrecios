@@ -1,4 +1,4 @@
-﻿using SuperPrecios.AuthenticationCore.Entities;
+﻿using SuperPrecios.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

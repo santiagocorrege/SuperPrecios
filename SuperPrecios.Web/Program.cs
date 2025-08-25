@@ -14,8 +14,11 @@ using SuperPrecios.Application.Services.Marca;
 using SuperPrecios.Application.IServices.Marca;
 using SuperPrecios.Application.Services.Proveedor;
 using SuperPrecios.Application.IServices.Proveedor;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using SuperPrecios.Web.Extensions;
+using SuperPrecios.Application.IServices.Carrito;
+using SuperPrecios.Application.Services.Carrito;
+using SuperPrecios.Application.IServices.Recomendador;
+using SuperPrecios.Application.Services.Recomendador;
 
 namespace SuperPrecios.Web
 {
@@ -45,6 +48,8 @@ namespace SuperPrecios.Web
             builder.Services.AddScoped<IMarcaRepository, MarcaRepositoryEF>();
             builder.Services.AddScoped<ISupermercadoRepository, SupermercadoRepositoryEF>();            
             builder.Services.AddScoped<IProveedorRepository, ProveedorRepositoryEF>();
+            builder.Services.AddScoped<ICarritoRepository, CarritoRepositoryEF>();            
+            builder.Services.AddScoped<IPrecioHistoricoRepository, PrecioHistoricoRepositoryEF>();            
 
             //DI: Services
             //Usuario
@@ -73,6 +78,12 @@ namespace SuperPrecios.Web
             builder.Services.AddScoped<IMarcaGetService, MarcaGetService>();
             builder.Services.AddScoped<IMarcaAddService, MarcaAddService>();            
             builder.Services.AddScoped<IMarcaDeleteService, MarcaDeleteService>();
+
+            //Carrito
+            builder.Services.AddScoped<ICarritoService, CarritoService>();
+
+            //Recomendador
+            builder.Services.AddScoped<IRecomendadorService, RecomendadorService>();
 
             //Cookies - Authentication Cookies cifradas - Se guarda en extensions de .Web
             builder.Services.AddCookieAuthentication();

@@ -1,14 +1,10 @@
 ﻿using SuperPrecios.Application.DTO.Miembro;
 using SuperPrecios.Application.IRepository;
 using SuperPrecios.Application.IServices.Miembro;
-using MiembroCore = SuperPrecios.AuthenticationCore.Entities.Miembro;
+using MiembroCore = SuperPrecios.Domain.Entities.Miembro;
 using SuperPrecios.Application.Mappers;
-using SuperPrecios.AuthenticationCore.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SuperPrecios.Domain.Exceptions;
+
 
 namespace SuperPrecios.Application.Services.Miembro
 {

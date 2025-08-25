@@ -3,8 +3,7 @@ using SuperPrecios.Domain.IRepositories;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Data.Common;
-using SuperPrecios.AuthenticationCore.Entities;
-using SuperPrecios.AuthenticationCore.ValueObject;
+using SuperPrecios.Domain.Entities.ValueObject;
 
 namespace SuperPrecios.Infrastructure.EF
 {

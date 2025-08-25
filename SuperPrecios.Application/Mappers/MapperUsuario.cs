@@ -1,10 +1,6 @@
 ﻿using SuperPrecios.Application.DTO.Usuario;
-using SuperPrecios.AuthenticationCore.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SuperPrecios.Domain.Entities;
+
 
 namespace SuperPrecios.Application.Mappers
 {

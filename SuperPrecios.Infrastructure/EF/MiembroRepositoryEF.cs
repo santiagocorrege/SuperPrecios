@@ -1,15 +1,9 @@
-﻿using SuperPrecios.Infrastructure.EF;
-using SuperPrecios.Application.IRepository;
+﻿using SuperPrecios.Application.IRepository;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using SuperPrecios.AuthenticationCore.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.Common;
-using SuperPrecios.AuthenticationCore.ValueObject;
+using SuperPrecios.Domain.Entities;
+using SuperPrecios.Domain.Entities.ValueObject;
 
 namespace SuperPrecios.Infrastructure.EF
 {
