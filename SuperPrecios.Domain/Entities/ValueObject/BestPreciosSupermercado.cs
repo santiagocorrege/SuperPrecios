@@ -24,7 +24,7 @@ namespace SuperPrecios.Domain.Entities.ValueObject
 
         #endregion
         #region Methods
-        public decimal CostoTotalProductosSupermercado()
+        private decimal CostoTotalProductosSupermercado()
         {
             decimal total = 0;
             foreach(LineaBestPrecios l in Lineas)

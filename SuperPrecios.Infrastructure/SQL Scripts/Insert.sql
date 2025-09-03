@@ -5,7 +5,7 @@ GO
 
 INSERT INTO Supermercados (Nombre, WebsiteUrl) VALUES
 	('Devoto', 'https://www.devoto.com.uy'),
-	('El Dorado', 'https://www.eldorado.com.uy')
+	('Disco', 'https://www.disco.com.uy')
 GO
 
 SET IDENTITY_INSERT Categorias ON;
